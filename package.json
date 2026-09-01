@@ -1,6 +1,6 @@
 {
   "name": "dsh-obsidian-session-reference-suite",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "One DSH Bundle that composes Annotation Core, Bridge lifecycle, Obsidian reference adapter, and Sticker Board as a Cordis group.",
   "type": "module",
   "license": "MIT",
@@ -20,7 +20,7 @@
   },
   "dshKnowledge": {
     "annotationProtocolVersion": 2,
-    "bridgeLifecycleProtocolVersion": 1,
+    "bridgeLifecycleProtocolVersion": 2,
     "stickerProtocolVersion": 1
   },
   "peerDependencies": {
