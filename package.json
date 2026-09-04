@@ -1,10 +1,10 @@
 {
   "name": "dsh-obsidian-session-reference-suite",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "One DSH Bundle that composes Annotation Core, Bridge lifecycle, Obsidian reference adapter, and Sticker Board as a Cordis group.",
   "type": "module",
   "license": "MIT",
-  "files": ["cordis.patch.yml", "README.md", "LICENSE"],
+  "files": ["cordis.patch.yml", "CHANGELOG.md", "README.md", "LICENSE"],
   "exports": {
     "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
