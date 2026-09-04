@@ -1,7 +1,7 @@
 lockfileVersion: '9.0'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 importers:
@@ -9,23 +9,23 @@ importers:
   .:
     devDependencies:
       dsh-annotation-core:
-        specifier: link:../dsh-annotation-core
-        version: link:../dsh-annotation-core
+        specifier: git+https://github.com/linmu115/dsh-annotation-core.git#de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161
+        version: https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161
       dsh-obsidian-bridge-lifecycle:
-        specifier: link:../dsh-obsidian-bridge-lifecycle
-        version: link:../dsh-obsidian-bridge-lifecycle
+        specifier: git+https://github.com/linmu115/dsh-obsidian-bridge-lifecycle.git#bfe3582f52826b052cedf2ad7c5f24318fd64bdb
+        version: https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)
       dsh-obsidian-bridge-protocol:
-        specifier: link:../dsh-obsidian-bridge-protocol
-        version: link:../dsh-obsidian-bridge-protocol
+        specifier: git+https://github.com/linmu115/dsh-obsidian-bridge-protocol.git#cfb069a5a09dacfb2e4f64a26036dfe514225132
+        version: https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132
       dsh-obsidian-reference-adapter:
-        specifier: link:../dsh-obsidian-reference-adapter
-        version: link:../dsh-obsidian-reference-adapter
+        specifier: git+https://github.com/linmu115/dsh-obsidian-reference-adapter.git#15b86cc9c8914ddce898c399bd2e057307a58c7c
+        version: https://codeload.github.com/linmu115/dsh-obsidian-reference-adapter/tar.gz/15b86cc9c8914ddce898c399bd2e057307a58c7c(dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161)(dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132))
       dsh-session-sticker-board:
-        specifier: link:../dsh-session-sticker-board
-        version: link:../dsh-session-sticker-board
+        specifier: git+https://github.com/linmu115/dsh-session-sticker-board.git#5788f26905d0b55ed2130bcf99b9b66fdb2310d4
+        version: https://codeload.github.com/linmu115/dsh-session-sticker-board/tar.gz/5788f26905d0b55ed2130bcf99b9b66fdb2310d4(dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161)(dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132))
       vitest:
         specifier: ^4.1.11
-        version: 4.1.11(vite@8.2.2(yaml@2.9.0))
+        version: 4.1.11(yaml@2.9.0)
       yaml:
         specifier: ^2.8.1
         version: 2.9.0
@@ -193,6 +193,119 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
+  dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161}
+    version: 0.3.7
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@deepseek-ai/cordis': '*'
+      '@deepseek-ai/dsh-agent': '*'
+      '@deepseek-ai/dsh-attachment': '*'
+      '@deepseek-ai/dsh-client-ui-conversation': '*'
+      '@deepseek-ai/dsh-client-ui-input-trigger': '*'
+      '@deepseek-ai/dsh-llm': '*'
+      '@deepseek-ai/dsh-session': '*'
+      '@deepseek-ai/dsh-storage-domain': '*'
+      '@deepseek-ai/dsh-system-prompt': '*'
+      '@deepseek-ai/dsh-typert-protocol': '*'
+      '@deepseek-ai/schemastery': '*'
+      react: '*'
+      react-dom: '*'
+    peerDependenciesMeta:
+      '@deepseek-ai/cordis':
+        optional: true
+      '@deepseek-ai/dsh-agent':
+        optional: true
+      '@deepseek-ai/dsh-attachment':
+        optional: true
+      '@deepseek-ai/dsh-client-ui-conversation':
+        optional: true
+      '@deepseek-ai/dsh-client-ui-input-trigger':
+        optional: true
+      '@deepseek-ai/dsh-llm':
+        optional: true
+      '@deepseek-ai/dsh-session':
+        optional: true
+      '@deepseek-ai/dsh-storage-domain':
+        optional: true
+      '@deepseek-ai/dsh-system-prompt':
+        optional: true
+      '@deepseek-ai/dsh-typert-protocol':
+        optional: true
+      '@deepseek-ai/schemastery':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
+  dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb}
+    version: 0.3.1
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@deepseek-ai/cordis': '*'
+      '@deepseek-ai/schemastery': '*'
+      dsh-obsidian-bridge-protocol: '*'
+    peerDependenciesMeta:
+      '@deepseek-ai/cordis':
+        optional: true
+      '@deepseek-ai/schemastery':
+        optional: true
+      dsh-obsidian-bridge-protocol:
+        optional: true
+
+  dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132}
+    version: 0.3.1
+
+  dsh-obsidian-reference-adapter@https://codeload.github.com/linmu115/dsh-obsidian-reference-adapter/tar.gz/15b86cc9c8914ddce898c399bd2e057307a58c7c:
+    resolution: {gitHosted: true, integrity: sha512-bXhDZiAE43dPCCJHzcBSvl5Jo5DUWWcqGKJN5StC3uG6sYYa1rgTQHRxtblflK5gVRelgoEcS1De+4gN4zDnrg==, tarball: https://codeload.github.com/linmu115/dsh-obsidian-reference-adapter/tar.gz/15b86cc9c8914ddce898c399bd2e057307a58c7c}
+    version: 0.3.1
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@deepseek-ai/cordis': '*'
+      '@deepseek-ai/schemastery': '*'
+      dsh-annotation-core: '*'
+      dsh-obsidian-bridge-lifecycle: '*'
+    peerDependenciesMeta:
+      '@deepseek-ai/cordis':
+        optional: true
+      '@deepseek-ai/schemastery':
+        optional: true
+      dsh-annotation-core:
+        optional: true
+      dsh-obsidian-bridge-lifecycle:
+        optional: true
+
+  dsh-session-sticker-board@https://codeload.github.com/linmu115/dsh-session-sticker-board/tar.gz/5788f26905d0b55ed2130bcf99b9b66fdb2310d4:
+    resolution: {gitHosted: true, integrity: sha512-Qnwadz2dWn5wbIiMf3grK7VgdZjewRcjhuZ46Y5+c+gs6T/GbUqEkdvBaeG99XqrLnFkmnFlwHDxfFnUyhnlvg==, tarball: https://codeload.github.com/linmu115/dsh-session-sticker-board/tar.gz/5788f26905d0b55ed2130bcf99b9b66fdb2310d4}
+    version: 0.7.1
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@deepseek-ai/cordis': '*'
+      '@deepseek-ai/dsh-typert-protocol': '*'
+      '@deepseek-ai/schemastery': '*'
+      dsh-annotation-core: '*'
+      dsh-obsidian-bridge-lifecycle: '*'
+      react: '*'
+      react-dom: '*'
+    peerDependenciesMeta:
+      '@deepseek-ai/cordis':
+        optional: true
+      '@deepseek-ai/dsh-typert-protocol':
+        optional: true
+      '@deepseek-ai/schemastery':
+        optional: true
+      dsh-annotation-core:
+        optional: true
+      dsh-obsidian-bridge-lifecycle:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   es-module-lexer@2.3.2:
     resolution: {integrity: sha512-poHGpORABojJJucnV9KbOavETW8lBVnphkW77ER5/BQ5Fz7oXSoCNek7IH3vR5nRjdsEz926ibFYX8KtLQmdyw==}
 
@@ -290,6 +403,11 @@ packages:
   lightningcss@1.33.0:
     resolution: {integrity: sha512-WkUDrojuJs0xkgGf2udWxa3yGBRxPtxUkB79i6aCZLRgc7PM8fZe9TosfPDcvEpQZbuFASnHYmRLBLUbmLOIIA==}
     engines: {node: '>= 12.0.0'}
+
+  lucide-react@0.542.0:
+    resolution: {integrity: sha512-w3hD8/SQB7+lzU2r4VdFyzzOzKnUjTZIF/MQJGSSvni7Llewni4vuViRppfRAa2guOsY5k4jZyxw/i9DQHv+dw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -409,7 +527,6 @@ packages:
       '@vitest/ui': 4.1.11
       happy-dom: '*'
       jsdom: '*'
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       '@edge-runtime/vm':
         optional: true
@@ -443,6 +560,9 @@ packages:
     resolution: {integrity: sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==}
     engines: {node: '>= 14.6'}
     hasBin: true
+
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
 snapshots:
 
@@ -557,6 +677,33 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
+  dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161:
+    dependencies:
+      zod: 4.4.3
+
+  dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132):
+    optionalDependencies:
+      dsh-obsidian-bridge-protocol: https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132
+
+  dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132:
+    dependencies:
+      zod: 4.4.3
+
+  dsh-obsidian-reference-adapter@https://codeload.github.com/linmu115/dsh-obsidian-reference-adapter/tar.gz/15b86cc9c8914ddce898c399bd2e057307a58c7c(dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161)(dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)):
+    dependencies:
+      zod: 4.4.3
+    optionalDependencies:
+      dsh-annotation-core: https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161
+      dsh-obsidian-bridge-lifecycle: https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)
+
+  dsh-session-sticker-board@https://codeload.github.com/linmu115/dsh-session-sticker-board/tar.gz/5788f26905d0b55ed2130bcf99b9b66fdb2310d4(dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161)(dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)):
+    dependencies:
+      lucide-react: 0.542.0
+      zod: 4.4.3
+    optionalDependencies:
+      dsh-annotation-core: https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161
+      dsh-obsidian-bridge-lifecycle: https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)
+
   es-module-lexer@2.3.2: {}
 
   estree-walker@3.0.3:
@@ -620,6 +767,8 @@ snapshots:
       lightningcss-linux-x64-musl: 1.33.0
       lightningcss-win32-arm64-msvc: 1.33.0
       lightningcss-win32-x64-msvc: 1.33.0
+
+  lucide-react@0.542.0: {}
 
   magic-string@0.30.21:
     dependencies:
@@ -692,7 +841,7 @@ snapshots:
       fsevents: 2.3.3
       yaml: 2.9.0
 
-  vitest@4.1.11(vite@8.2.2(yaml@2.9.0)):
+  vitest@4.1.11(yaml@2.9.0):
     dependencies:
       '@vitest/expect': 4.1.11
       '@vitest/mocker': 4.1.11(vite@8.2.2(yaml@2.9.0))
@@ -715,7 +864,18 @@ snapshots:
       vite: 8.2.2(yaml@2.9.0)
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
+      - '@vitejs/devtools'
+      - esbuild
+      - jiti
+      - less
       - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+      - tsx
+      - yaml
 
   why-is-node-running@2.3.0:
     dependencies:
@@ -723,3 +883,5 @@ snapshots:
       stackback: 0.0.2
 
   yaml@2.9.0: {}
+
+  zod@4.4.3: {}

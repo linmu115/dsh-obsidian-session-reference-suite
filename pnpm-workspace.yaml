@@ -1,0 +1,12 @@
+packages:
+  - .
+
+autoInstallPeers: false
+strictPeerDependencies: false
+
+allowBuilds:
+  'dsh-annotation-core@git+https://github.com/linmu115/dsh-annotation-core.git': true
+  'dsh-obsidian-bridge-protocol@git+https://github.com/linmu115/dsh-obsidian-bridge-protocol.git': true
+  'dsh-obsidian-bridge-lifecycle@git+https://github.com/linmu115/dsh-obsidian-bridge-lifecycle.git': true
+  'dsh-obsidian-reference-adapter@git+https://github.com/linmu115/dsh-obsidian-reference-adapter.git': true
+  'dsh-session-sticker-board@git+https://github.com/linmu115/dsh-session-sticker-board.git': true

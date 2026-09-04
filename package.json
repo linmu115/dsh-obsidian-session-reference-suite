@@ -38,11 +38,11 @@
     "dsh-session-sticker-board": { "optional": true }
   },
   "devDependencies": {
-    "dsh-annotation-core": "link:../dsh-annotation-core",
-    "dsh-obsidian-bridge-protocol": "link:../dsh-obsidian-bridge-protocol",
-    "dsh-obsidian-bridge-lifecycle": "link:../dsh-obsidian-bridge-lifecycle",
-    "dsh-obsidian-reference-adapter": "link:../dsh-obsidian-reference-adapter",
-    "dsh-session-sticker-board": "link:../dsh-session-sticker-board",
+    "dsh-annotation-core": "git+https://github.com/linmu115/dsh-annotation-core.git#de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161",
+    "dsh-obsidian-bridge-protocol": "git+https://github.com/linmu115/dsh-obsidian-bridge-protocol.git#cfb069a5a09dacfb2e4f64a26036dfe514225132",
+    "dsh-obsidian-bridge-lifecycle": "git+https://github.com/linmu115/dsh-obsidian-bridge-lifecycle.git#bfe3582f52826b052cedf2ad7c5f24318fd64bdb",
+    "dsh-obsidian-reference-adapter": "git+https://github.com/linmu115/dsh-obsidian-reference-adapter.git#15b86cc9c8914ddce898c399bd2e057307a58c7c",
+    "dsh-session-sticker-board": "git+https://github.com/linmu115/dsh-session-sticker-board.git#5788f26905d0b55ed2130bcf99b9b66fdb2310d4",
     "vitest": "^4.1.11",
     "yaml": "^2.8.1"
   },
