@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.2 - Unreleased
+
+- Keep Bridge origin in the Lifecycle row and let downstream members inherit it.
+- Add a seven-member compatibility specification, ordered local build/check
+  tooling, source/lock/artifact provenance and read-only installed comparison.
+- Cover actual Core/Adapter/Obsidian claim, cancellation and reconnection seams.
+- Keep the Bundle a light ordered group. Runtime health and targeted retries
+  remain in Lifecycle and are displayed by Sticker Board's Obsidian sidebar tab.
+- Record this as a local development combination until its source commits and
+  public dependency pins are published together.
+
 ## 0.3.1 - 2026-09-04
 
 - Package the RC1 Core, Bridge lifecycle/protocol, reference adapter, and

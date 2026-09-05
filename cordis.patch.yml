@@ -17,10 +17,7 @@
           name: 'dsh-obsidian-reference-adapter'
           inject: ['annotationCoreHost', 'obsidianBridgeLifecycle']
           config:
-            bridgeOrigin: 'http://127.0.0.1:18473'
             profileId: 'web'
         - id: session-sticker-board
           name: 'dsh-session-sticker-board'
           inject: ['obsidianBridgeLifecycle']
-          config:
-            bridgeOrigin: 'http://127.0.0.1:18473'

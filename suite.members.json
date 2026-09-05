@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "protocols": { "annotationProtocolVersion": 2, "bridgeLifecycleProtocolVersion": 3, "stickerProtocolVersion": 1 },
+  "members": [
+    { "name": "dsh-obsidian-bridge-protocol", "version": "0.3.2", "target": "dsh-profile" },
+    { "name": "dsh-annotation-core", "version": "0.3.8", "target": "dsh-profile" },
+    { "name": "dsh-obsidian-bridge-lifecycle", "version": "0.3.2", "target": "dsh-profile" },
+    { "name": "dsh-obsidian-reference-adapter", "version": "0.3.2", "target": "dsh-profile" },
+    { "name": "dsh-session-sticker-board", "version": "0.7.2", "target": "dsh-profile" },
+    { "name": "obsidian-deepharness-bridge", "version": "0.6.2", "target": "obsidian-vault" },
+    { "name": "dsh-obsidian-session-reference-suite", "version": "0.3.2", "target": "dsh-profile" }
+  ]
+}
