@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.3 - 2026-09-07
+
+- Coordinate Core 0.3.9, Reference Adapter 0.3.3 and Obsidian Bridge 0.6.3.
+- Retain captured references across unavailable Viewer navigation and report
+  recovery actions without holding the plugin state queue.
+- Confirm pending relationship deletions through the existing deletion protocol,
+  including durable retry jobs from earlier installations.
+- Validate the same identity on both sides before acknowledging a deletion.
+
 ## 0.3.2 - Unreleased
 
 - Keep Bridge origin in the Lifecycle row and let downstream members inherit it.

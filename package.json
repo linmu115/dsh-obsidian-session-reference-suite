@@ -1,10 +1,17 @@
 {
   "name": "dsh-obsidian-session-reference-suite",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "One DSH Bundle that composes Annotation Core, Bridge lifecycle, Obsidian reference adapter, and Sticker Board as a Cordis group.",
   "type": "module",
   "license": "MIT",
-  "files": ["cordis.patch.yml", "suite.members.json", "scripts", "CHANGELOG.md", "README.md", "LICENSE"],
+  "files": [
+    "cordis.patch.yml",
+    "suite.members.json",
+    "scripts",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
+  ],
   "exports": {
     "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
@@ -35,11 +42,21 @@
     "dsh-session-sticker-board": "*"
   },
   "peerDependenciesMeta": {
-    "dsh-annotation-core": { "optional": true },
-    "dsh-obsidian-bridge-protocol": { "optional": true },
-    "dsh-obsidian-bridge-lifecycle": { "optional": true },
-    "dsh-obsidian-reference-adapter": { "optional": true },
-    "dsh-session-sticker-board": { "optional": true }
+    "dsh-annotation-core": {
+      "optional": true
+    },
+    "dsh-obsidian-bridge-protocol": {
+      "optional": true
+    },
+    "dsh-obsidian-bridge-lifecycle": {
+      "optional": true
+    },
+    "dsh-obsidian-reference-adapter": {
+      "optional": true
+    },
+    "dsh-session-sticker-board": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "dsh-annotation-core": "git+https://github.com/linmu115/dsh-annotation-core.git#de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161",
@@ -51,7 +68,9 @@
     "yaml": "^2.8.1"
   },
   "packageManager": "pnpm@11.19.0",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/linmu115/dsh-obsidian-session-reference-suite.git"
