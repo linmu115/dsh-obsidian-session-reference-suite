@@ -32,8 +32,8 @@ async function fixture() {
   const store = new AnnotationStore(AnnotationStore.memoryTable(), { profileId: "web" });
   return { server, store, claims, discarded };
 }
-function client(server: RunningBridge, id: string) {
-  const transport = createBridgeHttpClient({ origin: server.origin, clientId: id, requestTimeoutMs: 2_000 });
+function client(server: RunningBridge, id: string, dshInstanceId?: string) {
+  const transport = createBridgeHttpClient({ origin: server.origin, clientId: id, requestTimeoutMs: 2_000, ...(dshInstanceId ? { dshInstanceId } : {}) });
   cleanup.push(() => transport.dispose());
   return transport;
 }
@@ -135,4 +135,20 @@ it("keeps Core, Protocol and Zod imports inside the built browser bundles", asyn
     expect(unresolved, `${name} runtime dependencies`).toEqual([]);
     expect(source).not.toMatch(/(?:^|\n)\s*import\s/);
   }
+});
+
+it("keeps independent same-profile stores isolated through the real scoped bridge transport", async () => {
+  const { server, store, claims, discarded } = await fixture();
+  const otherStore = new AnnotationStore(AnnotationStore.memoryTable(), { profileId: "web" });
+  const message = { ...capture("instances"), dshInstanceId: "rc2" }; server.enqueue(message);
+  const owner = client(server, "owner-web", "rc2"); const foreign = client(server, "other-web", "old");
+  expect((await foreign.nextActions(0)).actions).toEqual([]);
+  await consumeObsidianReferenceCapture({ capture: message, sessionId: "same-native-id", profileId: "web", annotationCore: core(store), bridge: owner,
+    logicalTarget: { dshInstanceId: "rc2", logicalSessionId: "logical" } });
+  await expect(consumeObsidianReferenceCapture({ capture: message, sessionId: "same-native-id", profileId: "web", annotationCore: core(otherStore), bridge: foreign,
+    logicalTarget: { dshInstanceId: "old" } })).rejects.toMatchObject({ code: "idempotency-conflict" });
+  expect(store.readPendingState("same-native-id").pendingCount).toBe(1);
+  expect(otherStore.readPendingState("same-native-id").pendingCount).toBe(0);
+  expect(claims).toHaveLength(1); expect(claims[0]).toMatchObject({ dshInstanceId: "rc2", logicalSessionId: "logical" });
+  await flushDiscards(otherStore, foreign, "same-native-id"); expect(discarded).toEqual([]);
 });

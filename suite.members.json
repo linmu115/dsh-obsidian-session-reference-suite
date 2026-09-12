@@ -8,37 +8,37 @@
   "members": [
     {
       "name": "dsh-obsidian-bridge-protocol",
-      "version": "0.3.2",
+      "version": "0.3.3-rc2.1",
       "target": "dsh-profile"
     },
     {
       "name": "dsh-annotation-core",
-      "version": "0.3.9",
+      "version": "0.3.11-rc2.2",
       "target": "dsh-profile"
     },
     {
       "name": "dsh-obsidian-bridge-lifecycle",
-      "version": "0.3.2",
+      "version": "0.3.3-rc2.1",
       "target": "dsh-profile"
     },
     {
       "name": "dsh-obsidian-reference-adapter",
-      "version": "0.3.3",
+      "version": "0.3.4-rc2.1",
       "target": "dsh-profile"
     },
     {
       "name": "dsh-session-sticker-board",
-      "version": "0.7.2",
+      "version": "0.7.3-rc2.1",
       "target": "dsh-profile"
     },
     {
       "name": "obsidian-deepharness-bridge",
-      "version": "0.6.3",
+      "version": "0.6.4-rc2.1",
       "target": "obsidian-vault"
     },
     {
       "name": "dsh-obsidian-session-reference-suite",
-      "version": "0.3.3",
+      "version": "0.3.4-rc2.1",
       "target": "dsh-profile"
     }
   ]

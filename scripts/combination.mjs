@@ -64,8 +64,19 @@ async function snapshot() {
       const pin = manifest.devDependencies?.[dependency.name];
       if (!pin) continue;
       const installed = await realpath(join(root, "node_modules", dependency.name));
-      if (installed !== await realpath(join(workspace, dependency.name))) throw new Error(`${member.name}: wrong checkout for ${dependency.name}; run workspace:link`);
-      localDependencies[dependency.name] = { developmentPin: pin, testedSource: dependency.name };
+      const checkout = await realpath(join(workspace, dependency.name));
+      const linked = installed === checkout;
+      if (!linked) {
+        const installedManifest = await json(join(installed, "package.json"));
+        if (installedManifest.name !== dependency.name || installedManifest.version !== dependency.version)
+          throw new Error(`${member.name}: unexpected installed ${dependency.name}`);
+        const artifactPaths = (await filesUnder(checkout, "lib")).filter(path => !path.endsWith(".map"));
+        for (const path of artifactPaths) {
+          if (hash(await readFile(join(installed, path))) !== hash(await readFile(join(checkout, path))))
+            throw new Error(`${member.name}: installed ${dependency.name}/${path} differs from the tested candidate`);
+        }
+      }
+      localDependencies[dependency.name] = { developmentPin: pin, testedSource: dependency.name, mode: linked ? "checkout" : "verified-artifact" };
     }
     const tracked = git(root, ["ls-files", "--cached", "--others", "--exclude-standard", "-z"]).split("\0").filter(Boolean);
     const sources = await fileDigests(root, tracked.filter((path) => !path.startsWith("lib/") && path !== "main.js"));

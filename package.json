@@ -1,6 +1,6 @@
 {
   "name": "dsh-obsidian-session-reference-suite",
-  "version": "0.3.3",
+  "version": "0.3.4-rc2.1",
   "description": "One DSH Bundle that composes Annotation Core, Bridge lifecycle, Obsidian reference adapter, and Sticker Board as a Cordis group.",
   "type": "module",
   "license": "MIT",
@@ -35,11 +35,11 @@
     "stickerProtocolVersion": 1
   },
   "peerDependencies": {
-    "dsh-annotation-core": "*",
-    "dsh-obsidian-bridge-protocol": "*",
-    "dsh-obsidian-bridge-lifecycle": "*",
-    "dsh-obsidian-reference-adapter": "*",
-    "dsh-session-sticker-board": "*"
+    "dsh-annotation-core": "0.3.11-rc2.2",
+    "dsh-obsidian-bridge-protocol": "0.3.3-rc2.1",
+    "dsh-obsidian-bridge-lifecycle": "0.3.3-rc2.1",
+    "dsh-obsidian-reference-adapter": "0.3.4-rc2.1",
+    "dsh-session-sticker-board": "0.7.3-rc2.1"
   },
   "peerDependenciesMeta": {
     "dsh-annotation-core": {
@@ -59,11 +59,11 @@
     }
   },
   "devDependencies": {
-    "dsh-annotation-core": "git+https://github.com/linmu115/dsh-annotation-core.git#de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161",
-    "dsh-obsidian-bridge-protocol": "git+https://github.com/linmu115/dsh-obsidian-bridge-protocol.git#cfb069a5a09dacfb2e4f64a26036dfe514225132",
-    "dsh-obsidian-bridge-lifecycle": "git+https://github.com/linmu115/dsh-obsidian-bridge-lifecycle.git#bfe3582f52826b052cedf2ad7c5f24318fd64bdb",
-    "dsh-obsidian-reference-adapter": "git+https://github.com/linmu115/dsh-obsidian-reference-adapter.git#15b86cc9c8914ddce898c399bd2e057307a58c7c",
-    "dsh-session-sticker-board": "git+https://github.com/linmu115/dsh-session-sticker-board.git#5788f26905d0b55ed2130bcf99b9b66fdb2310d4",
+    "dsh-annotation-core": "file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz",
+    "dsh-obsidian-bridge-protocol": "file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz",
+    "dsh-obsidian-bridge-lifecycle": "file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz",
+    "dsh-obsidian-reference-adapter": "file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-reference-adapter-0.3.4-rc2.1.tgz",
+    "dsh-session-sticker-board": "file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-session-sticker-board-0.7.3-rc2.1.tgz",
     "vitest": "^4.1.11",
     "yaml": "^2.8.1"
   },

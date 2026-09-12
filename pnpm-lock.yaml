@@ -9,20 +9,20 @@ importers:
   .:
     devDependencies:
       dsh-annotation-core:
-        specifier: git+https://github.com/linmu115/dsh-annotation-core.git#de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161
-        version: https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161
+        specifier: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz
+        version: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz
       dsh-obsidian-bridge-lifecycle:
-        specifier: git+https://github.com/linmu115/dsh-obsidian-bridge-lifecycle.git#bfe3582f52826b052cedf2ad7c5f24318fd64bdb
-        version: https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)
+        specifier: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz
+        version: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
       dsh-obsidian-bridge-protocol:
-        specifier: git+https://github.com/linmu115/dsh-obsidian-bridge-protocol.git#cfb069a5a09dacfb2e4f64a26036dfe514225132
-        version: https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132
+        specifier: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz
+        version: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz
       dsh-obsidian-reference-adapter:
-        specifier: git+https://github.com/linmu115/dsh-obsidian-reference-adapter.git#15b86cc9c8914ddce898c399bd2e057307a58c7c
-        version: https://codeload.github.com/linmu115/dsh-obsidian-reference-adapter/tar.gz/15b86cc9c8914ddce898c399bd2e057307a58c7c(dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161)(dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132))
+        specifier: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-reference-adapter-0.3.4-rc2.1.tgz
+        version: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-reference-adapter-0.3.4-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-lifecycle@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
       dsh-session-sticker-board:
-        specifier: git+https://github.com/linmu115/dsh-session-sticker-board.git#5788f26905d0b55ed2130bcf99b9b66fdb2310d4
-        version: https://codeload.github.com/linmu115/dsh-session-sticker-board/tar.gz/5788f26905d0b55ed2130bcf99b9b66fdb2310d4(dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161)(dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132))
+        specifier: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-session-sticker-board-0.7.3-rc2.1.tgz
+        version: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-session-sticker-board-0.7.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-lifecycle@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(yaml@2.9.0)
@@ -193,21 +193,23 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
-  dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161}
-    version: 0.3.7
+  dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz:
+    resolution: {integrity: sha512-otO0+pwxn0QB15riZzbA/uqExdHbj2M/yYhTz40ipkyx/CdVoSAYBVE7xjbWwcyHnowGIQ+4TZdm6cg6o07UtQ==, tarball: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz}
+    version: 0.3.11-rc2.2
     engines: {node: '>=20'}
     peerDependencies:
       '@deepseek-ai/cordis': '*'
-      '@deepseek-ai/dsh-agent': '*'
-      '@deepseek-ai/dsh-attachment': '*'
-      '@deepseek-ai/dsh-client-ui-conversation': '*'
-      '@deepseek-ai/dsh-client-ui-input-trigger': '*'
-      '@deepseek-ai/dsh-llm': '*'
-      '@deepseek-ai/dsh-session': '*'
-      '@deepseek-ai/dsh-storage-domain': '*'
-      '@deepseek-ai/dsh-system-prompt': '*'
-      '@deepseek-ai/dsh-typert-protocol': '*'
+      '@deepseek-ai/dsh-agent': 0.1.5-rc.2
+      '@deepseek-ai/dsh-attachment': 0.1.5-rc.2
+      '@deepseek-ai/dsh-client-file-upload': 0.1.5-rc.2
+      '@deepseek-ai/dsh-client-ui-conversation': 0.1.5-rc.2
+      '@deepseek-ai/dsh-client-ui-input-trigger': 0.1.5-rc.2
+      '@deepseek-ai/dsh-llm': 0.1.5-rc.2
+      '@deepseek-ai/dsh-session': 0.1.5-rc.2
+      '@deepseek-ai/dsh-storage-domain': 0.1.5-rc.2
+      '@deepseek-ai/dsh-system-prompt': 0.1.5-rc.2
+      '@deepseek-ai/dsh-tools': 0.1.5-rc.2
+      '@deepseek-ai/dsh-typert-protocol': 0.1.5-rc.2
       '@deepseek-ai/schemastery': '*'
       react: '*'
       react-dom: '*'
@@ -217,6 +219,8 @@ packages:
       '@deepseek-ai/dsh-agent':
         optional: true
       '@deepseek-ai/dsh-attachment':
+        optional: true
+      '@deepseek-ai/dsh-client-file-upload':
         optional: true
       '@deepseek-ai/dsh-client-ui-conversation':
         optional: true
@@ -230,6 +234,8 @@ packages:
         optional: true
       '@deepseek-ai/dsh-system-prompt':
         optional: true
+      '@deepseek-ai/dsh-tools':
+        optional: true
       '@deepseek-ai/dsh-typert-protocol':
         optional: true
       '@deepseek-ai/schemastery':
@@ -239,35 +245,42 @@ packages:
       react-dom:
         optional: true
 
-  dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb}
-    version: 0.3.1
+  dsh-obsidian-bridge-lifecycle@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz:
+    resolution: {integrity: sha512-2nAabMgRAudMGEnCtQLZY3dZ10fuOVh7YhJqAs80/uJMBjbFlqm7LXjkRZCj1qQ+6Mz1BSsui0raImQBirqJhQ==, tarball: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz}
+    version: 0.3.3-rc2.1
     engines: {node: '>=20'}
     peerDependencies:
       '@deepseek-ai/cordis': '*'
+      '@deepseek-ai/dsh-typert-protocol': 0.1.5-rc.2
       '@deepseek-ai/schemastery': '*'
-      dsh-obsidian-bridge-protocol: '*'
+      dsh-annotation-core: 0.3.11-rc2.2
+      dsh-obsidian-bridge-protocol: 0.3.3-rc2.1
     peerDependenciesMeta:
       '@deepseek-ai/cordis':
         optional: true
+      '@deepseek-ai/dsh-typert-protocol':
+        optional: true
       '@deepseek-ai/schemastery':
+        optional: true
+      dsh-annotation-core:
         optional: true
       dsh-obsidian-bridge-protocol:
         optional: true
 
-  dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132}
-    version: 0.3.1
+  dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz:
+    resolution: {integrity: sha512-N4SlrVPUAGJyK1pK3RK1CbpSFSYH43jN2mYid3f3Wd1OerYWWA0t0R44HoQvs/z3iR9Ged4cREYnNzlEt3C2Bg==, tarball: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz}
+    version: 0.3.3-rc2.1
 
-  dsh-obsidian-reference-adapter@https://codeload.github.com/linmu115/dsh-obsidian-reference-adapter/tar.gz/15b86cc9c8914ddce898c399bd2e057307a58c7c:
-    resolution: {gitHosted: true, integrity: sha512-bXhDZiAE43dPCCJHzcBSvl5Jo5DUWWcqGKJN5StC3uG6sYYa1rgTQHRxtblflK5gVRelgoEcS1De+4gN4zDnrg==, tarball: https://codeload.github.com/linmu115/dsh-obsidian-reference-adapter/tar.gz/15b86cc9c8914ddce898c399bd2e057307a58c7c}
-    version: 0.3.1
+  dsh-obsidian-reference-adapter@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-reference-adapter-0.3.4-rc2.1.tgz:
+    resolution: {integrity: sha512-2NsCjrvbnyliBMAKl8pI1pE3Cr/x1VBDYHmsJmrFMFri6eJxUiK9lm4to3XWAToMoqmjC/Mfi65tz9oFbT1t0g==, tarball: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-reference-adapter-0.3.4-rc2.1.tgz}
+    version: 0.3.4-rc2.1
     engines: {node: '>=20'}
     peerDependencies:
       '@deepseek-ai/cordis': '*'
       '@deepseek-ai/schemastery': '*'
-      dsh-annotation-core: '*'
-      dsh-obsidian-bridge-lifecycle: '*'
+      dsh-annotation-core: 0.3.11-rc2.2
+      dsh-obsidian-bridge-lifecycle: 0.3.3-rc2.1
+      dsh-obsidian-bridge-protocol: 0.3.3-rc2.1
     peerDependenciesMeta:
       '@deepseek-ai/cordis':
         optional: true
@@ -277,17 +290,21 @@ packages:
         optional: true
       dsh-obsidian-bridge-lifecycle:
         optional: true
+      dsh-obsidian-bridge-protocol:
+        optional: true
 
-  dsh-session-sticker-board@https://codeload.github.com/linmu115/dsh-session-sticker-board/tar.gz/5788f26905d0b55ed2130bcf99b9b66fdb2310d4:
-    resolution: {gitHosted: true, integrity: sha512-Qnwadz2dWn5wbIiMf3grK7VgdZjewRcjhuZ46Y5+c+gs6T/GbUqEkdvBaeG99XqrLnFkmnFlwHDxfFnUyhnlvg==, tarball: https://codeload.github.com/linmu115/dsh-session-sticker-board/tar.gz/5788f26905d0b55ed2130bcf99b9b66fdb2310d4}
-    version: 0.7.1
+  dsh-session-sticker-board@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-session-sticker-board-0.7.3-rc2.1.tgz:
+    resolution: {integrity: sha512-Cd17ecyJRbpzM7is4ahVzsAiP1GX76mCJu8tt/qc/Nc111odlMQPflG5T/F4fsKctfD56OIPZBOxHOVVIBgxVA==, tarball: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-session-sticker-board-0.7.3-rc2.1.tgz}
+    version: 0.7.3-rc2.1
     engines: {node: '>=20'}
     peerDependencies:
-      '@deepseek-ai/cordis': '*'
-      '@deepseek-ai/dsh-typert-protocol': '*'
+      '@deepseek-ai/cordis': ^4.0.2
+      '@deepseek-ai/dsh-typert-protocol': ^0.1.5-rc.2
       '@deepseek-ai/schemastery': '*'
-      dsh-annotation-core: '*'
-      dsh-obsidian-bridge-lifecycle: '*'
+      dsh-annotation-core: ^0.3.9 || 0.3.10-dev.2 || 0.3.11-rc2.1 || 0.3.11-rc2.2
+      dsh-better-sidebar: ^0.18.0 || ^0.19.1 || 0.19.2-rc2compat.1
+      dsh-obsidian-bridge-lifecycle: ^0.3.2 || 0.3.3-rc2.1
+      dsh-obsidian-bridge-protocol: ^0.3.2 || 0.3.3-rc2.1
       react: '*'
       react-dom: '*'
     peerDependenciesMeta:
@@ -300,6 +317,8 @@ packages:
       dsh-annotation-core:
         optional: true
       dsh-obsidian-bridge-lifecycle:
+        optional: true
+      dsh-obsidian-bridge-protocol:
         optional: true
       react:
         optional: true
@@ -677,32 +696,37 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161:
+  dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz:
     dependencies:
       zod: 4.4.3
 
-  dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132):
-    optionalDependencies:
-      dsh-obsidian-bridge-protocol: https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132
-
-  dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132:
-    dependencies:
-      zod: 4.4.3
-
-  dsh-obsidian-reference-adapter@https://codeload.github.com/linmu115/dsh-obsidian-reference-adapter/tar.gz/15b86cc9c8914ddce898c399bd2e057307a58c7c(dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161)(dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)):
+  dsh-obsidian-bridge-lifecycle@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz):
     dependencies:
       zod: 4.4.3
     optionalDependencies:
-      dsh-annotation-core: https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161
-      dsh-obsidian-bridge-lifecycle: https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)
+      dsh-annotation-core: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz
+      dsh-obsidian-bridge-protocol: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz
 
-  dsh-session-sticker-board@https://codeload.github.com/linmu115/dsh-session-sticker-board/tar.gz/5788f26905d0b55ed2130bcf99b9b66fdb2310d4(dsh-annotation-core@https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161)(dsh-obsidian-bridge-lifecycle@https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)):
+  dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz:
+    dependencies:
+      zod: 4.4.3
+
+  dsh-obsidian-reference-adapter@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-reference-adapter-0.3.4-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-lifecycle@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz):
+    dependencies:
+      zod: 4.4.3
+    optionalDependencies:
+      dsh-annotation-core: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz
+      dsh-obsidian-bridge-lifecycle: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
+      dsh-obsidian-bridge-protocol: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz
+
+  dsh-session-sticker-board@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-session-sticker-board-0.7.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-lifecycle@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz):
     dependencies:
       lucide-react: 0.542.0
       zod: 4.4.3
     optionalDependencies:
-      dsh-annotation-core: https://codeload.github.com/linmu115/dsh-annotation-core/tar.gz/de5c6d3e4784cfcfa4cc90b4e8c29d75a36a2161
-      dsh-obsidian-bridge-lifecycle: https://codeload.github.com/linmu115/dsh-obsidian-bridge-lifecycle/tar.gz/bfe3582f52826b052cedf2ad7c5f24318fd64bdb(dsh-obsidian-bridge-protocol@https://codeload.github.com/linmu115/dsh-obsidian-bridge-protocol/tar.gz/cfb069a5a09dacfb2e4f64a26036dfe514225132)
+      dsh-annotation-core: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz
+      dsh-obsidian-bridge-lifecycle: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.1.tgz(dsh-annotation-core@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-annotation-core-0.3.11-rc2.2.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
+      dsh-obsidian-bridge-protocol: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz
 
   es-module-lexer@2.3.2: {}
 
