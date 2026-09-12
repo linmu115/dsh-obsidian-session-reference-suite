@@ -18,27 +18,27 @@
     },
     {
       "name": "dsh-obsidian-bridge-lifecycle",
-      "version": "0.3.3-rc2.1",
+      "version": "0.3.3-rc2.2",
       "target": "dsh-profile"
     },
     {
       "name": "dsh-obsidian-reference-adapter",
-      "version": "0.3.4-rc2.1",
+      "version": "0.3.4-rc2.2",
       "target": "dsh-profile"
     },
     {
       "name": "dsh-session-sticker-board",
-      "version": "0.7.3-rc2.1",
+      "version": "0.7.3-rc2.2",
       "target": "dsh-profile"
     },
     {
       "name": "obsidian-deepharness-bridge",
-      "version": "0.6.4-rc2.1",
+      "version": "0.6.4-rc2.2",
       "target": "obsidian-vault"
     },
     {
       "name": "dsh-obsidian-session-reference-suite",
-      "version": "0.3.4-rc2.1",
+      "version": "0.3.4-rc2.2",
       "target": "dsh-profile"
     }
   ]
