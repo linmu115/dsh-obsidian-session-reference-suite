@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.4-rc2.3 — 2026-09-13
+
+- Accept Core 0.3.12-rc2.1, Lifecycle 0.3.3-rc2.3, Reference Adapter 0.3.4-rc2.3 and Sticker Board 0.7.3-rc2.3 alongside the previous RC2 peers.
+- Declare the coordinated seven-member release in suite.members.json.
+- Keep existing Suite composition; P2 session stickers and Obsidian data migration are not part of this release.
+- Validation and its limits are recorded in docs/changes/2026-09-13-upstream-core-compatibility.md.
+
 ## 0.3.4-rc2.2 — 2026-09-12
 
 Complete instance scope across durable capture, authenticated Core deletion, persisted reference ownership and Sticker backlink transport/matching. Legacy unscoped data remains unchanged. See deployment evidence for the tested combination.
