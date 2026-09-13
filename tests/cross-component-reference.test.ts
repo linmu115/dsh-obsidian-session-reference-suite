@@ -15,6 +15,7 @@ import { createObsidianReferenceCapture } from "../../obsidian-deepharness-bridg
 import type { ReferenceClaimV2 } from "../../obsidian-deepharness-bridge/src/protocol.ts";
 
 const cleanup: Array<() => void | Promise<void>> = [];
+const obsidianSurface = "7b31f255-d087-4f8e-bdd6-d09a61860819";
 afterEach(async () => { for (const dispose of cleanup.splice(0).reverse()) await dispose(); });
 function deferred() { let resolve!: () => void; const promise = new Promise<void>((done) => { resolve = done; }); return { promise, resolve }; }
 function capture(id: string) {
@@ -25,6 +26,7 @@ async function fixture() {
   const discarded: string[] = [];
   const server = await startBridgeServer({
     port: 0,
+    referenceSurfaceId: obsidianSurface,
     onClaimReference: async (claim) => { claims.push(claim); },
     onDiscardReference: async (request) => { discarded.push(request.referenceId); },
   });
@@ -32,8 +34,9 @@ async function fixture() {
   const store = new AnnotationStore(AnnotationStore.memoryTable(), { profileId: "web" });
   return { server, store, claims, discarded };
 }
-function client(server: RunningBridge, id: string, dshInstanceId?: string) {
-  const transport = createBridgeHttpClient({ origin: server.origin, clientId: id, requestTimeoutMs: 2_000, ...(dshInstanceId ? { dshInstanceId } : {}) });
+function client(server: RunningBridge, id: string, dshInstanceId?: string, surfaceId: string | null = obsidianSurface) {
+  const transport = createBridgeHttpClient({ origin: server.origin, clientId: id, requestTimeoutMs: 2_000,
+    ...(surfaceId ? { surfaceId } : {}), ...(dshInstanceId ? { dshInstanceId } : {}) });
   cleanup.push(() => transport.dispose());
   return transport;
 }
@@ -58,6 +61,22 @@ async function flushDiscards(store: AnnotationStore, transport: BridgeHttpClient
 }
 
 describe("actual Core + Adapter + Obsidian HTTP reference delivery", () => {
+  it("delivers a queued reference only to the Obsidian session while a standalone client polls the same instance", async () => {
+    const { server, store, claims } = await fixture();
+    const message = { ...capture("embedded-only"), dshInstanceId: "copy" }; server.enqueue(message);
+    const desktop = client(server, "desktop", "copy", null), embedded = client(server, "obsidian", "copy");
+    for(let i=0;i<3;i++)expect((await desktop.nextActions(0)).actions).toEqual([]);
+    const page = await embedded.nextActions(0);
+    expect(page.actions.map(entry => entry.message.actionId)).toEqual([message.actionId]);
+    await consumeObsidianReferenceCapture({ capture: message, sessionId: "obsidian-session", profileId: "web",
+      logicalTarget: { dshInstanceId: "copy" }, annotationCore: core(store), bridge: embedded });
+    expect(store.readPendingState("obsidian-session").pendingCount).toBe(1);
+    expect(store.readPendingState("desktop-session").pendingCount).toBe(0);
+    expect(claims).toHaveLength(1);expect(claims[0]!.sessionId).toBe("obsidian-session");
+    await expect(desktop.claimReference(message.actionId,claims[0]!)).rejects.toMatchObject({status:409});
+    expect(store.readPendingState("obsidian-session").pendingCount).toBe(1);
+  });
+
   it("keeps the winning claim intact when two persisted consumers race and the loser flushes cleanup", async () => {
     const { server, store, claims, discarded } = await fixture();
     const message = capture("race"); server.enqueue(message);
