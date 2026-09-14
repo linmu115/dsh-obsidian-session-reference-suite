@@ -21,8 +21,8 @@ importers:
         specifier: file:D:/AI/DeepSeekHarness-Plugin/artifacts/knowledge-network-rc2-20260914/client-fix/dsh-obsidian-reference-adapter-0.3.4-rc2.10.tgz
         version: file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-obsidian-reference-adapter-0.3.4-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-lifecycle@file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
       dsh-session-sticker-board:
-        specifier: file:D:/AI/DeepSeekHarness-Plugin/artifacts/knowledge-network-rc2-20260914/client-fix/dsh-session-sticker-board-0.7.3-rc2.10.tgz
-        version: file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-session-sticker-board-0.7.3-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-lifecycle@file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
+        specifier: file:D:/AI/DeepSeekHarness-Plugin/artifacts/sticker-ui-dsh-20260914/dsh-session-sticker-board-0.7.3-rc2.11.tgz
+        version: file:../../../artifacts/sticker-ui-dsh-20260914/dsh-session-sticker-board-0.7.3-rc2.11.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-lifecycle@file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(yaml@2.9.0)
@@ -293,9 +293,9 @@ packages:
       dsh-obsidian-bridge-protocol:
         optional: true
 
-  dsh-session-sticker-board@file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-session-sticker-board-0.7.3-rc2.10.tgz:
-    resolution: {integrity: sha512-rSlT+zd5L+VFpr6vJfSwfUOpfqbYDz2Ec6a+eoQfx2EnizIGXdeI4Yy4NOlFUCbPr6abm3kah16FYAwXAXH3+A==, tarball: file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-session-sticker-board-0.7.3-rc2.10.tgz}
-    version: 0.7.3-rc2.10
+  dsh-session-sticker-board@file:../../../artifacts/sticker-ui-dsh-20260914/dsh-session-sticker-board-0.7.3-rc2.11.tgz:
+    resolution: {integrity: sha512-NaIHE+kIIFJiPo6M1K6bwXzeGcgeKQiv31ytwONe25PW1krBeSQJIuLFNhfNIyfN5sUyKDuwiOopC26hsONrhA==, tarball: file:../../../artifacts/sticker-ui-dsh-20260914/dsh-session-sticker-board-0.7.3-rc2.11.tgz}
+    version: 0.7.3-rc2.11
     engines: {node: '>=20'}
     peerDependencies:
       '@deepseek-ai/cordis': ^4.0.2
@@ -719,7 +719,7 @@ snapshots:
       dsh-obsidian-bridge-lifecycle: file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz)
       dsh-obsidian-bridge-protocol: file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz
 
-  dsh-session-sticker-board@file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-session-sticker-board-0.7.3-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-lifecycle@file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz):
+  dsh-session-sticker-board@file:../../../artifacts/sticker-ui-dsh-20260914/dsh-session-sticker-board-0.7.3-rc2.11.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-lifecycle@file:../../../artifacts/knowledge-network-rc2-20260914/client-fix/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.10.tgz(dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz)(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz))(dsh-obsidian-bridge-protocol@file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz):
     dependencies:
       lucide-react: 0.542.0
       zod: 4.4.3
