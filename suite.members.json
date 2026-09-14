@@ -38,7 +38,7 @@
     },
     {
       "name": "dsh-obsidian-session-reference-suite",
-      "version": "0.3.4-rc2.10",
+      "version": "0.3.4-rc2.11",
       "target": "dsh-profile"
     }
   ]

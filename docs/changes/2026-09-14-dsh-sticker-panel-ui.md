@@ -2,4 +2,6 @@
 
 Suite 0.3.4-rc2.11 接纳并固定 Sticker Board 0.7.3-rc2.11，保留现有其他组合成员。组合测试与打包通过。
 
+安装前核查同时修正了 `suite.members.json` 中 Suite 自身的版本标识，使它与 `package.json` 的 `0.3.4-rc2.11` 一致。此修正仅涉及组合元数据；原安装包保留为 `suite-before-metadata-fix.tgz`，修正包重新测试和打包后交由安装步骤使用。
+
 安装至 0.1.5-rc.2 副本，真实安装验证另行记录。证据目录：D:/AI/DeepSeekHarness-Plugin/artifacts/sticker-ui-dsh-20260914。未在用户数据中创建测试贴纸、关联笔记或执行迁移。
