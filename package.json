@@ -1,6 +1,6 @@
 {
   "name": "dsh-obsidian-session-reference-suite",
-  "version": "0.3.4-rc2.12",
+  "version": "0.3.4-rc2.13",
   "description": "One DSH Bundle that composes Annotation Core, Bridge lifecycle, Obsidian reference adapter, and Sticker Board as a Cordis group.",
   "type": "module",
   "license": "MIT",
@@ -39,7 +39,7 @@
     "dsh-obsidian-bridge-protocol": "0.3.3-rc2.1",
     "dsh-obsidian-bridge-lifecycle": "0.3.3-rc2.2 || 0.3.3-rc2.3 || 0.3.3-rc2.4 || 0.3.3-rc2.5 || 0.3.3-rc2.6 || 0.3.3-rc2.7 || 0.3.3-rc2.8 || 0.3.3-rc2.9 || 0.3.3-rc2.10 || 0.3.3-rc2.11",
     "dsh-obsidian-reference-adapter": "0.3.4-rc2.2 || 0.3.4-rc2.3 || 0.3.4-rc2.4 || 0.3.4-rc2.5 || 0.3.4-rc2.6 || 0.3.4-rc2.7 || 0.3.4-rc2.8 || 0.3.4-rc2.9 || 0.3.4-rc2.10 || 0.3.4-rc2.11",
-    "dsh-session-sticker-board": "0.7.3-rc2.2 || 0.7.3-rc2.3 || 0.7.3-rc2.4 || 0.7.3-rc2.5 || 0.7.3-rc2.6 || 0.7.3-rc2.7 || 0.7.3-rc2.8 || 0.7.3-rc2.9 || 0.7.3-rc2.10 || 0.7.3-rc2.11 || 0.7.3-rc2.12"
+    "dsh-session-sticker-board": "0.7.3-rc2.2 || 0.7.3-rc2.3 || 0.7.3-rc2.4 || 0.7.3-rc2.5 || 0.7.3-rc2.6 || 0.7.3-rc2.7 || 0.7.3-rc2.8 || 0.7.3-rc2.9 || 0.7.3-rc2.10 || 0.7.3-rc2.11 || 0.7.3-rc2.12 || 0.7.3-rc2.13"
   },
   "peerDependenciesMeta": {
     "dsh-annotation-core": {
@@ -63,7 +63,7 @@
     "dsh-obsidian-bridge-protocol": "file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz",
     "dsh-obsidian-bridge-lifecycle": "file:D:/AI/DeepSeekHarness-Plugin/artifacts/system-fixes-20260914/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.11.tgz",
     "dsh-obsidian-reference-adapter": "file:D:/AI/DeepSeekHarness-Plugin/artifacts/system-fixes-20260914/dsh-obsidian-reference-adapter-0.3.4-rc2.11.tgz",
-    "dsh-session-sticker-board": "file:D:/AI/DeepSeekHarness-Plugin/artifacts/system-fixes-20260914/dsh-session-sticker-board-0.7.3-rc2.12.tgz",
+    "dsh-session-sticker-board": "file:D:\\AI\\DeepSeekHarness-Plugin\\artifacts\\linked-notes-20260914/dsh-session-sticker-board-0.7.3-rc2.13.tgz",
     "vitest": "^4.1.11",
     "yaml": "^2.8.1"
   },
