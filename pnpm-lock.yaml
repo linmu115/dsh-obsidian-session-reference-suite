@@ -194,7 +194,7 @@ packages:
     engines: {node: '>=8'}
 
   dsh-annotation-core@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz:
-    resolution: {integrity: sha512-ektEzE6VO31Vju/skd2pYwISnCQhInWP22qRkrEB/ngrOg2XqE0Z60nkuElPCvCczWtCleKgVgbp0O/m/ClPTg==, tarball: file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz}
+    resolution: {integrity: sha512-1RazTF/cvSYKUtPxjtjHbj09Iirn71ByzFlE67W3VmZw4Zc6UOvclXHl/Q9XrVI4aTrKz08rue+IvEhOfm8g5w==, tarball: file:../../../artifacts/knowledge-network-rc2-20260914/dsh-annotation-core-0.3.12-rc2.6.tgz}
     version: 0.3.12-rc2.6
     engines: {node: '>=20'}
     peerDependencies:
@@ -294,7 +294,7 @@ packages:
         optional: true
 
   dsh-session-sticker-board@file:../../../artifacts/knowledge-network-rc2-20260914/dsh-session-sticker-board-0.7.3-rc2.9.tgz:
-    resolution: {integrity: sha512-b+pY3mnQ6SMGyPG5ZFlpiz2ZH9yeICtmEew4vQG3jzENu+hbMLlNxVIN3GtiYOT/XumM66KsIAaGoMbkqhMVpA==, tarball: file:../../../artifacts/knowledge-network-rc2-20260914/dsh-session-sticker-board-0.7.3-rc2.9.tgz}
+    resolution: {integrity: sha512-CYXlg2C55FbpFL1aAZoJmITPxtFFywgiROthzKI4lHxmPoFKysWe1mLHH2UfwOmIm3IWmmgOdRTJNHn6ffYW9w==, tarball: file:../../../artifacts/knowledge-network-rc2-20260914/dsh-session-sticker-board-0.7.3-rc2.9.tgz}
     version: 0.7.3-rc2.9
     engines: {node: '>=20'}
     peerDependencies:
