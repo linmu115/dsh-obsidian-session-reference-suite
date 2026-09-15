@@ -1,8 +1,8 @@
 # Obsidian Session Reference Suite
 
-本补丁同步 **原生 Agent 上下文管理组合** 的兼容清单，接受 Annotation Core **0.3.12-rc2.11**；本插件原有职责保持不变，托管引擎不在本阶段范围内。见[组合兼容说明](docs/changes/2026-09-15-native-context-cohort.md)。
+本补丁配套 Annotation Core **0.3.12-rc2.12**，跨会话引用选择器使用 DSH 会话栏的可读标题。见[组合兼容说明](docs/changes/2026-09-15-picker-title-cohort.md)。
 
-当前版本 **0.3.4-rc2.17**，面向 **DSH 0.1.5-rc.2**。这是 DSH 与 Obsidian 引用系统的统一 Bundle：用一个父组加载四个有顺序的子插件，提供笔记引用、双向打开、会话关联、贴纸和断线恢复。
+当前版本 **0.3.4-rc2.18**，面向 **DSH 0.1.5-rc.2**。这是 DSH 与 Obsidian 引用系统的统一 Bundle：用一个父组加载四个有顺序的子插件，提供笔记引用、双向打开、会话关联、贴纸和断线恢复。
 
 ## 整套组件
 
@@ -10,13 +10,13 @@
 
 | 组件 | 当前版本 | 职责 |
 | --- | --- | --- |
-| Annotation Core | 0.3.12-rc2.11 | 引用气泡、准备与提交、引用状态、按需上下文工具 |
-| Bridge Lifecycle | 0.3.3-rc2.15 | Bridge 地址和实例身份、Viewer 连接租约、同步挂载及重试 |
-| Obsidian Reference Adapter | 0.3.4-rc2.15 | 笔记来源核对、定向领取、回链与双向删除 |
-| Session Sticker Board | 0.7.3-rc2.17 | 贴纸、真实会话入口、关联笔记气泡及对应管理界面 |
+| Annotation Core | 0.3.12-rc2.12 | 引用气泡、准备与提交、引用状态、按需上下文工具 |
+| Bridge Lifecycle | 0.3.3-rc2.16 | Bridge 地址和实例身份、Viewer 连接租约、同步挂载及重试 |
+| Obsidian Reference Adapter | 0.3.4-rc2.16 | 笔记来源核对、定向领取、回链与双向删除 |
+| Session Sticker Board | 0.7.3-rc2.18 | 贴纸、真实会话入口、关联笔记气泡及对应管理界面 |
 | Bridge Protocol | 0.3.3-rc2.1 | 共享消息与数据协议 |
 | Obsidian DeepHarness Bridge | 0.6.4-rc2.6 | Vault 侧选区、笔记定位、内嵌会话、回链和同步记录 |
-| 本 Suite | 0.3.4-rc2.17 | 单一父组与组合验证 |
+| 本 Suite | 0.3.4-rc2.18 | 单一父组与组合验证 |
 
 DSH 中的加载顺序为 **Core → Lifecycle → Reference Adapter → Sticker**，卸载顺序相反。Protocol 作为依赖提供；Companion 安装在 Obsidian，不能作为 DSH 插件加载。新会话贴纸、知识链接和结构管理还要求已接通的 [Session Maintenance](https://github.com/linmu115/dsh-session-maintenance/blob/codex/rc2-session-context-graph/README.md) 及对应扩展能力。
 
@@ -73,12 +73,12 @@ Lifecycle 配置内容示例：
 [
   {
     "namespace": "annotation-upstream",
-    "pluginVersion": "0.3.12-rc2.11",
+    "pluginVersion": "0.3.12-rc2.12",
     "writerId": "<沿用该实例 annotation-upstream 已登记的 writerId>"
   },
   {
     "namespace": "stickers",
-    "pluginVersion": "0.7.3-rc2.17",
+    "pluginVersion": "0.7.3-rc2.18",
     "writerId": "<沿用该实例 stickers 已登记的 writerId>"
   },
   {
