@@ -25,6 +25,29 @@ sources:
 - source_id: source-7
   path: ../2026-09-15-graph-reference-lifecycle-cohort.md
   format: markdown
+- source_id: graph-req
+  path: ../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-10-session-context-graph-requirements.md
+  format: markdown-table
+  id_column: 编号
+- source_id: native-req
+  path: ../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-15-native-agent-context-management.md
+  format: markdown-table
+  id_column: 编号
+- source_id: suite-readme
+  path: ../../README.md
+  format: markdown
+- source_id: linked-note-spec
+  path: ../2026-09-14-linked-note-rail.md
+  format: markdown
+- source_id: marker-spec
+  path: ../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/docs/2026-09-14-shared-marker-cleanup.md
+  format: markdown
+- source_id: ownership-spec
+  path: ../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-15-extension-ownership-and-session-reader.md
+  format: markdown
+- source_id: directory-contract
+  path: ../../../dsh-annotation-core/docs/changes/2026-09-15-reference-directory-mirror.md
+  format: markdown
 bindings:
 - id: REQ-selection
   kind: requirement
@@ -33,6 +56,8 @@ bindings:
   heading: 笔记选段引用
   status: current
   summary: 选段等待认领，进入气泡后由用户随问题发送，保留已有草稿。
+  aliases:
+  - REQ-note-delivery
 - id: REQ-links
   kind: requirement
   title: 笔记关联与独立会话贴纸
@@ -47,48 +72,6 @@ bindings:
   heading: 删除与数据归属
   status: current
   summary: 只清理对应引用和受拥有权保护的标记，不删除笔记或真实会话。
-- id: MOD-suite
-  kind: module
-  title: 组合加载与成员清单
-  source_id: source-1
-  heading: 整套组件
-  status: current
-  summary: Suite 单一父包按顺序加载四个成员；Companion 独立运行于 Vault。
-- id: MOD-core
-  kind: module
-  title: Annotation Core：引用事务与上下文
-  source_id: source-2
-  heading: 与其他组件的职责
-  status: current
-  summary: Core 负责引用事务；外部插件复用其能力，不重建另一份提交状态。
-- id: MOD-lifecycle
-  kind: module
-  title: Lifecycle：连接与认领身份
-  source_id: source-3
-  heading: 它负责什么
-  status: current
-  summary: 绑定实例/profile 与桥接生命周期，恢复连接但不代用户发送。
-- id: MOD-reference
-  kind: module
-  title: Reference Adapter：笔记引用入口
-  source_id: source-4
-  heading: 使用流程
-  status: current
-  summary: 把可认领的笔记选段接入当前会话，关联与引用动作分开。
-- id: MOD-sticker
-  kind: module
-  title: Sticker Board：三类入口
-  source_id: source-5
-  heading: 三种入口
-  status: current
-  summary: 普通贴纸、会话贴纸和跨会话引用有不同生命周期。
-- id: MOD-companion
-  kind: module
-  title: Obsidian Companion：Vault 一侧
-  source_id: source-6
-  heading: 数据保存在哪里
-  status: current
-  summary: 笔记在 Vault，桥接保存必要身份、标记拥有权与投递回执。
 - id: IMP-config
   kind: implementation
   title: 安装与配置路径
@@ -110,34 +93,215 @@ bindings:
   heading: 图谱引用生命周期包组
   status: current
   summary: 旧 rc2.15 包组 12 项测试记录，不冒充当前 rc2.18 的重新验收。
+- id: XR05
+  kind: requirement
+  title: 进入真实目标后再添加引用
+  source_id: graph-req
+  status: current
+  summary: 打开目标完整会话并等待输入框绑定。
+  row_id: XR05
+- id: XR07
+  kind: requirement
+  title: 用户明确发送才启动模型
+  source_id: graph-req
+  status: current
+  summary: 目标选择本身不发送、不启动 AI。
+  row_id: XR07
+- id: XR08
+  kind: requirement
+  title: 保留草稿并保证添加幂等
+  source_id: graph-req
+  status: current
+  summary: 原文字、附件和引用保留；同一操作重试不重复添加。
+  row_id: XR08
+- id: CUT03
+  kind: requirement
+  title: 固定截止使用稳定回复身份
+  source_id: graph-req
+  status: current
+  summary: 不能以屏幕位置、数组下标或临时 runId 代替完成回复身份。
+  row_id: CUT03
+- id: CUT05
+  kind: requirement
+  title: 来源追加不扩大已有引用
+  source_id: graph-req
+  status: current
+  summary: 更新更晚的上游需要明确的新引用修订。
+  row_id: CUT05
+- id: ST08
+  kind: requirement
+  title: 分别删除入口、关系、贴纸与会话
+  source_id: graph-req
+  status: current
+  summary: 四类删除操作不能互相代替。
+  row_id: ST08
+- id: ST11
+  kind: requirement
+  title: 蓝色来源引用与红色普通贴纸共存
+  source_id: graph-req
+  status: current
+  summary: 蓝色标记属于引用；普通贴纸和既有高亮保持。
+  row_id: ST11
+- id: NC02
+  kind: requirement
+  title: 授权、窗口、保留材料分开
+  source_id: native-req
+  status: current
+  summary: 固定授权上限、活动窗口和当前模型保留是三种状态。
+  row_id: NC02
+- id: NC07
+  kind: requirement
+  title: 原生上下文释放的引擎范围
+  source_id: native-req
+  status: current
+  summary: 当前新增能力限定 DSH 原生 Agent，不宣称托管引擎支持。
+  row_id: NC07
+- id: NC08
+  kind: requirement
+  title: 持续复用会话真源和扩展 Adapter
+  source_id: native-req
+  status: current
+  summary: 保留每会话主干，不增加全量上游或逐轮请求备份。
+  row_id: NC08
+- id: REQ-linked-note
+  kind: requirement
+  title: 关联笔记的导航与本轮引用
+  source_id: linked-note-spec
+  status: current
+  summary: 关联气泡按需取正文，直接绑定当前会话并保留草稿。
+  heading: 会话页关联笔记气泡与按需引用
+- id: REQ-marker-cleanup
+  kind: requirement
+  title: 最后一个使用方解除后清理自有标记
+  source_id: marker-spec
+  status: current
+  summary: 只清理有归属记录的插件标记；共享使用和用户块 ID 受保护。
+  heading: 用户可见行为
+- id: REQ-directory-owner
+  kind: requirement
+  title: 业务目录按真实所属会话组织
+  source_id: ownership-spec
+  status: current
+  summary: X → Y 属于接收方 Y；references 不等于 ownership，未知归属待核验。
+  heading: 业务 Adapter 与所属会话
+- id: IF-core-directory
+  kind: interface
+  title: Core 提供的轻量引用目录
+  source_id: directory-contract
+  status: current
+  summary: 提供方唯一目录合同：分页只读、有界摘录、持久变更通知、明确删除；消费方见 INT-maintenance-directory。
+  heading: 接口与边界
 archify:
   architecture:
     source: diagrams/architecture.json
     node_records:
-      vault:
-      - MOD-companion
-      lifecycle:
+      comp-viewer:
+      - MOD-companion-viewer
+      - OBJ-identities
+      comp-bridge:
+      - IF-companion-reference
+      - MOD-companion-viewer
+      comp-vault:
+      - MOD-companion-vault
+      - REQ-marker-cleanup
+      ref-client:
+      - MOD-reference-client
+      - INT-reference-core
+      ref-host:
+      - MOD-reference-host
+      - INT-reference-core
+      core-client:
+      - IF-core-client
+      - MOD-core-sources
+      - IF-reference
+      core-submit:
+      - MOD-core-submit
+      - OBJ-reference
+      core-host:
+      - IF-core-host
+      - MOD-core-sources
+      core-context:
+      - MOD-core-context
+      - IMP-context
+      - NC02
+      - NC07
+      core-directory:
+      - IF-core-directory
+      life-identity:
       - MOD-lifecycle
-      reference:
-      - MOD-reference
-      core:
-      - MOD-core
-      sticker:
-      - MOD-sticker
-      maintenance:
-      - IF-vault
+      - OBJ-identities
+      life-mount:
+      - IF-lifecycle
+      - MOD-lifecycle
+      sticker-ordinary:
+      - MOD-sticker-ordinary
+      - ST11
+      sticker-session:
+      - MOD-sticker-session
+      - INT-sticker-core
+      - ST08
+      sticker-linked:
+      - REQ-linked-note
+      - IF-companion-knowledge
+      - INT-sticker-core
+      maint-harness:
+      - EXT-harness-adapters
+      maint-domain:
+      - EXT-maintenance
+      - MOD-core-context
+      maint-business:
+      - EXT-business-adapters
+      - REQ-directory-owner
+      maint-mirror:
+      - INT-maintenance-directory
+      maint-store:
+      - EXT-maintenance
+      - DEC-ownership
+      - OBJ-knowledge
+      comp-knowledge:
+      - IF-companion-knowledge
+      - INT-companion-maintenance
   workflow:
     source: diagrams/workflow.json
     node_records:
-      select:
+      capture:
       - REQ-selection
-      claim:
-      - IF-vault
-      bubble:
-      - IF-reference
-      send:
+      - MOD-companion-vault
       - REQ-selection
-      backlink:
-      - REQ-delete
+      claimed:
+      - IF-companion-reference
+      written:
+      - MOD-companion-vault
+      - IF-companion-reference
+      ready:
+      - MOD-lifecycle
+      - IF-lifecycle
       offline:
-      - IMP-recovery
+      - IF-lifecycle
+      poll:
+      - MOD-reference-client
+      claim:
+      - MOD-reference-client
+      - IF-vault
+      compensate:
+      - INT-reference-core
+      backlink:
+      - MOD-reference-host
+      - IF-core-host
+      persist:
+      - IF-core-client
+      - XR08
+      pending:
+      - MOD-core-submit
+      - XR07
+      prepare:
+      - MOD-core-submit
+      blocked:
+      - MOD-core-submit
+      - XR08
+      sent:
+      - OBJ-reference
+      - MOD-core-submit
+      durable:
+      - MOD-core-submit
+      - EXT-harness-adapters

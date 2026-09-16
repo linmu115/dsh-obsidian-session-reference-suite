@@ -2,126 +2,447 @@
   "schema_version": 2,
   "diagram_type": "workflow",
   "meta": {
-    "title": "DSH–Obsidian 引用与贴纸组合 · 主要使用流程",
-    "locale": "zh-CN"
+    "title": "笔记选段从排队到真实提交",
+    "locale": "zh-CN",
+    "quality_profile": "standard",
+    "animation": "none",
+    "views": [
+      {
+        "id": "main-delivery",
+        "label": "成功交接",
+        "focus": [
+          "capture",
+          "poll",
+          "persist",
+          "claim",
+          "claimed",
+          "pending",
+          "prepare",
+          "durable",
+          "sent",
+          "backlink",
+          "written"
+        ],
+        "note": "claim 只确认领取；用户发送且持久确认后才写回链。"
+      },
+      {
+        "id": "recovery",
+        "label": "等待与恢复",
+        "focus": [
+          "ready",
+          "offline",
+          "claim",
+          "compensate",
+          "pending",
+          "prepare",
+          "blocked"
+        ],
+        "note": "异常留在负责方；离线不清空持久引用，冲突不影响赢家。"
+      }
+    ]
   },
   "lanes": [
     {
-      "id": "main",
-      "label": "正常使用"
+      "id": "lifecycle",
+      "label": "Bridge Lifecycle"
     },
     {
-      "id": "exception",
-      "label": "边界与恢复"
+      "id": "companion",
+      "label": "Obsidian Companion"
+    },
+    {
+      "id": "adapter",
+      "label": "Reference Adapter"
+    },
+    {
+      "id": "core",
+      "label": "Annotation Core"
+    },
+    {
+      "id": "host",
+      "label": "DSH 原生执行器"
+    }
+  ],
+  "groups": [
+    {
+      "id": "pending-records",
+      "label": "本侧投递记录",
+      "lane": "companion",
+      "fromCol": 0,
+      "toCol": 2
+    },
+    {
+      "id": "companion-receipt",
+      "label": "Vault 回执",
+      "lane": "companion",
+      "fromCol": 5,
+      "toCol": 5
+    },
+    {
+      "id": "lease-state",
+      "label": "连接附件生命周期",
+      "lane": "lifecycle",
+      "fromCol": 1,
+      "toCol": 2
+    },
+    {
+      "id": "client-consume",
+      "label": "Client 领取事务",
+      "lane": "adapter",
+      "fromCol": 0,
+      "toCol": 3
+    },
+    {
+      "id": "host-writeback",
+      "label": "Host 来源回调",
+      "lane": "adapter",
+      "fromCol": 5,
+      "toCol": 5
+    },
+    {
+      "id": "core-submit",
+      "label": "引用与用户提交",
+      "lane": "core",
+      "fromCol": 1,
+      "toCol": 5
+    },
+    {
+      "id": "host-durability",
+      "label": "接受与持久化",
+      "lane": "host",
+      "fromCol": 4,
+      "toCol": 4
     }
   ],
   "nodes": [
     {
-      "id": "select",
-      "lane": "main",
+      "id": "capture",
+      "lane": "companion",
       "col": 0,
-      "type": "backend",
-      "label": "选中笔记片段",
-      "sublabel": "保留稳定定位",
-      "width": 170
+      "type": "database",
+      "label": "保存选段 capture",
+      "sublabel": "用户显式引用 / 等待内嵌页",
+      "width": 156
     },
     {
-      "id": "claim",
-      "lane": "main",
+      "id": "claimed",
+      "lane": "companion",
+      "col": 2,
+      "type": "database",
+      "label": "保存目标领取",
+      "sublabel": "绑定 setId / referenceId",
+      "width": 156
+    },
+    {
+      "id": "written",
+      "lane": "companion",
+      "col": 5,
+      "type": "database",
+      "label": "保存回链回执",
+      "sublabel": "可返回真实提问及引用",
+      "width": 156
+    },
+    {
+      "id": "ready",
+      "lane": "lifecycle",
       "col": 1,
       "type": "backend",
-      "label": "身份绑定并认领",
-      "sublabel": "匹配 Vault / 实例 / 页面",
-      "width": 170
-    },
-    {
-      "id": "bubble",
-      "lane": "main",
-      "col": 2,
-      "type": "backend",
-      "label": "放入真实会话气泡",
-      "sublabel": "保留草稿供用户检查",
-      "width": 170
-    },
-    {
-      "id": "send",
-      "lane": "main",
-      "col": 3,
-      "type": "backend",
-      "label": "用户发送问题",
-      "sublabel": "Core 提交引用事务",
-      "width": 170
-    },
-    {
-      "id": "backlink",
-      "lane": "main",
-      "col": 4,
-      "type": "backend",
-      "label": "写回对应回链",
-      "sublabel": "回执幂等 · 拥有权清理",
-      "width": 170
+      "label": "连接就绪",
+      "sublabel": "当前实例 / bootId / 租约",
+      "width": 156
     },
     {
       "id": "offline",
-      "lane": "exception",
+      "lane": "lifecycle",
       "col": 2,
-      "type": "external",
-      "label": "目标不可用",
-      "sublabel": "保留待处理及重试身份",
-      "width": 170
+      "type": "backend",
+      "label": "等待或排空连接",
+      "sublabel": "停附件 / 保留持久记录",
+      "width": 156
+    },
+    {
+      "id": "poll",
+      "lane": "adapter",
+      "col": 0,
+      "type": "frontend",
+      "label": "合格内嵌页领取",
+      "sublabel": "页面身份与实例匹配",
+      "width": 156
+    },
+    {
+      "id": "claim",
+      "lane": "adapter",
+      "col": 2,
+      "type": "frontend",
+      "label": "确认相同操作领取",
+      "sublabel": "Core 加入成功后 claim",
+      "width": 156
+    },
+    {
+      "id": "compensate",
+      "lane": "adapter",
+      "col": 3,
+      "type": "frontend",
+      "label": "请求 Core 补偿",
+      "sublabel": "取消失败添加 / 不通知来源",
+      "width": 156
+    },
+    {
+      "id": "backlink",
+      "lane": "adapter",
+      "col": 5,
+      "type": "backend",
+      "label": "提交来源回链",
+      "sublabel": "绑定真实用户消息",
+      "width": 156
+    },
+    {
+      "id": "persist",
+      "lane": "core",
+      "col": 1,
+      "type": "database",
+      "label": "持久加入待发送引用",
+      "sublabel": "相同 operationId 幂等",
+      "width": 156
+    },
+    {
+      "id": "pending",
+      "lane": "core",
+      "col": 2,
+      "type": "frontend",
+      "label": "气泡待发",
+      "sublabel": "保留原问题和附件",
+      "width": 156
+    },
+    {
+      "id": "prepare",
+      "lane": "core",
+      "col": 3,
+      "type": "backend",
+      "label": "发送前准备与核对",
+      "sublabel": "目标 / 版本 / 来源 / 预算",
+      "width": 156
+    },
+    {
+      "id": "blocked",
+      "lane": "core",
+      "col": 5,
+      "type": "backend",
+      "label": "阻断并保留草稿",
+      "sublabel": "刷新引用，等待用户重试",
+      "width": 156
+    },
+    {
+      "id": "sent",
+      "lane": "core",
+      "col": 4,
+      "type": "database",
+      "label": "引用变为已提交",
+      "sublabel": "仅在持久确认后",
+      "width": 156
+    },
+    {
+      "id": "durable",
+      "lane": "host",
+      "col": 4,
+      "type": "backend",
+      "label": "接受并持久化输入",
+      "sublabel": "真实原生提交回执",
+      "width": 156
     }
   ],
   "edges": [
     {
-      "id": "e0",
-      "from": "select",
-      "to": "claim"
+      "id": "capture-page",
+      "from": "capture",
+      "to": "poll",
+      "label": "仅匹配页面",
+      "role": "main"
     },
     {
-      "id": "e1",
-      "from": "claim",
-      "to": "bubble"
+      "id": "attach",
+      "from": "ready",
+      "to": "poll",
+      "label": "挂载",
+      "role": "async"
     },
     {
-      "id": "e2",
-      "from": "bubble",
-      "to": "send"
-    },
-    {
-      "id": "e3",
-      "from": "send",
-      "to": "backlink"
-    },
-    {
-      "id": "offline-in",
-      "from": "claim",
+      "id": "connection-lost",
+      "from": "ready",
       "to": "offline",
-      "label": "目标不可用",
-      "role": "branch",
-      "variant": "dashed"
+      "label": "非就绪 / 断线",
+      "role": "branch"
     },
     {
-      "id": "offline-out",
+      "id": "connection-back",
       "from": "offline",
+      "to": "ready",
+      "label": "重连核对",
+      "role": "return"
+    },
+    {
+      "id": "core-add",
+      "from": "poll",
+      "to": "persist",
+      "label": "addReference",
+      "role": "main"
+    },
+    {
+      "id": "identity-return",
+      "from": "persist",
       "to": "claim",
-      "label": "核对后重试",
+      "label": "引用身份",
+      "role": "main"
+    },
+    {
+      "id": "claim-http",
+      "from": "claim",
+      "to": "claimed",
+      "label": "claim",
+      "role": "main"
+    },
+    {
+      "id": "claim-result",
+      "from": "claimed",
+      "to": "pending",
+      "label": "领取回执",
+      "role": "main",
+      "fromSide": "right",
+      "toSide": "top",
+      "via": [
+        [
+          602,
+          243
+        ],
+        [
+          602,
+          453
+        ],
+        [
+          482.4,
+          453
+        ]
+      ]
+    },
+    {
+      "id": "claim-conflict",
+      "from": "claim",
+      "to": "compensate",
+      "label": "冲突 / 404 / 410",
+      "role": "error",
+      "labelAt": [
+        545,
+        310
+      ]
+    },
+    {
+      "id": "user-submit",
+      "from": "pending",
+      "to": "prepare",
+      "label": "用户点击发送",
+      "role": "main"
+    },
+    {
+      "id": "blocked-input",
+      "from": "prepare",
+      "to": "blocked",
+      "label": "核对失败",
+      "role": "error"
+    },
+    {
+      "id": "retry-draft",
+      "from": "blocked",
+      "to": "pending",
+      "label": "保留草稿重试",
       "role": "return",
-      "variant": "dashed"
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "route": "bottom-channel"
+    },
+    {
+      "id": "input-admission",
+      "from": "prepare",
+      "to": "durable",
+      "label": "执行请求",
+      "role": "main"
+    },
+    {
+      "id": "durable-confirm",
+      "from": "durable",
+      "to": "sent",
+      "label": "持久确认",
+      "role": "main"
+    },
+    {
+      "id": "source-commit",
+      "from": "sent",
+      "to": "backlink",
+      "label": "真实消息绑定",
+      "role": "main",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "bridge-commit",
+      "from": "backlink",
+      "to": "written",
+      "label": "commitBacklink",
+      "role": "main"
     }
   ],
   "mainPath": [
-    "select",
+    "capture",
+    "poll",
+    "persist",
     "claim",
-    "bubble",
-    "send",
-    "backlink"
+    "claimed",
+    "pending",
+    "prepare",
+    "durable",
+    "sent",
+    "backlink",
+    "written"
   ],
   "semanticChecks": {
-    "allowedRoots": [
-      "select"
+    "requiredEdges": [
+      {
+        "from": "persist",
+        "to": "claim"
+      },
+      {
+        "from": "durable",
+        "to": "sent"
+      },
+      {
+        "from": "pending",
+        "to": "prepare"
+      }
     ],
-    "allowedTerminals": [
-      "backlink"
+    "requiredPaths": [
+      {
+        "from": "capture",
+        "to": "written"
+      }
     ]
-  }
+  },
+  "cards": [
+    {
+      "dot": "slate",
+      "title": "本图范围",
+      "items": [
+        "此图只说明笔记选段的自动队列路径。",
+        "关联笔记直接引用不经过 capture 自动领取队列。",
+        "删除、图接续和原生上下文释放分别在模块记录解释。"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "恢复界限",
+      "items": [
+        "一般断线保留已持久添加的同一操作，重连再 claim。",
+        "冲突补偿不取消赢家；来源改变与容量不足阻断发送。",
+        "claim 与 prepared 都不是模型已收到或理解材料的证明。"
+      ]
+    }
+  ]
 }

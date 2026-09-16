@@ -5,8 +5,8 @@ title: 整套插件怎样组装和升级
 status: current
 summary: Suite 是单一加载入口；协议包是共享依赖，Companion 安装到 Obsidian。
 sources:
-- file: ../../README.md
-- file: ../../suite.members.json
+- path: ../../README.md
+- path: ../../suite.members.json
 ---
 
 # 整套插件怎样组装和升级

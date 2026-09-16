@@ -2,168 +2,862 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "DSH–Obsidian 引用与贴纸组合 · 职责与数据归属",
-    "locale": "zh-CN"
+    "title": "引用协作、内部职责与外部接口",
+    "locale": "zh-CN",
+    "quality_profile": "standard",
+    "animation": "none",
+    "views": [
+      {
+        "id": "note-path",
+        "label": "笔记投递与提交",
+        "focus": [
+          "comp-bridge",
+          "ref-client",
+          "core-client",
+          "core-submit",
+          "core-host",
+          "ref-host",
+          "comp-vault"
+        ],
+        "note": "Core 管提交，Adapter 接来源，Companion 保留 Vault 侧回执。"
+      },
+      {
+        "id": "knowledge",
+        "label": "贴纸、关联与导航",
+        "focus": [
+          "sticker-ordinary",
+          "sticker-session",
+          "sticker-linked",
+          "core-client",
+          "comp-viewer",
+          "comp-vault",
+          "maint-business",
+          "comp-knowledge"
+        ],
+        "note": "普通贴纸、真实会话和笔记关系具有不同的删除语义。"
+      },
+      {
+        "id": "external",
+        "label": "两类 Maintenance Adapter",
+        "focus": [
+          "core-context",
+          "core-directory",
+          "maint-harness",
+          "maint-domain",
+          "maint-business",
+          "maint-mirror",
+          "maint-store"
+        ],
+        "note": "平台原生格式、业务对象和领域上下文接口不能混用。"
+      },
+      {
+        "id": "connection",
+        "label": "连接、实例与恢复",
+        "focus": [
+          "comp-viewer",
+          "comp-bridge",
+          "life-identity",
+          "life-mount",
+          "ref-client",
+          "ref-host",
+          "sticker-ordinary"
+        ],
+        "note": "Lifecycle 只管理外部附件，离线不卸载 Core 持久数据。"
+      }
+    ]
   },
   "components": [
     {
-      "id": "vault",
-      "type": "external",
-      "label": "Vault 与 Companion",
-      "sublabel": "笔记 · 拥有权 · 回执",
-      "pos": [
-        60,
-        100
-      ],
-      "size": [
-        200,
-        84
-      ]
-    },
-    {
-      "id": "lifecycle",
-      "type": "backend",
-      "label": "Bridge Lifecycle",
-      "sublabel": "连接 · 实例与页面身份",
-      "pos": [
-        400,
-        100
-      ],
-      "size": [
-        200,
-        84
-      ]
-    },
-    {
-      "id": "reference",
-      "type": "backend",
-      "label": "Reference Adapter",
-      "sublabel": "认领候选 · 引用入口",
-      "pos": [
-        740,
-        100
-      ],
-      "size": [
-        200,
-        84
-      ]
-    },
-    {
-      "id": "core",
-      "type": "backend",
-      "label": "Annotation Core",
-      "sublabel": "气泡 · 提交 · 上下文",
-      "pos": [
-        740,
-        360
-      ],
-      "size": [
-        200,
-        84
-      ]
-    },
-    {
-      "id": "sticker",
+      "id": "comp-viewer",
       "type": "frontend",
-      "label": "Sticker Board",
-      "sublabel": "贴纸 · 会话入口 · 蓝标",
+      "label": "内嵌 Viewer",
+      "sublabel": "稳定页面 / 真实会话",
       "pos": [
-        1080,
-        360
+        75.0,
+        112.0
       ],
       "size": [
-        200,
-        84
+        172.5,
+        53.2
       ]
     },
     {
-      "id": "maintenance",
-      "type": "database",
-      "label": "Session Maintenance",
-      "sublabel": "持久对象 · 目录与图",
+      "id": "comp-bridge",
+      "type": "backend",
+      "label": "Bridge 引用接口",
+      "sublabel": "队列 / claim / refresh / 回链",
       "pos": [
-        1080,
-        600
+        75.0,
+        245.0
       ],
       "size": [
-        200,
-        84
+        172.5,
+        53.2
       ]
+    },
+    {
+      "id": "comp-vault",
+      "type": "database",
+      "label": "Vault 身份与回执",
+      "sublabel": "笔记正文 / Owned 标记",
+      "pos": [
+        75.0,
+        378.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "ref-client",
+      "type": "frontend",
+      "label": "页面领取事务",
+      "sublabel": "先 Core 添加，再确认 claim",
+      "pos": [
+        450.0,
+        112.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "ref-host",
+      "type": "backend",
+      "label": "Host 来源适配",
+      "sublabel": "核对 / 回链 / 后台删除",
+      "pos": [
+        450.0,
+        245.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "core-client",
+      "type": "frontend",
+      "label": "Client 引用接口",
+      "sublabel": "气泡 / 添加 / 精确解除",
+      "pos": [
+        825.0,
+        112.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "core-submit",
+      "type": "backend",
+      "label": "输入与持久提交",
+      "sublabel": "草稿 / 版本 / 确认回执",
+      "pos": [
+        825.0,
+        245.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "core-host",
+      "type": "backend",
+      "label": "Host 来源接口",
+      "sublabel": "准备 / 回链 / 删除回调",
+      "pos": [
+        825.0,
+        378.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "core-context",
+      "type": "backend",
+      "label": "固定上游与原生工具",
+      "sublabel": "授权 / 窗口 / 保留材料",
+      "pos": [
+        1125.0,
+        112.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "core-directory",
+      "type": "backend",
+      "label": "轻量目录接口",
+      "sublabel": "分页只读 / 变更修订",
+      "pos": [
+        1125.0,
+        245.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "life-identity",
+      "type": "security",
+      "label": "实例与连接租约",
+      "sublabel": "实际 Web 地址 / bootId",
+      "pos": [
+        75.0,
+        651.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "life-mount",
+      "type": "backend",
+      "label": "就绪挂载接口",
+      "sublabel": "READY / DEGRADED / 逆序释放",
+      "pos": [
+        75.0,
+        784.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "sticker-ordinary",
+      "type": "frontend",
+      "label": "普通 Markdown 贴纸",
+      "sublabel": "红色符号 / 回链 / 迁移",
+      "pos": [
+        450.0,
+        651.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "sticker-session",
+      "type": "frontend",
+      "label": "真实会话与来源符号",
+      "sublabel": "工作区选择 / 蓝色引用",
+      "pos": [
+        450.0,
+        784.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "sticker-linked",
+      "type": "frontend",
+      "label": "关联笔记气泡",
+      "sublabel": "打开 / 直接引用到本轮",
+      "pos": [
+        450.0,
+        917.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "maint-harness",
+      "type": "external",
+      "label": "平台格式 Adapter",
+      "sublabel": "原生事件 / 锚点 / 持久证据",
+      "pos": [
+        825.0,
+        651.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "maint-domain",
+      "type": "external",
+      "label": "上下文领域服务",
+      "sublabel": "固定来源 / 图关系 / 生效核验",
+      "pos": [
+        1125.0,
+        651.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "maint-business",
+      "type": "external",
+      "label": "业务扩展 Adapter",
+      "sublabel": "schema / writer / ownership",
+      "pos": [
+        825.0,
+        784.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "maint-mirror",
+      "type": "external",
+      "label": "Core 目录镜像接入",
+      "sublabel": "annotation-records / 只读",
+      "pos": [
+        1125.0,
+        784.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "maint-store",
+      "type": "database",
+      "label": "会话与结构真源",
+      "sublabel": "稳定逻辑身份 / 当前对象",
+      "pos": [
+        825.0,
+        917.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    },
+    {
+      "id": "comp-knowledge",
+      "type": "backend",
+      "label": "笔记知识接口",
+      "sublabel": "按需准备 / 打开 / 回执",
+      "pos": [
+        75.0,
+        511.0
+      ],
+      "size": [
+        172.5,
+        53.2
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Suite 配套 · Obsidian Companion",
+      "wraps": [
+        "comp-viewer",
+        "comp-bridge",
+        "comp-vault",
+        "comp-knowledge"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "Suite · Reference Adapter",
+      "wraps": [
+        "ref-client",
+        "ref-host"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "Suite · Annotation Core",
+      "wraps": [
+        "core-client",
+        "core-submit",
+        "core-host",
+        "core-context",
+        "core-directory"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "Suite · Bridge Lifecycle",
+      "wraps": [
+        "life-identity",
+        "life-mount"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "Suite · Sticker Board",
+      "wraps": [
+        "sticker-ordinary",
+        "sticker-session",
+        "sticker-linked"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "外部依赖 · Session Maintenance",
+      "wraps": [
+        "maint-harness",
+        "maint-domain",
+        "maint-business",
+        "maint-mirror",
+        "maint-store"
+      ],
+      "pad": 20
     }
   ],
   "connections": [
     {
-      "id": "c0",
-      "from": "vault",
-      "to": "lifecycle",
-      "label": "身份绑定与投递"
-    },
-    {
-      "id": "c1",
-      "from": "lifecycle",
-      "to": "reference",
-      "label": "当前连接和候选"
-    },
-    {
-      "id": "c2",
-      "from": "reference",
-      "to": "core",
-      "label": "创建与核对引用",
+      "id": "capture-route",
+      "from": "comp-viewer",
+      "to": "comp-bridge",
+      "label": "页面身份",
       "fromSide": "bottom",
       "toSide": "top",
       "labelAt": [
-        890,
-        310
+        161.2,
+        175.0
       ]
     },
     {
-      "id": "c3",
-      "from": "sticker",
-      "to": "core",
-      "label": "复用引用生命周期"
+      "id": "vault-io",
+      "from": "comp-bridge",
+      "to": "comp-vault",
+      "label": "定位 / 持久回执",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        161.2,
+        308.0
+      ]
     },
     {
-      "id": "c4",
-      "from": "core",
-      "to": "vault",
-      "label": "提交回执与回链",
-      "fromSide": "top",
-      "toSide": "bottom",
+      "id": "client-claim",
+      "from": "ref-client",
+      "to": "comp-bridge",
+      "label": "读取队列 / claim",
+      "fromSide": "left",
+      "toSide": "right",
       "via": [
         [
-          840,
-          260
+          337.5,
+          138.6
         ],
         [
-          160,
-          260
+          337.5,
+          271.6
         ]
       ],
       "labelAt": [
-        390,
-        248
+        318,
+        200
       ]
     },
     {
-      "id": "c5",
-      "from": "sticker",
-      "to": "maintenance",
-      "label": "贴纸与关系领域操作",
+      "id": "source-http",
+      "from": "ref-host",
+      "to": "comp-bridge",
+      "label": "核对 / 回链 / 删除",
+      "fromSide": "left",
+      "toSide": "right",
+      "labelAt": [
+        299,
+        288
+      ]
+    },
+    {
+      "id": "client-add",
+      "from": "ref-client",
+      "to": "core-client",
+      "label": "添加 / 补偿",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "input-submit",
+      "from": "core-client",
+      "to": "core-submit",
+      "label": "提交入口",
       "fromSide": "bottom",
       "toSide": "top",
       "labelAt": [
-        1180,
-        520
+        911.2,
+        175.0
+      ]
+    },
+    {
+      "id": "source-hooks",
+      "from": "core-submit",
+      "to": "core-host",
+      "label": "来源回调",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        911.2,
+        308.0
+      ]
+    },
+    {
+      "id": "source-register",
+      "from": "ref-host",
+      "to": "core-host",
+      "label": "注册 obsidian-note",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          705.0,
+          271.6
+        ],
+        [
+          705.0,
+          404.6
+        ]
+      ],
+      "labelAt": [
+        690,
+        335
+      ]
+    },
+    {
+      "id": "directory-output",
+      "from": "core-submit",
+      "to": "core-directory",
+      "label": "持久变更通知",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "context-policy",
+      "from": "core-client",
+      "to": "core-context",
+      "label": "固定引用操作",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "lease-connection",
+      "from": "life-identity",
+      "to": "comp-bridge",
+      "label": "Viewer 地址 / 租约",
+      "fromSide": "left",
+      "toSide": "left",
+      "via": [
+        [
+          26.2,
+          677.6
+        ],
+        [
+          26.2,
+          271.6
+        ]
+      ],
+      "labelAt": [
+        26.2,
+        539.0
+      ]
+    },
+    {
+      "id": "lifecycle-attach",
+      "from": "life-identity",
+      "to": "life-mount",
+      "label": "当前连接状态",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        161.2,
+        714.0
+      ]
+    },
+    {
+      "id": "mount-ref",
+      "from": "life-mount",
+      "to": "ref-client",
+      "label": "就绪挂载",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          367.5,
+          810.6
+        ],
+        [
+          367.5,
+          138.6
+        ]
+      ],
+      "labelAt": [
+        367.5,
+        518.0
+      ]
+    },
+    {
+      "id": "mount-sticker",
+      "from": "life-mount",
+      "to": "sticker-ordinary",
+      "label": "同步附件",
+      "fromSide": "top",
+      "toSide": "left",
+      "via": [
+        [
+          161.25,
+          740
+        ],
+        [
+          420,
+          740
+        ],
+        [
+          420,
+          677.6
+        ]
+      ],
+      "labelAt": [
+        230,
+        724
+      ]
+    },
+    {
+      "id": "sticker-core",
+      "from": "sticker-session",
+      "to": "core-client",
+      "label": "会话引用 / 解除",
+      "fromSide": "top",
+      "toSide": "left",
+      "via": [
+        [
+          536.25,
+          749.0
+        ],
+        [
+          742.5,
+          749.0
+        ],
+        [
+          742.5,
+          138.6
+        ]
+      ],
+      "labelAt": [
+        742.5,
+        563.5
+      ]
+    },
+    {
+      "id": "linked-note-http",
+      "from": "sticker-linked",
+      "to": "comp-knowledge",
+      "label": "来源准备 / 打开",
+      "fromSide": "left",
+      "toSide": "right",
+      "via": [
+        [
+          292.5,
+          943.6
+        ],
+        [
+          292.5,
+          537.6
+        ]
+      ],
+      "labelAt": [
+        292.5,
+        864.5
+      ]
+    },
+    {
+      "id": "sticker-storage",
+      "from": "sticker-ordinary",
+      "to": "maint-business",
+      "label": "已迁入对象",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          675.0,
+          677.6
+        ],
+        [
+          675.0,
+          810.6
+        ]
+      ]
+    },
+    {
+      "id": "fixed-context",
+      "from": "core-context",
+      "to": "maint-domain",
+      "label": "固定来源 / 原生生效",
+      "fromSide": "right",
+      "toSide": "right",
+      "via": [
+        [
+          1365.0,
+          138.6
+        ],
+        [
+          1365.0,
+          677.6
+        ]
+      ],
+      "labelAt": [
+        1365.0,
+        490.0
+      ]
+    },
+    {
+      "id": "platform-evidence",
+      "from": "maint-harness",
+      "to": "maint-domain",
+      "label": "原生持久证据",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "directory-mirror",
+      "from": "core-directory",
+      "to": "maint-mirror",
+      "label": "分页 / 订阅",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [
+        [
+          1211.25,
+          530
+        ],
+        [
+          1335,
+          530
+        ],
+        [
+          1335,
+          740
+        ],
+        [
+          1211.25,
+          740
+        ]
+      ],
+      "labelAt": [
+        1300,
+        560
+      ]
+    },
+    {
+      "id": "business-store",
+      "from": "maint-business",
+      "to": "maint-store",
+      "label": "受版本保护的保存",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        911.2,
+        847.0
+      ]
+    },
+    {
+      "id": "mount-host",
+      "from": "life-mount",
+      "to": "ref-host",
+      "label": "删除轮询",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          401.2,
+          810.6
+        ],
+        [
+          401.2,
+          271.6
+        ]
+      ],
+      "labelAt": [
+        401.2,
+        448.0
+      ]
+    },
+    {
+      "id": "session-objects",
+      "from": "sticker-session",
+      "to": "maint-business",
+      "label": "会话贴纸",
+      "fromSide": "right",
+      "toSide": "left",
+      "labelAt": [
+        730,
+        833
+      ]
+    },
+    {
+      "id": "companion-objects",
+      "from": "comp-knowledge",
+      "to": "maint-business",
+      "label": "obsidian-links",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          345.0,
+          537.6
+        ],
+        [
+          345.0,
+          1015.0
+        ],
+        [
+          772.5,
+          1015.0
+        ],
+        [
+          772.5,
+          810.6
+        ]
+      ],
+      "labelAt": [
+        562.5,
+        1015.0
       ]
     }
   ],
   "cards": [
     {
-      "dot": "cyan",
-      "title": "阅读约定",
+      "dot": "slate",
+      "title": "归属与连线",
       "items": [
-        "箭头标明具体交接；位置不表示运行顺序。",
-        "外部依赖用项目 ID 关联；本图不保存另一项目的全文。"
+        "模块框表示职责归属，Maintenance 为外部依赖。",
+        "连线写明使用的能力；依赖不自动等于执行顺序。",
+        "关联笔记的直接引用与自动排队领取使用不同入口。"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "接口家族",
+      "items": [
+        "Core 来源 Adapter 分 Host 准备与 Client 导航。",
+        "Maintenance 平台 Adapter 解释原生格式；业务 Adapter 解释结构对象。",
+        "通用业务数据 context:false 不等于专门原生上下文领域能力不存在。"
       ]
     }
   ]
