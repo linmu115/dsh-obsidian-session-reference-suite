@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "DSH–Obsidian 引用与贴纸组合 · 职责与数据归属",
+    "locale": "zh-CN"
+  },
+  "components": [
+    {
+      "id": "vault",
+      "type": "external",
+      "label": "Vault 与 Companion",
+      "sublabel": "笔记 · 拥有权 · 回执",
+      "pos": [
+        60,
+        100
+      ],
+      "size": [
+        200,
+        84
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "type": "backend",
+      "label": "Bridge Lifecycle",
+      "sublabel": "连接 · 实例与页面身份",
+      "pos": [
+        400,
+        100
+      ],
+      "size": [
+        200,
+        84
+      ]
+    },
+    {
+      "id": "reference",
+      "type": "backend",
+      "label": "Reference Adapter",
+      "sublabel": "认领候选 · 引用入口",
+      "pos": [
+        740,
+        100
+      ],
+      "size": [
+        200,
+        84
+      ]
+    },
+    {
+      "id": "core",
+      "type": "backend",
+      "label": "Annotation Core",
+      "sublabel": "气泡 · 提交 · 上下文",
+      "pos": [
+        740,
+        360
+      ],
+      "size": [
+        200,
+        84
+      ]
+    },
+    {
+      "id": "sticker",
+      "type": "frontend",
+      "label": "Sticker Board",
+      "sublabel": "贴纸 · 会话入口 · 蓝标",
+      "pos": [
+        1080,
+        360
+      ],
+      "size": [
+        200,
+        84
+      ]
+    },
+    {
+      "id": "maintenance",
+      "type": "database",
+      "label": "Session Maintenance",
+      "sublabel": "持久对象 · 目录与图",
+      "pos": [
+        1080,
+        600
+      ],
+      "size": [
+        200,
+        84
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "c0",
+      "from": "vault",
+      "to": "lifecycle",
+      "label": "身份绑定与投递"
+    },
+    {
+      "id": "c1",
+      "from": "lifecycle",
+      "to": "reference",
+      "label": "当前连接和候选"
+    },
+    {
+      "id": "c2",
+      "from": "reference",
+      "to": "core",
+      "label": "创建与核对引用",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        890,
+        310
+      ]
+    },
+    {
+      "id": "c3",
+      "from": "sticker",
+      "to": "core",
+      "label": "复用引用生命周期"
+    },
+    {
+      "id": "c4",
+      "from": "core",
+      "to": "vault",
+      "label": "提交回执与回链",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "via": [
+        [
+          840,
+          260
+        ],
+        [
+          160,
+          260
+        ]
+      ],
+      "labelAt": [
+        390,
+        248
+      ]
+    },
+    {
+      "id": "c5",
+      "from": "sticker",
+      "to": "maintenance",
+      "label": "贴纸与关系领域操作",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        1180,
+        520
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "阅读约定",
+      "items": [
+        "箭头标明具体交接；位置不表示运行顺序。",
+        "外部依赖用项目 ID 关联；本图不保存另一项目的全文。"
+      ]
+    }
+  ]
+}

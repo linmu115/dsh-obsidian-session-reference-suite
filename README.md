@@ -133,3 +133,7 @@ node scripts/prepare-registry.mjs "D:/path/to/state/registry/plugins.yaml"
 参阅 [CHANGELOG](CHANGELOG.md)、[关联笔记与按需引用](docs/2026-09-14-linked-note-rail.md)、[当前图谱引用生命周期组合](docs/2026-09-15-graph-reference-lifecycle-cohort.md)及 [Companion 使用说明](https://github.com/linmu115/obsidian-deepharness-bridge/blob/codex/dsh-0-1-5-rc2/README.md)。
 
 本次配套更新支持 Maintenance 的轻量引用目录，详见[兼容变更说明](docs/changes/2026-09-15-maintenance-reference-directory.md)。
+
+## 项目维护地图
+
+从[项目地图](docs/project/map.md)查当前能力、设计、接口与实现；验证记录独立保存。机器检索入口为 [project.yaml](docs/project/project.yaml)。资料改变时只维护相关条目，页面按需生成。

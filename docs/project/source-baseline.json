@@ -1,0 +1,98 @@
+{
+  "as_of": "2026-09-16",
+  "repositories": [
+    {
+      "repository": "dsh-obsidian-session-reference-suite",
+      "path": "../..",
+      "branch": "codex/rc2-session-context-graph",
+      "commit": "176ebc5a4c228928136496d6152c5074f4ffae23"
+    },
+    {
+      "repository": "dsh-annotation-core",
+      "path": "../../../dsh-annotation-core",
+      "branch": "codex/rc2-session-context-graph",
+      "commit": "39a01bd34844f4e734579cc7d1f5efaa379867aa"
+    },
+    {
+      "repository": "dsh-obsidian-bridge-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle",
+      "branch": "codex/rc2-session-context-graph",
+      "commit": "383125d3ef52bae69b51454419987519570e88fa"
+    },
+    {
+      "repository": "dsh-obsidian-reference-adapter",
+      "path": "../../../dsh-obsidian-reference-adapter",
+      "branch": "codex/rc2-session-context-graph",
+      "commit": "c5c8236c9f121517d6d4a9ed885035a97e5357d0"
+    },
+    {
+      "repository": "dsh-session-sticker-board",
+      "path": "../../../dsh-session-sticker-board",
+      "branch": "codex/rc2-session-context-graph",
+      "commit": "8af1a7eef829ca392effdf5855d892d1059e7b90"
+    },
+    {
+      "repository": "obsidian-deepharness-bridge",
+      "path": "../../../obsidian-deepharness-bridge",
+      "branch": "codex/dsh-0-1-5-rc2",
+      "commit": "d25ce847ae2d3cfca9a7b608037cee48149768d6"
+    }
+  ],
+  "selected_sources": [
+    {
+      "path": "../../README.md",
+      "sha256": "f2827f251d8365de8eba10aa873e78ad4e018e76caf6073a6fdf6fbec6a81c39",
+      "bound_headings": [
+        "笔记选段引用",
+        "笔记关联和会话贴纸",
+        "删除与数据归属",
+        "整套组件",
+        "安装与配置",
+        "连接恢复"
+      ]
+    },
+    {
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed",
+      "bound_headings": [
+        "与其他组件的职责"
+      ]
+    },
+    {
+      "path": "../../../dsh-obsidian-bridge-lifecycle/README.md",
+      "sha256": "5d31c2f2cbe074e486c481e77d435d11f7f7cbdc7e469ef454de41e584d83a8d",
+      "bound_headings": [
+        "它负责什么"
+      ]
+    },
+    {
+      "path": "../../../dsh-obsidian-reference-adapter/README.md",
+      "sha256": "4f4b94657bf29e5bd3ce32f1abfbd3db7fd339976974b2b0e0ac289b64a794db",
+      "bound_headings": [
+        "使用流程"
+      ]
+    },
+    {
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c",
+      "bound_headings": [
+        "三种入口"
+      ]
+    },
+    {
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80",
+      "bound_headings": [
+        "数据保存在哪里"
+      ]
+    },
+    {
+      "path": "../2026-09-15-graph-reference-lifecycle-cohort.md",
+      "sha256": "312b03b4b18bb426648f38e7c9ed108aea857093bcd8689d675e7a5c413957ed",
+      "bound_headings": [
+        "图谱引用生命周期包组"
+      ]
+    }
+  ],
+  "note": "Adoption baseline before adding the map. Runtime deployment was not inspected. Refresh only affected entries when sources change."
+}

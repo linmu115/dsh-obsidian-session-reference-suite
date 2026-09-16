@@ -1,0 +1,143 @@
+schema: project-map/v1
+project_id: dd46311f-d98d-49ff-ae13-fef0a8a6f9c3
+name: DSH–Obsidian 引用与贴纸组合
+kind: software
+map: map.md
+sources:
+- source_id: source-1
+  path: ../../README.md
+  format: markdown
+- source_id: source-2
+  path: ../../../dsh-annotation-core/README.md
+  format: markdown
+- source_id: source-3
+  path: ../../../dsh-obsidian-bridge-lifecycle/README.md
+  format: markdown
+- source_id: source-4
+  path: ../../../dsh-obsidian-reference-adapter/README.md
+  format: markdown
+- source_id: source-5
+  path: ../../../dsh-session-sticker-board/README.md
+  format: markdown
+- source_id: source-6
+  path: ../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md
+  format: markdown
+- source_id: source-7
+  path: ../2026-09-15-graph-reference-lifecycle-cohort.md
+  format: markdown
+bindings:
+- id: REQ-selection
+  kind: requirement
+  title: 从笔记选段进入真实会话
+  source_id: source-1
+  heading: 笔记选段引用
+  status: current
+  summary: 选段等待认领，进入气泡后由用户随问题发送，保留已有草稿。
+- id: REQ-links
+  kind: requirement
+  title: 笔记关联与独立会话贴纸
+  source_id: source-1
+  heading: 笔记关联和会话贴纸
+  status: current
+  summary: 打开笔记是导航；引用到会话才传递材料。
+- id: REQ-delete
+  kind: requirement
+  title: 取消、删除与数据归属
+  source_id: source-1
+  heading: 删除与数据归属
+  status: current
+  summary: 只清理对应引用和受拥有权保护的标记，不删除笔记或真实会话。
+- id: MOD-suite
+  kind: module
+  title: 组合加载与成员清单
+  source_id: source-1
+  heading: 整套组件
+  status: current
+  summary: Suite 单一父包按顺序加载四个成员；Companion 独立运行于 Vault。
+- id: MOD-core
+  kind: module
+  title: Annotation Core：引用事务与上下文
+  source_id: source-2
+  heading: 与其他组件的职责
+  status: current
+  summary: Core 负责引用事务；外部插件复用其能力，不重建另一份提交状态。
+- id: MOD-lifecycle
+  kind: module
+  title: Lifecycle：连接与认领身份
+  source_id: source-3
+  heading: 它负责什么
+  status: current
+  summary: 绑定实例/profile 与桥接生命周期，恢复连接但不代用户发送。
+- id: MOD-reference
+  kind: module
+  title: Reference Adapter：笔记引用入口
+  source_id: source-4
+  heading: 使用流程
+  status: current
+  summary: 把可认领的笔记选段接入当前会话，关联与引用动作分开。
+- id: MOD-sticker
+  kind: module
+  title: Sticker Board：三类入口
+  source_id: source-5
+  heading: 三种入口
+  status: current
+  summary: 普通贴纸、会话贴纸和跨会话引用有不同生命周期。
+- id: MOD-companion
+  kind: module
+  title: Obsidian Companion：Vault 一侧
+  source_id: source-6
+  heading: 数据保存在哪里
+  status: current
+  summary: 笔记在 Vault，桥接保存必要身份、标记拥有权与投递回执。
+- id: IMP-config
+  kind: implementation
+  title: 安装与配置路径
+  source_id: source-1
+  heading: 安装与配置
+  status: current
+  summary: 单一父包、匹配 profile/实例、Companion 与 Maintenance 扩展声明。
+- id: IMP-recovery
+  kind: implementation
+  title: 连接异常怎样处理
+  source_id: source-1
+  heading: 连接恢复
+  status: current
+  summary: 离线保留待处理资料；显式重试与冲突处理，不把不在线等同删除。
+- id: VER-history
+  kind: verification
+  title: 组合引用生命周期的历史回归
+  source_id: source-7
+  heading: 图谱引用生命周期包组
+  status: current
+  summary: 旧 rc2.15 包组 12 项测试记录，不冒充当前 rc2.18 的重新验收。
+archify:
+  architecture:
+    source: diagrams/architecture.json
+    node_records:
+      vault:
+      - MOD-companion
+      lifecycle:
+      - MOD-lifecycle
+      reference:
+      - MOD-reference
+      core:
+      - MOD-core
+      sticker:
+      - MOD-sticker
+      maintenance:
+      - IF-vault
+  workflow:
+    source: diagrams/workflow.json
+    node_records:
+      select:
+      - REQ-selection
+      claim:
+      - IF-vault
+      bubble:
+      - IF-reference
+      send:
+      - REQ-selection
+      backlink:
+      - REQ-delete
+      offline:
+      - IMP-recovery

@@ -1,0 +1,127 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "DSH–Obsidian 引用与贴纸组合 · 主要使用流程",
+    "locale": "zh-CN"
+  },
+  "lanes": [
+    {
+      "id": "main",
+      "label": "正常使用"
+    },
+    {
+      "id": "exception",
+      "label": "边界与恢复"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "select",
+      "lane": "main",
+      "col": 0,
+      "type": "backend",
+      "label": "选中笔记片段",
+      "sublabel": "保留稳定定位",
+      "width": 170
+    },
+    {
+      "id": "claim",
+      "lane": "main",
+      "col": 1,
+      "type": "backend",
+      "label": "身份绑定并认领",
+      "sublabel": "匹配 Vault / 实例 / 页面",
+      "width": 170
+    },
+    {
+      "id": "bubble",
+      "lane": "main",
+      "col": 2,
+      "type": "backend",
+      "label": "放入真实会话气泡",
+      "sublabel": "保留草稿供用户检查",
+      "width": 170
+    },
+    {
+      "id": "send",
+      "lane": "main",
+      "col": 3,
+      "type": "backend",
+      "label": "用户发送问题",
+      "sublabel": "Core 提交引用事务",
+      "width": 170
+    },
+    {
+      "id": "backlink",
+      "lane": "main",
+      "col": 4,
+      "type": "backend",
+      "label": "写回对应回链",
+      "sublabel": "回执幂等 · 拥有权清理",
+      "width": 170
+    },
+    {
+      "id": "offline",
+      "lane": "exception",
+      "col": 2,
+      "type": "external",
+      "label": "目标不可用",
+      "sublabel": "保留待处理及重试身份",
+      "width": 170
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "from": "select",
+      "to": "claim"
+    },
+    {
+      "id": "e1",
+      "from": "claim",
+      "to": "bubble"
+    },
+    {
+      "id": "e2",
+      "from": "bubble",
+      "to": "send"
+    },
+    {
+      "id": "e3",
+      "from": "send",
+      "to": "backlink"
+    },
+    {
+      "id": "offline-in",
+      "from": "claim",
+      "to": "offline",
+      "label": "目标不可用",
+      "role": "branch",
+      "variant": "dashed"
+    },
+    {
+      "id": "offline-out",
+      "from": "offline",
+      "to": "claim",
+      "label": "核对后重试",
+      "role": "return",
+      "variant": "dashed"
+    }
+  ],
+  "mainPath": [
+    "select",
+    "claim",
+    "bubble",
+    "send",
+    "backlink"
+  ],
+  "semanticChecks": {
+    "allowedRoots": [
+      "select"
+    ],
+    "allowedTerminals": [
+      "backlink"
+    ]
+  }
+}
