@@ -23,8 +23,11 @@ plugins:
 
 it("does not promote a legacy compatibility test package into the runtime registry", () => {
   const result = prepareRegistry("schemaVersion: 1\nplugins: []\n", "D:/suite", [
-    { name: "dsh-obsidian-bridge-lifecycle", target: "dsh-profile" },
+    { name: "dsh-obsidian-bridge", target: "dsh-profile", directory: "dsh-obsidian-bridge-lifecycle" },
     { name: "dsh-obsidian-reference-adapter", target: "compatibility-test" },
+    { name: "dsh-obsidian-bridge-protocol", target: "development-only" },
+    { name: "dsh-obsidian-session-reference-suite", target: "development-only" },
   ]);
-  expect(parse(result.candidate).plugins.map((plugin: { name: string }) => plugin.name)).toEqual(["dsh-obsidian-bridge-lifecycle"]);
+  expect(parse(result.candidate).plugins.map((plugin: { name: string }) => plugin.name)).toEqual(["dsh-obsidian-bridge"]);
+  expect(parse(result.candidate).plugins[0].repository.path.replaceAll('\\', '/')).toBe('D:/suite/dsh-obsidian-bridge-lifecycle');
 });

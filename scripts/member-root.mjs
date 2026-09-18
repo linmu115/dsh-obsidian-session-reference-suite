@@ -6,8 +6,10 @@ import { join } from "node:path";
 // before any build or source snapshot is allowed to use it.
 export async function memberRoot(workspace, member) {
   if (!/^[a-z][a-z0-9-]+$/.test(member.name)) throw new Error("Invalid member path");
+  const directory = member.directory ?? member.name;
+  if (!/^[a-z][a-z0-9-]+$/.test(directory)) throw new Error("Invalid member directory");
   let root;
-  try { root = await realpath(join(workspace, member.name)); }
+  try { root = await realpath(join(workspace, directory)); }
   catch (error) {
     if (error.code !== "ENOENT" || member.name !== "dsh-obsidian-bridge-protocol") throw error;
     root = await realpath(join(workspace, "dsh-obsidian-session-reference-suite", "node_modules", member.name));

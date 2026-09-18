@@ -1,75 +1,34 @@
 {
   "name": "dsh-obsidian-session-reference-suite",
-  "version": "0.4.0-rc2.2",
-  "description": "One DSH Bundle with Annotation Core, the integrated Obsidian Bridge, and ordinary Sticker Board.",
+  "version": "0.4.1-rc2.1",
+  "description": "Private development, documentation and acceptance workspace for the standalone DSH Obsidian Bridge",
   "type": "module",
   "license": "MIT",
-  "files": [
-    "cordis.patch.yml",
-    "suite.members.json",
-    "scripts",
-    "CHANGELOG.md",
-    "README.md",
-    "LICENSE",
-    "docs/changes"
-  ],
-  "exports": {
-    "./cordis.patch.yml": "./cordis.patch.yml",
-    "./package.json": "./package.json"
-  },
   "scripts": {
     "test": "vitest run",
     "workspace:link": "node scripts/link-workspace.mjs",
     "suite:check": "node scripts/check-workspace.mjs",
     "suite:record": "node scripts/combination.mjs record",
     "suite:verify": "node scripts/combination.mjs verify",
-    "check": "pnpm test && pnpm pack --dry-run --json"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    }
+    "check": "node scripts/check-workspace.mjs"
   },
   "dshKnowledge": {
     "annotationProtocolVersion": 2,
     "bridgeLifecycleProtocolVersion": 3,
     "stickerProtocolVersion": 1
   },
-  "peerDependencies": {
-    "dsh-annotation-core": "0.3.12-rc2.19",
-    "dsh-obsidian-bridge-protocol": "0.4.0-rc2.1",
-    "dsh-obsidian-bridge-lifecycle": "0.4.0-rc2.2",
-    "dsh-session-sticker-board": "0.7.4-rc2.2"
-  },
-  "peerDependenciesMeta": {
-    "dsh-annotation-core": {
-      "optional": true
-    },
-    "dsh-obsidian-bridge-protocol": {
-      "optional": true
-    },
-    "dsh-obsidian-bridge-lifecycle": {
-      "optional": true
-    },
-    "dsh-session-sticker-board": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "dsh-annotation-core": "link:../dsh-annotation-core",
     "dsh-obsidian-bridge-protocol": "link:../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol",
-    "dsh-obsidian-bridge-lifecycle": "link:../dsh-obsidian-bridge-lifecycle",
-    "dsh-obsidian-reference-adapter": "link:../dsh-obsidian-reference-adapter",
     "dsh-session-sticker-board": "link:../dsh-session-sticker-board",
     "vitest": "^4.1.11",
-    "yaml": "^2.8.1"
+    "yaml": "^2.8.1",
+    "dsh-obsidian-bridge": "link:../dsh-obsidian-bridge-lifecycle"
   },
   "packageManager": "pnpm@11.19.0",
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/linmu115/dsh-obsidian-session-reference-suite.git"
-  }
+  },
+  "private": true
 }

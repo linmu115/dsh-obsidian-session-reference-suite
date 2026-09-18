@@ -41,11 +41,12 @@ for (const member of spec.members) {
   if (manifest.scripts.typecheck) await run("typescript", ["--noEmit"]);
   if (manifest.scripts.build) {
     if (member.target !== "obsidian-vault") {
-      const lib = join(root, "lib");
+      const outputName = manifest.main?.startsWith('dist/') ? 'dist' : 'lib';
+      const lib = join(root, outputName);
       const actual = await realpath(lib).catch((error) => { if (error.code === "ENOENT") return lib; throw error; });
-      if (actual !== join(await realpath(root), "lib")) throw new Error(`Refusing to clean redirected build output: ${lib}`);
+      if (actual !== join(await realpath(root), outputName)) throw new Error(`Refusing to clean redirected build output: ${lib}`);
       await rm(lib, { recursive: true, force: true });
-      await run("typescript", ["-p", "tsconfig.build.json"]);
+      if (manifest.scripts.build.includes('tsc -p tsconfig.build.json')) await run("typescript", ["-p", "tsconfig.build.json"]);
     }
     await run("tsdown", ["--config-loader", "unrun", "--config", "tsdown.config.ts"]);
   }

@@ -5,11 +5,10 @@ import { fileURLToPath } from "node:url";
 // Development aliases only. Every target is inspected before the first write.
 // A shared Protocol checkout is explicit; no sibling checkout is manufactured.
 const dependencies = {
-  "dsh-obsidian-bridge-lifecycle": ["dsh-annotation-core", "dsh-obsidian-bridge-protocol"],
-  "dsh-obsidian-reference-adapter": ["dsh-annotation-core", "dsh-obsidian-bridge-protocol", "dsh-obsidian-bridge-lifecycle"],
-  "dsh-session-sticker-board": ["dsh-annotation-core", "dsh-obsidian-bridge-protocol", "dsh-obsidian-bridge-lifecycle"],
+  "dsh-obsidian-bridge": ["dsh-annotation-core", "dsh-obsidian-bridge-protocol"],
+  "dsh-session-sticker-board": ["dsh-annotation-core", "dsh-obsidian-bridge"],
   "obsidian-deepharness-bridge": ["dsh-annotation-core", "dsh-obsidian-bridge-protocol"],
-  "dsh-obsidian-session-reference-suite": ["dsh-annotation-core", "dsh-obsidian-bridge-protocol", "dsh-obsidian-bridge-lifecycle", "dsh-obsidian-reference-adapter", "dsh-session-sticker-board"],
+  "dsh-obsidian-session-reference-suite": ["dsh-annotation-core", "dsh-obsidian-bridge-protocol", "dsh-obsidian-bridge", "dsh-session-sticker-board"],
 };
 const exists = async (path) => lstat(path).catch((error) => { if (error.code === "ENOENT") return null; throw error; });
 const samePath = (left, right) => process.platform === "win32" ? resolve(left).toLowerCase() === resolve(right).toLowerCase() : resolve(left) === resolve(right);
@@ -21,6 +20,11 @@ export async function linkWorkspace({ suiteRoot = resolve(dirname(fileURLToPath(
   if (!samePath(await realpath(workspace), workspace)) throw new Error("Suite workspace may not be redirected");
   const members = JSON.parse(await readFile(join(suiteRoot, "suite.members.json"), "utf8"));
   const versions = new Map(members.members.map((member) => [member.name, member.version]));
+  const directoryFor = (name) => {
+    const directory = members.members.find(member => member.name === name)?.directory ?? name;
+    if (!/^[a-z][a-z0-9-]+$/.test(directory)) throw new Error(`Invalid source directory: ${directory}`);
+    return directory;
+  };
   const contained = (path) => {
     const suffix = relative(workspace, path);
     if (!suffix || suffix.startsWith("..") || isAbsolute(suffix) || !samePath(resolve(workspace, suffix), path)) throw new Error(`Path is outside the suite workspace: ${path}`);
@@ -36,7 +40,7 @@ export async function linkWorkspace({ suiteRoot = resolve(dirname(fileURLToPath(
   };
   const providersByName = new Map();
   for (const provider of new Set(Object.values(dependencies).flat())) {
-    const target = provider === "dsh-obsidian-bridge-protocol" && protocolRoot ? resolve(protocolRoot) : contained(join(workspace, provider));
+    const target = provider === "dsh-obsidian-bridge-protocol" && protocolRoot ? resolve(protocolRoot) : contained(join(workspace, directoryFor(provider)));
     const actual = await realpath(target), manifest = await readManifest(actual);
     if (manifest.name !== provider || manifest.version !== versions.get(provider)) throw new Error(`Unexpected provider name/version at ${target}; expected ${provider}@${versions.get(provider)}`);
     if (!(provider === "dsh-obsidian-bridge-protocol" && protocolRoot) && !samePath(actual, target)) throw new Error(`Unexpected redirected provider: ${target}; external Protocol requires --protocol-root`);
@@ -45,7 +49,7 @@ export async function linkWorkspace({ suiteRoot = resolve(dirname(fileURLToPath(
   const plans = [], inspected = [];
   for (const [consumer, providers] of Object.entries(dependencies)) {
     if (dshOnly && consumer === "obsidian-deepharness-bridge") continue;
-    const consumerRoot = contained(join(workspace, consumer)), manifest = await readManifest(consumerRoot);
+    const consumerRoot = contained(join(workspace, directoryFor(consumer))), manifest = await readManifest(consumerRoot);
     if (manifest.name !== consumer || manifest.version !== versions.get(consumer)) throw new Error(`Unexpected consumer name/version at ${consumerRoot}`);
     if (!samePath(await realpath(consumerRoot), consumerRoot)) throw new Error(`Unexpected redirected consumer: ${consumerRoot}`);
     for (const provider of providers) {

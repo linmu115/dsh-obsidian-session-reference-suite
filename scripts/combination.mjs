@@ -10,6 +10,7 @@ const workspace = dirname(suiteRoot);
 const hash = (data) => createHash("sha256").update(data).digest("hex");
 const json = async (path) => JSON.parse(await readFile(path, "utf8"));
 const git = (root, args) => execFileSync("git", ["-C", root, ...args], { encoding: "utf8", windowsHide: true });
+const buildDirectory = (manifest) => manifest.main?.startsWith('dist/') ? 'dist' : 'lib';
 
 export async function fileDigests(root, paths) {
   const result = {};
@@ -72,7 +73,8 @@ async function snapshot() {
         const installedManifest = await json(join(installed, "package.json"));
         if (installedManifest.name !== dependency.name || installedManifest.version !== dependency.version)
           throw new Error(`${member.name}: unexpected installed ${dependency.name}`);
-        const artifactPaths = (await filesUnder(checkout, "lib")).filter(path => !path.endsWith(".map"));
+        const dependencyManifest = await json(join(checkout, 'package.json'));
+        const artifactPaths = (await filesUnder(checkout, buildDirectory(dependencyManifest))).filter(path => !path.endsWith(".map"));
         for (const path of artifactPaths) {
           if (hash(await readFile(join(installed, path))) !== hash(await readFile(join(checkout, path))))
             throw new Error(`${member.name}: installed ${dependency.name}/${path} differs from the tested candidate`);
@@ -81,11 +83,12 @@ async function snapshot() {
       localDependencies[dependency.name] = { developmentPin: pin, testedSource: dependency.name, mode: linked ? "checkout" : "verified-artifact" };
     }
     const tracked = git(root, ["ls-files", "--cached", "--others", "--exclude-standard", "-z"]).split("\0").filter(Boolean);
-    const sources = await fileDigests(root, tracked.filter((path) => !path.startsWith("lib/") && path !== "main.js"));
+    const deleted = new Set(git(root, ['ls-files', '--deleted', '-z']).split('\0').filter(Boolean));
+    const sources = await fileDigests(root, tracked.filter((path) => !deleted.has(path) && !path.startsWith("lib/") && !path.startsWith("dist/") && path !== "main.js"));
     const artifacts = member.target === "obsidian-vault"
       ? ["main.js", "manifest.json", "styles.css", "versions.json"]
       : member.name === "dsh-obsidian-session-reference-suite"
-        ? ["cordis.patch.yml", "suite.members.json"] : (await filesUnder(root, "lib")).filter((path) => !path.endsWith(".map"));
+        ? ["suite.members.json"] : [...(await filesUnder(root, buildDirectory(manifest))).filter((path) => !path.endsWith(".map")), ...(manifest.dsh?.bundle?.patch ? [manifest.dsh.bundle.patch.replace(/^\.\//, '')] : [])];
     const artifactFiles = {};
     for (const path of artifacts.sort()) artifactFiles[path] = artifactDigest(path, await readFile(join(root, path)));
     members.push({
@@ -108,7 +111,7 @@ async function snapshot() {
 async function installedIssues(expected, options) {
   const issues = [];
   for (const member of expected.members) {
-    if (member.target === "compatibility-test") continue;
+    if (member.target === "compatibility-test" || member.target === "development-only") continue;
     const target = member.target === "obsidian-vault" ? options.vault : options.profile;
     if (!target) continue;
     const root = member.target === "obsidian-vault" ? join(target, ".obsidian", "plugins", member.name) : join(target, "node_modules", member.name);

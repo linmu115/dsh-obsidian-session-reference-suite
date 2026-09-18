@@ -11,11 +11,12 @@ export function prepareRegistry(text, workspace, members) {
   if (existing.schemaVersion !== 1 || !Array.isArray(existing.plugins)) throw new Error("Unsupported maintenance registry");
   const changes = [];
   for (const member of members) {
-    if (member.target === "compatibility-test") continue;
+    if (member.target === "compatibility-test" || member.target === "development-only") continue;
     if (!/^[a-z][a-z0-9-]+$/.test(member.name)) throw new Error("Invalid member name");
+    if (member.directory && !/^[a-z][a-z0-9-]+$/.test(member.directory)) throw new Error("Invalid member directory");
     const matches = existing.plugins.flatMap((plugin, index) => plugin.name === member.name ? [index] : []);
     if (matches.length > 1) throw new Error(`Duplicate registered member: ${member.name}`);
-    const path = join(workspace, member.name);
+    const path = join(workspace, member.directory ?? member.name);
     if (matches.length) {
       const index = matches[0];
       changes.push({ name: member.name, previous: existing.plugins[index].repository.path, source: path });

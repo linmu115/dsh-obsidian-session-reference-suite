@@ -29,3 +29,12 @@ it("does not fall back to installed packages for missing runtime source checkout
   await expect(memberRoot(root, { name: "dsh-annotation-core", version: "1" })).rejects.toMatchObject({ code: "ENOENT" });
   await expect(memberRoot(root, { name: "../elsewhere", version: "1" })).rejects.toThrow("Invalid member path");
 });
+
+it('resolves the new product from its historical checkout only after validating package identity', async () => {
+  const root = await workspace();
+  const source = join(root, 'dsh-obsidian-bridge-lifecycle');
+  await mkdir(source);
+  await writeFile(join(source, 'package.json'), JSON.stringify({ name: 'dsh-obsidian-bridge', version: '1' }));
+  await expect(memberRoot(root, { name: 'dsh-obsidian-bridge', version: '1', directory: 'dsh-obsidian-bridge-lifecycle' })).resolves.toBe(source);
+  await expect(memberRoot(root, { name: 'dsh-obsidian-bridge', version: '1', directory: '../outside' })).rejects.toThrow('Invalid member directory');
+});
