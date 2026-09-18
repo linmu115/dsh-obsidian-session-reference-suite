@@ -35,4 +35,4 @@ Suite 仅保留私有开发、文档与组合验收；旧 Adapter 退役，Proto
 
 Core 自己负责引用状态、上下文组织与注入、引用 UI/样式/气泡，以及提交、撤销和恢复。缺少业务依赖显示不可用/等待，不造成启动报错。已托管数据不因可选 Maintenance 缺席而退回旧副本写入。
 
-依据为本轮用户直接确认；新公开来源 ledger 待主任务导入。实现与验收状态见 [[VER-single-bridge-delivery]]，不能将此决定当作部署完成证明。
+依据为本轮用户直接确认；可展开的原始消息已挂接至 [[HIST-vault-instance-binding]] 的安装形态、业务组合及 Core 职责章节。实现与验收状态见 [[VER-single-bridge-delivery]]，不能将此决定当作部署完成证明。

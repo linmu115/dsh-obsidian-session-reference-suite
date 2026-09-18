@@ -75,7 +75,7 @@ Annotation Core 提供气泡与引用动作，详见 [接入 Core](integrations/
 
 ## 扩展与可替换部分
 
-普通 Sticker 当前业务组合需要 Core、Bridge 和 [[EXT-better-sidebar|Better Sidebar]]。缺少业务依赖显示不可用/等待，不报启动错误；服务晚加载后挂载，卸载后释放。此前侧栏可选浮层的方案已被 [[DEC-single-bridge-product]] 取代。ThoughtDAG 是可选主干图 UI，当前 sources 未包含其仓库；只记录与 Suite 的接口依赖，不重建其内部模块。普通贴纸本地保存和已迁移结构写入的要求不同，Bridge 离线不等于 Maintenance 可写。
+普通 Sticker 当前业务组合需要 Core、Bridge 和 [[EXT-better-sidebar|Better Sidebar]]。缺少业务依赖显示不可用/等待，不报启动错误；服务晚加载后挂载，卸载后释放。此前侧栏可选浮层的方案已被 [[DEC-single-bridge-product]] 取代；组合依赖的用户原文见 [[HIST-vault-instance-binding]]。ThoughtDAG 是可选主干图 UI，当前 sources 未包含其仓库；只记录与 Suite 的接口依赖，不重建其内部模块。普通贴纸本地保存和已迁移结构写入的要求不同，Bridge 离线不等于 Maintenance 可写。
 
 ## 共享协议接入
 

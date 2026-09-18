@@ -8,12 +8,12 @@ modules: [Bridge Lifecycle, Obsidian Companion, Reference Adapter, Bridge Protoc
 outcome: 已按授权实施桥整合、双侧绑定与路由、实例分类范围及公共信息页；本地合成验收与真实部署分别记录。
 summary: 从维护面板中的绑定讨论收敛为 Bridge 独立配对、可选维护页、共享实例范围及动态端口自动续接。
 applicability: 本机 Obsidian Vault 与 DSH 实例；首版不扩展到跨机器或未来操作插件的具体业务。
-coverage_note: 当前任务公开来源第 9–2203 行，共 536 事件；包含开工、分类工作区与下次启动生效的确认，以及实施和分组验收。截点有一条工具调用尚未配对；旧索引保留，不收录隐藏推理。
+coverage_note: 当前任务公开来源第 9–3209 行，共 777 事件（352 组调用/返回全部配对）；在既有范围上补齐安装形态纠正、业务组合、Core 职责和安装前备份。旧索引保留，不收录隐藏推理、内部元数据和图片等非文本块；截点为 2026-09-18 06:14:13 UTC，不覆盖后续真实安装。
 history:
-  path: history/20260918-binding-scope-implementation
-  sha256: 7d4f56b79277d188358d1564805861b64df0f9faf856a90ebd47e3649e5ba338
-  capture_sha256: 1906245268ee125af34796362ab9d17cee02b7ba44e6d9fbad0b6cbc407987bf
-related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-operation-channel, VER-vault-binding-design, REQ-integration-complete, EXP-bridge-consolidation, VER-requirements-consolidation, DEC-bridge-refactor-sequence]
+  path: history/20260918-single-bridge-product-correction
+  sha256: 48e86e4e6e8494eb4a9b7ad7e48a9a17c8570365e507eda8a58c1a6d61134129
+  capture_sha256: f40c51c5c588b84684f4fa01fcdcfb801b6cb74918b6d7d8df7f5ec5209421a4
+related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-operation-channel, VER-vault-binding-design, REQ-integration-complete, EXP-bridge-consolidation, VER-requirements-consolidation, DEC-bridge-refactor-sequence, DEC-single-bridge-product, EXT-better-sidebar, VER-single-bridge-delivery]
 ---
 
 # Vault 单实例绑定、公开扩展页与动态端口的需求收敛
@@ -92,10 +92,44 @@ related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-oper
 
 实施采用持久绑定修订、动态发现与端口重连、每运行范围快照、投影筛选及事务内回写复核。公开业务页使用声明式栏目与有界动作回执，绑定写入仍交给 Companion。实际改动和后续验证的提交、测试数与限制见 implementation / verification 记录；本历程截点不代表后续工具工作已停止。
 
-## 本轮后续更正草稿（新来源索引待补）
+## 安装请求暴露交付形态差距
 
-本节由本轮地图维护任务依据当前公开用户确认整理；既有 ledger 的覆盖范围和哈希保持不变，本节新消息未伪装成旧事件。用户指出内部桥合并加 Suite wrapper 不满足桥接层合一，明确一个 `dsh-obsidian-bridge` 安装项，Suite 退为私有开发验收工作区、Protocol 内部依赖、旧 Adapter 退役。
+用户先要求检查地图文档与图形，并将成果安装到当前副本作第一阶段验收。读取候选版本表后，用户指出 Suite、Adapter、Lifecycle 仍列为多个包，与之前期待的“一个桥插件”不符。
 
-用户同时明确普通 Sticker 使用 Core、Bridge 与 Better Sidebar；Core+Bridge 支持跨 Obsidian 引用，Core+ThoughtDAG 支持跨会话引用及会话贴纸。Core 自己管理运行引用、上下文、UI/样式/气泡和提交撤销恢复；Maintenance 经业务 Adapter 保存恢复历史类型。地图与当前说明按这些边界更正，旧阶段报告保留事实并标注安装方案被取代。
+[查看依据：地图核查与安装请求](history-event:EVT-f17eeaa88bf870afa1f0)
 
-当前决定见 [[DEC-single-bridge-product]]；新包和真实安装检查独立记录于 [[VER-single-bridge-delivery]]。原先计划直接导出旧形态地图的工作在用户纠正后暂停，待产品边界确认才恢复修图。新的公开来源 ledger 由主任务后续导入；本节不证明真实部署成功。
+[查看依据：用户指出多桥包交付差距](history-event:EVT-d95234028788f2b31e0e)
+
+主任务承认内部实现合并与安装形态收敛不是同一件事，暂停原安装推进。用户随后明确：桥接层合一，实例/Vault 绑定和后续专用通道也全部属于同一插件。Core、普通贴纸与可选 Maintenance 保持独立。
+
+[查看依据：确认单桥安装边界](history-event:EVT-645ea6e7a60c78250d79)
+
+[[DEC-single-bridge-product]] 据此明确 `dsh-obsidian-bridge` 为唯一桥安装项；Suite 退为私有开发、文档和组合验收工作区，旧 Adapter 退役，Protocol 作为内部依赖。旧目录和内部服务 key 可保留兼容。地图不删除旧记录，而把先前报告的安装解释标为被替代。
+
+## 普通贴纸组合和 Core 引用职责
+
+用户进一步明确普通 Sticker 同时依赖 Core、Bridge 与 Better Sidebar；Core + Bridge 直接实现跨 Obsidian 引用，Core + ThoughtDAG 直接实现跨会话引用和会话贴纸。Maintenance 通过对应 Adapter 维护各自历史消息类型，不能把会话贴纸重新归给普通 Sticker。
+
+[查看依据：用户明确功能组合与历史维护](history-event:EVT-5317d245917dd1926ca9)
+
+用户再次强调 Core 自己维护上下文引用、引用样式与 UI、气泡和上下文。运行引用状态、上下文组织注入、提交撤销恢复继续归 Core；Bridge 提供 Obsidian 来源、传输、定位和绑定，ThoughtDAG 管会话来源关系，普通 Sticker 调用 Core，Maintenance 不接管运行时引用。
+
+[查看依据：Core 自己拥有引用、样式、气泡与上下文](history-event:EVT-9f43f5ddaedba44b5ecf)
+
+此前“桥可选”“Sidebar 缺席可退回浮层”的普通贴纸说明随之修正为三项业务依赖；缺失能力显示等待/不可用，不以启动异常代替状态。已托管数据不因可选维护服务缺席回退旧副本写入。当前要求映射到 [[REQ-integration-complete]] 的 R12/R13、[[OBJ-reference]]、[[OBJ-knowledge]]、[[MOD-core]]、[[MOD-sticker]] 与 [[EXT-better-sidebar]]。
+
+## 新包验证、发行修复与安装前备份
+
+单一 Bridge 构件完成隔离加载检查，普通 Sticker 按三项依赖重新接入；Suite 的私有工作区与独立 profile 迁移后来保存为 2480db1。相关组件的新版本、提交和测试数字分开登记于 [[VER-single-bridge-delivery]]，旧 857 项组合验证不冒充新包回归。
+
+[查看依据：单桥隔离检查与普通贴纸依赖验证](history-event:EVT-1f61a9a1cedd6777e15f)
+
+[查看依据：Suite 工作区与迁移源码提交](history-event:EVT-b23a8f097262211daf41)
+
+安装准备又发现 Maintenance 发行门禁未接纳新版本，以及暂存安装路径不能直接搬到真实副本。主任务先修正并核验精确包组，再备份会话维护状态与 Obsidian 插件状态；保持零活动 run/job 的前置条件。公开进度在本次来源截点确认备份完成，仍在最终安装包核验阶段，不能据此写成副本已安装或窗口验收成功。
+
+[查看依据：发行门禁与暂存路径问题](history-event:EVT-4d12c72d05407c13a6ba)
+
+[查看依据：备份完成，安装包继续核验](history-event:EVT-dc037f83d2e8e05462c6)
+
+本次沿用 HIST-vault-instance-binding 身份，创建新的不可变范围索引覆盖第 9–3209 行以保持旧引用可展开；旧索引原样保留。新增事实只从此前截点后的公开消息整理，没有导入隐藏推理，也没有伪造原始消息或补写图片内容。后续安装事实由执行主任务另行扩展来源与验收记录。

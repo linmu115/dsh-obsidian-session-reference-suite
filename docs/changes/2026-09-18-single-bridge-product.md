@@ -33,15 +33,17 @@
 | 检查项 | 当前证据与边界 |
 | --- | --- |
 | 完整需求、地图职责与安装入口 | 111 条地图记录，0 错误/警告；架构与流程结构检查通过；隔离无界面 Chrome 打开概览、架构、流程和新决定页，无横向溢出 |
-| 单一 Bridge 包及独立 profile 接线 | 主任务回报：Bridge `b3cad82`，21 文件 102 tests 通过并生成隔离产物；Suite 私有工作区 8 文件 21 tests 通过，覆盖独立节点、退役边界及保留身份的可重复配置迁移 |
+| 单一 Bridge 包及独立 profile 接线 | 主任务回报：Bridge `b3cad82`，21 文件 102 tests 通过并生成隔离产物；Suite 私有工作区 `2480db1`，8 文件 21 tests 通过，覆盖独立节点、退役边界及保留身份的可重复配置迁移 |
 | 普通 Sticker 三项业务依赖及晚加载 | 主任务回报：Sticker `50a8c13`，20 文件 123 tests 通过；按当前 Core + Bridge + Better Sidebar 组合接入 |
 | Core 与 ThoughtDAG / Bridge 的职责边界 | 已记录；已有 Core/来源模块边界继续保留，不以安装重命名迁移运行时引用责任 |
-| 可选 Maintenance 发布出口 | 主任务回报：修复发布构件漏带公共 business-pages 出口，补既有 ThoughtDAG/Sticker 与新 Sticker 兼容声明；12 tests 和 Engine build 通过，打包/安装结果另记 |
-| 当前副本安装、备份与回退 | 待执行方填写路径、时间、包哈希与安装检查，不宣称完成 |
+| 可选 Maintenance 发布出口与精确门禁 | 前次 public business-pages 出口修复已有 12 tests/Engine build；后续 `2e84ec3` 修正 Engine .38 / plugin .29 精确白名单，32 tests、typecheck/build 通过。两批结果不相加为唯一总数 |
+| 隔离 official install | 严格 peer 检查完成；暂存核验 state=verified、importsPassed=true、failures=[]，Core/Bridge/Sticker 为独立业务根，旧 Suite/Adapter/Lifecycle/Protocol 安装项缺席。仅为隔离安装证据 |
+| 当前副本备份与回退 | 备份回执时间 2026-09-18 06:11:46 UTC；Engine 已停，会话数据库及维护状态、profile metadata、完整 Companion 插件目录已备份。此回执不表示新版已安装 |
+| 当前副本实际安装 | 本记录截点仍待执行方填写安装路径、包哈希及切换结果，不宣称完成 |
 | 启动、真实窗口及两侧连接 | 待执行方记录宿主探针和实际交互；文档导出不构成窗口验收 |
 | 用户 Vault/会话及模型调用 | 本文档任务未执行写入或模型调用；任何后续真实操作按执行方记录 |
 
-本轮对话的新公开来源索引由主任务后续导入；旧 ledger 不覆盖、不伪造新事件。
+本轮公开来源已增量整理并挂到 [既有开发历程](../project/records/history/vault-instance-binding.md)，使用新不可变范围索引 `history/20260918-single-bridge-product-correction`；覆盖第 9–3209 行、777 个公开事件，352 组调用/返回全部配对，旧 ledger 保留。来源截点为 2026-09-18 06:14:13 UTC，不覆盖后续安装。
 
 ## 地图阅读检查
 
@@ -50,3 +52,7 @@
 阅读页输出在 `docs/project/views/index.html`，架构/流程源在 `docs/project/diagrams/`。派生回执为 `views/single-bridge-render.json`、`reader-browser-check.json` 和两图 receipt，四张 `reader-*.png` 截图供本地核对；这些派生文件不是产品源码或安装证据。项目阅读服务地址以 `views/index.preview.json` 为准，文件内容变化后需重导出。
 
 架构仍有 109 项连线交叉/共享走线等布局提示，流程有 4 项；硬检查均通过。原生图单页 visual-check 因页面纵向滚动报告 viewport overflow，文本与控件间距检查通过；不能宣称该检查全通过。实际嵌入阅读页已视觉核对全图和记录，整体图可缩放并使用聚焦视图。未修改技能阅读器以掩盖提示。
+
+## 安装准备的本地回执
+
+只读核对的 [备份完成回执](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/backup-complete.json) 与 [隔离安装核验](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/staged-install-verification.json)保存在本机交付归档。它们分别证明备份/隔离构件检查，不证明真实 profile 已切换或双窗口交互成功；真实部署项留给执行方续填。

@@ -52,7 +52,7 @@ relations:
 
 可选 Session Maintenance 当前候选为 Engine **0.1.33-rc2.38**、DSH 维护插件 **0.2.26-rc2.29**。该项目独立维护分类工作区策略、运行快照与公共信息页；缺席不阻断基础绑定、路由与引用，已托管数据仍不得回退到旧副本写入。
 
-Suite 不再是可安装插件，旧 Adapter 退役。Profile 独立加载 Core、Bridge、Sticker 各一次，以服务发现支持可选与晚加载；新包本地验证已由主任务回报：Bridge 102、Sticker 123、Suite 21 项通过；构件和部署边界见 [[VER-single-bridge-delivery]]。
+Suite 不再是可安装插件，旧 Adapter 退役。Profile 独立加载 Core、Bridge、Sticker 各一次，以服务发现支持可选与晚加载；新包本地验证已由主任务回报：Bridge 102、Sticker 123、Suite 21 项通过；Suite 源码为 2480db1，Maintenance 精确门禁修复 2e84ec3 另有 32 项及类型/构建检查通过；构件、安装前备份与部署边界见 [[VER-single-bridge-delivery]]。
 
 此前内部整合、绑定与维护接入已完成 TypeScript 检查、构建和合成验证；该证据适用上一轮包名和版本，不自动证明本轮单桥产品已验收。当前实现见 [[IMP-bridge-consolidation]]、[[IMP-vault-binding-routing]]；各组件及 Suite 的测试数字、提交和覆盖边界见 [[VER-vault-binding-implementation]]。Maintenance 的分组验证见其 [范围与公开信息页验证记录](../../../../../dsh-session-maintenance/docs/project/records/verification/scope-business-pages.md)。各组可能交叠，不相加为统一总测试数。
 

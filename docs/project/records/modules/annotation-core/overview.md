@@ -82,7 +82,7 @@ relations:
 
 Core 自己拥有运行时引用状态、上下文组织与注入、引用 UI/样式/气泡，以及提交、撤销和恢复；提供统一注解、历史详情及目标会话里的读取工具。Sidechat、Sticker 和 ThoughtDAG 是入口或展示消费者；Core 本身没有独立侧栏或画布。
 
-Core + Bridge 直接支持跨 Obsidian 引用，Core + ThoughtDAG 直接支持跨会话引用和会话贴纸。Bridge 管笔记来源/传输/定位/绑定，ThoughtDAG 管会话来源关系，普通 Sticker 调用 Core。可选 Maintenance 经业务 Adapter 保存恢复历史类型，不接管 Core 运行时引用，见 [[DEC-single-bridge-product]]。
+Core + Bridge 直接支持跨 Obsidian 引用，Core + ThoughtDAG 直接支持跨会话引用和会话贴纸。Bridge 管笔记来源/传输/定位/绑定，ThoughtDAG 管会话来源关系，普通 Sticker 调用 Core。可选 Maintenance 经业务 Adapter 保存恢复历史类型，不接管 Core 运行时引用，见 [[DEC-single-bridge-product]]；用户原始确认可在 [[HIST-vault-instance-binding]] 的“普通贴纸组合和 Core 引用职责”章节展开。
 
 ## 内部维护边界
 
