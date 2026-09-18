@@ -50,3 +50,8 @@ status: current
 同步接口实测：原离线实例activeScopes为0，当前RC2副本为1。看板实际显示Maintenance与Codex并列子栏目，离线实例显示无在线运行；未修改同步名单、Vault绑定或笔记。通过正式integration repair刷新升级后失配的接入指纹，其他绑定、范围、包及配置保留。Launcher正式Start成功：副本/web running，boot 51386209-f905-4c6f-95d2-33b2b28e71e8，run-8a67195d-e8b0-4dc2-85f5-04767d91770e running，scope all/revision0。
 
 本次看板地址http://127.0.0.1:58529/dashboard/，DSH地址http://127.0.0.1:17118；均为动态端口证据，不写入固定绑定。最终证据：D:/AI/DeepSeekHarness-Plugin/artifacts/maintenance-engine40-install-20260918/activated.json；最终备份位于同目录final-state-backup；正常退出回执C:/Users/19717/AppData/Local/DSH-Session-Maintenance/logs/engine-lifecycle/57996.jsonl。外部浏览器插件bundle故障根因、完整引用往返及真实folder绑定交互不属于本次已通过项。
+
+
+### 后续并行任务事故（09:19 UTC）
+
+CPA并行任务报告运行进程诊断动态import导致DSH fatal退出。主任务只读确认本轮run为recovered，Launcher handle finalized且finalReceipt.disposition=recovered（09:19:07.206Z）；Engine .40仍ready。先前running是升级完成时证据，事故后副本stopped，不伪装为正常closed。已将正式Start恢复交给该并行任务单一负责，本任务没有再次启动或注入进程。后续状态应以该任务恢复回执为准。证据已追加到activated.json的subsequentEvent。
