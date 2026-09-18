@@ -2,6 +2,8 @@
 
 当前职责修订见 [[DEC-selection-ownership-20260918|划选与会话贴纸归属]]；旧版入口说明以此修订为准。
 
+已确认、待实现的绑定与扩展设计：[[REQ-vault-instance-binding]]、[[IF-vault-binding]]、[[INT-suite-extension-pages]]；动态端口自动连接作为必保留能力，文档验证见 [[VER-vault-binding-design]]。
+
 ## 目标：让笔记与真实会话相互引用
 
 这套组合把 Obsidian 选段、笔记链接、DSH 引用气泡和会话贴纸连起来。用户保留原草稿，自行发送；内嵌 Viewer 打开的是目标实例的真实 DSH 会话。入口：[Suite 结构](records/modules/suite/overview.md)、[当前版本与限制](records/implementation/cohort.md)。

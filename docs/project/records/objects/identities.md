@@ -42,3 +42,7 @@ relations:
 例：来源 X 被 Y 引用，X 是来源，Y 是所有者。固定来源同时保存来源版本和完成回复截止；重开 Y 不得重新捕获 X 的最新历史。笔记重命名可按 noteId 解析；存在重复块时停止准备或清理。
 
 变更任何身份映射时，同时查 [Core 添加/解除入口](../modules/annotation-core/interfaces/client.md)、[Companion 领取合同](../modules/obsidian-companion/interfaces/references.md) 和 [[INT-maintenance-directory|目录镜像映射]]。
+
+## 绑定身份与当前可用性（待实现）
+
+[[IF-vault-binding]] 追加绑定修订与运行代次的区别：实例 ID 是持久目标，端口和当前登录地址是运行位置。各 Vault 共用实例有效同步范围；未同步、离线、映射未就绪与会话已删除分开表达。改绑不重写历史实例、逻辑会话和 Vault 身份，也不重新投递旧队列。

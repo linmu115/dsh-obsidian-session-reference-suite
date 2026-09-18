@@ -17,6 +17,10 @@ aliases:
 relations:
 - relation: consumes
   to:
+    record_id: IF-vault-binding
+  reason: 计划接入按 Vault 路由和绑定修订
+- relation: consumes
+  to:
     record_id: IF-lifecycle
   reason: 贴纸和导航传输
   reasons:
@@ -76,3 +80,7 @@ Better Sidebar 是可选详情容器，缺失可用浮层。ThoughtDAG 是可选
 ## 共享协议接入
 
 [[INT-sticker-protocol]]说明本组件实际消费哪些控制、数据及 Annotation 2 出口，返回 [[MOD-protocol|提供方接入目录]]。
+
+## 绑定改造的影响（待实现）
+
+[[REQ-vault-instance-binding]] 与 [[IF-vault-binding]] 要求普通贴纸和关联笔记按 Vault 路由，实例取消工作区同步时保留链接并显示原因。已托管对象不恢复旧副本写入。沿用 [[DEC-selection-ownership-20260918]]，本任务不把会话贴纸和跨会话入口从 ThoughtDAG 移回 Sticker。

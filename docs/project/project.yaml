@@ -76,6 +76,16 @@
       "source_id": "directory-contract",
       "path": "../../../dsh-annotation-core/docs/changes/2026-09-15-reference-directory-mirror.md",
       "format": "markdown"
+    },
+    {
+      "source_id": "vault-binding-design",
+      "path": "../2026-09-18-vault-instance-binding-design.md",
+      "format": "markdown"
+    },
+    {
+      "source_id": "vault-binding-design-report",
+      "path": "../2026-09-18-vault-binding-design-report.md",
+      "format": "markdown"
     }
   ],
   "bindings": [
@@ -261,6 +271,45 @@
       "status": "current",
       "summary": "提供方唯一目录合同：分页只读、有界摘录、持久变更通知、明确删除；消费方见 INT-maintenance-directory。",
       "heading": "接口与边界"
+    },
+    {
+      "id": "REQ-vault-instance-binding",
+      "kind": "requirement",
+      "title": "Vault 单实例绑定与两组插件独立运行",
+      "source_id": "vault-binding-design",
+      "heading": "已确认需求",
+      "status": "current",
+      "progress": "planned",
+      "summary": "一 Vault 至多一实例，多 Vault 共用实例同步范围；历史链接保留，动态端口自动重连。"
+    },
+    {
+      "id": "IF-vault-binding",
+      "kind": "interface",
+      "title": "Bridge 绑定、发现与多 Vault 连接合同草案",
+      "source_id": "vault-binding-design",
+      "heading": "绑定与连接合同草案",
+      "status": "proposed",
+      "progress": "planned",
+      "summary": "稳定身份与运行端点分离；Bridge 确认有效配对，Maintenance 保存登记与回执。"
+    },
+    {
+      "id": "IF-obsidian-operation-channel",
+      "kind": "interface",
+      "title": "Obsidian 操作管道的扩展预留",
+      "source_id": "vault-binding-design",
+      "heading": "操作管道扩展预留",
+      "status": "proposed",
+      "progress": "planned",
+      "summary": "只预留按 Vault 的操作登记与结果合同，具体笔记、样式、模板和插件功能以后实现。"
+    },
+    {
+      "id": "VER-vault-binding-design",
+      "kind": "verification",
+      "title": "Vault 绑定设计的文档检查",
+      "source_id": "vault-binding-design-report",
+      "heading": "验证结果",
+      "status": "current",
+      "summary": "仅检查地图、公开来源、链接与差异；产品验收待实施。"
     }
   ],
   "archify": {
@@ -269,23 +318,29 @@
       "node_records": {
         "comp-viewer": [
           "MOD-companion-viewer",
-          "OBJ-identities"
+          "OBJ-identities",
+          "REQ-vault-instance-binding"
         ],
         "comp-bridge": [
           "IF-companion-reference",
-          "MOD-companion-viewer"
+          "MOD-companion-viewer",
+          "IF-vault-binding",
+          "IF-obsidian-operation-channel"
         ],
         "comp-vault": [
           "MOD-companion-vault",
-          "REQ-marker-cleanup"
+          "REQ-marker-cleanup",
+          "REQ-vault-instance-binding"
         ],
         "ref-client": [
           "MOD-reference-client",
-          "INT-reference-core"
+          "INT-reference-core",
+          "REQ-vault-instance-binding"
         ],
         "ref-host": [
           "MOD-reference-host",
-          "INT-reference-core"
+          "INT-reference-core",
+          "REQ-vault-instance-binding"
         ],
         "core-client": [
           "IF-core-client",
@@ -314,11 +369,14 @@
         ],
         "life-identity": [
           "MOD-lifecycle",
-          "OBJ-identities"
+          "OBJ-identities",
+          "REQ-vault-instance-binding",
+          "IF-vault-binding"
         ],
         "life-mount": [
           "IF-lifecycle",
-          "MOD-lifecycle"
+          "MOD-lifecycle",
+          "IF-vault-binding"
         ],
         "sticker-ordinary": [
           "MOD-sticker-ordinary",
@@ -332,7 +390,8 @@
         "sticker-linked": [
           "REQ-linked-note",
           "IF-companion-knowledge",
-          "INT-sticker-core"
+          "INT-sticker-core",
+          "REQ-vault-instance-binding"
         ],
         "comp-knowledge": [
           "IF-companion-knowledge",
@@ -341,7 +400,8 @@
         "suite-assembly": [
           "MOD-suite",
           "IF-composition",
-          "REQ-suite-boundary"
+          "REQ-suite-boundary",
+          "VER-vault-binding-design"
         ],
         "core-ui": [
           "MOD-core-ui",
@@ -352,7 +412,8 @@
         ],
         "protocol-control": [
           "MOD-protocol",
-          "IF-protocol-control"
+          "IF-protocol-control",
+          "IF-vault-binding"
         ],
         "protocol-data": [
           "MOD-protocol",
@@ -363,7 +424,8 @@
           "MOD-core-context",
           "INT-maintenance-directory",
           "INT-sticker-maintenance",
-          "INT-companion-maintenance"
+          "INT-companion-maintenance",
+          "INT-suite-extension-pages"
         ],
         "ext-thoughtdag": [
           "EXT-thoughtdag"

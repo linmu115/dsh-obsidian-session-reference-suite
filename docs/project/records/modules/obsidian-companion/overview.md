@@ -17,6 +17,14 @@ sources:
 aliases:
 - Obsidian Companion：Vault 一侧
 relations:
+- relation: provides
+  to:
+    record_id: IF-obsidian-operation-channel
+  reason: 后续操作扩展的合同预留
+- relation: provides
+  to:
+    record_id: IF-vault-binding
+  reason: 计划中的双侧绑定合同；产品待实现
 - relation: contains
   to:
     record_id: INT-companion-maintenance
@@ -63,3 +71,7 @@ Companion 是 Suite 配套的 Obsidian 插件，不是第五个 DSH 子插件。
 [引用 HTTP 交接](interfaces/references.md) 给 Lifecycle 和 Reference Adapter 使用；[知识链接与直接引用](interfaces/knowledge.md) 给 Sticker 的关联气泡和 Companion 内部会话选择使用。消费者分别返回 [Adapter](../reference-adapter/overview.md)、[Lifecycle](../bridge-lifecycle/overview.md) 与 [Sticker 关系 UI](../sticker-board/session-links.md)。
 
 Maintenance 结构集成见 [消费方接入说明](integrations/maintenance.md)。同步记录是身份和回执，不能被当作第二套完整会话备份。共享协议源码已按 Suite 依赖绑定核对；控制、数据及 Annotation 2 的具体消费见 [[INT-companion-protocol]]。Companion 与 Protocol 是并列成员，不存在产品父子关系。
+
+## Vault 绑定与独立运行（待实现）
+
+Companion 按 [[REQ-vault-instance-binding]] 提供设置页实例选择及有效绑定的唯一写入口；Maintenance 管理页通过 [[IF-vault-binding]] 调用同一入口。按绑定身份选择当前控制租约并自动更新动态 Web 地址，不能再由另一实例最近上线抢占。未来专门操作插件通过 [[IF-obsidian-operation-channel]] 扩展；本轮只留合同，不实现其业务。

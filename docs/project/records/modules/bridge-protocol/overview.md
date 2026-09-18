@@ -14,6 +14,10 @@ sources:
 - path: ../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/src/data.ts
   role: source-reviewed-2026-09-16
 relations:
+- relation: implements
+  to:
+    record_id: REQ-vault-instance-binding
+  reason: 共享传输形状的待实现适配
 - relation: provides
   to:
     record_id: IF-protocol-control
@@ -40,3 +44,7 @@ Protocol 是七成员之一，以依赖库随消费者构建。它没有 UI，�
 包版本 0.3.3-rc2.1；控制协议 Lifecycle 3、数据协议 Sticker 1。Suite node_modules 的 Junction 实际指向 rc2-adapt-20260912/dsh-obsidian-bridge-protocol；本次读取的是该真实源码工作树，未用旧归档路径代替源码。
 
 [[INT-lifecycle-protocol|Lifecycle 接入]]、[[INT-reference-protocol|Reference Adapter 接入]]、[[INT-sticker-protocol|Sticker 接入]]、[[INT-companion-protocol|Companion 接入]]分别说明实际调用范围。安装清单、源码导入与运行实例是否启用是不同事实。
+
+## 计划中的绑定与操作扩展
+
+[[IF-vault-binding]] 需要共享绑定修订、端点发现、目标 Vault 和运行代次的传输形状；[[IF-obsidian-operation-channel]] 只预留能力登记与调用结果。版本号与字段在实施时确定，当前 Lifecycle 3 / Sticker 1 声明不因此冒充已支持新协议。

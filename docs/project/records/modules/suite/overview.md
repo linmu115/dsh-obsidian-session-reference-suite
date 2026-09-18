@@ -19,6 +19,10 @@ sources:
 aliases:
 - 组合加载与成员清单
 relations:
+- relation: implements
+  to:
+    record_id: REQ-vault-instance-binding
+  reason: 独立安装与组合兼容待实现验收
 - relation: contains
   to:
     record_id: MOD-core
@@ -77,3 +81,7 @@ Core → Lifecycle → Reference Adapter → Sticker 是装载顺序；整个父
 ## 组合接口
 
 [Vault 与 DSH 之间的交接入口](interfaces/composition.md)说明各提供方的分工，并链接到相应权威接口。
+
+## 绑定与独立安装要求（待实现）
+
+[[REQ-vault-instance-binding]] 明确 Maintenance 为可选协作者，基础配对、路由和引用不以其存在为启动前提；已经托管的数据仍受其写入归属约束。Suite 同步成员兼容与装配，不持有绑定真源，不新增必装操作插件。范围与验收见 [绑定设计](../../../../2026-09-18-vault-instance-binding-design.md)，当前职责仍遵守 [[DEC-selection-ownership-20260918]]。

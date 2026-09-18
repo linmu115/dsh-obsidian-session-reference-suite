@@ -23,6 +23,10 @@ aliases:
 relations:
 - relation: provides
   to:
+    record_id: IF-vault-binding
+  reason: 计划中的双侧绑定合同；产品待实现
+- relation: provides
+  to:
     record_id: IF-lifecycle
   reason: 连接服务提供方
   reasons:
@@ -56,3 +60,7 @@ Core 的宿主存储和本地草稿不由此生命周期卸载。外部连接可
 ## 共享协议接入
 
 [[INT-lifecycle-protocol]]说明本组件实际消费哪些控制、数据及 Annotation 2 出口，返回 [[MOD-protocol|提供方接入目录]]。
+
+## 已确认的绑定与多 Vault 扩展（待实现）
+
+[[REQ-vault-instance-binding]] 要求一 Vault 至多绑定一个实例，并由本模块自登记当前端点、按 vaultId 管理多个连接。[[IF-vault-binding]] 将稳定实例身份与端口、bootId、租约分开；继续从宿主取得实际端口和有效 Viewer 地址，重启换端口无需改绑。单 Vault 断开只释放对应附件。Maintenance 接入与 Launcher 发现都属于可选能力。

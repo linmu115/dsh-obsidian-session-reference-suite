@@ -26,3 +26,7 @@ sources:
 参数与类型以 [ObsidianBridgeLifecycle](../../../../../../dsh-obsidian-bridge-lifecycle/src/api.ts) 为唯一合同，状态/逆序实现以 [runtime.ts](../../../../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts) 为依据。改变就绪判定、释放顺序或身份格式会影响 Adapter 与 Sticker，不能仅测试单个连接对象。
 
 已知接入者与返回：[Adapter 的 Host/Client 挂载](../reference-adapter/overview.md)、[Sticker 的外部同步](../sticker-board/overview.md)；提供方介绍在 [Lifecycle 模块](overview.md)。
+
+## 下一版合同方向（待实现）
+
+当前代码仍是上述单连接接口。新增绑定、发现与按 Vault 的连接接口草案统一见 [[IF-vault-binding]]；其消费者包括 Reference Adapter、Sticker、Companion 及可选维护页。迁移不能丢失现有动态端口、登录 URL、surfaceId、代次检查和延迟挂载释放行为。
