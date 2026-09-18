@@ -1,12 +1,12 @@
 # Core 引用归属、桥接插件收敛与未来操作通道评估
 
-日期：2026-09-18。状态：基于当前源码的架构建议，尚未确认实施。本文不修改已确认需求，不改变现有安装结构，也不授权迁移历史数据。
+日期：2026-09-18。状态：保留本次源码核查；桥整合方向、贴纸归属与分期已进一步确认，具体实施计划待落实，尚未开工。最新决定见 [桥整合与分期](project/records/decision/bridge-refactor-sequence-20260918.md)。
 
 ## 判断
 
 Core 已经承载引用状态和提交的主干，但“所有与引用有关的代码”没有也不适合全部进入 Core。Obsidian 的来源读取和笔记写回应由来源适配负责，ThoughtDAG 的业务入口仍可调用 Core 的通用能力。
 
-当前更明确的组合问题在 DSH 侧桥接层：共享传输已经存在，连接的使用、队列消费、笔记关联与维护 UI 仍散布于 Lifecycle、Reference Adapter 和 Sticker。建议收敛为一个对外安装的 DSH Obsidian Bridge 插件，保留内部模块；Core、普通贴纸和 Maintenance 继续独立。
+当前更明确的组合问题在 DSH 侧桥接层：共享传输已经存在，连接使用、队列消费和通用桥管理仍散布于多个入口。用户认可先整合 DSH Bridge、普通贴纸重新接入；Core、普通贴纸和 Maintenance 继续独立。笔记关联继续是贴纸的业务，桥提供共用引用通道。
 
 未来专门操作通道需要 DSH 发起端与 Obsidian 执行端。两端能力可以扩展现有桥插件；不必从第一天就再引入两个独立安装包。
 
@@ -23,7 +23,7 @@ Core 已经承载引用状态和提交的主干，但“所有与引用有关的
 | 原生引用气泡、输入区接入、主会话划选和扩展动作注册 | Core 的 Client；其他业务插件注册动作，不自行接管同一主会话的整套划选流程。 |
 | 跨会话引用的添加、目标输入区准备和固定来源使用 | Core 暴露 addCrossSessionReference 等能力，维护系统提供固定来源／会话映射；ThoughtDAG 负责业务入口及图。 |
 | Obsidian 选文、定位、刷新、标记和笔记回链写入 | Companion 执行 Vault 操作，Reference Adapter 接入 Core 的来源合同；保持在来源适配层合理。 |
-| 普通贴纸、笔记关联入口和会话贴纸 | 普通贴纸在 Sticker，笔记关联入口目前也在 Sticker，会话贴纸在 ThoughtDAG；笔记关联接入值得进一步收敛，见下文。 |
+| 普通贴纸、笔记关联入口和会话贴纸 | 普通贴纸及其笔记关联保留在 Sticker，会话贴纸在 ThoughtDAG；收敛的是桥公共通道与接入，见下文。 |
 
 源码依据：[Core Host 接口](../../dsh-annotation-core/src/public/host-api.ts)、[Core Client 接口](../../dsh-annotation-core/src/public/client-api.ts)、[Core 启动与 outbox](../../dsh-annotation-core/src/index.ts)、[来源注册与固定来源接入](../../dsh-annotation-core/src/host/source-registry.ts)、[Obsidian 来源适配](../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts)、[ThoughtDAG 接入](../../../../repositories/thoughtdag/dsh/lib/client.js)。
 
@@ -55,11 +55,11 @@ BridgeHealthPanel 展示整体连接、引用接收、引用删除和贴纸同�
 
 Sticker 的 LinkedNotes 当前自己完成：解析维护身份 → 读取关联对象 → 调用 Bridge 准备来源 → Core.addReference → Bridge 确认；失败时再调用 Core.discardPendingOperation。Reference Adapter 的选文领取是另一条入口，也调用 Core 添加与取消接口。
 
-这不是 Sticker 重写了 Core 的引用状态机，Core 仍拥有补偿和持久状态；但两条 Obsidian 来源接入流程分属两个插件。建议将“把一个 Obsidian 来源加入当前引用”的编排收敛到 Bridge 内的引用适配模块，对 UI 暴露简单入口。笔记关联面板可由 Bridge 提供，或原位置只保留调用入口。
+这不是 Sticker 重写了 Core 的引用状态机，Core 仍拥有补偿和持久状态；但两条 Obsidian 来源接入流程分属两个插件。统一 Bridge 应暴露共用引用交接能力，由 Sticker 自己适配；来源领取、回链确认、定位与解除等公共交接集中维护。笔记关联的面板、业务规则和对象仍由 Sticker 拥有。
 
 依据：[Sticker 关联笔记引用](../../dsh-session-sticker-board/src/client/linked-notes.tsx)、[Reference 选文领取](../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts)、[Companion 来源准备与确认](../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/linked-reference.ts)。
 
-将笔记关联从 Sticker 移入 Bridge 会调整 [现有职责决定](project/records/decision/selection-ownership-20260918.md) 的一部分，因此这里只提出建议。用户确认后再更新决定与迁移计划，不能借本次评估直接移走功能。
+此前曾建议把笔记关联面板或业务迁入 Bridge，用户明确选择保留在普通贴纸，本建议已撤回。继续遵守 [现有职责决定](project/records/decision/selection-ownership-20260918.md)，通过共用通道解决公共接入分散的问题。
 
 ### 通用桥传输与具体业务能力绑得较紧
 
@@ -74,13 +74,13 @@ Lifecycle 的 createBridgeHttpClient 在握手时统一要求引用刷新、回�
 | Annotation Core | 通用引用状态、提交、取消、删除、渲染和来源扩展接口。保持独立。 |
 | DSH Obsidian Bridge（名称待定） | 接收现有 Lifecycle 与 Reference Adapter 的职责，统一连接、绑定、路由、动作分发、状态 UI、Obsidian 来源适配与可选维护接入。 |
 | Obsidian Bridge | 保留现有 Companion，在 Obsidian 进程中负责 Vault 绑定、Viewer、笔记来源与操作执行；内部拆模块即可。 |
-| Sticker Board | 普通贴纸和其业务交互；桥连接和通用笔记接入通过 Bridge 调用。 |
+| Sticker Board | 普通贴纸、笔记关联及其业务交互；自行适配 Bridge 的共用双向引用通道。 |
 | ThoughtDAG、Sidechat | 保留各自业务职责，通过 Core 使用引用能力。 |
 | Session Maintenance | 保持独立，提供维护、有效范围、数据归属与公开扩展页；Bridge 作为可选消费者。 |
 | Bridge Protocol | 两侧共享协议库，独立于运行插件的安装数量；可以同仓维护，保持可复用出口。 |
 | Suite | 可继续作为选装组合／安装预设，不增加自己的运行状态和数据归属。 |
 
-建议 DSH Bridge 内部至少分开运行连接、Obsidian 引用适配、笔记关联、维护接入和未来操作工具。内部模块只向自己需要的能力接入：无 Core 时基础连接和未来笔记操作可运行，无 Maintenance 时基础桥能力可运行，无 Sticker 时桥状态与笔记入口仍可用。
+DSH Bridge 内部分开运行连接、Obsidian 引用适配、通用管理与可选维护接入。笔记关联业务留在 Sticker。无 Sticker 时基础桥和通用管理仍可运行；无 Core 时基础连接不因此失效，引用能力按 Core 可用性接入；无 Maintenance 时基础桥能力可运行。未来操作工具后置，不为第一阶段预建完整框架。
 
 从维护收益看，优先合并 Lifecycle 与 Reference Adapter 的运行包装，并移入通用桥 UI 和接入编排。Core 与 Bridge 不同职责且存在其他消费者；普通贴纸也有不使用 Obsidian 的价值，继续独立更合适。Obsidian 与 DSH 是不同宿主进程，不能仅靠合并安装包消除两端适配。
 
@@ -97,15 +97,16 @@ Lifecycle 的 createBridgeHttpClient 在握手时统一要求引用刷新、回�
 
 笔记操作应尽量由 DSH Host 发起，不依赖内嵌 Viewer 恰好打开在某个会话；需要 Obsidian UI 的操作仍要求目标宿主与相应能力处于可用状态。具体插件注册和启停采用哪种受支持的宿主接口，留到该功能实施时核验。
 
-首阶段可把操作执行器写成 Obsidian Bridge 的可选内部模块，DSH 工具写成 DSH Bridge 的内部模块。以后某类操作需要独立安装、独立发布，或有多个不同实现时，再通过已预留的能力注册接口做独立插件。不能为新操作再建立第二套配对、端口发现和路由。
+未来操作通道展开时，可以把执行器放在 Obsidian Bridge 的可选内部模块，把 DSH 工具放在 DSH Bridge 的内部模块；本轮不决定具体打包方式。某类操作确实需要独立安装或发布时再考虑拆分，复用已经完成的配对、发现和路由。用户确认纯笔记操作不必经过 Core 引用流程或 Maintenance。
 
-## 若采纳建议，后续实施应保留什么
+## 后续实施计划应保留什么
 
 - 先确定运行能力归属，再合并包装；保留公开接口兼容过渡，避免旧套件同时加载新旧 Bridge。
 - 继续只有一个 Core 状态所有者；统一引用接入不重建 referenceId、Vault 身份和历史定位。
-- 以 Vault、运行代次和 surface 角色核验路由，保留 Host 后台删除、Viewer 定向领取和动态端口续接。
+- 第一阶段保留已有运行代次与 surface 隔离、Host 后台删除、Viewer 定向领取和动态端口续接；完整 Vault 绑定与路由放在第二阶段。
 - 公共桥管理页由 Bridge 自己运行，向 Maintenance 的信息页仅作可选贡献。
-- 把基础握手与业务能力分开；测试无 Core、无 Sticker、无 Maintenance 的相应基础能力，以及两个 Vault 并行。
-- 保持普通贴纸与会话贴纸的既有区分。笔记关联接入是否迁入 Bridge 是待确认变化，不伪装成已经实施。
+- 把基础握手与业务能力分开；重构回归当前能力，两个 Vault 并行等新增场景在第二阶段验收。
+- 保持普通贴纸与会话贴纸的既有区分。笔记关联明确保留在 Sticker，由贴纸自己适配共用引用通道。
+- 当前 Maintenance 接入在第一阶段继续工作；第三阶段才补新的扩展信息页及绑定 Adapter，不能把新接入后置解释成暂时删除已有接入。
 
-上述均为本轮建议。当前已经确认的产品需求以 [完整需求稿](2026-09-18-dsh-obsidian-confirmed-requirements.md) 为准；本次没有改动产品代码、插件名称、包依赖、加载顺序或部署。
+已确认要求以 [完整需求稿](2026-09-18-dsh-obsidian-confirmed-requirements.md) 与最新分期决定为准。先落实实施计划，再等待用户明确下令开工；本次只修正文档，没有改动产品代码、插件名称、包依赖、加载顺序或部署。

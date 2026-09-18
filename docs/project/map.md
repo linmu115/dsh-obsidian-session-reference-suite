@@ -4,7 +4,7 @@
 
 已确认、待实现的绑定与扩展设计：[[REQ-vault-instance-binding]]、[[IF-vault-binding]]、[[INT-suite-extension-pages]]；动态端口自动连接作为必保留能力，文档验证见 [[VER-vault-binding-design]]。
 
-完整需求阅读入口：[[REQ-integration-complete]]。当前 Core、桥接层与未来操作通道的源码评估见 [[EXP-bridge-consolidation]]；其中合并插件、迁移笔记关联的建议尚未确认，现有职责决定继续有效。本轮文档检查见 [[VER-requirements-consolidation]]。
+完整需求阅读入口：[[REQ-integration-complete]]。最新 [[DEC-bridge-refactor-sequence]] 明确先整合桥、贴纸保留笔记关联、再做绑定路由和新的维护 Adapter；当前尚未开工。源码评估 [[EXP-bridge-consolidation]] 已撤回迁移笔记关联业务的建议，原职责决定继续有效。文档检查见 [[VER-requirements-consolidation]]。
 
 ## 目标：让笔记与真实会话相互引用
 

@@ -8,12 +8,12 @@ modules: [Bridge Lifecycle, Obsidian Companion, Reference Adapter, Bridge Protoc
 outcome: 已整理确认需求和待实现设计，产品实现与部署未开始
 summary: 从维护面板中的绑定讨论收敛为 Bridge 独立配对、可选维护页、共享实例范围及动态端口自动续接。
 applicability: 本机 Obsidian Vault 与 DSH 实例；首版不扩展到跨机器或未来操作插件的具体业务。
-coverage_note: 当前 Codex 任务公开来源第 9–409 行，包含初始需求、确认选择、前次整理和本次完整文档及架构提问；92 个公开事件且工具均配对。保留此前 9–259 行索引，当前源码评估和文档检查通过对应文档单独说明。
+coverage_note: 当前 Codex 任务公开来源第 9–626 行，包含本轮归属修正、分期要求与两项明确选择；143 个公开事件，56 组工具调用与返回配对。此前范围索引保留；当前仅更新文档，未开始施工。
 history:
-  path: history/20260918-vault-binding-complete-requirements
-  sha256: bb9906b563fd63d91a996ce00869196166f348400f8c5de3e2971188b46d45d0
-  capture_sha256: c698def16030cf7b4a0ad026c5493d12fd4e33d96d7025af784c804cd24b8bf1
-related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-operation-channel, VER-vault-binding-design, REQ-integration-complete, EXP-bridge-consolidation, VER-requirements-consolidation]
+  path: history/20260918-bridge-refactor-confirmation
+  sha256: 4be28f40681d58f7be0e077bf95091a8b061b62212370ff5f96436a2e515a342
+  capture_sha256: af6ee6a8c324cf0eb0b8612c7a7d03ee599c2fc05d5c3b01d2b1567049590ddd
+related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-operation-channel, VER-vault-binding-design, REQ-integration-complete, EXP-bridge-consolidation, VER-requirements-consolidation, DEC-bridge-refactor-sequence]
 ---
 
 # Vault 单实例绑定、公开扩展页与动态端口的需求收敛
@@ -51,3 +51,17 @@ related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-oper
 核查当前源码确认 Core 拥有通用引用状态与提交；Reference 与 Sticker 已共享 Lifecycle 的 transport，但各自消费动作队列，通用状态 UI 和一部分笔记引用编排仍在 Sticker。[[EXP-bridge-consolidation]] 据此提出统一 DSH Bridge 的建议，分开已核实事实与尚未确认的职责迁移。未来操作通道建议由两侧 Bridge 的内部模块协作，不将这个建议写成已确认安装结构。
 
 本次扩展为新范围索引并保留原索引；完整稿及评估的文档检查见 [[VER-requirements-consolidation]]。没有修改运行插件或部署。
+
+## 桥公共能力收敛与实施顺序确认
+
+用户明确笔记关联是普通贴纸业务，应继续保留；Bridge 暴露共用双向引用通道，由普通贴纸适配。用户同时确认纯笔记操作不必经过 Core 引用流程或 Maintenance。此前迁移笔记关联功能的建议撤回。
+
+[查看依据：职责修正、分期及等待开工要求](history-event:EVT-7001997878bc8d33bea6)
+
+顺序确定为先整合 DSH Bridge 和普通贴纸的已有接入，再在两侧 Bridge 实现 Vault 绑定与路由，之后新增 Maintenance 的业务 Adapter 和扩展信息页，未来专门操作通道最后再展开。新追问确认第一阶段只统一已有引用、回链、定位和解除能力，保留扩展位置。
+
+[查看依据：第一阶段只整合现有能力](history-event:EVT-adbd0f0aa425de5f0771)
+
+现有 Maintenance 贴纸、引用和会话定位接入必须在重构阶段保持可用，新 Adapter 后置不等于移除旧能力。先落实实施计划，只有用户明确下令后才开始产品代码施工；本次只修订文档与地图。
+
+[查看依据：保留现有维护接入](history-event:EVT-fd7a27be9c986eb9d8e3)

@@ -334,7 +334,7 @@
       "heading": "已确认需求",
       "status": "current",
       "progress": "planned",
-      "summary": "汇总绑定、动态端口、独立安装、业务页、实例同步范围和未来操作通道的确认要求；工程方案另列。"
+      "summary": "完整确认稿包含绑定与独立运行，并新增贴纸业务归属、桥共用引用通道和先重构后开发的顺序。"
     },
     {
       "id": "EXP-bridge-consolidation",
@@ -342,8 +342,8 @@
       "title": "Core、桥接插件收敛与直连通道的源码评估",
       "source_id": "bridge-composition-review",
       "heading": "Core 引用归属、桥接插件收敛与未来操作通道评估",
-      "status": "proposed",
-      "summary": "建议合并 DSH 桥维护和 Obsidian 接入的运行包装；当前只是讨论，Core 与维护系统保持独立。",
+      "status": "current",
+      "summary": "保留源码核查，按用户反馈收敛桥公共通道；笔记关联保留贴纸，先重构后绑定与新维护接入，尚未开工。",
       "relations": [
         {
           "relation": "derived_from",
@@ -378,7 +378,8 @@
           "MOD-companion-viewer",
           "IF-vault-binding",
           "IF-obsidian-operation-channel",
-          "EXP-bridge-consolidation"
+          "EXP-bridge-consolidation",
+          "DEC-bridge-refactor-sequence"
         ],
         "comp-vault": [
           "MOD-companion-vault",
@@ -427,7 +428,8 @@
           "OBJ-identities",
           "REQ-vault-instance-binding",
           "IF-vault-binding",
-          "EXP-bridge-consolidation"
+          "EXP-bridge-consolidation",
+          "DEC-bridge-refactor-sequence"
         ],
         "life-mount": [
           "IF-lifecycle",
@@ -448,7 +450,8 @@
           "IF-companion-knowledge",
           "INT-sticker-core",
           "REQ-vault-instance-binding",
-          "EXP-bridge-consolidation"
+          "EXP-bridge-consolidation",
+          "DEC-bridge-refactor-sequence"
         ],
         "comp-knowledge": [
           "IF-companion-knowledge",
@@ -460,7 +463,8 @@
           "REQ-suite-boundary",
           "VER-vault-binding-design",
           "EXP-bridge-consolidation",
-          "REQ-integration-complete"
+          "REQ-integration-complete",
+          "DEC-bridge-refactor-sequence"
         ],
         "core-ui": [
           "MOD-core-ui",
@@ -484,7 +488,8 @@
           "INT-maintenance-directory",
           "INT-sticker-maintenance",
           "INT-companion-maintenance",
-          "INT-suite-extension-pages"
+          "INT-suite-extension-pages",
+          "DEC-bridge-refactor-sequence"
         ],
         "ext-thoughtdag": [
           "EXT-thoughtdag"
