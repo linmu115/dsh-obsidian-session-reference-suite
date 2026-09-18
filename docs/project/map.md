@@ -1,10 +1,12 @@
 # DSH–Obsidian 引用与贴纸组合
 
+当前产品形态见 [[DEC-single-bridge-product]]：用户只管理一个 DSH Bridge 桥插件；Suite 是私有开发/文档/组合验收工作区，Protocol 是内部依赖，旧 Adapter 退役。新包与真实安装进度见 [[VER-single-bridge-delivery]]。
+
 当前职责修订见 [[DEC-selection-ownership-20260918|划选与会话贴纸归属]]；旧版入口说明以此修订为准。
 
 绑定与扩展需求：[[REQ-vault-instance-binding]]、[[IF-vault-binding]]、[[INT-suite-extension-pages]]；双侧实现保留动态端口自动连接，当前源码与合成验收见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。旧 [[VER-vault-binding-design]] 保留设计阶段证据。
 
-完整需求阅读入口：[[REQ-integration-complete]]。[[DEC-bridge-refactor-sequence]] 明确先整合桥、贴纸保留笔记关联、再做绑定路由和新的维护 Adapter；已按该顺序完成本地实现与分组验收。源码评估 [[EXP-bridge-consolidation]] 已撤回迁移笔记关联业务的建议，原职责决定继续有效。文档检查见 [[VER-requirements-consolidation]]。
+完整需求阅读入口：[[REQ-integration-complete]]。[[DEC-bridge-refactor-sequence]] 明确先整合桥、贴纸保留笔记关联、再做绑定路由和新的维护 Adapter；此前已按该顺序完成内部能力实现与分组验收；用户随后纠正单桥安装形态，新包单独验证。源码评估 [[EXP-bridge-consolidation]] 已撤回迁移笔记关联业务的建议，原职责决定继续有效。文档检查见 [[VER-requirements-consolidation]]。
 
 ## 目标：让笔记与真实会话相互引用
 
@@ -26,25 +28,25 @@ Vault 拥有笔记正文，Maintenance 拥有会话和已迁入结构，Core 拥
 
 ## 模块、提供方合同与接入者
 
-- [Suite 入口](records/modules/suite/overview.md)：七成员兼容清单，三个 DSH 运行子插件的单一装配组。
+- [Suite 工作区](records/modules/suite/overview.md)：私有开发、文档和组合验收，无运行插件或父组。
 - [Annotation Core](records/modules/annotation-core/overview.md)：通用引用 UI、引用状态与提交、上下文注入、Host/Client 来源扩展、轻量目录。
-- [Bridge Protocol](records/modules/bridge-protocol/overview.md)：两侧共享的控制/数据类型与校验；Annotation 2 单独归 Core。
-- [Bridge Lifecycle](records/modules/bridge-lifecycle/overview.md)：身份租约、实际 Viewer 地址、就绪挂载与重试。
+- [Bridge Protocol](records/modules/bridge-protocol/overview.md)：两侧内部共享的控制/数据/绑定/发现类型与校验；Annotation 2 单独归 Core。
+- [DSH Obsidian Bridge](records/modules/bridge-lifecycle/overview.md)：单一桥产品；实例/Vault 绑定、路由、来源、传输、定位、共享交接和桥管理。
 - [Bridge 内部引用接入](records/modules/reference-adapter/overview.md)：原 Adapter 已并入 Bridge；Client 领取与 Host 来源/删除仍分工。
-- [Sticker Board](records/modules/sticker-board/overview.md)：普通贴纸与真实会话/来源符号、关联笔记气泡。
+- [Sticker Board](records/modules/sticker-board/overview.md)：普通贴纸与笔记关联业务，使用 Core、Bridge 与 Better Sidebar；会话贴纸归 ThoughtDAG。
 - [Obsidian Companion](records/modules/obsidian-companion/overview.md)：Viewer/Bridge 与 Vault 身份/标记/回执分别维护。
 
-当前候选部署组合为 Suite、Core、Bridge、Sticker、Protocol 与 Companion 六成员；原独立 Reference Adapter 留作 compatibility-test，不再是运行子插件。该组合已本地构建，尚未安装到真实实例。Companion 运行于 Obsidian，Protocol 是被两侧消费的库；源码依赖不表示两者存在产品父子关系。
+当前 DSH profile 独立启用 Core、`dsh-obsidian-bridge` 和 Sticker 各一次；普通 Sticker 同时需要 Better Sidebar，Maintenance 独立可选。Companion 运行于 Obsidian，Protocol 由消费者构建使用，用户不单独安装或启用；Suite 与旧 Adapter 无安装项。Cordis 服务支持可选、晚加载与卸载，缺少业务依赖显示等待/不可用，不抛启动错误。旧 Lifecycle 目录与服务 key 仅内部兼容。
 
 [Session Maintenance](records/dependencies/session-maintenance/overview.md) 与 [ThoughtDAG](records/dependencies/thoughtdag.md) 是独立项目，详情按稳定 ID 到各自地图。本组合保留自己的消费范围，不展开对方内部 Adapter。
 
-提供方只留一份技术合同入口，消费者页说明自己的接入和受影响功能。Core → Adapter/Sticker → Core 的链接与关系可双向追查。项目条目提供可展开的模块目录；正文链接可直达接口、接入说明及其章节。可从 [[IF-core-client#已知接入与返回|Core Client 的接入目录]] 进入已知消费者，再返回合同。
+提供方只留一份技术合同入口，消费者页说明自己的接入和受影响功能。Core、Bridge 内部引用接入与普通 Sticker 的合同可双向追查。Core + Bridge 支持跨 Obsidian 引用；Core + ThoughtDAG 支持跨会话引用和会话贴纸。Core 继续拥有引用运行状态、上下文组织注入、UI/样式/气泡和提交撤销恢复，Maintenance 的业务 Adapter 只保存恢复相应历史类型。项目条目提供可展开的模块目录；正文链接可直达接口、接入说明及其章节。可从 [[IF-core-client#已知接入与返回|Core Client 的接入目录]] 进入已知消费者，再返回合同。
 
 ## 图怎么读
 
-架构图按 Suite 入口、DSH 组件、共享 Protocol 和 Obsidian Companion 框住各自内部功能，外部 Maintenance / ThoughtDAG 仅保留接口端点。Core 的 UI、事务和上下文都可独立定位；共享协议的依赖线与 HTTP 调用分开标注。可选“Core 的完整职责”“两端共享协议”“外部依赖与消费”等聚焦视图。
+架构图区分 Suite 开发工作区、DSH 独立组件、内部 Protocol 库和 Obsidian Companion，框住各自内部功能，外部 Maintenance / ThoughtDAG 仅保留接口端点。Core 的 UI、事务和上下文都可独立定位；共享协议的依赖线与 HTTP 调用分开标注。可选“Core 的完整职责”“两端共享协议”“外部依赖与消费”等聚焦视图。
 
-流程图只展开有源码证据的笔记选段队列路径：Companion 保存 → Lifecycle 就绪 → Adapter 加入 Core / claim → 用户发送 → Core 持久确认 → 回链。离线、冲突和来源/预算错误留在各自负责方。直接笔记引用、删除与上下文释放另有记录，不混成一条假定时序。
+流程图只展开有源码证据的笔记选段队列路径：Companion 保存 → Bridge 连接就绪 → Bridge 内部引用接入加入 Core / claim → 用户发送 → Core 持久确认 → 回链。离线、冲突和来源/预算错误留在各自负责方。直接笔记引用、删除与上下文释放另有记录，不混成一条假定时序。
 
 ## 查需求与继续开发
 
@@ -61,8 +63,8 @@ Maintenance 与 ThoughtDAG 通过已登记项目 ID 轻量关联。Protocol 真�
 地图正文、记录与 diagrams 是维护源；views 是按需更新的阅读快照。继续开发时在原规格修订相关要求，按影响范围检查合同与消费者。实现与验证分开维护；旧接口入口 [[IF-reference]]、[[IF-vault]] 和 [[IF-composition]] 继续可查。
 
 
-当前六部署成员与旧兼容测试成员的范围及验收条件见 [[REQ-suite-boundary]]。旧外部档案保留身份与后继；[[VER-map-repair]]保留上次修复的历史验证，当前结果见 [[VER-suite-boundary]]。
+当前单桥产品、独立业务插件与内部依赖的范围及验收条件见 [[REQ-suite-boundary]]。旧外部档案保留身份与后继；[[VER-map-repair]]保留上次修复的历史验证，旧边界结果见 [[VER-suite-boundary]]，本轮见 [[VER-single-bridge-delivery]]。
 
 ## 2026-09-18 当前施工状态
 
-第一阶段整合已验收：[[IMP-bridge-consolidation]]。双侧绑定、多 Vault 路由与可选 Maintenance 贡献接入已完成本地实现、构建及合成验证，见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。Maintenance 分类工作区策略与公共信息页由其独立地图维护，保存影响下次启动，旧 run 按快照写入。真实应用安装与窗口验收尚未进行；未来通用直连笔记/样式管道仍后置。
+第一阶段整合已验收：[[IMP-bridge-consolidation]]。双侧绑定、多 Vault 路由与可选 Maintenance 贡献接入已完成本地实现、构建及合成验证，见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。Maintenance 分类工作区策略与公共信息页由其独立地图维护，保存影响下次启动，旧 run 按快照写入。上述合成证据适用原包组；新的单桥安装形态已确认，新包、依赖等待和真实安装验收按 [[VER-single-bridge-delivery]] 续填。未来通用直连笔记/样式业务仍后置，通道归同一 Bridge。

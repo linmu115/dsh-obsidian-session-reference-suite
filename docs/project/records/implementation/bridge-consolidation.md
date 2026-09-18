@@ -4,7 +4,7 @@ kind: implementation
 title: 第一阶段：整合 Bridge 与普通贴纸共用通道
 status: current
 progress: implemented
-summary: 引用接入并入 Bridge，普通贴纸保留业务并借用通道，Suite 收敛为三个运行子插件。
+summary: 引用接入并入 Bridge，普通贴纸保留业务；初阶段 Suite 父组后来被单桥产品与独立启用方案取代。
 relations:
 - relation: implements
   to:
@@ -20,7 +20,7 @@ relations:
 
 普通贴纸保留笔记关联界面、业务核验与数据，改为调用公共交接并注册普通定位处理者。通用桥健康入口已归 Bridge。已纳管的数据仍遵守 Maintenance 所有权限制；基础服务支持可选插件缺席和晚挂载。
 
-旧 Reference Adapter 包仅检查增强桥能力。Suite 加载 Core → Bridge → Sticker，旧 Adapter 只在开发组合中以 compatibility-test 身份验证，不进入新的运行安装或候选登记。提供方接口见 [[IF-lifecycle]]，原引用模块条目身份保留并指向 Bridge 内部实现。
+初阶段曾由 Suite 父组加载 Core → Bridge → Sticker，旧 Reference Adapter 只检查增强桥能力并参与兼容测试。该产品包装已由 [[DEC-single-bridge-product]] 取代：Suite 无运行父组，Core、单一 Bridge 与 Sticker 独立启用，旧 Adapter 退役。提供方接口见 [[IF-lifecycle]]，原引用模块条目身份保留并指向 Bridge 内部实现。
 
 首阶段源码提交：Bridge `3b16e92`，兼容 Adapter `e8b6285`，Sticker `bdc814c`。对应候选版本为 `0.4.0-rc2.1`、`0.3.5-rc2.1`、`0.7.4-rc2.1`，Core 使用 `0.3.12-rc2.19`。后续阶段会在此基础上继续修改，不将这些版本号视为发布或真实部署证据。
 

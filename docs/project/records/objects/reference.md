@@ -42,9 +42,11 @@ relations:
 
 接收方逻辑会话拥有引用；笔记路径、块定位和来源会话是来源，不作为另一个所有者。
 
+跨 Obsidian 来源由 Bridge 提供，跨会话来源关系由 ThoughtDAG 提供；普通 Sticker 消费 Core。可选 Maintenance 通过业务 Adapter 保存恢复历史类型，不能据此接管运行时引用或把所有引用搬到 Bridge。
+
 ## 引用生命周期
 
-Core 管理按会话组织的 ReferenceSet 和其中的 ReferenceItem。来源可以是 DSH 消息或 obsidian-note。选区和用户注解不改变原问题正文。setId / referenceId 用于对应历史详情、回链和精确删除。
+Core 拥有运行时引用状态、上下文组织注入、UI/样式/气泡和提交/撤销/恢复，管理按会话组织的 ReferenceSet 和其中的 ReferenceItem。来源可以是 DSH 消息或 obsidian-note。选区和用户注解不改变原问题正文。setId / referenceId 用于对应历史详情、回链和精确删除。
 
 | 状态或对象 | 含义 |
 | --- | --- |

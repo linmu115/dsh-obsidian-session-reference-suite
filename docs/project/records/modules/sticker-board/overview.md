@@ -18,7 +18,7 @@ relations:
 - relation: consumes
   to:
     record_id: IF-vault-binding
-  reason: 计划接入按 Vault 路由和绑定修订
+  reason: 消费按 Vault 路由和绑定修订
 - relation: consumes
   to:
     record_id: IF-lifecycle
@@ -71,18 +71,18 @@ relations:
 
 普通贴纸使用 Markdown、标签和红色符号，保留旧数据迁移及 Obsidian 双向链接。会话贴纸和蓝色来源标记自本轮起由 ThoughtDAG 提供。参见 [普通贴纸与镜像](ordinary.md)、[关联笔记与迁移边界](session-links.md)。
 
-Annotation Core 提供气泡与引用动作，详见 [接入 Core](integrations/core.md)。Maintenance 提供会话身份和已迁入结构，详见 [接入 Maintenance](integrations/maintenance.md)。Lifecycle 提供外部 Bridge 挂载和重试，契约为 [Lifecycle 接口](../bridge-lifecycle/interface.md)；Companion 提供笔记打开、关联及回链。
+Annotation Core 提供气泡与引用动作，详见 [接入 Core](integrations/core.md)。Maintenance 提供会话身份和已迁入结构，详见 [接入 Maintenance](integrations/maintenance.md)。统一 Bridge 提供外部挂载、路由和重试，契约为 [Lifecycle 接口](../bridge-lifecycle/interface.md)；Companion 提供笔记打开、关联及回链。
 
 ## 扩展与可替换部分
 
-Better Sidebar 是可选详情容器，缺失可用浮层。ThoughtDAG 是可选主干图 UI，当前 sources 未包含其仓库；只记录与 Suite 的接口依赖，不重建其内部模块。普通贴纸本地保存和已迁移结构写入的要求不同，Bridge 离线不等于 Maintenance 可写。
+普通 Sticker 当前业务组合需要 Core、Bridge 和 [[EXT-better-sidebar|Better Sidebar]]。缺少业务依赖显示不可用/等待，不报启动错误；服务晚加载后挂载，卸载后释放。此前侧栏可选浮层的方案已被 [[DEC-single-bridge-product]] 取代。ThoughtDAG 是可选主干图 UI，当前 sources 未包含其仓库；只记录与 Suite 的接口依赖，不重建其内部模块。普通贴纸本地保存和已迁移结构写入的要求不同，Bridge 离线不等于 Maintenance 可写。
 
 ## 共享协议接入
 
 [[INT-sticker-protocol]]说明本组件实际消费哪些控制、数据及 Annotation 2 出口，返回 [[MOD-protocol|提供方接入目录]]。
 
-## 绑定改造的影响（当前实现，组合验证进行中）
+## 绑定路由与当前组合边界
 
 [[REQ-vault-instance-binding]] 与 [[IF-vault-binding]] 要求普通贴纸和关联笔记按 Vault 路由，实例取消工作区同步时保留链接并显示原因。已托管对象不恢复旧副本写入。沿用 [[DEC-selection-ownership-20260918]]，本任务不把会话贴纸和跨会话入口从 ThoughtDAG 移回 Sticker。
 
-当前实现状态：[[IMP-vault-binding-routing]]；分阶段验证与未结项：[[VER-vault-binding-implementation]]。未来通用直连操作仍 deferred。
+当前实现状态：[[IMP-vault-binding-routing]]；分阶段验证与未结项：[[VER-vault-binding-implementation]]。新的三项业务依赖与单桥包验收见 [[VER-single-bridge-delivery]]；未来通用直连操作仍后置。

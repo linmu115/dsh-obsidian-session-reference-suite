@@ -80,7 +80,9 @@ relations:
 
 # Annotation Core：引用状态、提交、上下文与通用 UI
 
-Core 提供统一气泡、注解、历史详情及目标会话里的读取工具。Sidechat、Sticker 和 ThoughtDAG 是入口或展示消费者；Core 本身没有独立侧栏或画布。
+Core 自己拥有运行时引用状态、上下文组织与注入、引用 UI/样式/气泡，以及提交、撤销和恢复；提供统一注解、历史详情及目标会话里的读取工具。Sidechat、Sticker 和 ThoughtDAG 是入口或展示消费者；Core 本身没有独立侧栏或画布。
+
+Core + Bridge 直接支持跨 Obsidian 引用，Core + ThoughtDAG 直接支持跨会话引用和会话贴纸。Bridge 管笔记来源/传输/定位/绑定，ThoughtDAG 管会话来源关系，普通 Sticker 调用 Core。可选 Maintenance 经业务 Adapter 保存恢复历史类型，不接管 Core 运行时引用，见 [[DEC-single-bridge-product]]。
 
 ## 内部维护边界
 
@@ -96,8 +98,8 @@ Core 提供统一气泡、注解、历史详情及目标会话里的读取工具
 
 | 接入者 | 使用能力 | 状态与回到接入说明 |
 | --- | --- | --- |
-| Reference Adapter | obsidian-note 来源注册、添加/补偿、后台删除 | 当前源码核实；[接入 Core](../reference-adapter/integrations/core.md) |
-| Sticker Board | 跨会话引用、来源引用动作与关联笔记气泡 | 当前源码与 README 核实；[接入 Core](../sticker-board/integrations/core.md) |
+| Bridge 内部引用接入 | obsidian-note 来源注册、添加/补偿、后台删除 | 当前源码核实；[接入 Core](../reference-adapter/integrations/core.md) |
+| 普通 Sticker Board | 普通贴纸引用动作与关联笔记气泡，不拥有会话贴纸 | 当前源码与 README 核实；[接入 Core](../sticker-board/integrations/core.md) |
 | Maintenance | 有界引用目录与持久变更通知 | 文档及公开类型核实；[[INT-maintenance-directory|镜像接入]] |
 | ThoughtDAG | 创建固定引用、准备合法入向引用、解除关系与打开已有注释 | 独立地图核对了当前调用；[[EXT-thoughtdag|ThoughtDAG 接入入口]] |
 | Sidechat | DSH 来源添加、跨会话选择、嵌入输入框/历史、回答回链与添加保护 | 0.4.7-rc2.12 源码核实；[[EXT-sidechat|独立地图与接入入口]] |

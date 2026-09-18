@@ -30,7 +30,7 @@ relations:
 
 # Bridge Protocol：两端共享类型与校验
 
-Protocol 是七成员之一，以依赖库随消费者构建。它没有 UI，不启动 HTTP 服务，也不创建 Companion；Companion 是运行在 Obsidian 的并列组件。DSH 侧 Lifecycle 与 Obsidian 侧 Bridge 服务共同消费控制协议，贴纸与导航组件消费数据协议。
+Protocol 是内部开发库，以依赖随消费者构建，用户不单独安装或启用。它没有 UI，不启动 HTTP 服务，也不创建 Companion；Companion 是独立运行在 Obsidian 的插件。DSH 侧统一 Bridge 与 Obsidian 侧 Bridge 服务共同消费控制协议，贴纸与导航组件消费数据协议。
 
 ## 两个维护边界
 

@@ -1,5 +1,7 @@
 # 图谱引用生命周期包组
 
+> 历史适用范围：本文保留当时的设计、包名、测试和安装事实。Suite 父组/旧桥包的交付形态已被 2026-09-18 用户确认的[单一 Bridge 产品方案](changes/2026-09-18-single-bridge-product.md)取代；当前安装项与验收不从本文旧版本推定。
+
 Suite 发布 `0.3.4-rc2.15`，成员清单及兼容范围同步到 Annotation Core `0.3.12-rc2.9`、桥接生命周期包 `0.3.3-rc2.13`、引用适配器 `0.3.4-rc2.13`、会话贴纸 `0.7.3-rc2.15`。协议包和 Obsidian Companion 的版本保持不变。
 
 继续使用 Suite 作为单一父包，成员顺序为 Core、Lifecycle、Reference Adapter、Sticker。没有增加重复根成员，也没有更改真实 Vault 配置。

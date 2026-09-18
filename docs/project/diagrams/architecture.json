@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "整合后的桥：职责、共享协议与外部协作",
+    "title": "单一 Bridge：独立业务插件、双侧绑定与引用责任",
     "locale": "zh-CN",
     "quality_profile": "standard",
     "animation": "none",
@@ -38,16 +38,22 @@
       },
       {
         "id": "external",
-        "label": "外部依赖与消费",
+        "label": "安装与外部业务组合",
         "focus": [
-          "core-context",
-          "core-directory",
-          "sticker-session",
-          "comp-knowledge",
-          "ext-maintenance",
-          "ext-thoughtdag"
+          "suite-assembly",
+          "life-identity",
+          "life-mount",
+          "ref-client",
+          "core-client",
+          "core-ui",
+          "sticker-ordinary",
+          "sticker-linked",
+          "comp-bridge",
+          "ext-thoughtdag",
+          "ext-better-sidebar",
+          "ext-maintenance"
         ],
-        "note": "Maintenance 和 ThoughtDAG 只有外部接口端点；内部设计转到各自地图。"
+        "note": "Bridge 是唯一桥安装项；Core/Sticker 独立，普通 Sticker 需要 Core+Bridge+Better Sidebar，Maintenance 可选。"
       },
       {
         "id": "shared-protocol",
@@ -63,7 +69,7 @@
           "core-schema",
           "ref-host"
         ],
-        "note": "Protocol 与 Companion 是并列成员；Annotation 2 来源模型归 Core。"
+        "note": "Protocol 是两侧内部依赖，不是用户安装项；Companion 独立运行在 Obsidian，Annotation 2 来源模型归 Core。"
       },
       {
         "id": "core-capabilities",
@@ -170,7 +176,7 @@
       "id": "core-submit",
       "type": "backend",
       "label": "输入与持久提交",
-      "sublabel": "草稿 / 版本 / 确认回执",
+      "sublabel": "运行状态 / 提交 / 撤销 / 恢复",
       "pos": [
         825.0,
         245.0
@@ -268,7 +274,7 @@
       "id": "sticker-session",
       "type": "frontend",
       "label": "普通贴纸定位与标记",
-      "sublabel": "工作区选择 / 蓝色引用",
+      "sublabel": "普通贴纸定位 / 关系管理",
       "pos": [
         450.0,
         784.0
@@ -309,8 +315,8 @@
     {
       "id": "suite-assembly",
       "type": "backend",
-      "label": "Suite 组合入口",
-      "sublabel": "三运行子插件 / 六部署成员",
+      "label": "Suite 开发工作区",
+      "sublabel": "文档 / 组合验收，不安装",
       "pos": [
         75,
         700
@@ -324,7 +330,7 @@
       "id": "core-ui",
       "type": "frontend",
       "label": "通用引用 UI",
-      "sublabel": "气泡 / 注解 / 历史 / 输入绑定",
+      "sublabel": "引用样式 / 气泡 / 历史 / 输入",
       "pos": [
         1125,
         378
@@ -379,8 +385,8 @@
     {
       "id": "ext-maintenance",
       "type": "external",
-      "label": "外部 Session Maintenance",
-      "sublabel": "固定来源 / 生效 / 业务结构",
+      "label": "可选 Session Maintenance",
+      "sublabel": "分类范围 / 历史 Adapter / 信息页",
       "pos": [
         950,
         1000
@@ -393,8 +399,8 @@
     {
       "id": "ext-thoughtdag",
       "type": "external",
-      "label": "外部 ThoughtDAG",
-      "sublabel": "图交互；消费 Core 引用",
+      "label": "独立 ThoughtDAG",
+      "sublabel": "会话来源 / 跨会话引用 / 会话贴纸",
       "pos": [
         1300,
         1150
@@ -415,6 +421,20 @@
       ],
       "size": [
         200,
+        60
+      ]
+    },
+    {
+      "id": "ext-better-sidebar",
+      "type": "external",
+      "label": "独立 Better Sidebar",
+      "sublabel": "普通贴纸界面承载依赖",
+      "pos": [
+        450,
+        1130
+      ],
+      "size": [
+        230,
         60
       ]
     }
@@ -447,7 +467,7 @@
     },
     {
       "kind": "region",
-      "label": "DSH 侧 · 整合 Bridge",
+      "label": "DSH 侧 · 单一 dsh-obsidian-bridge",
       "wraps": [
         "ref-client",
         "ref-host",
@@ -468,7 +488,7 @@
     },
     {
       "kind": "region",
-      "label": "组合入口 · Session Reference Suite",
+      "label": "开发工作区 · 无运行父组",
       "wraps": [
         "suite-assembly"
       ],
@@ -476,7 +496,7 @@
     },
     {
       "kind": "region",
-      "label": "两侧共享 · Bridge Protocol",
+      "label": "内部依赖 · Bridge Protocol",
       "wraps": [
         "protocol-control",
         "protocol-data",
@@ -674,7 +694,7 @@
       "id": "sticker-core",
       "from": "sticker-session",
       "to": "core-client",
-      "label": "会话引用 / 解除",
+      "label": "普通贴纸引用 / 解除",
       "fromSide": "top",
       "toSide": "left",
       "via": [
@@ -776,9 +796,9 @@
     },
     {
       "id": "session-objects",
-      "from": "sticker-session",
+      "from": "ext-thoughtdag",
       "to": "ext-maintenance",
-      "label": "会话贴纸"
+      "label": "可选历史类型保存 / 恢复"
     },
     {
       "id": "companion-objects",
@@ -1002,7 +1022,7 @@
       "id": "thoughtdag-core",
       "from": "ext-thoughtdag",
       "to": "core-client",
-      "label": "消费引用 API；详见外部图",
+      "label": "跨会话引用 / 会话贴纸",
       "fromSide": "right",
       "toSide": "top",
       "via": [
@@ -1028,13 +1048,13 @@
       "id": "suite-core",
       "from": "suite-assembly",
       "to": "core-submit",
-      "label": "配置共享 Core"
+      "label": "组合源码验证"
     },
     {
       "id": "suite-lifecycle",
       "from": "suite-assembly",
       "to": "life-mount",
-      "label": "装配连接子插件"
+      "label": "开发 / 构件核验"
     },
     {
       "id": "discover-host",
@@ -1072,7 +1092,29 @@
       "id": "scope-consumer",
       "from": "life-mount",
       "to": "ext-maintenance",
-      "label": "可选有效范围 / 公共页贡献"
+      "label": "可选分类范围 / 公共页贡献"
+    },
+    {
+      "id": "sticker-sidebar",
+      "from": "sticker-ordinary",
+      "to": "ext-better-sidebar",
+      "label": "业务界面依赖",
+      "fromSide": "left",
+      "toSide": "left",
+      "via": [
+        [
+          400,
+          677.6
+        ],
+        [
+          400,
+          1160
+        ]
+      ],
+      "labelAt": [
+        398,
+        1030
+      ]
     }
   ],
   "cards": [
@@ -1080,27 +1122,27 @@
       "dot": "slate",
       "title": "组合与部署",
       "items": [
-        "当前运行组合 = Suite 入口 + 三个 DSH 子插件 + 共享协议 + Obsidian Companion；旧 Adapter 只作兼容入口测试。",
-        "Protocol 的类型依赖不构成 Companion 的产品父子关系。",
-        "外部 Maintenance / ThoughtDAG 只保留当前组合相关端点。"
+        "用户安装：Core、单一 Bridge、普通 Sticker；普通贴纸同时需要 Better Sidebar。Companion 安装在 Obsidian，Maintenance 独立可选。",
+        "Suite 仅私有开发/文档/验收；旧 Adapter 退役；Protocol 是内部依赖，不单独安装或启用。",
+        "Core → Bridge → Sticker 表示职责依赖；各插件独立启用一次，以 Cordis 服务支持晚加载。"
       ]
     },
     {
       "dot": "slate",
       "title": "接口与数据归属",
       "items": [
-        "Core 管引用状态、提交、通用 UI 及上下文注入。",
-        "Lifecycle 3 / Sticker 1 由 Protocol 定义；Annotation 2 由 Core 定义。",
-        "连线标明实际消费范围；接口依赖不自动等于执行顺序。"
+        "Core 管运行引用状态、上下文组织注入、引用样式/UI/气泡及提交撤销恢复。",
+        "Core + Bridge 实现跨 Obsidian 引用；Core + ThoughtDAG 实现跨会话引用与会话贴纸。",
+        "普通贴纸业务留 Sticker；Maintenance Adapter 保存恢复历史类型，不接管 Core 运行时引用。"
       ]
     },
     {
       "dot": "cyan",
       "title": "当前交付边界",
       "items": [
-        "第一阶段整合已验收；双侧绑定已实现，Bridge/Sticker 最终组合验证仍进行。",
-        "Maintenance 保存下次启动范围；当前 run 按快照完成写入。",
-        "通用直连笔记、样式和模板操作 deferred。"
+        "内部桥整合、双侧绑定和维护接入已有前阶段合成证据；新单桥包与真实安装另行验收。",
+        "Maintenance 的分类范围保存后下次启动生效，当前 run 按快照完成写入。缺少业务依赖显示等待/不可用。",
+        "未来专用通道归同一 Bridge；笔记、样式和模板等业务实现仍后置。"
       ]
     }
   ]

@@ -3,7 +3,7 @@ id: IMP-delivery
 kind: implementation
 title: 笔记选段投递：实际顺序与恢复
 status: current
-summary: 自动队列流程按 Companion、Lifecycle、Adapter、Core 分责；直接关联引用另走专门入口。
+summary: 自动队列流程按 Companion、Bridge 内部连接/引用模块、Core 分责；直接关联引用另走专门入口。
 progress: implemented
 gap: 静态核对与来源合成测试覆盖；本次未执行双应用投递。
 sources:
@@ -43,7 +43,7 @@ relations:
 # 笔记选段投递：实际顺序与恢复
 
 1. Companion 保存用户选段 capture 与本侧定位责任，等待配置的内嵌页。
-2. Lifecycle 确认可用 Bridge 与当前实例，挂载 Client 外部连接。
+2. DSH Bridge 确认可用 Companion 与当前实例，挂载 Client 外部连接。
 3. Adapter 将相同操作和引用身份持久加入目标 Core；随后向 Companion claim。
 4. 用户检查气泡与原草稿并发送。Core 校验目标、引用版本、来源及请求预算。
 5. 执行器接受并持久确认后 Core 标记 sent；Host 来源 Adapter 执行回链写回。

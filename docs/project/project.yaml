@@ -141,7 +141,7 @@
       "source_id": "source-1",
       "heading": "安装与配置",
       "status": "current",
-      "summary": "单一父包、匹配 profile/实例、Companion 与 Maintenance 扩展声明。"
+      "summary": "单一 Bridge 产品；Core/Bridge/Sticker 独立启用，普通贴纸依赖 Better Sidebar，Suite 不安装。"
     },
     {
       "id": "IMP-recovery",
@@ -326,7 +326,7 @@
       "source_id": "vault-binding-design-report",
       "heading": "验证结果",
       "status": "current",
-      "summary": "仅检查地图、公开来源、链接与差异；产品验收待实施。"
+      "summary": "历史设计阶段文档检查；后续实现见 VER-vault-binding-implementation，单桥产品见 VER-single-bridge-delivery。"
     },
     {
       "id": "REQ-integration-complete",
@@ -336,7 +336,7 @@
       "heading": "已确认需求",
       "status": "current",
       "progress": "in_progress",
-      "summary": "第一阶段整合已验收；双侧绑定、多 Vault 消费和 Maintenance 策略/信息页已实现，最终跨仓验收进行中。"
+      "summary": "桥能力及绑定/范围已做上一轮合成验证；用户确认单桥产品和独立业务组合，新包与安装另行验收。"
     },
     {
       "id": "EXP-bridge-consolidation",
@@ -438,7 +438,8 @@
         "life-mount": [
           "IF-lifecycle",
           "MOD-lifecycle",
-          "IF-vault-binding"
+          "IF-vault-binding",
+          "DEC-single-bridge-product"
         ],
         "sticker-ordinary": [
           "MOD-sticker-ordinary",
@@ -468,7 +469,9 @@
           "VER-vault-binding-design",
           "EXP-bridge-consolidation",
           "REQ-integration-complete",
-          "DEC-bridge-refactor-sequence"
+          "DEC-bridge-refactor-sequence",
+          "DEC-single-bridge-product",
+          "VER-single-bridge-delivery"
         ],
         "core-ui": [
           "MOD-core-ui",
@@ -501,6 +504,10 @@
         "protocol-discovery": [
           "IMP-vault-binding-routing",
           "IF-vault-binding"
+        ],
+        "ext-better-sidebar": [
+          "EXT-better-sidebar",
+          "MOD-sticker"
         ]
       }
     },

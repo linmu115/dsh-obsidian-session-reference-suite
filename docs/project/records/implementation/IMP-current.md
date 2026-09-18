@@ -33,7 +33,7 @@ relations:
 
 
 
-本图覆盖当前六个部署成员及旧 Adapter 兼容入口，引用接入已归入 Bridge 内部，不额外给每个成员创建一张地图。模块目录先解释内部职责，再链接各仓库权威原文；接口关系通过 Maintenance 与 ThoughtDAG 的稳定项目 ID 按需定位。
+本图覆盖独立 Core、单一 Bridge、普通 Sticker、Obsidian Companion 及内部 Protocol；Suite 是开发工作区，旧 Adapter 只保留历史定位。引用接入已归入 Bridge 内部，不额外给每个组件创建一张地图。模块目录先解释内部职责，再链接各仓库权威原文；接口关系通过 Maintenance 与 ThoughtDAG 的稳定项目 ID 按需定位。
 
 
 

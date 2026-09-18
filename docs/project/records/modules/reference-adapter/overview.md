@@ -65,7 +65,7 @@ relations:
 
 # Bridge 引用接入：把 Obsidian 来源接入 Core
 
-此模块现位于 DSH Bridge 内部，把 obsidian-note 接入共享 Core，并使用桥统一的连接与动作分派。原 dsh-obsidian-reference-adapter 包只检查增强桥能力，不再注册来源或轮询；新 Suite 不加载该兼容入口。边界分成 [Host 来源准备与删除](host.md)、[Client 定向领取与导航](client.md)：前者可以在浏览器关闭后继续完成删除，后者负责当前页面和目标会话。
+此模块现位于 DSH Bridge 内部，把 obsidian-note 接入共享 Core，并使用桥统一的连接与动作分派。原 dsh-obsidian-reference-adapter 包在初阶段曾保留兼容能力检查，当前已退役，不列候选安装项；本条目 ID 保留并描述 Bridge 内部引用模块。边界分成 [Host 来源准备与删除](host.md)、[Client 定向领取与导航](client.md)：前者可以在浏览器关闭后继续完成删除，后者负责当前页面和目标会话。
 
 配置统一来自 Bridge，profile 与 Core 及已接入的 Maintenance 一致。接入的唯一合同分别是 [Core Host](../annotation-core/interfaces/host.md)、[Core Client](../annotation-core/interfaces/client.md)、[Lifecycle](../bridge-lifecycle/interface.md) 与 [Companion 引用交接](../obsidian-companion/interfaces/references.md)。
 
@@ -79,4 +79,4 @@ relations:
 
 依据 [[REQ-vault-instance-binding]]，保留单一 obsidian-note 来源类型，在 Bridge 内按 vaultId 选择连接，覆盖 Host 来源准备、Client 领取与导航、回链和删除；同名笔记不能串入另一 Vault。消费 [[IF-vault-binding]] 以及 [[INT-suite-extension-pages]] 所链接的 Maintenance 有效范围；缺少 Maintenance 时基础原生引用继续运行。
 
-上述接入已归入 Bridge 0.4.0-rc2.2，旧 Adapter 0.3.5-rc2.2 仅保留能力守卫与兼容元数据。实现与合成验收见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。
+上述接入此前已归入桥内部；当前由 `dsh-obsidian-bridge@0.4.1-rc2.1` 统一提供。旧 Adapter 0.3.5-rc2.2 的守卫与兼容元数据只作历史证据。实现与合成验收见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。

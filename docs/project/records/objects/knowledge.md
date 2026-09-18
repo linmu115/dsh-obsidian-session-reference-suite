@@ -31,9 +31,9 @@ relations:
 
 # 贴纸、知识链接与主干图的归属
 
-普通贴纸保存 Markdown、标签和选区；会话贴纸保存通往真实会话的入口。笔记链接把 Vault note/block 与逻辑会话联系起来。X → Y 的引用和从 X 创建的会话贴纸 Y 属于 Y，X 作为来源。图以 ownerSessionId 为所属会话，披露记录附属该图。
+普通 Sticker 保存 Markdown、标签和选区，并使用 Core、Bridge 与 Better Sidebar 的业务能力；会话贴纸由 Core + ThoughtDAG 提供，保存通往真实会话的入口。笔记链接把 Vault note/block 与逻辑会话联系起来。X → Y 的引用和从 X 创建的会话贴纸 Y 属于 Y，X 作为来源。图以 ownerSessionId 为所属会话，披露记录附属该图。
 
-Maintenance 用 instanceId、profileId、namespace、objectId 隔离扩展对象；写入方和对象版本控制更新。references 数组描述关联，不能取第一项作为 owner。没有明确归属的旧对象进入“待绑定／待核验”；工作区归属跟随真实逻辑会话，不重写扩展正文。
+可选 Maintenance 经对应业务 Adapter 保存恢复历史消息和业务类型，不接管 Core 运行时引用。Maintenance 用 instanceId、profileId、namespace、objectId 隔离扩展对象；写入方和对象版本控制更新。references 数组描述关联，不能取第一项作为 owner。没有明确归属的旧对象进入“待绑定／待核验”；工作区归属跟随真实逻辑会话，不重写扩展正文。
 
 Owned 标记是另一类小型维护对象：Companion 记录自己写入的 dsh-note 块归属和后续清理责任。它不是会话数据，也不因单条关系删除就可以立即清理。
 

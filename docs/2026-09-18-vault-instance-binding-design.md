@@ -1,8 +1,8 @@
 # Vault 与 DSH 实例绑定、动态连接及可选维护接入
 
-日期：2026-09-18。状态：需求已确认，设计待实现；本次只整理文档与地图，没有修改、构建或部署产品。
+日期：2026-09-18。需求与合同设计入口。下文保留设计初期的源码观察；双侧绑定与路由已完成前阶段实现及合成验收，见 [阶段记录](changes/2026-09-18-binding-scope-delivery.md)。当前单桥安装形态及新包/部署验收见 [更正记录](changes/2026-09-18-single-bridge-product.md)。
 
-跨项目的完整产品要求统一阅读 [需求完整稿](2026-09-18-dsh-obsidian-confirmed-requirements.md)。本页需求表保留原编号作为摘要；Bridge 接口草案仍在本页维护。后续插件合并讨论见 [职责评估](2026-09-18-dsh-obsidian-composition-review.md)，尚未改变当前职责。
+跨项目的完整产品要求统一阅读 [需求完整稿](2026-09-18-dsh-obsidian-confirmed-requirements.md)。本页需求表保留原编号作为摘要；Bridge 接口草案仍在本页维护。原插件合并讨论保留在[职责评估](2026-09-18-dsh-obsidian-composition-review.md)；当前按完整稿 R12/R13 执行单桥产品与独立业务组合。
 
 本文拥有 Bridge 绑定、发现、路由及操作管道预留的设计。Maintenance 的公开扩展注册与实例有效范围合同由 [Maintenance 设计](../../dsh-session-maintenance/docs/superpowers/specs/2026-09-18-extension-pages-and-instance-scope.md) 维护；双方通过接口协作，不复制对方内部实现。
 
@@ -24,7 +24,7 @@
 
 来源：当前 Codex 任务 01a0b244-91e1-7c60-9d88-0b67eed0f0e9。初始要求、八项批注、两个范围选择以及动态端口问题分别可从 [本次设计历程](project/records/history/vault-instance-binding.md) 展开；用户来源与工程建议分开保存。
 
-## 当前实现与缺口
+## 设计起点的实现与缺口（历史观察）
 
 - Lifecycle 从宿主 webServer 的实际监听端口生成 Web origin，再通过 connection.authenticatedUrl 取得 Viewer URL，随控制租约传给 Companion。Companion 优先使用活动控制连接提供的 Viewer URL。这条动态地址链路已存在，不能退化为把某次端口写死在绑定里。
 - 当前 Lifecycle、Reference Adapter 和 Sticker 的连接入口仍以单个 bridgeOrigin 为中心。多 Vault 需要让连接、来源读取、导航、回链与删除都按 vaultId 路由。
@@ -41,12 +41,12 @@
 
 ## 绑定与连接合同草案
 
-本节规定职责和行为，不宣称已有这些新方法或确定了最终字段名。共享传输形状由 Bridge Protocol 唯一维护，数据语义由各提供方维护。
+本节保留设计职责和行为；最终字段以 Protocol 与各提供方源码为准，当前实现见 [[IMP-vault-binding-routing]]。共享传输形状由 Bridge Protocol 唯一维护，数据语义由各提供方维护。
 
 ### 身份与写入责任
 
 - Companion 持久保存 vaultId、有效目标实例、选定运行 Profile 和绑定修订；解除绑定保留必要的修订或撤销证据。配对、解绑和改绑都在同一写入口处理。
-- DSH Lifecycle 维护当前实例身份及按 vaultId 索引的已确认连接。实例与 Profile 身份必须同 Maintenance 对齐，Profile 不提供绕过“一个 Vault 一个实例”的第二个绑定入口。
+- DSH Bridge 维护当前实例身份及按 vaultId 索引的已确认连接。实例与 Profile 身份必须同 Maintenance 对齐，Profile 不提供绕过“一个 Vault 一个实例”的第二个绑定入口。
 - Maintenance 通过业务接入保存维护登记、确认修订和同步回执。登记是已确认绑定的投影，不能离线独自改成另一份有效绑定。
 - Web 端口、Bridge 端口、bootId、租约和 Viewer surfaceId 各有运行语义，不替代实例或 Vault 身份。移动路径、重命名和重启不自动生成新身份。
 - 同 vaultId 同时由两个独立副本发布、同实例 ID 出现无法区分的运行归属时，显示身份冲突并暂停有歧义的写入；不按名称或“最后上线”猜测。跨机器发现不属于首版范围。

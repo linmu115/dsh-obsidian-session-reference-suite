@@ -3,33 +3,30 @@ id: REQ-suite-boundary
 kind: requirement
 title: 组合范围：整合 Bridge 与独立外部项目
 status: current
-summary: 按用户确认名单维护一张组合地图；Core 包括引用状态、提交、上下文注入和通用 UI。
+summary: 桥接层为单一 Bridge 安装项；Suite 是开发验收工作区，Core、普通 Sticker、可选 Maintenance 保持独立。
 sources:
 - path: ../../suite.members.json
-  role: source-reviewed-2026-09-16
-- path: ../../cordis.patch.yml
   role: source-reviewed-2026-09-16
 relations: []
 ---
 
 # 组合范围：整合 Bridge 与独立外部项目
 
-## 当前要求与来源
+## 当前要求与替代关系
 
-2026-09-16 用户确认：组合入口为 dsh-obsidian-session-reference-suite，成员包含 dsh-annotation-core、dsh-obsidian-bridge-protocol、obsidian-deepharness-bridge、dsh-obsidian-bridge-lifecycle、dsh-session-sticker-board、dsh-obsidian-reference-adapter。此名单与现有 suite.members.json 七项一致；本页保存当前任务的用户决定，成员文件提供独立核对依据。
+2026-09-18 用户在交付核查中明确：Lifecycle、原 Reference Adapter、Suite 桥接包装必须收敛成一个 `dsh-obsidian-bridge` 用户安装项。实例/Vault 绑定、路由与未来专用通道均归这个桥；Core 与普通 Sticker 继续独立，Maintenance 可选。具体确认见 [[DEC-single-bridge-product]]。
 
-Core 的范围包括引用状态与提交、上下文注入、通用引用 UI，不能缩成双链。Companion 缩进位置按真实依赖解释：它消费共享 Protocol，并非由 Protocol 创建、加载或拥有的子插件。
+Suite 仓库是私有开发、文档和组合验收工作区，不再作为运行插件或父组。Protocol 是内部开发库，不需用户单独安装或启用；旧 Adapter 退役，不列当前候选安装成员。Obsidian Companion 仍独立运行在 Obsidian，不是 Protocol 或 DSH 插件的子组件。
 
-2026-09-18 用户授权桥整合后，原 Reference Adapter 实现迁入 Bridge，独立包只作为旧入口兼容测试成员。当前 DSH 运行装配是 Core → Bridge → Sticker 三个子插件，连同 Suite、Protocol 与 Companion 共六个部署成员。清单中的第七项标为 compatibility-test，不要求安装。原条目身份与来源继续保留，内部引用接入挂到 Bridge 下。
+2026-09-16 的七成员组合名单，以及 2026-09-18 初阶段的六部署成员/三子插件父组方案，均保留历史定位，但其安装边界被本轮确认取代。原项目、记录和来源身份保持；引用内部模块仍沿用旧 Adapter 条目 ID。
 
-Session Maintenance 与 ThoughtDAG 各自已有地图，不属于本组合。组合保留自己使用哪些外部能力以及提供接口的已知外部消费者；对方内部平台/业务 Adapter 档案归回独立地图。已有需求编号、身份与后继继续可查。
+Core 继续拥有通用引用 UI、状态、提交、补偿和上下文，普通 Sticker 保留业务与数据。Maintenance 与 ThoughtDAG 有各自地图；组合仅保留消费和提供关系，不复制其内部设计。
 
 ## 验收条件
 
-- 入口区分六个当前部署成员与旧 Adapter 兼容测试成员；图框将引用接入容纳在 Bridge 内，部署顺序与实际补丁一致。
-- 两侧分别消费共享协议；Annotation 2 合同归 Core，Lifecycle 3 / Sticker 1 归 Protocol。
-- Core 的通用 UI、提交和注入职责均有记录与源码；其他成员保留内部职责、具体接入与返回合同的链接。
-- 外部项目用稳定项目/记录 ID 引用，不画成本组合子模块；旧重复记录只保留身份、原因与后继。
-- 保留 A/B、语义护照条目按钮、更新记录入口；本次没有新增 kind:update 的要求。
-
-实现观察见 [[IMP-cohort]]；地图核对结果见 [[VER-suite-boundary]]。本要求不代表对真实部署作出验收。
+- 当前入口与图明确一个桥产品、三个独立 DSH 插件、可选 Maintenance 和 Obsidian Companion；Suite 无运行父组。
+- Profile 中 Core、Bridge、Sticker 各加载一次；缺席、晚加载、卸载不会重复注册或持续失败。
+- Protocol 随构件提供；旧 Lifecycle 名称仅物理历史路径/内部兼容 key，旧 Adapter 不列候选安装项。
+- 两侧共用绑定与路由；Annotation 2 归 Core，Lifecycle 3 / Sticker 1 / binding 1 归内部 Protocol。
+- 保存所有项目和记录 ID、旧设计和报告时点；新包及真实部署以 [[VER-single-bridge-delivery]] 另行验收。
+- A/B 阅读、图节点语义护照与条目跳转保留；不新增 kind:update。

@@ -1,24 +1,24 @@
-# Obsidian Session Reference Suite
+# DSH–Obsidian 桥开发与组合验收工作区
 
-本组合已整合桥并增加 Vault 绑定、定向路由与可选维护页，阶段与验收条件见[实施计划](docs/2026-09-18-bridge-implementation-plan.md)。版本为本地开发候选，不代表已经发布或安装。
+当前对用户提供一个 DSH 桥插件 **`dsh-obsidian-bridge@0.4.1-rc2.1`**，统一连接、实例/Vault 绑定、路由、共享引用交接与桥管理。Core、普通 Sticker 和可选 Maintenance 保持独立。用户确认的交付形态及本轮验收进度见[单桥更正与验收记录](docs/changes/2026-09-18-single-bridge-product.md)。
 
-当前版本 **0.4.0-rc2.2**，面向 **DSH 0.1.5-rc.2**。这是 DSH 与 Obsidian 引用系统的统一 Bundle：用一个父组加载三个有顺序的子插件，提供笔记引用、双向打开、会话关联、贴纸和断线恢复。
+本仓库面向 **DSH 0.1.5-rc.2**，只作为私有开发、文档与跨仓组合验收工作区，不再提供可安装的 Suite plugin wrapper。实例 profile 独立加载 Core、Bridge、Sticker 各一次，使用 Cordis 服务发现支持可选能力及晚加载。旧 Lifecycle 目录名和内部服务 key 仅用于源码历史与兼容，不是额外安装项。
 
 ## 整套组件
 
 以下是 [suite.members.json](suite.members.json) 记录的当前源码组合，不能据此推定这些候选版已经发布到 npm 或 GitHub Releases。
 
-| 组件 | 当前版本 | 职责 |
+| 用户安装项 | 当前候选版本 | 职责 |
 | --- | --- | --- |
-| Annotation Core | 0.3.12-rc2.19 | 引用气泡、准备与提交、引用状态、按需上下文工具 |
-| DSH Bridge（保留 Lifecycle 包名） | 0.4.0-rc2.2 | 连接租约、统一动作分派、引用交接、来源核对、回链、双向删除与健康管理 |
-| Obsidian Reference Adapter（兼容测试成员） | 0.3.5-rc2.2 | 旧安装入口兼容；新 Suite 不加载，不另建轮询或来源注册 |
-| Session Sticker Board | 0.7.4-rc2.2 | 普通贴纸、笔记关联业务与界面；通过 Bridge 共用通道交接引用和定位 |
-| Bridge Protocol | 0.4.0-rc2.1 | 共享消息与数据协议 |
-| Obsidian DeepHarness Bridge | 0.7.0-rc2.1 | Vault 侧选区、笔记定位、内嵌会话、回链和同步记录 |
-| 本 Suite | 0.4.0-rc2.2 | 单一父组与组合验证 |
+| Annotation Core | 0.3.12-rc2.19 | 通用引用 UI、引用状态、提交与补偿、上下文 |
+| DSH Obsidian Bridge (`dsh-obsidian-bridge`) | 0.4.1-rc2.1 | 连接、实例/Vault 绑定、路由、共享交接、来源接入与桥管理 |
+| Session Sticker Board | 0.7.4-rc2.3 | 普通贴纸、笔记关联业务与界面，通过 Bridge 借用通道 |
+| Obsidian DeepHarness Bridge | 0.7.0-rc2.1 | 安装在 Obsidian；Vault 绑定唯一写入口、选区、定位、回链与 Viewer |
+| Session Maintenance（可选） | DSH plugin 0.2.26-rc2.29 / Engine 0.1.33-rc2.38 | 分类工作区同步策略、运行快照、托管真源与公开业务页 |
 
-DSH 中的加载顺序为 **Core → Bridge → Sticker**，卸载顺序相反。Protocol 作为依赖提供；Companion 安装在 Obsidian，不能作为 DSH 插件加载。新会话贴纸、知识链接和结构管理还要求已接通的 [Session Maintenance](https://github.com/linmu115/dsh-session-maintenance/blob/codex/rc2-session-context-graph/README.md) 及对应扩展能力。
+Bridge Protocol **0.4.0-rc2.1** 是两侧构建使用的内部开发库，用户不单独安装或启用。旧 Reference Adapter 已退役，只保留历史源码和证据，不列为候选安装成员。Suite 也不是运行插件。普通 Sticker 的完整业务组合需要 **Core、Bridge 和 Better Sidebar**；缺少所需能力显示不可用或等待。Core → Bridge → Sticker 表示通用引用、跨宿主交接与业务消费的职责关系，不再表示一个父组中的强制加载顺序；每个独立插件都处理服务缺席、晚加载与卸载。
+
+**Core + Bridge** 直接实现跨 Obsidian 引用；**Core + ThoughtDAG** 直接实现跨会话引用和会话贴纸。Core 自己拥有运行时引用状态、上下文组织与注入、引用 UI/样式/气泡及提交撤销恢复。Bridge 管 Obsidian 来源和跨宿主交接；可选 Maintenance 的业务 Adapter 保存恢复历史类型，不接管 Core 运行时引用。
 
 ## Vault 绑定与维护范围
 
@@ -54,25 +54,27 @@ Maintenance 是可选能力。接入后，“扩展数据”的 Obsidian 业务�
 
 同一个笔记位置可以被多个引用、回链、会话关联或尚未确认的选段共同使用。只有最后一个有效使用方解除后，Companion 才清理它自己创建并记录归属的 `dsh-note-*` 块标记。用户已有块 ID 不清理；定位不唯一或写入失败时保留清理记录等待重试。移除一个笔记中的“DSH 贴纸”回链只解除该处关系，不删除贴纸本体或其它笔记中的回链。
 
-在当前 Maintenance 集成流程中，**会话与新增贴纸、知识链接、图结构由 Maintenance 管理真源，Vault 继续管理笔记正文**。Companion 保存笔记身份、链接回执、待处理操作和标记归属；Core 管理当前引用事务。这些记录服务于定位和同步，不是第二套完整会话备份。旧伴生格式有独立迁移流程，不能通过删本地文件或重建标记强制完成迁移。
+在当前 Maintenance 集成流程中，**已托管会话、普通贴纸、知识链接与图结构由 Maintenance 通过对应业务 Adapter 维护，Vault 继续管理笔记正文**。Companion 保存笔记身份、链接回执、待处理操作和标记归属；Core 管理当前引用事务。这些记录服务于定位和同步，不是第二套完整会话备份。旧伴生格式有独立迁移流程，不能通过删本地文件或重建标记强制完成迁移。
 
 ## 安装与配置
 
-首次手动部署时，先准备同一验证组合的本地构件，并在目标 DSH profile 安装表中的五个 DSH 运行与依赖包（不包括兼容测试成员）。已有 Launcher/套件管理的实例沿用其安装与更新流程，不重复安装第二套。只把 Suite 作为这组功能的 Bundle 加载；不要再把 Core、Bridge、Sticker 各自重复挂载为根 Bundle。[cordis.patch.yml](cordis.patch.yml) 定义唯一父组和子节点。
+在目标 DSH profile 将 **Core、`dsh-obsidian-bridge`、Sticker 各启用一次**；普通贴纸业务同时启用 Better Sidebar，按需另启用 Maintenance。安装 Obsidian Companion 到目标 Vault。既有 Launcher/实例管理流程应更新对应安装项，不能同时保留旧 Suite 父组和新的独立项。迁移时移除 Suite wrapper、旧 Lifecycle 包与旧 Adapter 的运行登记，保留稳定实例身份、Profile 及已有业务数据。Protocol 随消费者构件提供，不添加启用项。
+
+这段说明定义目标安装结构；实际安装、重启及宿主探针结果由[本轮验收记录](docs/changes/2026-09-18-single-bridge-product.md)分别记录，不能用上一轮合成测试替代。
 
 | 配置位置 | 要求 |
 | --- | --- |
-| Lifecycle 子节点 `obsidian-bridge-lifecycle.config` | bridgeOrigin 是人工发现候选；dshInstanceId 使用已核验的稳定实例 ID，不能填 Launcher 显示名或端口；profileId 与目标实例一致。 |
-| Core / Bridge 子节点 | `profileId` 与当前实例及已接入的 Maintenance 一致；引用接入由 Bridge 内部提供。 |
-| Maintenance 插件 | 使用该实例已登记的 Engine 连接及 Launcher 启动绑定；为需要的扩展登记对应插件版本。只填 JSON 不能替代可信安装与启动绑定。 |
-| Obsidian 设置 | 显式选择本机实例并绑定／改绑／解绑；Bridge 端口冲突时可自动选择可用端口。当前 Viewer 地址由已核验的绑定实例提供，旧手填地址不自动建立绑定。 |
+| 独立 Bridge 插件 | `bridgeOrigin` 是人工发现候选；`dshInstanceId` 使用已核验的稳定身份，不能填显示名或端口；`profileId` 与目标实例一致。 |
+| Core / Bridge | 通过 Cordis 服务接入；每项只加载一次，不由 Suite 创建子组。 |
+| 可选 Maintenance | 沿用实例已登记的 Engine 连接、稳定身份及启动绑定；缺席是正常状态，已纳管数据不能恢复旧副本写入。 |
+| Obsidian 设置 | 显式选择实例并绑定／改绑／解绑；端口冲突可自动选择可用端口，Viewer 由匹配绑定的控制方提供。 |
 
-Lifecycle 配置内容示例：
+Bridge 配置内容示例：
 
 ```json
 {
   "bridgeOrigin": "http://127.0.0.1:18473",
-  "dshInstanceId": "<当前 Launcher 实例 ID>",
+  "dshInstanceId": "<该实例已核验的稳定 ID>",
   "profileId": "web"
 }
 ```
@@ -88,7 +90,7 @@ Lifecycle 配置内容示例：
   },
   {
     "namespace": "stickers",
-    "pluginVersion": "0.7.4-rc2.2",
+    "pluginVersion": "0.7.4-rc2.3",
     "writerId": "<沿用该实例 stickers 已登记的 writerId>"
   },
   {
@@ -109,7 +111,7 @@ Bridge 离线时，Core 与贴纸模块仍保留已保存的本地工作；外�
 
 ## 从源码构建与核对
 
-版本与成员清单一致。六个组合成员加旧 Adapter 兼容测试仓均参与开发验证；Protocol 可通过显式 `--protocol-root` 从独立共享仓链接。检查和组合记录使用该已验证的真实来源，无需复制协议仓。各仓库当前含本地 `file:` 开发构件，Companion 还依赖 Maintenance contracts；先准备这些依赖路径或在新的开发分支更新路径与锁文件，再安装各仓库依赖。公开 Git 源码不等于本机归档自动可用。
+开发组合以成员清单为准，包括三个独立 DSH 插件、Obsidian Companion 和内部 Protocol 库；Suite 自身负责跨仓验收，旧 Adapter 只保留历史记录，不参与当前候选安装。Protocol 可通过显式 `--protocol-root` 从独立共享仓链接。检查和组合记录使用该已验证的真实来源，无需复制协议仓。各仓库使用本地源码链接或开发构件，Companion 还依赖 Maintenance contracts；先准备这些依赖路径或在新的开发分支更新路径与锁文件，再安装各仓库依赖。公开 Git 源码不等于本机归档自动可用。
 
 成员依赖已安装后，在本 Suite 目录执行已有脚本：
 
@@ -140,7 +142,7 @@ node scripts/prepare-registry.mjs "D:/path/to/state/registry/plugins.yaml"
 
 协议版本保持 Annotation 2 / Sticker 1 / Lifecycle 3。组合测试覆盖真实 Core 存储、整合后的 Bridge 与合成 Obsidian HTTP 服务、目标领取、重连和删除；它们不能替代实际双应用交互、真实模型调用或 Vault 性能验收。
 
-参阅 [CHANGELOG](CHANGELOG.md)、[关联笔记与按需引用](docs/2026-09-14-linked-note-rail.md)、[当前图谱引用生命周期组合](docs/2026-09-15-graph-reference-lifecycle-cohort.md)及 [Companion 使用说明](https://github.com/linmu115/obsidian-deepharness-bridge/blob/codex/dsh-0-1-5-rc2/README.md)。
+参阅 [CHANGELOG](CHANGELOG.md)、[关联笔记与按需引用](docs/2026-09-14-linked-note-rail.md)、[历史图谱引用生命周期组合](docs/2026-09-15-graph-reference-lifecycle-cohort.md)及 [Companion 使用说明](https://github.com/linmu115/obsidian-deepharness-bridge/blob/codex/dsh-0-1-5-rc2/README.md)。
 
 本次配套更新支持 Maintenance 的轻量引用目录，详见[兼容变更说明](docs/changes/2026-09-15-maintenance-reference-directory.md)。
 

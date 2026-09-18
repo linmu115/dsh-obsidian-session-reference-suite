@@ -17,6 +17,8 @@ relations:
 ---
 # 七成员边界核对：范围、来源与图
 
+> 本记录保留原阶段的版本、结构和验证时点；当前单桥安装形态按 [[DEC-single-bridge-product]]，新包与部署结果按 [[VER-single-bridge-delivery]]，不把旧测试扩大为新版本已验收。
+
 日期：2026-09-16。仅维护本地图，保留 project_id dd46311f-d98d-49ff-ae13-fef0a8a6f9c3，不重新初始化、不改产品代码、不新增 kind:update。
 
 ## 已核对的源证据

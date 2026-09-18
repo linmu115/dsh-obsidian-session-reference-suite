@@ -91,3 +91,11 @@ related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-oper
 [查看依据：分类工作区语义](history-event:EVT-853cc1946e5b3ca9e0a7)
 
 实施采用持久绑定修订、动态发现与端口重连、每运行范围快照、投影筛选及事务内回写复核。公开业务页使用声明式栏目与有界动作回执，绑定写入仍交给 Companion。实际改动和后续验证的提交、测试数与限制见 implementation / verification 记录；本历程截点不代表后续工具工作已停止。
+
+## 本轮后续更正草稿（新来源索引待补）
+
+本节由本轮地图维护任务依据当前公开用户确认整理；既有 ledger 的覆盖范围和哈希保持不变，本节新消息未伪装成旧事件。用户指出内部桥合并加 Suite wrapper 不满足桥接层合一，明确一个 `dsh-obsidian-bridge` 安装项，Suite 退为私有开发验收工作区、Protocol 内部依赖、旧 Adapter 退役。
+
+用户同时明确普通 Sticker 使用 Core、Bridge 与 Better Sidebar；Core+Bridge 支持跨 Obsidian 引用，Core+ThoughtDAG 支持跨会话引用及会话贴纸。Core 自己管理运行引用、上下文、UI/样式/气泡和提交撤销恢复；Maintenance 经业务 Adapter 保存恢复历史类型。地图与当前说明按这些边界更正，旧阶段报告保留事实并标注安装方案被取代。
+
+当前决定见 [[DEC-single-bridge-product]]；新包和真实安装检查独立记录于 [[VER-single-bridge-delivery]]。原先计划直接导出旧形态地图的工作在用户纠正后暂停，待产品边界确认才恢复修图。新的公开来源 ledger 由主任务后续导入；本节不证明真实部署成功。

@@ -26,12 +26,12 @@ relations:
 
 # 外部依赖：Session Maintenance
 
-Session Maintenance 是独立项目，ID 为 0d05f813-7097-47d9-9e88-3d523bb537d6。它不属于七成员组合；会话真源、稳定身份和已迁入业务结构在该地图维护。
+Session Maintenance 是独立项目，ID 为 0d05f813-7097-47d9-9e88-3d523bb537d6。它是独立可选协作者；会话真源、稳定身份和已迁入业务结构在该地图维护。
 
 本组合具体消费方：[[MOD-core-context|Core 固定来源与原生上下文]] → IF-graph / IF-native-context；[[INT-sticker-maintenance|Sticker 会话与贴纸]]及[[INT-companion-maintenance|Companion 知识关联]] → IF-extension。反向消费是 [[INT-maintenance-directory|Maintenance 读取 Core 轻量目录]]。
 
 这里只保存边界和定位，不展开对方的两类 Adapter、Engine 或内部存储。历史 EXT-harness-adapters / EXT-business-adapters 身份及后继仍可检索。
 
-## 公开扩展页与有效范围（待实现）
+## 公开扩展页与有效范围（当前实现）
 
-新增接入由 [[INT-suite-extension-pages]] 维护，分别消费 Maintenance 的页面栏目注册与实例有效范围合同。有效绑定仍在 Bridge，Maintenance 保存登记／回执并承载集中 UI。两组插件分别安装仍应正常运行；本段为新需求，不将尚未补齐的降级路径写成已验收。
+新增接入由 [[INT-suite-extension-pages]] 维护，分别消费 Maintenance 的页面栏目注册与实例有效范围合同。有效绑定仍在 Bridge，Maintenance 保存登记／回执并承载集中 UI。两组插件分别安装和缺席/晚加载已有上一阶段合成覆盖，见 [[VER-vault-binding-implementation]]；新单桥产品另行验收。范围是 Maintenance 分类工作区，保存后下次启动生效，当前 run 按快照完成写入。通过各业务 Adapter 保存恢复对应历史类型，不接管 Core 运行时引用。

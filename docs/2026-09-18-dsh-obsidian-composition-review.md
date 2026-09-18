@@ -1,5 +1,7 @@
 # Core 引用归属、桥接插件收敛与未来操作通道评估
 
+> 历史适用范围：本文保留当时的设计、包名、测试和安装事实。Suite 父组/旧桥包的交付形态已被 2026-09-18 用户确认的[单一 Bridge 产品方案](changes/2026-09-18-single-bridge-product.md)取代；当前安装项与验收不从本文旧版本推定。
+
 日期：2026-09-18。状态：保留本次源码核查；桥整合方向、贴纸归属与分期已进一步确认，具体实施计划待落实，尚未开工。最新决定见 [桥整合与分期](project/records/decision/bridge-refactor-sequence-20260918.md)。
 
 ## 判断
@@ -25,7 +27,7 @@ Core 已经承载引用状态和提交的主干，但“所有与引用有关的
 | Obsidian 选文、定位、刷新、标记和笔记回链写入 | Companion 执行 Vault 操作，Reference Adapter 接入 Core 的来源合同；保持在来源适配层合理。 |
 | 普通贴纸、笔记关联入口和会话贴纸 | 普通贴纸及其笔记关联保留在 Sticker，会话贴纸在 ThoughtDAG；收敛的是桥公共通道与接入，见下文。 |
 
-源码依据：[Core Host 接口](../../dsh-annotation-core/src/public/host-api.ts)、[Core Client 接口](../../dsh-annotation-core/src/public/client-api.ts)、[Core 启动与 outbox](../../dsh-annotation-core/src/index.ts)、[来源注册与固定来源接入](../../dsh-annotation-core/src/host/source-registry.ts)、[Obsidian 来源适配](../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts)、[ThoughtDAG 接入](../../../../repositories/thoughtdag/dsh/lib/client.js)。
+源码依据：[Core Host 接口](../../dsh-annotation-core/src/public/host-api.ts)、[Core Client 接口](../../dsh-annotation-core/src/public/client-api.ts)、[Core 启动与 outbox](../../dsh-annotation-core/src/index.ts)、[来源注册与固定来源接入](../../dsh-annotation-core/src/host/source-registry.ts)、Obsidian 来源适配（历史路径 `../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts`；[当前桥内后继](../../dsh-obsidian-bridge-lifecycle/src/reference/host/obsidian-source-adapter.ts)）、[ThoughtDAG 接入](../../../../repositories/thoughtdag/dsh/lib/client.js)。
 
 “引用核心唯一”应约束数据状态、提交结果、删除与补偿的所有权，而不是要求所有按钮、来源解析和宿主操作都写进 Core。否则 Core 会被迫依赖 Vault、桥连接和各业务界面，失去独立复用能力。
 
@@ -41,7 +43,7 @@ Reference Adapter 与 Sticker 的 http-client 文件均转导出 Lifecycle 的 t
 
 建议统一 Bridge 运行注册和动作分发，按 Vault、运行代次及 surface／controller 角色管理消费。这里不等于把 Host 与所有浏览器强行变成一个全局轮询器：后台删除必须在没有浏览器时可用，选文领取仍要限定目标 Viewer，多个 surface 之间也必须保持当前身份隔离。
 
-依据：[共享 transport](../../dsh-obsidian-bridge-lifecycle/src/transport.ts)、[Reference Host](../../dsh-obsidian-reference-adapter/src/index.ts)、[Reference Client](../../dsh-obsidian-reference-adapter/src/client/index.ts)、[Reference 轮询](../../dsh-obsidian-reference-adapter/src/bridge/reference-polling.ts)、[Sticker Client](../../dsh-session-sticker-board/src/client/index.tsx)、[Sticker 轮询](../../dsh-session-sticker-board/src/client/bridge-polling.ts)。
+依据：[共享 transport](../../dsh-obsidian-bridge-lifecycle/src/transport.ts)、[Reference Host](../../dsh-obsidian-reference-adapter/src/index.ts)、[Reference Client](../../dsh-obsidian-reference-adapter/src/client/index.ts)、Reference 轮询（历史路径 `../../dsh-obsidian-reference-adapter/src/bridge/reference-polling.ts`；[当前桥内后继](../../dsh-obsidian-bridge-lifecycle/src/reference/bridge/reference-polling.ts)）、[Sticker Client](../../dsh-session-sticker-board/src/client/index.tsx)、Sticker 轮询（历史路径 `../../dsh-session-sticker-board/src/client/bridge-polling.ts`；[当前桥内后继](../../dsh-obsidian-bridge-lifecycle/src/runtime.ts)）。
 
 ### 通用桥状态面板放在 Sticker 中
 
@@ -49,7 +51,7 @@ BridgeHealthPanel 展示整体连接、引用接收、引用删除和贴纸同�
 
 建议将通用状态、绑定与恢复 UI 的提供方迁入统一 Bridge。Sticker 只贡献自己的健康项；其侧栏可以继续放入口，但不再拥有整个桥诊断页面。
 
-依据：[状态面板](../../dsh-session-sticker-board/src/client/bridge-health-panel.tsx)、[侧栏注册](../../dsh-session-sticker-board/src/client/sticker-sidebar.tsx)。
+依据：状态面板（历史路径 `../../dsh-session-sticker-board/src/client/bridge-health-panel.tsx`；[当前桥内后继](../../dsh-obsidian-bridge-lifecycle/src/health-panel.tsx)）、[侧栏注册](../../dsh-session-sticker-board/src/client/sticker-sidebar.tsx)。
 
 ### 笔记关联引用同时跨越 Sticker 与 Reference Adapter
 
@@ -57,7 +59,7 @@ Sticker 的 LinkedNotes 当前自己完成：解析维护身份 → 读取关联
 
 这不是 Sticker 重写了 Core 的引用状态机，Core 仍拥有补偿和持久状态；但两条 Obsidian 来源接入流程分属两个插件。统一 Bridge 应暴露共用引用交接能力，由 Sticker 自己适配；来源领取、回链确认、定位与解除等公共交接集中维护。笔记关联的面板、业务规则和对象仍由 Sticker 拥有。
 
-依据：[Sticker 关联笔记引用](../../dsh-session-sticker-board/src/client/linked-notes.tsx)、[Reference 选文领取](../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts)、[Companion 来源准备与确认](../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/linked-reference.ts)。
+依据：[Sticker 关联笔记引用](../../dsh-session-sticker-board/src/client/linked-notes.tsx)、Reference 选文领取（历史路径 `../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts`；[当前桥内后继](../../dsh-obsidian-bridge-lifecycle/src/reference/client/annotation-consumer.ts)）、[Companion 来源准备与确认](../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/linked-reference.ts)。
 
 此前曾建议把笔记关联面板或业务迁入 Bridge，用户明确选择保留在普通贴纸，本建议已撤回。继续遵守 [现有职责决定](project/records/decision/selection-ownership-20260918.md)，通过共用通道解决公共接入分散的问题。
 
