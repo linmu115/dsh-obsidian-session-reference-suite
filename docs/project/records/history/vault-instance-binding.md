@@ -133,3 +133,11 @@ related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-oper
 [查看依据：备份完成，安装包继续核验](history-event:EVT-dc037f83d2e8e05462c6)
 
 本次沿用 HIST-vault-instance-binding 身份，创建新的不可变范围索引覆盖第 9–3209 行以保持旧引用可展开；旧索引原样保留。新增事实只从此前截点后的公开消息整理，没有导入隐藏推理，也没有伪造原始消息或补写图片内容。后续安装事实由执行主任务另行扩展来源与验收记录。
+
+## 后续安装、加载恢复与停止入口纠正
+
+既有事件索引截点之后，主任务完成单桥包组安装，installed.json 保存精确版本与哈希，旧四个安装项退役。随后用户报告客户端 Failed load；同一 revision 的服务端检查通过，但不能说明当时浏览器失败原因。首次命令 Restart 暴露直接 appExit 未走 Launcher beforeStop 的缺口，旧 run 以 recovered 完成恢复；包装脚本遂在写操作前禁用 Stop/Restart，保留 Status/Start。
+
+之后正式 Start 成功，新运行端口为 36928。主任务 BrowserUse 新启动及禁用缓存刷新均完整加载 bundle，Core/Bridge/Sticker 已启用运行；托管历史会话及普通贴纸/笔记链接面板完成基本只读检查。当前恢复不等于原加载故障根因已修复；Vault 仍未绑定，Companion .2 修复未部署，双向引用与完整停止链路没有通过验收。详见 [[VER-single-bridge-delivery]] 和 [真实验收及本机回执](../../../changes/2026-09-18-single-bridge-product.md)。
+
+本节只整理执行主任务的回报和真实 artifact，不将晚于截点的事实伪造为既有 history-event。原索引、事件与所有身份保持不变；本次未写用户会话标题/正文。

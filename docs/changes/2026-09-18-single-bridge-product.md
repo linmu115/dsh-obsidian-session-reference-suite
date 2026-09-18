@@ -1,6 +1,6 @@
 # 单一 DSH Bridge 产品更正与验收
 
-2026-09-18。用户在交付核查中指出：将实现收进桥、但继续安装 Suite wrapper 与旧桥包，不符合“桥接层合一”。本轮据此更正产品形态。本文记录当前要求和实际检查；真实部署栏由执行安装的主任务续填，不以先前测试代替。
+2026-09-18。用户在交付核查中指出：将实现收进桥、但继续安装 Suite wrapper 与旧桥包，不符合“桥接层合一”。本轮据此更正产品形态。当前副本已安装单桥包组，真实 Start 与新启动浏览器基本加载检查通过；此前客户端加载故障只能确认当前恢复，根因尚未确定。Vault 绑定和完整 Stop/Restart 仍有阻塞，不能将第一阶段整体标为全部通过。
 
 ## 当前交付形态
 
@@ -28,7 +28,7 @@
 
 [上一轮内部整合、绑定与范围交付](2026-09-18-binding-scope-delivery.md)记录旧包名和旧 Suite 父组的构建及合成结果，这些测试事实保留，但安装方案被本轮替代。历史七成员、六部署成员和 Core→Lifecycle→Adapter→Sticker 顺序只描述当时状态，不再是当前安装说明。
 
-## 本轮检查与真实部署（待续填）
+## 本轮检查与真实部署
 
 | 检查项 | 当前证据与边界 |
 | --- | --- |
@@ -39,8 +39,13 @@
 | 可选 Maintenance 发布出口与精确门禁 | 前次 public business-pages 出口修复已有 12 tests/Engine build；后续 `2e84ec3` 修正 Engine .38 / plugin .29 精确白名单，32 tests、typecheck/build 通过。两批结果不相加为唯一总数 |
 | 隔离 official install | 严格 peer 检查完成；暂存核验 state=verified、importsPassed=true、failures=[]，Core/Bridge/Sticker 为独立业务根，旧 Suite/Adapter/Lifecycle/Protocol 安装项缺席。仅为隔离安装证据 |
 | 当前副本备份与回退 | 备份回执时间 2026-09-18 06:11:46 UTC；Engine 已停，会话数据库及维护状态、profile metadata、完整 Companion 插件目录已备份。此回执不表示新版已安装 |
-| 当前副本实际安装 | 本记录截点仍待执行方填写安装路径、包哈希及切换结果，不宣称完成 |
-| 启动、真实窗口及两侧连接 | 待执行方记录宿主探针和实际交互；文档导出不构成窗口验收 |
+| 当前副本实际安装 | `installed.json`：2026-09-18 06:21:21.734 UTC 已切换 RC2 副本 `profiles/web`；Bridge 0.4.1-rc2.1、Sticker 0.7.4-rc2.3、SM plugin 0.2.26-rc2.29 / Engine 0.1.33-rc2.38、Companion 0.7.0-rc2.1。回执含包哈希；旧 Suite、Adapter、Lifecycle、Protocol 四个安装项退役缺席，其他插件保留，Companion data 未变 |
+| 真实 Start 与运行身份 | 执行主任务核验：origin `http://127.0.0.1:36928`，boot `85e3889c-b9f6-4624-a734-f5d4bbed4371`，run `run-68b9a983-155c-47d7-a94a-2c104b710b96` 为 running；SM ready，实际范围 all / revision 0。地址仅为本次证据，不能固定端口 |
+| 浏览器客户端与插件清单 | 主任务使用 BrowserUse 检查新启动及禁用缓存刷新：同一 revision `9c1aa9e06508` HTTP 200 + loadingFinished，传输计数 5,212,329 bytes；另两个 bundle 均 200 + finished，分别 372,610 / 6,726 bytes；没有 loadingFailed 或 runtime exception。设置插件列表只有一个 `dsh-obsidian-bridge` 且运行中；Core 和普通 Sticker 各显示已启用/运行中 |
+| 基本只读界面检查 | 打开一个已有托管会话，历史消息、40 轮导航与编辑器可加载；普通贴纸及笔记链接面板可以打开/关闭。未记录会话标题或正文，未发送消息、调用模型、编辑笔记或执行绑定；不等于引用双向业务、气泡样式和全部真实交互已验收 |
+| 原 Failed load 问题 | 当前加载恢复，原失败根因未确定；后端曾正确返回同一 revision，不能把重开页面成功写成已定位并修复根因。仍观察到未映射草稿的普通 Sticker warn，以及可选 performance SSE 404，两者未被证明是原加载失败原因 |
+| Stop / Restart | 当前拒绝执行，错误 `LAUNCHER_STOP_UNAVAILABLE`，无退出副作用。首次真实 Restart 的旧 run 最终 finalized / recovered：直接 appExit 未经 Launcher beforeStop，requestedStop=false，无法达到正常关闭合同；恢复检查已完成。正式外部停止入口接通前不能提供完整命令重启 |
+| Companion / Vault 真实绑定 | 已安装 Companion .1；.2 的源码修复已测试但未部署。当前 Vault binding revision 0、target=null，renderer fetch 失败导致绑定未完成，仍待处理。不得宣布两侧绑定或引用往返通过 |
 | 用户 Vault/会话及模型调用 | 本文档任务未执行写入或模型调用；任何后续真实操作按执行方记录 |
 
 本轮公开来源已增量整理并挂到 [既有开发历程](../project/records/history/vault-instance-binding.md)，使用新不可变范围索引 `history/20260918-single-bridge-product-correction`；覆盖第 9–3209 行、777 个公开事件，352 组调用/返回全部配对，旧 ledger 保留。来源截点为 2026-09-18 06:14:13 UTC，不覆盖后续安装。
@@ -55,4 +60,8 @@
 
 ## 安装准备的本地回执
 
-只读核对的 [备份完成回执](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/backup-complete.json) 与 [隔离安装核验](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/staged-install-verification.json)保存在本机交付归档。它们分别证明备份/隔离构件检查，不证明真实 profile 已切换或双窗口交互成功；真实部署项留给执行方续填。
+只读核对的 [备份完成回执](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/backup-complete.json) 与 [隔离安装核验](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/staged-install-verification.json)保存在本机交付归档。它们分别证明备份/隔离构件检查；后续 [实际安装回执](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/installed.json) 才证明真实 profile 切换，包含精确版本和包哈希。
+
+[客户端合并包只读检查](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/client-bundle-readonly-review.md)保留旧 55977 时点的服务端证据；[恢复检查](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/restart-recovery-review.md)保留首次重启未达到正常关闭的负结果。新 36928 启动与 BrowserUse 数字由执行主任务回报，来源晚于既有公开 ledger 截点，未伪造为旧事件，也未将网络传输计数混作服务端解压后字节数。
+
+执行主任务另已保存 [浏览器启动与恢复摘要](D:/AI/DeepSeekHarness-Plugin/artifacts/single-bridge-20260918/browser-startup-recovery.json)，用于回查新运行身份、禁用缓存加载与基本只读交互；不包含用户会话标题或正文。
