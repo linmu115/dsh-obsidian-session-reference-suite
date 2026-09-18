@@ -48,7 +48,7 @@
     },
     {
       "id": "companion",
-      "label": "Obsidian Companion"
+      "label": "Obsidian 侧 · Companion"
     },
     {
       "id": "adapter",
@@ -60,7 +60,7 @@
     },
     {
       "id": "host",
-      "label": "DSH 原生执行器"
+      "label": "外部宿主 · DSH 原生执行器"
     }
   ],
   "groups": [
@@ -432,7 +432,9 @@
       "items": [
         "此图只说明笔记选段的自动队列路径。",
         "关联笔记直接引用不经过 capture 自动领取队列。",
-        "删除、图接续和原生上下文释放分别在模块记录解释。"
+        "删除、图接续和原生上下文释放分别在模块记录解释。",
+        "泳道按实际执行方划分；Protocol 只供类型校验，不作为独立执行步骤。",
+        "DSH 原生执行器是外部宿主，Maintenance/ThoughtDAG 不列为 Suite 成员泳道。"
       ]
     },
     {

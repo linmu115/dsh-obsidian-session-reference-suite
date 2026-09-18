@@ -1,0 +1,25 @@
+{
+  "reason": "外部项目内部展开收缩；实际依赖转为外部端点",
+  "removed_nodes": [
+    "maint-harness",
+    "maint-domain",
+    "maint-business",
+    "maint-mirror",
+    "maint-store"
+  ],
+  "successor_node": "ext-maintenance",
+  "removed_internal_edges": [
+    "business-store",
+    "platform-evidence"
+  ],
+  "record_successors": {
+    "EXT-harness-adapters": {
+      "project_id": "0d05f813-7097-47d9-9e88-3d523bb537d6",
+      "record_id": "IF-harness-adapter"
+    },
+    "EXT-business-adapters": {
+      "project_id": "0d05f813-7097-47d9-9e88-3d523bb537d6",
+      "record_id": "IF-extension"
+    }
+  }
+}

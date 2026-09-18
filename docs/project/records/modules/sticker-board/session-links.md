@@ -1,15 +1,13 @@
 ---
 id: MOD-sticker-session
 kind: module
-title: Sticker / 真实会话、来源标记与关联气泡
+title: Sticker / 关联笔记与会话功能迁移
 status: current
-summary: 先工作区后会话；蓝色标记精确解除关系，关联笔记可导航或直接引用。
+summary: 关联笔记保留；会话贴纸和蓝色来源标记转交 ThoughtDAG。
 sources:
 - path: ../../../dsh-session-sticker-board/README.md
   role: current-workspace-source
 - path: ../../../dsh-session-sticker-board/src/client/knowledge-panel.tsx
-  role: current-workspace-source
-- path: ../../../dsh-session-sticker-board/src/client/source-markers.ts
   role: current-workspace-source
 - path: ../../../dsh-session-sticker-board/src/client/linked-notes.tsx
   role: current-workspace-source
@@ -37,12 +35,10 @@ relations:
   reason: 关联笔记明确动作
 ---
 
-# Sticker / 真实会话、来源标记与关联气泡
+# Sticker / 关联笔记与会话功能迁移
 
-会话贴纸先选工作区，再选择已有会话或创建独立会话；取消不创建。点击入口打开完整会话而不发送。来源选区仅接受已完成回复，长度 1–4000 字，绑定后保留固定版本与完成截止。
-
-蓝色符号的导航列表对同一目标去重，但删除列表保留每条独立引用。等待服务器精确撤销成功后再更新标记；失败保留可重试菜单，同处其它引用与普通贴纸不受影响。归档后关系撤销，恢复会话不复活旧引用。
+会话贴纸的创建、列表、删除恢复及蓝色来源标记已移至 ThoughtDAG，使用原有对象和引用数据。旧记录 ID 保留用于回查；本页现在描述留在 Sticker Board 的关联笔记能力。迁移决定见 [[DEC-selection-ownership-20260918]]。
 
 关联笔记气泡通过 conversation.input.dock 挂载。展示只读取链接元数据；点击“引用到本轮”才准备材料、核对当前会话并调用 Core。此路径直接绑定实例/会话/引用集，绕过自动领取队列。详见 [笔记直接引用合同](../obsidian-companion/interfaces/knowledge.md)。
 
-入口：[会话选择](../../../../../../dsh-session-sticker-board/src/client/knowledge-panel.tsx)、[来源标记](../../../../../../dsh-session-sticker-board/src/client/source-markers.ts)、[关联笔记](../../../../../../dsh-session-sticker-board/src/client/linked-notes.tsx)。
+入口：[普通贴纸与笔记链接](../../../../../../dsh-session-sticker-board/src/client/knowledge-panel.tsx)、[关联笔记](../../../../../../dsh-session-sticker-board/src/client/linked-notes.tsx)。

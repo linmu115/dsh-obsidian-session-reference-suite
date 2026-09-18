@@ -12,12 +12,9 @@ sources:
 relations:
 - relation: consumes
   to:
-    record_id: EXT-business-adapters
-  reason: 专门领域能力
-- relation: consumes
-  to:
-    record_id: EXT-harness-adapters
-  reason: 间接依赖稳定来源与原生持久证据
+    record_id: IF-native-context
+    project_id: 0d05f813-7097-47d9-9e88-3d523bb537d6
+  reason: 原生生效凭持久证据核验；平台格式是外部间接前置
 - relation: implements
   to:
     record_id: CUT05
@@ -32,7 +29,8 @@ relations:
   reason: 原生范围
 - relation: consumes
   to:
-    record_id: EXT-maintenance
+    record_id: IF-graph
+    project_id: 0d05f813-7097-47d9-9e88-3d523bb537d6
   reason: 固定来源和权威状态
 ---
 
@@ -44,4 +42,6 @@ relations:
 
 原生 DSH 工具管理当前会话的图、请求索引、窗口、来源状态、保留标记与材料。释放先 pending-next-step，再由下一次 pre-step 写入原生 replace 事件；Maintenance 核验持久证据后才 applied。当前新增释放不覆盖 Codex 托管引擎。
 
-看 [当前实现与限制](../../implementation/context.md) 了解能力停用时的阻断和预算；看 [平台 Adapter](../../dependencies/session-maintenance/harness-adapters.md) 了解宿主持久证据责任。
+看 [当前实现与限制](../../implementation/context.md) 了解能力停用时的阻断和预算；看 [[EXT-maintenance|平台 Adapter]] 了解宿主持久证据责任。
+
+外部提供方合同以 Maintenance 的 IF-graph（固定来源/图关系）与 IF-native-context（实际生效）为准，项目 ID 0d05f813-7097-47d9-9e88-3d523bb537d6。Core 调用领域能力，平台原生格式由外部项目处理，不能把 Core 注册成 Harness Adapter。

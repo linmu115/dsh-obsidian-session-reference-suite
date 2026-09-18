@@ -28,6 +28,6 @@ relations:
 
 这样，重新打开 Viewer、建立知识关联和目录重建不需要复制整篇笔记或整份会话。镜像只用于有界阅读，不能成为新的提交或撤销接口。扩展冲突保留双方内容，调用方不能把未经确认的编辑显示为已保存。
 
-迁移须冻结旧写入、导入并核对回执，再切换所有者；“真源已改为 Maintenance”不授权删除未迁移数据。详见 [外部扩展合同](../dependencies/session-maintenance/business-adapters.md) 和 [Companion 接入说明](../modules/obsidian-companion/integrations/maintenance.md)。
+迁移须冻结旧写入、导入并核对回执，再切换所有者；“真源已改为 Maintenance”不授权删除未迁移数据。详见 [[EXT-maintenance|外部扩展合同]] 和 [Companion 接入说明](../modules/obsidian-companion/integrations/maintenance.md)。
 
 这是来源中已明确的设计，不是本地图新提出的重构。

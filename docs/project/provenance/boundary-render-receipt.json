@@ -1,0 +1,558 @@
+{
+  "output": "D:\\AI\\DeepSeekHarness-Plugin\\worktrees\\session-context-graph-20260913\\dsh-obsidian-session-reference-suite\\docs\\project\\views\\index.html",
+  "fingerprint": "ffe2788aaed6470db2cee1b100d23296cdc1bf4a6a53bcd56cd11055113ba3d9",
+  "diagrams": {
+    "architecture": {
+      "file": "architecture.html",
+      "canonical_file": "architecture.native.html",
+      "source": "native-archify",
+      "source_path": "D:\\AI\\DeepSeekHarness-Plugin\\worktrees\\session-context-graph-20260913\\dsh-obsidian-session-reference-suite\\docs\\project\\diagrams\\architecture.json",
+      "source_sha256": "580329993d72f26bb28d4ef6df871a076f5180dae12b81a545bee3a4126df446",
+      "title": "七成员组合：职责、协议与外部协作",
+      "archify_commit": "d673e8300df60a5c8166abe78787fdc78f6b8000",
+      "warnings": [],
+      "errors": [],
+      "record_nodes": {
+        "MOD-companion-viewer": [
+          "comp-viewer",
+          "comp-bridge"
+        ],
+        "OBJ-identities": [
+          "comp-viewer",
+          "life-identity"
+        ],
+        "IF-companion-reference": [
+          "comp-bridge"
+        ],
+        "MOD-companion-vault": [
+          "comp-vault"
+        ],
+        "REQ-marker-cleanup": [
+          "comp-vault"
+        ],
+        "MOD-reference-client": [
+          "ref-client"
+        ],
+        "INT-reference-core": [
+          "ref-client",
+          "ref-host"
+        ],
+        "MOD-reference-host": [
+          "ref-host"
+        ],
+        "IF-core-client": [
+          "core-client",
+          "core-ui"
+        ],
+        "MOD-core-sources": [
+          "core-client",
+          "core-host"
+        ],
+        "IF-reference": [
+          "core-client"
+        ],
+        "MOD-core-submit": [
+          "core-submit"
+        ],
+        "OBJ-reference": [
+          "core-submit"
+        ],
+        "IF-core-host": [
+          "core-host"
+        ],
+        "MOD-core-context": [
+          "core-context",
+          "ext-maintenance"
+        ],
+        "IMP-context": [
+          "core-context"
+        ],
+        "NC02": [
+          "core-context"
+        ],
+        "NC07": [
+          "core-context"
+        ],
+        "IF-core-directory": [
+          "core-directory"
+        ],
+        "MOD-lifecycle": [
+          "life-identity",
+          "life-mount"
+        ],
+        "IF-lifecycle": [
+          "life-mount"
+        ],
+        "MOD-sticker-ordinary": [
+          "sticker-ordinary"
+        ],
+        "ST11": [
+          "sticker-ordinary"
+        ],
+        "MOD-sticker-session": [
+          "sticker-session"
+        ],
+        "INT-sticker-core": [
+          "sticker-session",
+          "sticker-linked"
+        ],
+        "ST08": [
+          "sticker-session"
+        ],
+        "REQ-linked-note": [
+          "sticker-linked"
+        ],
+        "IF-companion-knowledge": [
+          "sticker-linked",
+          "comp-knowledge"
+        ],
+        "INT-companion-maintenance": [
+          "comp-knowledge",
+          "ext-maintenance"
+        ],
+        "MOD-suite": [
+          "suite-assembly"
+        ],
+        "IF-composition": [
+          "suite-assembly"
+        ],
+        "REQ-suite-boundary": [
+          "suite-assembly"
+        ],
+        "MOD-core-ui": [
+          "core-ui"
+        ],
+        "IF-core-annotation-protocol": [
+          "core-schema"
+        ],
+        "MOD-protocol": [
+          "protocol-control",
+          "protocol-data"
+        ],
+        "IF-protocol-control": [
+          "protocol-control"
+        ],
+        "IF-protocol-data": [
+          "protocol-data"
+        ],
+        "EXT-maintenance": [
+          "ext-maintenance"
+        ],
+        "INT-maintenance-directory": [
+          "ext-maintenance"
+        ],
+        "INT-sticker-maintenance": [
+          "ext-maintenance"
+        ],
+        "EXT-thoughtdag": [
+          "ext-thoughtdag"
+        ]
+      },
+      "nodes": [
+        {
+          "id": "comp-viewer",
+          "label": "内嵌 Viewer",
+          "record_ids": [
+            "MOD-companion-viewer",
+            "OBJ-identities"
+          ]
+        },
+        {
+          "id": "comp-bridge",
+          "label": "Bridge 引用接口",
+          "record_ids": [
+            "IF-companion-reference",
+            "MOD-companion-viewer"
+          ]
+        },
+        {
+          "id": "comp-vault",
+          "label": "Vault 身份与回执",
+          "record_ids": [
+            "MOD-companion-vault",
+            "REQ-marker-cleanup"
+          ]
+        },
+        {
+          "id": "ref-client",
+          "label": "页面领取事务",
+          "record_ids": [
+            "MOD-reference-client",
+            "INT-reference-core"
+          ]
+        },
+        {
+          "id": "ref-host",
+          "label": "Host 来源适配",
+          "record_ids": [
+            "MOD-reference-host",
+            "INT-reference-core"
+          ]
+        },
+        {
+          "id": "core-client",
+          "label": "Client 引用接口",
+          "record_ids": [
+            "IF-core-client",
+            "MOD-core-sources",
+            "IF-reference"
+          ]
+        },
+        {
+          "id": "core-submit",
+          "label": "输入与持久提交",
+          "record_ids": [
+            "MOD-core-submit",
+            "OBJ-reference"
+          ]
+        },
+        {
+          "id": "core-host",
+          "label": "Host 来源接口",
+          "record_ids": [
+            "IF-core-host",
+            "MOD-core-sources"
+          ]
+        },
+        {
+          "id": "core-context",
+          "label": "固定上游与原生工具",
+          "record_ids": [
+            "MOD-core-context",
+            "IMP-context",
+            "NC02",
+            "NC07"
+          ]
+        },
+        {
+          "id": "core-directory",
+          "label": "轻量目录接口",
+          "record_ids": [
+            "IF-core-directory"
+          ]
+        },
+        {
+          "id": "life-identity",
+          "label": "实例与连接租约",
+          "record_ids": [
+            "MOD-lifecycle",
+            "OBJ-identities"
+          ]
+        },
+        {
+          "id": "life-mount",
+          "label": "就绪挂载接口",
+          "record_ids": [
+            "IF-lifecycle",
+            "MOD-lifecycle"
+          ]
+        },
+        {
+          "id": "sticker-ordinary",
+          "label": "普通 Markdown 贴纸",
+          "record_ids": [
+            "MOD-sticker-ordinary",
+            "ST11"
+          ]
+        },
+        {
+          "id": "sticker-session",
+          "label": "真实会话与来源符号",
+          "record_ids": [
+            "MOD-sticker-session",
+            "INT-sticker-core",
+            "ST08"
+          ]
+        },
+        {
+          "id": "sticker-linked",
+          "label": "关联笔记气泡",
+          "record_ids": [
+            "REQ-linked-note",
+            "IF-companion-knowledge",
+            "INT-sticker-core"
+          ]
+        },
+        {
+          "id": "comp-knowledge",
+          "label": "笔记知识接口",
+          "record_ids": [
+            "IF-companion-knowledge",
+            "INT-companion-maintenance"
+          ]
+        },
+        {
+          "id": "suite-assembly",
+          "label": "Suite 组合入口",
+          "record_ids": [
+            "MOD-suite",
+            "IF-composition",
+            "REQ-suite-boundary"
+          ]
+        },
+        {
+          "id": "core-ui",
+          "label": "通用引用 UI",
+          "record_ids": [
+            "MOD-core-ui",
+            "IF-core-client"
+          ]
+        },
+        {
+          "id": "core-schema",
+          "label": "Annotation 2 协议",
+          "record_ids": [
+            "IF-core-annotation-protocol"
+          ]
+        },
+        {
+          "id": "protocol-control",
+          "label": "控制协议出口",
+          "record_ids": [
+            "MOD-protocol",
+            "IF-protocol-control"
+          ]
+        },
+        {
+          "id": "protocol-data",
+          "label": "数据协议出口",
+          "record_ids": [
+            "MOD-protocol",
+            "IF-protocol-data"
+          ]
+        },
+        {
+          "id": "ext-maintenance",
+          "label": "外部 Session Maintenance",
+          "record_ids": [
+            "EXT-maintenance",
+            "MOD-core-context",
+            "INT-maintenance-directory",
+            "INT-sticker-maintenance",
+            "INT-companion-maintenance"
+          ]
+        },
+        {
+          "id": "ext-thoughtdag",
+          "label": "外部 ThoughtDAG",
+          "record_ids": [
+            "EXT-thoughtdag"
+          ]
+        }
+      ],
+      "receipt_file": "architecture.receipt.json",
+      "validation": {
+        "checksPassed": 9,
+        "checkCount": 9,
+        "compositionProfile": "standard",
+        "compositionStatus": "pass",
+        "errors": 0,
+        "warnings": 81
+      }
+    },
+    "workflow": {
+      "file": "workflow.html",
+      "canonical_file": "workflow.native.html",
+      "source": "native-archify",
+      "source_path": "D:\\AI\\DeepSeekHarness-Plugin\\worktrees\\session-context-graph-20260913\\dsh-obsidian-session-reference-suite\\docs\\project\\diagrams\\workflow.json",
+      "source_sha256": "88c60dc956af4a1877f44a237732cbcb6d09729f911b0371a9bf3d0408055e3e",
+      "title": "笔记选段从排队到真实提交",
+      "archify_commit": "d673e8300df60a5c8166abe78787fdc78f6b8000",
+      "warnings": [],
+      "errors": [],
+      "record_nodes": {
+        "REQ-selection": [
+          "capture"
+        ],
+        "MOD-companion-vault": [
+          "capture",
+          "written"
+        ],
+        "IF-companion-reference": [
+          "claimed",
+          "written"
+        ],
+        "MOD-lifecycle": [
+          "ready"
+        ],
+        "IF-lifecycle": [
+          "ready",
+          "offline"
+        ],
+        "MOD-reference-client": [
+          "poll",
+          "claim"
+        ],
+        "IF-vault": [
+          "claim"
+        ],
+        "INT-reference-core": [
+          "compensate"
+        ],
+        "MOD-reference-host": [
+          "backlink"
+        ],
+        "IF-core-host": [
+          "backlink"
+        ],
+        "IF-core-client": [
+          "persist"
+        ],
+        "XR08": [
+          "persist",
+          "blocked"
+        ],
+        "MOD-core-submit": [
+          "pending",
+          "prepare",
+          "blocked",
+          "sent",
+          "durable"
+        ],
+        "XR07": [
+          "pending"
+        ],
+        "OBJ-reference": [
+          "sent",
+          "durable"
+        ]
+      },
+      "nodes": [
+        {
+          "id": "capture",
+          "label": "保存选段 capture",
+          "record_ids": [
+            "REQ-selection",
+            "MOD-companion-vault"
+          ]
+        },
+        {
+          "id": "claimed",
+          "label": "保存目标领取",
+          "record_ids": [
+            "IF-companion-reference"
+          ]
+        },
+        {
+          "id": "written",
+          "label": "保存回链回执",
+          "record_ids": [
+            "MOD-companion-vault",
+            "IF-companion-reference"
+          ]
+        },
+        {
+          "id": "ready",
+          "label": "连接就绪",
+          "record_ids": [
+            "MOD-lifecycle",
+            "IF-lifecycle"
+          ]
+        },
+        {
+          "id": "offline",
+          "label": "等待或排空连接",
+          "record_ids": [
+            "IF-lifecycle"
+          ]
+        },
+        {
+          "id": "poll",
+          "label": "合格内嵌页领取",
+          "record_ids": [
+            "MOD-reference-client"
+          ]
+        },
+        {
+          "id": "claim",
+          "label": "确认相同操作领取",
+          "record_ids": [
+            "MOD-reference-client",
+            "IF-vault"
+          ]
+        },
+        {
+          "id": "compensate",
+          "label": "请求 Core 补偿",
+          "record_ids": [
+            "INT-reference-core"
+          ]
+        },
+        {
+          "id": "backlink",
+          "label": "提交来源回链",
+          "record_ids": [
+            "MOD-reference-host",
+            "IF-core-host"
+          ]
+        },
+        {
+          "id": "persist",
+          "label": "持久加入待发送引用",
+          "record_ids": [
+            "IF-core-client",
+            "XR08"
+          ]
+        },
+        {
+          "id": "pending",
+          "label": "气泡待发",
+          "record_ids": [
+            "MOD-core-submit",
+            "XR07"
+          ]
+        },
+        {
+          "id": "prepare",
+          "label": "发送前准备与核对",
+          "record_ids": [
+            "MOD-core-submit"
+          ]
+        },
+        {
+          "id": "blocked",
+          "label": "阻断并保留草稿",
+          "record_ids": [
+            "MOD-core-submit",
+            "XR08"
+          ]
+        },
+        {
+          "id": "sent",
+          "label": "引用变为已提交",
+          "record_ids": [
+            "OBJ-reference",
+            "MOD-core-submit"
+          ]
+        },
+        {
+          "id": "durable",
+          "label": "接受并持久化输入",
+          "record_ids": [
+            "MOD-core-submit",
+            "OBJ-reference"
+          ]
+        }
+      ],
+      "receipt_file": "workflow.receipt.json",
+      "validation": {
+        "checksPassed": 9,
+        "checkCount": 9,
+        "compositionProfile": "standard",
+        "compositionStatus": "pass",
+        "errors": 0,
+        "warnings": 4
+      }
+    }
+  },
+  "exported_at": "2026-09-16 06:14 UTC",
+  "preview": {
+    "status": "running",
+    "url": "http://localhost:52893/6f33124e70c61b3475a7d01a71c0a982/",
+    "entry": "D:\\AI\\DeepSeekHarness-Plugin\\worktrees\\session-context-graph-20260913\\dsh-obsidian-session-reference-suite\\docs\\project\\views\\index.html",
+    "pid": 54288,
+    "reused": true,
+    "idle_timeout_hours": 8
+  },
+  "url": "http://localhost:52893/6f33124e70c61b3475a7d01a71c0a982/"
+}

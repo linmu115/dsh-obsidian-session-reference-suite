@@ -23,6 +23,7 @@ sources:
 
 - [Reference Adapter 接入](../../reference-adapter/integrations/core.md)：添加 obsidian-note、取消失败操作、打开来源。
 - [Sticker 接入](../../sticker-board/integrations/core.md)：跨会话固定上游、来源引用解析/解除、关联笔记直接引用。
+- [[EXT-sidechat|Sidechat 独立接入]]：普通来源与跨会话目标选择、侧聊 composer/历史投影、fence/discard 核对；实际 consumes 由 Sidechat 地图声明。
 - [Core 接入目录](../overview.md)：包含仅由资料确认的其他消费者。
 
 协议或返回值变更影响上述调用方、输入框状态和历史详情。不得把此 Client 权限当成 Maintenance 的任意对象写接口。

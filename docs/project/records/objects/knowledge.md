@@ -20,7 +20,8 @@ relations:
   reason: 明确归属规则
 - relation: governed_by
   to:
-    record_id: EXT-business-adapters
+    record_id: IF-extension
+    project_id: 0d05f813-7097-47d9-9e88-3d523bb537d6
   reason: 业务对象语义
 - relation: related
   to:

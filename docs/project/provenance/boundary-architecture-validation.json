@@ -1,0 +1,2528 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "validate",
+  "type": "architecture",
+  "input": "D:\\AI\\DeepSeekHarness-Plugin\\worktrees\\session-context-graph-20260913\\dsh-obsidian-session-reference-suite\\docs\\project\\diagrams\\architecture.json",
+  "checks": [
+    {
+      "name": "single_svg",
+      "ok": true,
+      "details": [
+        "found 1 <svg> block(s)"
+      ]
+    },
+    {
+      "name": "finite_svg",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "orthogonal_arrows",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "label_route_clearance",
+      "ok": true,
+      "details": [
+        "[composition/label-route-clearance] standard label \"核对 / 回链 / 删除\" on relationship id \"source-http\" (\"ref-host\" -> \"comp-bridge\") is 0px from relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") segment 1 [320, 271.6] -> [320, 610] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"注册 obsidian-note\" on relationship id \"source-register\" (\"ref-host\" -> \"core-host\") is 0px from relationship id \"adapter-annotation-schema\" (\"ref-host\" -> \"core-schema\") segment 1 [710, 271.6] -> [710, 541] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"注册 obsidian-note\" on relationship id \"source-register\" (\"ref-host\" -> \"core-host\") is 0px from relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") segment 1 [723.8, 943.6] -> [723.8, 145.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"注册 obsidian-note\" on relationship id \"source-register\" (\"ref-host\" -> \"core-host\") is 0px from relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") segment 1 [737.5, 475] -> [737.5, 271.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"就绪挂载\" on relationship id \"mount-ref\" (\"life-mount\" -> \"ref-client\") is 0px from relationship id \"suite-lifecycle\" (\"suite-assembly\" -> \"life-mount\") segment 1 [348.8, 475] -> [348.8, 810.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"会话引用 / 解除\" on relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") is 0px from relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") segment 1 [723.8, 943.6] -> [723.8, 145.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"来源准备 / 打开\" on relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") is 0px from relationship id \"companion-objects\" (\"comp-knowledge\" -> \"ext-maintenance\") segment 1 [271.5, 537.6] -> [271.5, 1016] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"来源准备 / 打开\" on relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") is 0px from relationship id \"lifecycle-data-schema\" (\"life-mount\" -> \"protocol-data\") segment 1 [300, 810.6] -> [300, 870] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"已迁入对象\" on relationship id \"sticker-storage\" (\"sticker-ordinary\" -> \"ext-maintenance\") is 0px from relationship id \"session-objects\" (\"sticker-session\" -> \"ext-maintenance\") segment 1 [786.3, 810.6] -> [786.3, 1044] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"固定来源 / 原生生效\" on relationship id \"fixed-context\" (\"core-context\" -> \"ext-maintenance\") is 0px from relationship id \"directory-mirror\" (\"ext-maintenance\" -> \"core-directory\") segment 1 [1530, 1030] -> [1530, 271.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"消费分页目录 / 订阅\" on relationship id \"directory-mirror\" (\"ext-maintenance\" -> \"core-directory\") is 0px from relationship id \"fixed-context\" (\"core-context\" -> \"ext-maintenance\") segment 1 [1560, 138.6] -> [1560, 1030] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"会话贴纸\" on relationship id \"session-objects\" (\"sticker-session\" -> \"ext-maintenance\") is 0px from relationship id \"sticker-storage\" (\"sticker-ordinary\" -> \"ext-maintenance\") segment 1 [786.3, 677.6] -> [786.3, 1030] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"obsidian-links\" on relationship id \"companion-objects\" (\"comp-knowledge\" -> \"ext-maintenance\") is 0px from relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") segment 1 [292.5, 943.6] -> [292.5, 537.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"引用状态 / 变更\" on relationship id \"ui-state\" (\"core-ui\" -> \"core-submit\") is 0px from relationship id \"ui-client\" (\"core-ui\" -> \"core-client\") segment 2 [1021.5, 354] -> [1021.5, 138.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"消费控制类型\" on relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") is 0px from relationship id \"companion-data-schema\" (\"comp-knowledge\" -> \"protocol-data\") segment 2 [350, 585] -> [1450, 585] with 67.6px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"服务方消费控制类型\" on relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") is 0px from relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") segment 2 [742.5, 749] -> [742.5, 138.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"服务方消费控制类型\" on relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") is 0px from relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") segment 2 [740, 590] -> [740, 710] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"服务方消费控制类型\" on relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") is 0px from relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") segment 1 [723.8, 943.6] -> [723.8, 145.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"消费 Annotation 2\" on relationship id \"adapter-annotation-schema\" (\"ref-host\" -> \"core-schema\") is 0px from relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") segment 2 [742.5, 749] -> [742.5, 138.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"消费 Annotation 2\" on relationship id \"adapter-annotation-schema\" (\"ref-host\" -> \"core-schema\") is 0px from relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") segment 1 [723.8, 943.6] -> [723.8, 145.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"来源准备后添加 / 补偿\" on relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") is 0px from relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") segment 2 [742.5, 749] -> [742.5, 138.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"来源准备后添加 / 补偿\" on relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") is 0px from relationship id \"adapter-annotation-schema\" (\"ref-host\" -> \"core-schema\") segment 1 [710, 271.6] -> [710, 541] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"消费引用 API；详见外部图\" on relationship id \"thoughtdag-core\" (\"ext-thoughtdag\" -> \"core-client\") is 0px from relationship id \"fixed-context\" (\"core-context\" -> \"ext-maintenance\") segment 1 [1560, 138.6] -> [1560, 1030] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"配置共享 Core\" on relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") is 0px from relationship id \"source-register\" (\"ref-host\" -> \"core-host\") segment 1 [705, 271.6] -> [705, 404.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"配置共享 Core\" on relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") is 0px from relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") segment 2 [742.5, 749] -> [742.5, 138.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"配置共享 Core\" on relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") is 0px from relationship id \"adapter-annotation-schema\" (\"ref-host\" -> \"core-schema\") segment 1 [710, 271.6] -> [710, 541] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"配置共享 Core\" on relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") is 0px from relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") segment 1 [723.8, 943.6] -> [723.8, 145.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel.",
+        "[composition/label-route-clearance] standard label \"装配连接子插件\" on relationship id \"suite-lifecycle\" (\"suite-assembly\" -> \"life-mount\") is 0px from relationship id \"mount-ref\" (\"life-mount\" -> \"ref-client\") segment 1 [367.5, 810.6] -> [367.5, 138.6] with 14px hidden by the mask (minimum 2px) — use renderer-supported label controls (message y for sequence; otherwise labelAt, labelDx, labelDy, or labelSegment), or adjust the other relationship route/via/channel."
+      ]
+    },
+    {
+      "name": "relationship_crossings",
+      "ok": true,
+      "details": [
+        "[composition/proper-crossing] standard relationship id \"source-http\" (\"ref-host\" -> \"comp-bridge\") crosses relationship id \"mount-ref\" (\"life-mount\" -> \"ref-client\") at [367.5, 271.6]",
+        "[composition/proper-crossing] standard relationship id \"source-register\" (\"ref-host\" -> \"core-host\") crosses relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") at [742.5, 404.6]",
+        "[composition/proper-crossing] standard relationship id \"source-register\" (\"ref-host\" -> \"core-host\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 404.6]",
+        "[composition/proper-crossing] standard relationship id \"source-register\" (\"ref-host\" -> \"core-host\") crosses relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") at [737.5, 404.6]",
+        "[composition/proper-crossing] standard relationship id \"directory-output\" (\"core-submit\" -> \"core-directory\") crosses relationship id \"ui-client\" (\"core-ui\" -> \"core-client\") at [1021.5, 264.6]",
+        "[composition/proper-crossing] standard relationship id \"mount-ref\" (\"life-mount\" -> \"ref-client\") crosses relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") at [292.5, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"mount-ref\" (\"life-mount\" -> \"ref-client\") crosses relationship id \"companion-objects\" (\"comp-knowledge\" -> \"ext-maintenance\") at [271.5, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"mount-ref\" (\"life-mount\" -> \"ref-client\") crosses relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") at [367.5, 590]",
+        "[composition/proper-crossing] standard relationship id \"mount-ref\" (\"life-mount\" -> \"ref-client\") crosses relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") at [367.5, 610]",
+        "[composition/proper-crossing] standard relationship id \"mount-ref\" (\"life-mount\" -> \"ref-client\") crosses relationship id \"companion-data-schema\" (\"comp-knowledge\" -> \"protocol-data\") at [367.5, 585]",
+        "[composition/proper-crossing] standard relationship id \"mount-sticker\" (\"life-mount\" -> \"sticker-ordinary\") crosses relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") at [292.5, 740]",
+        "[composition/proper-crossing] standard relationship id \"mount-sticker\" (\"life-mount\" -> \"sticker-ordinary\") crosses relationship id \"companion-objects\" (\"comp-knowledge\" -> \"ext-maintenance\") at [271.5, 740]",
+        "[composition/proper-crossing] standard relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") crosses relationship id \"sticker-storage\" (\"sticker-ordinary\" -> \"ext-maintenance\") at [742.5, 677.6]",
+        "[composition/proper-crossing] standard relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") crosses relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") at [742.5, 708.4]",
+        "[composition/proper-crossing] standard relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") crosses relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") at [742.5, 610]",
+        "[composition/proper-crossing] standard relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") crosses relationship id \"sticker-data-schema\" (\"sticker-ordinary\" -> \"protocol-data\") at [742.5, 630]",
+        "[composition/proper-crossing] standard relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") crosses relationship id \"companion-data-schema\" (\"comp-knowledge\" -> \"protocol-data\") at [742.5, 585]",
+        "[composition/proper-crossing] standard relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") crosses relationship id \"adapter-annotation-schema\" (\"ref-host\" -> \"core-schema\") at [742.5, 541]",
+        "[composition/proper-crossing] standard relationship id \"sticker-core\" (\"sticker-session\" -> \"core-client\") crosses relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") at [742.5, 272]",
+        "[composition/proper-crossing] standard relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") crosses relationship id \"mount-host\" (\"life-mount\" -> \"ref-host\") at [292.5, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") crosses relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") at [292.5, 590]",
+        "[composition/proper-crossing] standard relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") crosses relationship id \"lifecycle-data-schema\" (\"life-mount\" -> \"protocol-data\") at [292.5, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"linked-note-http\" (\"sticker-linked\" -> \"comp-knowledge\") crosses relationship id \"suite-lifecycle\" (\"suite-assembly\" -> \"life-mount\") at [292.5, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"sticker-storage\" (\"sticker-ordinary\" -> \"ext-maintenance\") crosses relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") at [740, 677.6]",
+        "[composition/proper-crossing] standard relationship id \"sticker-storage\" (\"sticker-ordinary\" -> \"ext-maintenance\") crosses relationship id \"lifecycle-data-schema\" (\"life-mount\" -> \"protocol-data\") at [786.3, 870]",
+        "[composition/proper-crossing] standard relationship id \"sticker-storage\" (\"sticker-ordinary\" -> \"ext-maintenance\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 677.6]",
+        "[composition/proper-crossing] standard relationship id \"fixed-context\" (\"core-context\" -> \"ext-maintenance\") crosses relationship id \"companion-annotation-schema\" (\"comp-bridge\" -> \"core-schema\") at [1480, 138.6]",
+        "[composition/proper-crossing] standard relationship id \"directory-mirror\" (\"ext-maintenance\" -> \"core-directory\") crosses relationship id \"companion-annotation-schema\" (\"comp-bridge\" -> \"core-schema\") at [1480, 271.6]",
+        "[composition/proper-crossing] standard relationship id \"mount-host\" (\"life-mount\" -> \"ref-host\") crosses relationship id \"companion-objects\" (\"comp-knowledge\" -> \"ext-maintenance\") at [271.5, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"mount-host\" (\"life-mount\" -> \"ref-host\") crosses relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") at [401.2, 590]",
+        "[composition/proper-crossing] standard relationship id \"mount-host\" (\"life-mount\" -> \"ref-host\") crosses relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") at [401.2, 610]",
+        "[composition/proper-crossing] standard relationship id \"mount-host\" (\"life-mount\" -> \"ref-host\") crosses relationship id \"companion-data-schema\" (\"comp-knowledge\" -> \"protocol-data\") at [401.2, 585]",
+        "[composition/proper-crossing] standard relationship id \"session-objects\" (\"sticker-session\" -> \"ext-maintenance\") crosses relationship id \"lifecycle-data-schema\" (\"life-mount\" -> \"protocol-data\") at [786.3, 870]",
+        "[composition/proper-crossing] standard relationship id \"session-objects\" (\"sticker-session\" -> \"ext-maintenance\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"companion-objects\" (\"comp-knowledge\" -> \"ext-maintenance\") crosses relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") at [271.5, 590]",
+        "[composition/proper-crossing] standard relationship id \"companion-objects\" (\"comp-knowledge\" -> \"ext-maintenance\") crosses relationship id \"lifecycle-data-schema\" (\"life-mount\" -> \"protocol-data\") at [271.5, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"companion-objects\" (\"comp-knowledge\" -> \"ext-maintenance\") crosses relationship id \"suite-lifecycle\" (\"suite-assembly\" -> \"life-mount\") at [271.5, 810.6]",
+        "[composition/proper-crossing] standard relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") crosses relationship id \"sticker-data-schema\" (\"sticker-ordinary\" -> \"protocol-data\") at [740, 630]",
+        "[composition/proper-crossing] standard relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 590]",
+        "[composition/proper-crossing] standard relationship id \"lifecycle-control-schema\" (\"life-identity\" -> \"protocol-control\") crosses relationship id \"suite-lifecycle\" (\"suite-assembly\" -> \"life-mount\") at [348.7, 590]",
+        "[composition/proper-crossing] standard relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") crosses relationship id \"sticker-data-schema\" (\"sticker-ordinary\" -> \"protocol-data\") at [925, 630]",
+        "[composition/proper-crossing] standard relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") crosses relationship id \"companion-data-schema\" (\"comp-knowledge\" -> \"protocol-data\") at [320, 537.6]",
+        "[composition/proper-crossing] standard relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 610]",
+        "[composition/proper-crossing] standard relationship id \"companion-control-schema\" (\"comp-bridge\" -> \"protocol-control\") crosses relationship id \"suite-lifecycle\" (\"suite-assembly\" -> \"life-mount\") at [348.7, 610]",
+        "[composition/proper-crossing] standard relationship id \"lifecycle-data-schema\" (\"life-mount\" -> \"protocol-data\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 870]",
+        "[composition/proper-crossing] standard relationship id \"sticker-data-schema\" (\"sticker-ordinary\" -> \"protocol-data\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 630]",
+        "[composition/proper-crossing] standard relationship id \"companion-data-schema\" (\"comp-knowledge\" -> \"protocol-data\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 585]",
+        "[composition/proper-crossing] standard relationship id \"companion-data-schema\" (\"comp-knowledge\" -> \"protocol-data\") crosses relationship id \"suite-lifecycle\" (\"suite-assembly\" -> \"life-mount\") at [348.7, 540.6]",
+        "[composition/proper-crossing] standard relationship id \"adapter-annotation-schema\" (\"ref-host\" -> \"core-schema\") crosses relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") at [723.8, 541]",
+        "[composition/proper-crossing] standard relationship id \"adapter-annotation-schema\" (\"ref-host\" -> \"core-schema\") crosses relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") at [710, 475]",
+        "[composition/proper-crossing] standard relationship id \"companion-annotation-schema\" (\"comp-bridge\" -> \"core-schema\") crosses relationship id \"thoughtdag-core\" (\"ext-thoughtdag\" -> \"core-client\") at [911.3, 65]",
+        "[composition/proper-crossing] standard relationship id \"linked-note-core\" (\"sticker-linked\" -> \"core-client\") crosses relationship id \"suite-core\" (\"suite-assembly\" -> \"core-submit\") at [723.8, 475]"
+      ]
+    },
+    {
+      "name": "relationship_corridors",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "container_border_runs",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "route_rhythm",
+      "ok": true,
+      "details": []
+    },
+    {
+      "name": "legend_clearance",
+      "ok": true,
+      "details": []
+    }
+  ],
+  "composition": {
+    "schemaVersion": 1,
+    "profile": "standard",
+    "status": "pass",
+    "summary": {
+      "errors": 0,
+      "warnings": 81
+    },
+    "metrics": {
+      "properCrossings": 52,
+      "ambiguousCorridors": 0,
+      "containerBorderRuns": 0,
+      "labelRouteClearanceIssues": 28,
+      "minLabelRouteClearance": 0,
+      "desktopReadabilityIssues": 1,
+      "minProjectedNodeTextPx": 5.348242811501597,
+      "maxBends": 4,
+      "routesOverSuggestedBends": 10,
+      "maxStretch": 1.562,
+      "routesOverSuggestedStretch": 3,
+      "minSegmentPx": 24,
+      "minInteriorSegmentPx": 47.4,
+      "shortSegmentCount": 0,
+      "shortEndpointSegmentCount": 0,
+      "shortInteriorSegmentCount": 0,
+      "microSegmentCount": 0
+    },
+    "suggestedLimits": {
+      "bendsPerRelationship": 2,
+      "stretch": 1.35,
+      "segmentPx": 16,
+      "microSegmentPx": 8
+    },
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "核对 / 回链 / 删除",
+        "labelRelationship": {
+          "id": "source-http",
+          "from": "ref-host",
+          "to": "comp-bridge",
+          "label": "核对 / 回链 / 删除",
+          "collectionIndex": 3,
+          "artifactIndex": 4
+        },
+        "otherRelationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 250.8,
+          "y": 278,
+          "width": 96.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          320,
+          271.6
+        ],
+        "to": [
+          320,
+          610
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "注册 obsidian-note",
+        "labelRelationship": {
+          "id": "source-register",
+          "from": "ref-host",
+          "to": "core-host",
+          "label": "注册 obsidian-note",
+          "collectionIndex": 7,
+          "artifactIndex": 8
+        },
+        "otherRelationship": {
+          "id": "adapter-annotation-schema",
+          "from": "ref-host",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 30,
+          "artifactIndex": 31
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 641.8,
+          "y": 325,
+          "width": 96.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          710,
+          271.6
+        ],
+        "to": [
+          710,
+          541
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "注册 obsidian-note",
+        "labelRelationship": {
+          "id": "source-register",
+          "from": "ref-host",
+          "to": "core-host",
+          "label": "注册 obsidian-note",
+          "collectionIndex": 7,
+          "artifactIndex": 8
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 641.8,
+          "y": 325,
+          "width": 96.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          723.8,
+          943.6
+        ],
+        "to": [
+          723.8,
+          145.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "注册 obsidian-note",
+        "labelRelationship": {
+          "id": "source-register",
+          "from": "ref-host",
+          "to": "core-host",
+          "label": "注册 obsidian-note",
+          "collectionIndex": 7,
+          "artifactIndex": 8
+        },
+        "otherRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 641.8,
+          "y": 325,
+          "width": 96.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          737.5,
+          475
+        ],
+        "to": [
+          737.5,
+          271.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "就绪挂载",
+        "labelRelationship": {
+          "id": "mount-ref",
+          "from": "life-mount",
+          "to": "ref-client",
+          "label": "就绪挂载",
+          "collectionIndex": 12,
+          "artifactIndex": 13
+        },
+        "otherRelationship": {
+          "id": "suite-lifecycle",
+          "from": "suite-assembly",
+          "to": "life-mount",
+          "label": "装配连接子插件",
+          "collectionIndex": 35,
+          "artifactIndex": 36
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 343.3,
+          "y": 508,
+          "width": 48.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          348.8,
+          475
+        ],
+        "to": [
+          348.8,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "会话引用 / 解除",
+        "labelRelationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 701.5,
+          "y": 553.5,
+          "width": 82,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          723.8,
+          943.6
+        ],
+        "to": [
+          723.8,
+          145.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "来源准备 / 打开",
+        "labelRelationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "otherRelationship": {
+          "id": "companion-objects",
+          "from": "comp-knowledge",
+          "to": "ext-maintenance",
+          "label": "obsidian-links",
+          "collectionIndex": 21,
+          "artifactIndex": 22
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 251.5,
+          "y": 854.5,
+          "width": 82,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          271.5,
+          537.6
+        ],
+        "to": [
+          271.5,
+          1016
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "来源准备 / 打开",
+        "labelRelationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "otherRelationship": {
+          "id": "lifecycle-data-schema",
+          "from": "life-mount",
+          "to": "protocol-data",
+          "label": "传输校验 / 数据类型",
+          "collectionIndex": 27,
+          "artifactIndex": 28
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 251.5,
+          "y": 854.5,
+          "width": 82,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          300,
+          810.6
+        ],
+        "to": [
+          300,
+          870
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "已迁入对象",
+        "labelRelationship": {
+          "id": "sticker-storage",
+          "from": "sticker-ordinary",
+          "to": "ext-maintenance",
+          "label": "已迁入对象",
+          "collectionIndex": 16,
+          "artifactIndex": 17
+        },
+        "otherRelationship": {
+          "id": "session-objects",
+          "from": "sticker-session",
+          "to": "ext-maintenance",
+          "label": "会话贴纸",
+          "collectionIndex": 20,
+          "artifactIndex": 21
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 757.3,
+          "y": 833.8,
+          "width": 58,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          786.3,
+          810.6
+        ],
+        "to": [
+          786.3,
+          1044
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "固定来源 / 原生生效",
+        "labelRelationship": {
+          "id": "fixed-context",
+          "from": "core-context",
+          "to": "ext-maintenance",
+          "label": "固定来源 / 原生生效",
+          "collectionIndex": 17,
+          "artifactIndex": 18
+        },
+        "otherRelationship": {
+          "id": "directory-mirror",
+          "from": "ext-maintenance",
+          "to": "core-directory",
+          "label": "消费分页目录 / 订阅",
+          "collectionIndex": 18,
+          "artifactIndex": 19
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 1509.4,
+          "y": 470,
+          "width": 101.2,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          1530,
+          1030
+        ],
+        "to": [
+          1530,
+          271.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "消费分页目录 / 订阅",
+        "labelRelationship": {
+          "id": "directory-mirror",
+          "from": "ext-maintenance",
+          "to": "core-directory",
+          "label": "消费分页目录 / 订阅",
+          "collectionIndex": 18,
+          "artifactIndex": 19
+        },
+        "otherRelationship": {
+          "id": "fixed-context",
+          "from": "core-context",
+          "to": "ext-maintenance",
+          "label": "固定来源 / 原生生效",
+          "collectionIndex": 17,
+          "artifactIndex": 18
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 1479.4,
+          "y": 825,
+          "width": 101.2,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          1560,
+          138.6
+        ],
+        "to": [
+          1560,
+          1030
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "会话贴纸",
+        "labelRelationship": {
+          "id": "session-objects",
+          "from": "sticker-session",
+          "to": "ext-maintenance",
+          "label": "会话贴纸",
+          "collectionIndex": 20,
+          "artifactIndex": 21
+        },
+        "otherRelationship": {
+          "id": "sticker-storage",
+          "from": "sticker-ordinary",
+          "to": "ext-maintenance",
+          "label": "已迁入对象",
+          "collectionIndex": 16,
+          "artifactIndex": 17
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 762.1,
+          "y": 907.3,
+          "width": 48.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          786.3,
+          677.6
+        ],
+        "to": [
+          786.3,
+          1030
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "obsidian-links",
+        "labelRelationship": {
+          "id": "companion-objects",
+          "from": "comp-knowledge",
+          "to": "ext-maintenance",
+          "label": "obsidian-links",
+          "collectionIndex": 21,
+          "artifactIndex": 22
+        },
+        "otherRelationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 232.9,
+          "y": 756.8,
+          "width": 77.2,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          292.5,
+          943.6
+        ],
+        "to": [
+          292.5,
+          537.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "引用状态 / 变更",
+        "labelRelationship": {
+          "id": "ui-state",
+          "from": "core-ui",
+          "to": "core-submit",
+          "label": "引用状态 / 变更",
+          "collectionIndex": 22,
+          "artifactIndex": 23
+        },
+        "otherRelationship": {
+          "id": "ui-client",
+          "from": "core-ui",
+          "to": "core-client",
+          "label": "输入框公开绑定",
+          "collectionIndex": 23,
+          "artifactIndex": 24
+        },
+        "segmentIndex": 2,
+        "labelRect": {
+          "x": 1020.3,
+          "y": 323.3,
+          "width": 82,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          1021.5,
+          354
+        ],
+        "to": [
+          1021.5,
+          138.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "消费控制类型",
+        "labelRelationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "otherRelationship": {
+          "id": "companion-data-schema",
+          "from": "comp-knowledge",
+          "to": "protocol-data",
+          "label": "消费定位 / 数据类型",
+          "collectionIndex": 29,
+          "artifactIndex": 30
+        },
+        "segmentIndex": 2,
+        "labelRect": {
+          "x": 506.2,
+          "y": 580,
+          "width": 67.6,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 67.6,
+        "threshold": 2,
+        "from": [
+          350,
+          585
+        ],
+        "to": [
+          1450,
+          585
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "服务方消费控制类型",
+        "labelRelationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "otherRelationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "segmentIndex": 2,
+        "labelRect": {
+          "x": 691.8,
+          "y": 600,
+          "width": 96.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          742.5,
+          749
+        ],
+        "to": [
+          742.5,
+          138.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "服务方消费控制类型",
+        "labelRelationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "otherRelationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "segmentIndex": 2,
+        "labelRect": {
+          "x": 691.8,
+          "y": 600,
+          "width": 96.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          740,
+          590
+        ],
+        "to": [
+          740,
+          710
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "服务方消费控制类型",
+        "labelRelationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 691.8,
+          "y": 600,
+          "width": 96.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          723.8,
+          943.6
+        ],
+        "to": [
+          723.8,
+          145.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "消费 Annotation 2",
+        "labelRelationship": {
+          "id": "adapter-annotation-schema",
+          "from": "ref-host",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 30,
+          "artifactIndex": 31
+        },
+        "otherRelationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "segmentIndex": 2,
+        "labelRect": {
+          "x": 664.2,
+          "y": 480,
+          "width": 91.6,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          742.5,
+          749
+        ],
+        "to": [
+          742.5,
+          138.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "消费 Annotation 2",
+        "labelRelationship": {
+          "id": "adapter-annotation-schema",
+          "from": "ref-host",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 30,
+          "artifactIndex": 31
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 664.2,
+          "y": 480,
+          "width": 91.6,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          723.8,
+          943.6
+        ],
+        "to": [
+          723.8,
+          145.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "来源准备后添加 / 补偿",
+        "labelRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "otherRelationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "segmentIndex": 2,
+        "labelRect": {
+          "x": 668.4,
+          "y": 524.6,
+          "width": 110.8,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          742.5,
+          749
+        ],
+        "to": [
+          742.5,
+          138.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "来源准备后添加 / 补偿",
+        "labelRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "otherRelationship": {
+          "id": "adapter-annotation-schema",
+          "from": "ref-host",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 30,
+          "artifactIndex": 31
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 668.4,
+          "y": 524.6,
+          "width": 110.8,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          710,
+          271.6
+        ],
+        "to": [
+          710,
+          541
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "消费引用 API；详见外部图",
+        "labelRelationship": {
+          "id": "thoughtdag-core",
+          "from": "ext-thoughtdag",
+          "to": "core-client",
+          "label": "消费引用 API；详见外部图",
+          "collectionIndex": 33,
+          "artifactIndex": 34
+        },
+        "otherRelationship": {
+          "id": "fixed-context",
+          "from": "core-context",
+          "to": "ext-maintenance",
+          "label": "固定来源 / 原生生效",
+          "collectionIndex": 17,
+          "artifactIndex": 18
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 1557.4,
+          "y": 740,
+          "width": 125.2,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          1560,
+          138.6
+        ],
+        "to": [
+          1560,
+          1030
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "配置共享 Core",
+        "labelRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "otherRelationship": {
+          "id": "source-register",
+          "from": "ref-host",
+          "to": "core-host",
+          "label": "注册 obsidian-note",
+          "collectionIndex": 7,
+          "artifactIndex": 8
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 701.3,
+          "y": 353.3,
+          "width": 72.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          705,
+          271.6
+        ],
+        "to": [
+          705,
+          404.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "配置共享 Core",
+        "labelRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "otherRelationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "segmentIndex": 2,
+        "labelRect": {
+          "x": 701.3,
+          "y": 353.3,
+          "width": 72.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          742.5,
+          749
+        ],
+        "to": [
+          742.5,
+          138.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "配置共享 Core",
+        "labelRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "otherRelationship": {
+          "id": "adapter-annotation-schema",
+          "from": "ref-host",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 30,
+          "artifactIndex": 31
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 701.3,
+          "y": 353.3,
+          "width": 72.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          710,
+          271.6
+        ],
+        "to": [
+          710,
+          541
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "配置共享 Core",
+        "labelRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 701.3,
+          "y": 353.3,
+          "width": 72.4,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          723.8,
+          943.6
+        ],
+        "to": [
+          723.8,
+          145.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/label-route-clearance",
+        "label": "装配连接子插件",
+        "labelRelationship": {
+          "id": "suite-lifecycle",
+          "from": "suite-assembly",
+          "to": "life-mount",
+          "label": "装配连接子插件",
+          "collectionIndex": 35,
+          "artifactIndex": 36
+        },
+        "otherRelationship": {
+          "id": "mount-ref",
+          "from": "life-mount",
+          "to": "ref-client",
+          "label": "就绪挂载",
+          "collectionIndex": 12,
+          "artifactIndex": 13
+        },
+        "segmentIndex": 1,
+        "labelRect": {
+          "x": 310.2,
+          "y": 622.8,
+          "width": 77.2,
+          "height": 14
+        },
+        "clearance": 0,
+        "intersectionLength": 14,
+        "threshold": 2,
+        "from": [
+          367.5,
+          810.6
+        ],
+        "to": [
+          367.5,
+          138.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "source-http",
+          "from": "ref-host",
+          "to": "comp-bridge",
+          "label": "核对 / 回链 / 删除",
+          "collectionIndex": 3,
+          "artifactIndex": 4
+        },
+        "otherRelationship": {
+          "id": "mount-ref",
+          "from": "life-mount",
+          "to": "ref-client",
+          "label": "就绪挂载",
+          "collectionIndex": 12,
+          "artifactIndex": 13
+        },
+        "point": [
+          367.5,
+          271.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "source-register",
+          "from": "ref-host",
+          "to": "core-host",
+          "label": "注册 obsidian-note",
+          "collectionIndex": 7,
+          "artifactIndex": 8
+        },
+        "otherRelationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "point": [
+          742.5,
+          404.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "source-register",
+          "from": "ref-host",
+          "to": "core-host",
+          "label": "注册 obsidian-note",
+          "collectionIndex": 7,
+          "artifactIndex": 8
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          404.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "source-register",
+          "from": "ref-host",
+          "to": "core-host",
+          "label": "注册 obsidian-note",
+          "collectionIndex": 7,
+          "artifactIndex": 8
+        },
+        "otherRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "point": [
+          737.5,
+          404.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "directory-output",
+          "from": "core-submit",
+          "to": "core-directory",
+          "label": "持久变更通知",
+          "collectionIndex": 8,
+          "artifactIndex": 9
+        },
+        "otherRelationship": {
+          "id": "ui-client",
+          "from": "core-ui",
+          "to": "core-client",
+          "label": "输入框公开绑定",
+          "collectionIndex": 23,
+          "artifactIndex": 24
+        },
+        "point": [
+          1021.5,
+          264.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-ref",
+          "from": "life-mount",
+          "to": "ref-client",
+          "label": "就绪挂载",
+          "collectionIndex": 12,
+          "artifactIndex": 13
+        },
+        "otherRelationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "point": [
+          292.5,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-ref",
+          "from": "life-mount",
+          "to": "ref-client",
+          "label": "就绪挂载",
+          "collectionIndex": 12,
+          "artifactIndex": 13
+        },
+        "otherRelationship": {
+          "id": "companion-objects",
+          "from": "comp-knowledge",
+          "to": "ext-maintenance",
+          "label": "obsidian-links",
+          "collectionIndex": 21,
+          "artifactIndex": 22
+        },
+        "point": [
+          271.5,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-ref",
+          "from": "life-mount",
+          "to": "ref-client",
+          "label": "就绪挂载",
+          "collectionIndex": 12,
+          "artifactIndex": 13
+        },
+        "otherRelationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "point": [
+          367.5,
+          590
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-ref",
+          "from": "life-mount",
+          "to": "ref-client",
+          "label": "就绪挂载",
+          "collectionIndex": 12,
+          "artifactIndex": 13
+        },
+        "otherRelationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "point": [
+          367.5,
+          610
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-ref",
+          "from": "life-mount",
+          "to": "ref-client",
+          "label": "就绪挂载",
+          "collectionIndex": 12,
+          "artifactIndex": 13
+        },
+        "otherRelationship": {
+          "id": "companion-data-schema",
+          "from": "comp-knowledge",
+          "to": "protocol-data",
+          "label": "消费定位 / 数据类型",
+          "collectionIndex": 29,
+          "artifactIndex": 30
+        },
+        "point": [
+          367.5,
+          585
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-sticker",
+          "from": "life-mount",
+          "to": "sticker-ordinary",
+          "label": "同步附件",
+          "collectionIndex": 13,
+          "artifactIndex": 14
+        },
+        "otherRelationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "point": [
+          292.5,
+          740
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-sticker",
+          "from": "life-mount",
+          "to": "sticker-ordinary",
+          "label": "同步附件",
+          "collectionIndex": 13,
+          "artifactIndex": 14
+        },
+        "otherRelationship": {
+          "id": "companion-objects",
+          "from": "comp-knowledge",
+          "to": "ext-maintenance",
+          "label": "obsidian-links",
+          "collectionIndex": 21,
+          "artifactIndex": 22
+        },
+        "point": [
+          271.5,
+          740
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "otherRelationship": {
+          "id": "sticker-storage",
+          "from": "sticker-ordinary",
+          "to": "ext-maintenance",
+          "label": "已迁入对象",
+          "collectionIndex": 16,
+          "artifactIndex": 17
+        },
+        "point": [
+          742.5,
+          677.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "otherRelationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "point": [
+          742.5,
+          708.4
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "otherRelationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "point": [
+          742.5,
+          610
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "otherRelationship": {
+          "id": "sticker-data-schema",
+          "from": "sticker-ordinary",
+          "to": "protocol-data",
+          "label": "消费贴纸数据",
+          "collectionIndex": 28,
+          "artifactIndex": 29
+        },
+        "point": [
+          742.5,
+          630
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "otherRelationship": {
+          "id": "companion-data-schema",
+          "from": "comp-knowledge",
+          "to": "protocol-data",
+          "label": "消费定位 / 数据类型",
+          "collectionIndex": 29,
+          "artifactIndex": 30
+        },
+        "point": [
+          742.5,
+          585
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "otherRelationship": {
+          "id": "adapter-annotation-schema",
+          "from": "ref-host",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 30,
+          "artifactIndex": 31
+        },
+        "point": [
+          742.5,
+          541
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-core",
+          "from": "sticker-session",
+          "to": "core-client",
+          "label": "会话引用 / 解除",
+          "collectionIndex": 14,
+          "artifactIndex": 15
+        },
+        "otherRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "point": [
+          742.5,
+          272
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "otherRelationship": {
+          "id": "mount-host",
+          "from": "life-mount",
+          "to": "ref-host",
+          "label": "删除轮询",
+          "collectionIndex": 19,
+          "artifactIndex": 20
+        },
+        "point": [
+          292.5,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "otherRelationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "point": [
+          292.5,
+          590
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "otherRelationship": {
+          "id": "lifecycle-data-schema",
+          "from": "life-mount",
+          "to": "protocol-data",
+          "label": "传输校验 / 数据类型",
+          "collectionIndex": 27,
+          "artifactIndex": 28
+        },
+        "point": [
+          292.5,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "linked-note-http",
+          "from": "sticker-linked",
+          "to": "comp-knowledge",
+          "label": "来源准备 / 打开",
+          "collectionIndex": 15,
+          "artifactIndex": 16
+        },
+        "otherRelationship": {
+          "id": "suite-lifecycle",
+          "from": "suite-assembly",
+          "to": "life-mount",
+          "label": "装配连接子插件",
+          "collectionIndex": 35,
+          "artifactIndex": 36
+        },
+        "point": [
+          292.5,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-storage",
+          "from": "sticker-ordinary",
+          "to": "ext-maintenance",
+          "label": "已迁入对象",
+          "collectionIndex": 16,
+          "artifactIndex": 17
+        },
+        "otherRelationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "point": [
+          740,
+          677.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-storage",
+          "from": "sticker-ordinary",
+          "to": "ext-maintenance",
+          "label": "已迁入对象",
+          "collectionIndex": 16,
+          "artifactIndex": 17
+        },
+        "otherRelationship": {
+          "id": "lifecycle-data-schema",
+          "from": "life-mount",
+          "to": "protocol-data",
+          "label": "传输校验 / 数据类型",
+          "collectionIndex": 27,
+          "artifactIndex": 28
+        },
+        "point": [
+          786.3,
+          870
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-storage",
+          "from": "sticker-ordinary",
+          "to": "ext-maintenance",
+          "label": "已迁入对象",
+          "collectionIndex": 16,
+          "artifactIndex": 17
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          677.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "fixed-context",
+          "from": "core-context",
+          "to": "ext-maintenance",
+          "label": "固定来源 / 原生生效",
+          "collectionIndex": 17,
+          "artifactIndex": 18
+        },
+        "otherRelationship": {
+          "id": "companion-annotation-schema",
+          "from": "comp-bridge",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 31,
+          "artifactIndex": 32
+        },
+        "point": [
+          1480,
+          138.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "directory-mirror",
+          "from": "ext-maintenance",
+          "to": "core-directory",
+          "label": "消费分页目录 / 订阅",
+          "collectionIndex": 18,
+          "artifactIndex": 19
+        },
+        "otherRelationship": {
+          "id": "companion-annotation-schema",
+          "from": "comp-bridge",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 31,
+          "artifactIndex": 32
+        },
+        "point": [
+          1480,
+          271.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-host",
+          "from": "life-mount",
+          "to": "ref-host",
+          "label": "删除轮询",
+          "collectionIndex": 19,
+          "artifactIndex": 20
+        },
+        "otherRelationship": {
+          "id": "companion-objects",
+          "from": "comp-knowledge",
+          "to": "ext-maintenance",
+          "label": "obsidian-links",
+          "collectionIndex": 21,
+          "artifactIndex": 22
+        },
+        "point": [
+          271.5,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-host",
+          "from": "life-mount",
+          "to": "ref-host",
+          "label": "删除轮询",
+          "collectionIndex": 19,
+          "artifactIndex": 20
+        },
+        "otherRelationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "point": [
+          401.2,
+          590
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-host",
+          "from": "life-mount",
+          "to": "ref-host",
+          "label": "删除轮询",
+          "collectionIndex": 19,
+          "artifactIndex": 20
+        },
+        "otherRelationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "point": [
+          401.2,
+          610
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "mount-host",
+          "from": "life-mount",
+          "to": "ref-host",
+          "label": "删除轮询",
+          "collectionIndex": 19,
+          "artifactIndex": 20
+        },
+        "otherRelationship": {
+          "id": "companion-data-schema",
+          "from": "comp-knowledge",
+          "to": "protocol-data",
+          "label": "消费定位 / 数据类型",
+          "collectionIndex": 29,
+          "artifactIndex": 30
+        },
+        "point": [
+          401.2,
+          585
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "session-objects",
+          "from": "sticker-session",
+          "to": "ext-maintenance",
+          "label": "会话贴纸",
+          "collectionIndex": 20,
+          "artifactIndex": 21
+        },
+        "otherRelationship": {
+          "id": "lifecycle-data-schema",
+          "from": "life-mount",
+          "to": "protocol-data",
+          "label": "传输校验 / 数据类型",
+          "collectionIndex": 27,
+          "artifactIndex": 28
+        },
+        "point": [
+          786.3,
+          870
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "session-objects",
+          "from": "sticker-session",
+          "to": "ext-maintenance",
+          "label": "会话贴纸",
+          "collectionIndex": 20,
+          "artifactIndex": 21
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-objects",
+          "from": "comp-knowledge",
+          "to": "ext-maintenance",
+          "label": "obsidian-links",
+          "collectionIndex": 21,
+          "artifactIndex": 22
+        },
+        "otherRelationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "point": [
+          271.5,
+          590
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-objects",
+          "from": "comp-knowledge",
+          "to": "ext-maintenance",
+          "label": "obsidian-links",
+          "collectionIndex": 21,
+          "artifactIndex": 22
+        },
+        "otherRelationship": {
+          "id": "lifecycle-data-schema",
+          "from": "life-mount",
+          "to": "protocol-data",
+          "label": "传输校验 / 数据类型",
+          "collectionIndex": 27,
+          "artifactIndex": 28
+        },
+        "point": [
+          271.5,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-objects",
+          "from": "comp-knowledge",
+          "to": "ext-maintenance",
+          "label": "obsidian-links",
+          "collectionIndex": 21,
+          "artifactIndex": 22
+        },
+        "otherRelationship": {
+          "id": "suite-lifecycle",
+          "from": "suite-assembly",
+          "to": "life-mount",
+          "label": "装配连接子插件",
+          "collectionIndex": 35,
+          "artifactIndex": 36
+        },
+        "point": [
+          271.5,
+          810.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "otherRelationship": {
+          "id": "sticker-data-schema",
+          "from": "sticker-ordinary",
+          "to": "protocol-data",
+          "label": "消费贴纸数据",
+          "collectionIndex": 28,
+          "artifactIndex": 29
+        },
+        "point": [
+          740,
+          630
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          590
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "lifecycle-control-schema",
+          "from": "life-identity",
+          "to": "protocol-control",
+          "label": "消费控制类型",
+          "collectionIndex": 25,
+          "artifactIndex": 26
+        },
+        "otherRelationship": {
+          "id": "suite-lifecycle",
+          "from": "suite-assembly",
+          "to": "life-mount",
+          "label": "装配连接子插件",
+          "collectionIndex": 35,
+          "artifactIndex": 36
+        },
+        "point": [
+          348.7,
+          590
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "otherRelationship": {
+          "id": "sticker-data-schema",
+          "from": "sticker-ordinary",
+          "to": "protocol-data",
+          "label": "消费贴纸数据",
+          "collectionIndex": 28,
+          "artifactIndex": 29
+        },
+        "point": [
+          925,
+          630
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "otherRelationship": {
+          "id": "companion-data-schema",
+          "from": "comp-knowledge",
+          "to": "protocol-data",
+          "label": "消费定位 / 数据类型",
+          "collectionIndex": 29,
+          "artifactIndex": 30
+        },
+        "point": [
+          320,
+          537.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          610
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-control-schema",
+          "from": "comp-bridge",
+          "to": "protocol-control",
+          "label": "服务方消费控制类型",
+          "collectionIndex": 26,
+          "artifactIndex": 27
+        },
+        "otherRelationship": {
+          "id": "suite-lifecycle",
+          "from": "suite-assembly",
+          "to": "life-mount",
+          "label": "装配连接子插件",
+          "collectionIndex": 35,
+          "artifactIndex": 36
+        },
+        "point": [
+          348.7,
+          610
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "lifecycle-data-schema",
+          "from": "life-mount",
+          "to": "protocol-data",
+          "label": "传输校验 / 数据类型",
+          "collectionIndex": 27,
+          "artifactIndex": 28
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          870
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "sticker-data-schema",
+          "from": "sticker-ordinary",
+          "to": "protocol-data",
+          "label": "消费贴纸数据",
+          "collectionIndex": 28,
+          "artifactIndex": 29
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          630
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-data-schema",
+          "from": "comp-knowledge",
+          "to": "protocol-data",
+          "label": "消费定位 / 数据类型",
+          "collectionIndex": 29,
+          "artifactIndex": 30
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          585
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-data-schema",
+          "from": "comp-knowledge",
+          "to": "protocol-data",
+          "label": "消费定位 / 数据类型",
+          "collectionIndex": 29,
+          "artifactIndex": 30
+        },
+        "otherRelationship": {
+          "id": "suite-lifecycle",
+          "from": "suite-assembly",
+          "to": "life-mount",
+          "label": "装配连接子插件",
+          "collectionIndex": 35,
+          "artifactIndex": 36
+        },
+        "point": [
+          348.7,
+          540.6
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "adapter-annotation-schema",
+          "from": "ref-host",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 30,
+          "artifactIndex": 31
+        },
+        "otherRelationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "point": [
+          723.8,
+          541
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "adapter-annotation-schema",
+          "from": "ref-host",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 30,
+          "artifactIndex": 31
+        },
+        "otherRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "point": [
+          710,
+          475
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "companion-annotation-schema",
+          "from": "comp-bridge",
+          "to": "core-schema",
+          "label": "消费 Annotation 2",
+          "collectionIndex": 31,
+          "artifactIndex": 32
+        },
+        "otherRelationship": {
+          "id": "thoughtdag-core",
+          "from": "ext-thoughtdag",
+          "to": "core-client",
+          "label": "消费引用 API；详见外部图",
+          "collectionIndex": 33,
+          "artifactIndex": 34
+        },
+        "point": [
+          911.3,
+          65
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/proper-crossing",
+        "relationship": {
+          "id": "linked-note-core",
+          "from": "sticker-linked",
+          "to": "core-client",
+          "label": "来源准备后添加 / 补偿",
+          "collectionIndex": 32,
+          "artifactIndex": 33
+        },
+        "otherRelationship": {
+          "id": "suite-core",
+          "from": "suite-assembly",
+          "to": "core-submit",
+          "label": "配置共享 Core",
+          "collectionIndex": 34,
+          "artifactIndex": 35
+        },
+        "point": [
+          723.8,
+          475
+        ]
+      },
+      {
+        "severity": "warning",
+        "code": "composition/desktop-readability",
+        "viewportWidth": 1440,
+        "viewportHeight": 900,
+        "availableDiagramWidth": 930,
+        "viewBoxWidth": 1565,
+        "scale": 0.5942492012779552,
+        "text": "稳定页面 / 真实会话",
+        "detail": "context",
+        "sourceFontPx": 9,
+        "projectedFontPx": 5.348242811501597,
+        "minimumProjectedFontPx": 6
+      }
+    ]
+  }
+}

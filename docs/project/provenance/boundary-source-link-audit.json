@@ -1,0 +1,840 @@
+{
+  "record_count": 76,
+  "original_id_count": 64,
+  "missing_original_ids": [],
+  "local_link_issues": [],
+  "missing_sources": [],
+  "relation_count": 136,
+  "sources": [
+    {
+      "record_id": "DEC-explicit-context",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "DEC-explicit-context",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "DEC-explicit-context",
+      "path": "../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-10-session-context-graph-requirements.md",
+      "sha256": "671d89b30fe5c68fa810fcff7da6d8a266026c5fcc0a2590500c3064f36602c9"
+    },
+    {
+      "record_id": "DEC-explicit-context",
+      "path": "../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-15-native-agent-context-management.md",
+      "sha256": "9aaa05d99b69ca2016549dee323ca4ed00b04ad1584513951371b0b9cf14d74f"
+    },
+    {
+      "record_id": "DEC-ownership",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "DEC-ownership",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "DEC-ownership",
+      "path": "../../../dsh-session-maintenance/docs/extensions/plugin-data-integration.md",
+      "sha256": "d1c8a81ab2fd1422d01cd5c8f308905c220b5761c8693916ec4d846c389925e7"
+    },
+    {
+      "record_id": "EXT-thoughtdag",
+      "path": "../../../../../repositories/thoughtdag/docs/project/records/interface/IF-integration.md",
+      "sha256": "b8663477e0af9f8431b97d172f07f7fa26dadc7e18999ec700ef382276de4e8b"
+    },
+    {
+      "record_id": "EXT-maintenance",
+      "path": "../../../dsh-session-maintenance/docs/project/project.yaml",
+      "sha256": "7cd56954eae92f639c4e79835e6c018513668321a0f46dd78293cc8929e7bf46"
+    },
+    {
+      "record_id": "IMP-cohort",
+      "path": "../../suite.members.json",
+      "sha256": "c15994c37f4c0b185a65c47b95392f4d31dafedacda331f9ed865d262bdf16cc"
+    },
+    {
+      "record_id": "IMP-cohort",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "IMP-cohort",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    },
+    {
+      "record_id": "IMP-cohort",
+      "path": "../../../dsh-session-maintenance/README.md",
+      "sha256": "046b59312c6b238bf8501bb5f3b96607fe78f92650eb44da3fe4b5964056eaa4"
+    },
+    {
+      "record_id": "IMP-cohort",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/docs/2026-09-14-shared-marker-cleanup.md",
+      "sha256": "36390730a197bc048c4fe7aa502e64398e24f0ac8cbdc64df1f72c9590150754"
+    },
+    {
+      "record_id": "IMP-cohort",
+      "path": "../2026-09-15-graph-reference-lifecycle-cohort.md",
+      "sha256": "312b03b4b18bb426648f38e7c9ed108aea857093bcd8689d675e7a5c413957ed"
+    },
+    {
+      "record_id": "IMP-context",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "IMP-context",
+      "path": "../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-15-native-agent-context-management.md",
+      "sha256": "9aaa05d99b69ca2016549dee323ca4ed00b04ad1584513951371b0b9cf14d74f"
+    },
+    {
+      "record_id": "IMP-current",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "IMP-delivery",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts",
+      "sha256": "538ccbe2c4ee9ff696340998525ba5cfd99772d1861450dc2ce451a436424f2b"
+    },
+    {
+      "record_id": "IMP-delivery",
+      "path": "../../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts",
+      "sha256": "5d14411ba441bbb6261295d2e8184f77562f19fbf98456f967be110e012fd44a"
+    },
+    {
+      "record_id": "IMP-delivery",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts",
+      "sha256": "089e602c1803605a9c7524d10f36fbf68936e30e0a4d7d7475443ddfc2dbf536"
+    },
+    {
+      "record_id": "IMP-delivery",
+      "path": "../../tests/cross-component-reference.test.ts",
+      "sha256": "26b6d7b41d1ce6d4324e66be22d217109a264d6707367c7315e0fb3916afb0d0"
+    },
+    {
+      "record_id": "IMP-delivery",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "MOD-core-context",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "MOD-core-context",
+      "path": "../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-15-native-agent-context-management.md",
+      "sha256": "9aaa05d99b69ca2016549dee323ca4ed00b04ad1584513951371b0b9cf14d74f"
+    },
+    {
+      "record_id": "MOD-core",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "MOD-core",
+      "path": "../../../dsh-annotation-core/src/public/client-api.ts",
+      "sha256": "0c48a6f353f2ddaddb6b6995c857be6ebbf1e60ae0a237962bcbc93ab0e5ab52"
+    },
+    {
+      "record_id": "MOD-core",
+      "path": "../../../dsh-annotation-core/src/public/host-api.ts",
+      "sha256": "d6f3e613605f86ba2712b65d38fb2b8ffd0578816bb54dafa59e1bb89de321e0"
+    },
+    {
+      "record_id": "MOD-core",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "MOD-core-sources",
+      "path": "../../../dsh-annotation-core/src/public/host-api.ts",
+      "sha256": "d6f3e613605f86ba2712b65d38fb2b8ffd0578816bb54dafa59e1bb89de321e0"
+    },
+    {
+      "record_id": "MOD-core-sources",
+      "path": "../../../dsh-annotation-core/src/public/client-api.ts",
+      "sha256": "0c48a6f353f2ddaddb6b6995c857be6ebbf1e60ae0a237962bcbc93ab0e5ab52"
+    },
+    {
+      "record_id": "MOD-core-sources",
+      "path": "../../../dsh-obsidian-reference-adapter/src/index.ts",
+      "sha256": "83e7a3a7b9cae16e423271f0e983ba014ba0807b5577058205c050c704fce94a"
+    },
+    {
+      "record_id": "MOD-core-sources",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/index.ts",
+      "sha256": "ebaa7773c427afa11111a9a0c2e94d74c80982ceae6f473c456e6ec570c3eb5f"
+    },
+    {
+      "record_id": "MOD-core-submit",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "MOD-core-submit",
+      "path": "../../../dsh-annotation-core/docs/changes/2026-09-14-reference-submit-revision.md",
+      "sha256": "f7276a8784ecbe43b7575b486db1fd14439b09f47f94c44e0b4b57d19aa0523b"
+    },
+    {
+      "record_id": "MOD-core-ui",
+      "path": "../../../dsh-annotation-core/src/client/reference-rail.tsx",
+      "sha256": "411b63341d155a3393f019f3678202f9852751311617fdb327c7f9ff1a69776d"
+    },
+    {
+      "record_id": "MOD-core-ui",
+      "path": "../../../dsh-annotation-core/src/client/reference-dialog.tsx",
+      "sha256": "b1d5a45371ce47bb17209c29ab2a9a91bf7e571441c0e3447cd552c62e3f03ef"
+    },
+    {
+      "record_id": "MOD-core-ui",
+      "path": "../../../dsh-annotation-core/src/client/composer-binding.tsx",
+      "sha256": "8b92be8ae302ebb5cf3e0b0a15a08fc97c7bb77da0780c52b6cd677b27204bb2"
+    },
+    {
+      "record_id": "MOD-core-ui",
+      "path": "../../../dsh-annotation-core/src/client/conversation-node.tsx",
+      "sha256": "1ff15bf849c07cdea13368a42c0a253e1da2ddb64415c685bc39fd6c39513072"
+    },
+    {
+      "record_id": "MOD-core-ui",
+      "path": "../../../dsh-annotation-core/src/client/answer-link.ts",
+      "sha256": "fec9ffa4e5cafecad1acc5b3578d4c4a479ad24eeb33b2883fb6a978113d74ce"
+    },
+    {
+      "record_id": "INT-maintenance-directory",
+      "path": "../../../dsh-annotation-core/docs/changes/2026-09-15-reference-directory-mirror.md",
+      "sha256": "4587d3befe387573cff3c8bf0801f63b23c62140ccf27687a763ec5b3d8b31bf"
+    },
+    {
+      "record_id": "INT-maintenance-directory",
+      "path": "../../../dsh-session-maintenance/docs/project/records/interface/IF-extension.md",
+      "sha256": "155d7a522cdc949cd779758da9bb8a97e7925fa79febedb41a84bc4d2951aa7e"
+    },
+    {
+      "record_id": "IF-core-annotation-protocol",
+      "path": "../../../dsh-annotation-core/src/protocol/schema.ts",
+      "sha256": "0953350a12d0c1a40f4ef6538112d34ebdc265558a7fed75091f5433655a6fd6"
+    },
+    {
+      "record_id": "IF-core-annotation-protocol",
+      "path": "../../../dsh-annotation-core/src/protocol/index.ts",
+      "sha256": "9e78c028e164fc276db7626311aaafe2760358c08a6c013398ce95b24aeb8f11"
+    },
+    {
+      "record_id": "IF-core-client",
+      "path": "../../../dsh-annotation-core/src/public/client-api.ts",
+      "sha256": "0c48a6f353f2ddaddb6b6995c857be6ebbf1e60ae0a237962bcbc93ab0e5ab52"
+    },
+    {
+      "record_id": "IF-core-client",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "IF-core-host",
+      "path": "../../../dsh-annotation-core/src/public/host-api.ts",
+      "sha256": "d6f3e613605f86ba2712b65d38fb2b8ffd0578816bb54dafa59e1bb89de321e0"
+    },
+    {
+      "record_id": "IF-core-host",
+      "path": "../../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts",
+      "sha256": "5d14411ba441bbb6261295d2e8184f77562f19fbf98456f967be110e012fd44a"
+    },
+    {
+      "record_id": "IF-reference",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "IF-reference",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "IF-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/api.ts",
+      "sha256": "2f8002ace26b5a547d53566fb9af96f05fbc1dfcf7b85c337df700ac381501c7"
+    },
+    {
+      "record_id": "IF-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts",
+      "sha256": "089e602c1803605a9c7524d10f36fbf68936e30e0a4d7d7475443ddfc2dbf536"
+    },
+    {
+      "record_id": "IF-lifecycle",
+      "path": "../../../dsh-obsidian-reference-adapter/src/index.ts",
+      "sha256": "83e7a3a7b9cae16e423271f0e983ba014ba0807b5577058205c050c704fce94a"
+    },
+    {
+      "record_id": "IF-lifecycle",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/index.ts",
+      "sha256": "ebaa7773c427afa11111a9a0c2e94d74c80982ceae6f473c456e6ec570c3eb5f"
+    },
+    {
+      "record_id": "IF-lifecycle",
+      "path": "../../../dsh-session-sticker-board/src/client/index.tsx",
+      "sha256": "646231fa9c856329d737e8e58895e544333509b9f05c79bbdb3a00982f39acd1"
+    },
+    {
+      "record_id": "MOD-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/README.md",
+      "sha256": "5d31c2f2cbe074e486c481e77d435d11f7f7cbdc7e469ef454de41e584d83a8d"
+    },
+    {
+      "record_id": "MOD-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/api.ts",
+      "sha256": "2f8002ace26b5a547d53566fb9af96f05fbc1dfcf7b85c337df700ac381501c7"
+    },
+    {
+      "record_id": "MOD-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts",
+      "sha256": "089e602c1803605a9c7524d10f36fbf68936e30e0a4d7d7475443ddfc2dbf536"
+    },
+    {
+      "record_id": "MOD-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/index.ts",
+      "sha256": "b77718b536b7d5c21b2eb90afcdaa993ea4a07db47720773ff9d7441dc972bd9"
+    },
+    {
+      "record_id": "MOD-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/client.ts",
+      "sha256": "a2fd91ad54aa3d3a12a3c18f9fdb681533b20754250044f4562e43fd54d65cde"
+    },
+    {
+      "record_id": "MOD-lifecycle",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/README.md",
+      "sha256": "5d31c2f2cbe074e486c481e77d435d11f7f7cbdc7e469ef454de41e584d83a8d"
+    },
+    {
+      "record_id": "INT-lifecycle-protocol",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/control-client.ts",
+      "sha256": "29b5ebf22df57e4cd22ff3c9c460f3ff6c1ce4d5580b82e5f0f8ae6440f4a21d"
+    },
+    {
+      "record_id": "INT-lifecycle-protocol",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/transport.ts",
+      "sha256": "c21df82bcd199b49e1bfa1f91578386f2d32d2b50fb5f6ddd41bf2614c1c2ab0"
+    },
+    {
+      "record_id": "INT-lifecycle-protocol",
+      "path": "../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts",
+      "sha256": "089e602c1803605a9c7524d10f36fbf68936e30e0a4d7d7475443ddfc2dbf536"
+    },
+    {
+      "record_id": "MOD-protocol",
+      "path": "../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/README.md",
+      "sha256": "6676aa217e5a6f4e1f38ecab37939d397259c695dabc308e016c1b6bde35f369"
+    },
+    {
+      "record_id": "MOD-protocol",
+      "path": "../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/package.json",
+      "sha256": "52c3c5b82f7b48154b807ec1c8efea06a00be04afe51216f3afeba236a9d9cc1"
+    },
+    {
+      "record_id": "MOD-protocol",
+      "path": "../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/src/index.ts",
+      "sha256": "7eb2b66bd65924e4d22e97d9f1703685833dd1e038b70088a196e36fff15d800"
+    },
+    {
+      "record_id": "MOD-protocol",
+      "path": "../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/src/data.ts",
+      "sha256": "e0aeb5882b149af4ebb141cad4a31aca2382f612d11a23421c700b8c0fdd4d68"
+    },
+    {
+      "record_id": "IF-protocol-control",
+      "path": "../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/src/index.ts",
+      "sha256": "7eb2b66bd65924e4d22e97d9f1703685833dd1e038b70088a196e36fff15d800"
+    },
+    {
+      "record_id": "IF-protocol-control",
+      "path": "../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/README.md",
+      "sha256": "6676aa217e5a6f4e1f38ecab37939d397259c695dabc308e016c1b6bde35f369"
+    },
+    {
+      "record_id": "IF-protocol-data",
+      "path": "../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/src/data.ts",
+      "sha256": "e0aeb5882b149af4ebb141cad4a31aca2382f612d11a23421c700b8c0fdd4d68"
+    },
+    {
+      "record_id": "IF-protocol-data",
+      "path": "../../../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol/README.md",
+      "sha256": "6676aa217e5a6f4e1f38ecab37939d397259c695dabc308e016c1b6bde35f369"
+    },
+    {
+      "record_id": "MOD-companion",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "MOD-companion",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/bridge/server.ts",
+      "sha256": "3d50cb51b1e8b6621e8419557391e2a9a5579dd58bfe48f37852338bf14fb2a6"
+    },
+    {
+      "record_id": "MOD-companion",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/protocol.ts",
+      "sha256": "eb82b61df5eea55c0982754a65b0be370183f092d662d425e0a1230b1b7a8fe4"
+    },
+    {
+      "record_id": "MOD-companion",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "MOD-companion-vault",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "MOD-companion-vault",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/docs/2026-09-14-shared-marker-cleanup.md",
+      "sha256": "36390730a197bc048c4fe7aa502e64398e24f0ac8cbdc64df1f72c9590150754"
+    },
+    {
+      "record_id": "MOD-companion-vault",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/owned-markers.ts",
+      "sha256": "df9f8dca7c8eb1283ed78df92e9148b1a78c82f55c47e34a3a65ad63756ce561"
+    },
+    {
+      "record_id": "MOD-companion-vault",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/pending-reference-cleanup.ts",
+      "sha256": "2b7e1a11e402f7b274167a5fee1929c7a880bfba90e1192443cd5c7bb22e44a2"
+    },
+    {
+      "record_id": "MOD-companion-vault",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/knowledge-store.ts",
+      "sha256": "5a52d7bf21db815bf986defb77c70a85769bc99b71dcf1df01b740c218c4d559"
+    },
+    {
+      "record_id": "MOD-companion-vault",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/main.ts",
+      "sha256": "8ceec81cb9cea081b717e76823326a6c49cdc98f8cc8d10437c09a20d309e210"
+    },
+    {
+      "record_id": "MOD-companion-viewer",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "MOD-companion-viewer",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/webviewer/adapter.ts",
+      "sha256": "e404a73b3998d2087eefec71fd1867400ae74fb0f5cc43269306102597b09809"
+    },
+    {
+      "record_id": "MOD-companion-viewer",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/webviewer/launch-url.ts",
+      "sha256": "206775658864792a9188504a17248cfcea81c891d843e63e7e53bd533da3d12c"
+    },
+    {
+      "record_id": "MOD-companion-viewer",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/bridge/server.ts",
+      "sha256": "3d50cb51b1e8b6621e8419557391e2a9a5579dd58bfe48f37852338bf14fb2a6"
+    },
+    {
+      "record_id": "INT-companion-maintenance",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "INT-companion-maintenance",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/webviewer/knowledge-client.ts",
+      "sha256": "a204eefd90ada1a484e15f579eac1a57034673e8347c898bc6932007dec2765d"
+    },
+    {
+      "record_id": "INT-companion-maintenance",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/knowledge-sync.ts",
+      "sha256": "6ec2aedd16cf5f352ccfe7daa9b17e54f1a9ea77bf59f8943be2e502dbac6bb1"
+    },
+    {
+      "record_id": "INT-companion-maintenance",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/knowledge-store.ts",
+      "sha256": "5a52d7bf21db815bf986defb77c70a85769bc99b71dcf1df01b740c218c4d559"
+    },
+    {
+      "record_id": "INT-companion-protocol",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/bridge/server.ts",
+      "sha256": "3d50cb51b1e8b6621e8419557391e2a9a5579dd58bfe48f37852338bf14fb2a6"
+    },
+    {
+      "record_id": "INT-companion-protocol",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/protocol.ts",
+      "sha256": "eb82b61df5eea55c0982754a65b0be370183f092d662d425e0a1230b1b7a8fe4"
+    },
+    {
+      "record_id": "IF-companion-knowledge",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/linked-reference.ts",
+      "sha256": "d4ad7613bfe38d616220fd6a5eb0515c1eac0d879e03ee030e7989abbcdaada1"
+    },
+    {
+      "record_id": "IF-companion-knowledge",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/main.ts",
+      "sha256": "8ceec81cb9cea081b717e76823326a6c49cdc98f8cc8d10437c09a20d309e210"
+    },
+    {
+      "record_id": "IF-companion-knowledge",
+      "path": "../../../dsh-session-sticker-board/src/client/linked-notes.tsx",
+      "sha256": "d88df2f02f126334b9e240ad9ddd782cea71edf4fa162e09cfc3cf13fe5ae8ae"
+    },
+    {
+      "record_id": "IF-companion-knowledge",
+      "path": "../2026-09-14-linked-note-rail.md",
+      "sha256": "c145f913d9298739b02df9b5c60db04ff4e568a64f069e51c3f1d1845dbdd533"
+    },
+    {
+      "record_id": "IF-vault",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "IF-vault",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "IF-companion-reference",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/bridge/server.ts",
+      "sha256": "3d50cb51b1e8b6621e8419557391e2a9a5579dd58bfe48f37852338bf14fb2a6"
+    },
+    {
+      "record_id": "IF-companion-reference",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/protocol.ts",
+      "sha256": "eb82b61df5eea55c0982754a65b0be370183f092d662d425e0a1230b1b7a8fe4"
+    },
+    {
+      "record_id": "IF-companion-reference",
+      "path": "../../../dsh-obsidian-reference-adapter/src/bridge/http-client.ts",
+      "sha256": "6b0461d4331fd525a127fa9e0c0a1031f70c8c85f6895641fb49a8ba2b27eaf7"
+    },
+    {
+      "record_id": "IF-companion-reference",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts",
+      "sha256": "538ccbe2c4ee9ff696340998525ba5cfd99772d1861450dc2ce451a436424f2b"
+    },
+    {
+      "record_id": "IF-companion-reference",
+      "path": "../../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts",
+      "sha256": "5d14411ba441bbb6261295d2e8184f77562f19fbf98456f967be110e012fd44a"
+    },
+    {
+      "record_id": "MOD-reference-client",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts",
+      "sha256": "538ccbe2c4ee9ff696340998525ba5cfd99772d1861450dc2ce451a436424f2b"
+    },
+    {
+      "record_id": "MOD-reference-client",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/index.ts",
+      "sha256": "ebaa7773c427afa11111a9a0c2e94d74c80982ceae6f473c456e6ec570c3eb5f"
+    },
+    {
+      "record_id": "MOD-reference-client",
+      "path": "../../tests/cross-component-reference.test.ts",
+      "sha256": "26b6d7b41d1ce6d4324e66be22d217109a264d6707367c7315e0fb3916afb0d0"
+    },
+    {
+      "record_id": "MOD-reference-host",
+      "path": "../../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts",
+      "sha256": "5d14411ba441bbb6261295d2e8184f77562f19fbf98456f967be110e012fd44a"
+    },
+    {
+      "record_id": "MOD-reference-host",
+      "path": "../../../dsh-obsidian-reference-adapter/src/index.ts",
+      "sha256": "83e7a3a7b9cae16e423271f0e983ba014ba0807b5577058205c050c704fce94a"
+    },
+    {
+      "record_id": "MOD-reference",
+      "path": "../../../dsh-obsidian-reference-adapter/README.md",
+      "sha256": "4f4b94657bf29e5bd3ce32f1abfbd3db7fd339976974b2b0e0ac289b64a794db"
+    },
+    {
+      "record_id": "MOD-reference",
+      "path": "../../../dsh-obsidian-reference-adapter/src/index.ts",
+      "sha256": "83e7a3a7b9cae16e423271f0e983ba014ba0807b5577058205c050c704fce94a"
+    },
+    {
+      "record_id": "MOD-reference",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/index.ts",
+      "sha256": "ebaa7773c427afa11111a9a0c2e94d74c80982ceae6f473c456e6ec570c3eb5f"
+    },
+    {
+      "record_id": "MOD-reference",
+      "path": "../../../dsh-obsidian-reference-adapter/README.md",
+      "sha256": "4f4b94657bf29e5bd3ce32f1abfbd3db7fd339976974b2b0e0ac289b64a794db"
+    },
+    {
+      "record_id": "INT-reference-core",
+      "path": "../../../dsh-obsidian-reference-adapter/src/index.ts",
+      "sha256": "83e7a3a7b9cae16e423271f0e983ba014ba0807b5577058205c050c704fce94a"
+    },
+    {
+      "record_id": "INT-reference-core",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/index.ts",
+      "sha256": "ebaa7773c427afa11111a9a0c2e94d74c80982ceae6f473c456e6ec570c3eb5f"
+    },
+    {
+      "record_id": "INT-reference-core",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts",
+      "sha256": "538ccbe2c4ee9ff696340998525ba5cfd99772d1861450dc2ce451a436424f2b"
+    },
+    {
+      "record_id": "INT-reference-protocol",
+      "path": "../../../dsh-obsidian-reference-adapter/src/protocol.ts",
+      "sha256": "5e8c62e3b413f4f2dc48d2e0fca3a45c3ec10e5a861b9437c6841da67561340a"
+    },
+    {
+      "record_id": "INT-reference-protocol",
+      "path": "../../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts",
+      "sha256": "538ccbe2c4ee9ff696340998525ba5cfd99772d1861450dc2ce451a436424f2b"
+    },
+    {
+      "record_id": "INT-reference-protocol",
+      "path": "../../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts",
+      "sha256": "5d14411ba441bbb6261295d2e8184f77562f19fbf98456f967be110e012fd44a"
+    },
+    {
+      "record_id": "MOD-sticker-ordinary",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    },
+    {
+      "record_id": "MOD-sticker-ordinary",
+      "path": "../../../dsh-session-sticker-board/src/client/sticker-workspace.ts",
+      "sha256": "707ee998b0d9ee441e1055d74b0f822df12a3819d775aa878b957cbd7f08e49e"
+    },
+    {
+      "record_id": "MOD-sticker-ordinary",
+      "path": "../../../dsh-session-sticker-board/src/client/sticker-store.ts",
+      "sha256": "20a70ed054c7b5829d1e7a4993559f01d498151eba5495612d68d66d434684ff"
+    },
+    {
+      "record_id": "MOD-sticker-ordinary",
+      "path": "../../../dsh-session-sticker-board/src/host/local-store.ts",
+      "sha256": "403c6a49bca613a376864aac8f36f022faed4af80d7fd488a2f01feac1e4290e"
+    },
+    {
+      "record_id": "MOD-sticker",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    },
+    {
+      "record_id": "MOD-sticker",
+      "path": "../../../dsh-session-sticker-board/src/client/index.tsx",
+      "sha256": "646231fa9c856329d737e8e58895e544333509b9f05c79bbdb3a00982f39acd1"
+    },
+    {
+      "record_id": "MOD-sticker",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    },
+    {
+      "record_id": "MOD-sticker-session",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    },
+    {
+      "record_id": "MOD-sticker-session",
+      "path": "../../../dsh-session-sticker-board/src/client/knowledge-panel.tsx",
+      "sha256": "01412c5a6b36cd243596a675cd989589c44ea3c1199dc08bd34ec2e7af1285fe"
+    },
+    {
+      "record_id": "MOD-sticker-session",
+      "path": "../../../dsh-session-sticker-board/src/client/source-markers.ts",
+      "sha256": "b43e77a719469546d2e6c11c5d003ad554ed7320c2685467e0bf78951bbe4c79"
+    },
+    {
+      "record_id": "MOD-sticker-session",
+      "path": "../../../dsh-session-sticker-board/src/client/linked-notes.tsx",
+      "sha256": "d88df2f02f126334b9e240ad9ddd782cea71edf4fa162e09cfc3cf13fe5ae8ae"
+    },
+    {
+      "record_id": "MOD-sticker-session",
+      "path": "../../../dsh-session-sticker-board/docs/2026-09-15-source-marker-context-menu.md",
+      "sha256": "8889767e4774c8e42ff052cb5c176feaab0597ad8a596e46d9961b74a1a56f21"
+    },
+    {
+      "record_id": "INT-sticker-core",
+      "path": "../../../dsh-session-sticker-board/src/client/linked-notes.tsx",
+      "sha256": "d88df2f02f126334b9e240ad9ddd782cea71edf4fa162e09cfc3cf13fe5ae8ae"
+    },
+    {
+      "record_id": "INT-sticker-core",
+      "path": "../../../dsh-session-sticker-board/src/client/index.tsx",
+      "sha256": "646231fa9c856329d737e8e58895e544333509b9f05c79bbdb3a00982f39acd1"
+    },
+    {
+      "record_id": "INT-sticker-core",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    },
+    {
+      "record_id": "INT-sticker-maintenance",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    },
+    {
+      "record_id": "INT-sticker-maintenance",
+      "path": "../../../dsh-session-sticker-board/src/client/knowledge.ts",
+      "sha256": "38d76ee3d5da22d61ecce4edbdc2a480ba31b4110c24d828c71ed8710db9e168"
+    },
+    {
+      "record_id": "INT-sticker-maintenance",
+      "path": "../../../dsh-session-sticker-board/src/client/linked-notes.tsx",
+      "sha256": "d88df2f02f126334b9e240ad9ddd782cea71edf4fa162e09cfc3cf13fe5ae8ae"
+    },
+    {
+      "record_id": "INT-sticker-protocol",
+      "path": "../../../dsh-session-sticker-board/src/protocol.ts",
+      "sha256": "41e8132b8adb05c2c2d7f4be7e509deaa46279f8da85fffaece28ba0e90f1a00"
+    },
+    {
+      "record_id": "INT-sticker-protocol",
+      "path": "../../../dsh-session-sticker-board/src/host/local-store.ts",
+      "sha256": "403c6a49bca613a376864aac8f36f022faed4af80d7fd488a2f01feac1e4290e"
+    },
+    {
+      "record_id": "INT-sticker-protocol",
+      "path": "../../../dsh-session-sticker-board/src/client/linked-notes.tsx",
+      "sha256": "d88df2f02f126334b9e240ad9ddd782cea71edf4fa162e09cfc3cf13fe5ae8ae"
+    },
+    {
+      "record_id": "MOD-suite",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "MOD-suite",
+      "path": "../../suite.members.json",
+      "sha256": "c15994c37f4c0b185a65c47b95392f4d31dafedacda331f9ed865d262bdf16cc"
+    },
+    {
+      "record_id": "MOD-suite",
+      "path": "../../cordis.patch.yml",
+      "sha256": "d066dc06630ec6430edeefd11231e73e80228f1b9435755954192e6a2e099f09"
+    },
+    {
+      "record_id": "MOD-suite",
+      "path": "../../package.json",
+      "sha256": "0eb4e5a9d4bd25cd16b3ad39420be76b4e2afe866190dbf06fccff07902971b2"
+    },
+    {
+      "record_id": "MOD-suite",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "IF-composition",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "IF-composition",
+      "path": "../../suite.members.json",
+      "sha256": "c15994c37f4c0b185a65c47b95392f4d31dafedacda331f9ed865d262bdf16cc"
+    },
+    {
+      "record_id": "OBJ-identities",
+      "path": "../../README.md",
+      "sha256": "47263c63bc4f87a6bb374c949da25cd39dcfb09632f33cf44ccb99d201f55c9e"
+    },
+    {
+      "record_id": "OBJ-identities",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "OBJ-identities",
+      "path": "../../../dsh-annotation-core/src/public/client-api.ts",
+      "sha256": "0c48a6f353f2ddaddb6b6995c857be6ebbf1e60ae0a237962bcbc93ab0e5ab52"
+    },
+    {
+      "record_id": "OBJ-identities",
+      "path": "../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-15-extension-ownership-and-session-reader.md",
+      "sha256": "13f0a49abc8585141d3b9a1e147d64dd04564d0a05b13edeae44e7b232f6bcee"
+    },
+    {
+      "record_id": "OBJ-knowledge",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    },
+    {
+      "record_id": "OBJ-knowledge",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/README.md",
+      "sha256": "8aa341501a57609f644c2cba4caa036739a165e5f1a5752bcc6e5267e0606c80"
+    },
+    {
+      "record_id": "OBJ-knowledge",
+      "path": "../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-15-extension-ownership-and-session-reader.md",
+      "sha256": "13f0a49abc8585141d3b9a1e147d64dd04564d0a05b13edeae44e7b232f6bcee"
+    },
+    {
+      "record_id": "OBJ-knowledge",
+      "path": "../../../dsh-session-maintenance/packages/contracts/src/extension-data.ts",
+      "sha256": "7873cd1f06f0975bb84c29e1d4f9ef9f49600ef776951aa5e64912baebf41805"
+    },
+    {
+      "record_id": "OBJ-reference",
+      "path": "../../../dsh-annotation-core/README.md",
+      "sha256": "46f151ba0ddc76202ec645b89903325f54529e41e89ed084b17c4011fa18a2ed"
+    },
+    {
+      "record_id": "OBJ-reference",
+      "path": "../../../dsh-annotation-core/src/public/host-api.ts",
+      "sha256": "d6f3e613605f86ba2712b65d38fb2b8ffd0578816bb54dafa59e1bb89de321e0"
+    },
+    {
+      "record_id": "OBJ-reference",
+      "path": "../../../dsh-session-maintenance/docs/superpowers/specs/2026-09-10-session-context-graph-requirements.md",
+      "sha256": "671d89b30fe5c68fa810fcff7da6d8a266026c5fcc0a2590500c3064f36602c9"
+    },
+    {
+      "record_id": "REQ-suite-boundary",
+      "path": "../../suite.members.json",
+      "sha256": "c15994c37f4c0b185a65c47b95392f4d31dafedacda331f9ed865d262bdf16cc"
+    },
+    {
+      "record_id": "REQ-suite-boundary",
+      "path": "../../cordis.patch.yml",
+      "sha256": "d066dc06630ec6430edeefd11231e73e80228f1b9435755954192e6a2e099f09"
+    },
+    {
+      "record_id": "VER-map-repair",
+      "path": "provenance/map-repair-20260916.json",
+      "sha256": "2ae2ad48b1067809f9bbf6891be83e3bf332517bf43dbb09943140c89f4c87e3"
+    },
+    {
+      "record_id": "VER-source-evidence",
+      "path": "../../tests/cross-component-reference.test.ts",
+      "sha256": "26b6d7b41d1ce6d4324e66be22d217109a264d6707367c7315e0fb3916afb0d0"
+    },
+    {
+      "record_id": "VER-source-evidence",
+      "path": "../2026-09-15-graph-reference-lifecycle-cohort.md",
+      "sha256": "312b03b4b18bb426648f38e7c9ed108aea857093bcd8689d675e7a5c413957ed"
+    },
+    {
+      "record_id": "VER-source-evidence",
+      "path": "../../../dsh-annotation-core/docs/changes/2026-09-14-reference-submit-revision.md",
+      "sha256": "f7276a8784ecbe43b7575b486db1fd14439b09f47f94c44e0b4b57d19aa0523b"
+    },
+    {
+      "record_id": "VER-source-evidence",
+      "path": "../../../dsh-annotation-core/docs/changes/2026-09-15-reference-directory-mirror.md",
+      "sha256": "4587d3befe387573cff3c8bf0801f63b23c62140ccf27687a763ec5b3d8b31bf"
+    },
+    {
+      "record_id": "VER-source-evidence",
+      "path": "../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/docs/2026-09-14-shared-marker-cleanup.md",
+      "sha256": "36390730a197bc048c4fe7aa502e64398e24f0ac8cbdc64df1f72c9590150754"
+    },
+    {
+      "record_id": "VER-source-evidence",
+      "path": "../../../dsh-session-sticker-board/README.md",
+      "sha256": "5022eb4eb11fc258c0a6d0e77901c8a2a50667c65329a8e830e36b53d54c234c"
+    }
+  ]
+}

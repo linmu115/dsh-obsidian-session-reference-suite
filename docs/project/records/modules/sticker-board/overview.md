@@ -1,9 +1,9 @@
 ---
 id: MOD-sticker
 kind: module
-title: Sticker Board：贴纸、会话入口与关联笔记
+title: Sticker Board：普通贴纸与关联笔记
 status: current
-summary: 普通贴纸和真实会话入口分别维护；来源标记与关联笔记只是交互视图。
+summary: 普通贴纸、迁移和 Obsidian 双向链接；会话贴纸与来源标记已迁至 ThoughtDAG。
 sources:
 - path: ../../../dsh-session-sticker-board/README.md
   role: current-workspace-source
@@ -58,16 +58,21 @@ relations:
   reason: 笔记按需引用
 - relation: consumes
   to:
-    record_id: EXT-business-adapters
+    record_id: IF-extension
+    project_id: 0d05f813-7097-47d9-9e88-3d523bb537d6
   reason: 结构真源
 ---
 
-# Sticker Board：贴纸、会话入口与关联笔记
+# Sticker Board：普通贴纸与关联笔记
 
-普通贴纸使用 Markdown、标签和红色符号；会话贴纸进入真实原生会话；蓝色符号指出哪些会话引用当前完成回复。三者删除范围不同。内部职责按 [普通贴纸与镜像](ordinary.md)、[会话/来源标记与笔记气泡](session-links.md) 拆分。
+普通贴纸使用 Markdown、标签和红色符号，保留旧数据迁移及 Obsidian 双向链接。会话贴纸和蓝色来源标记自本轮起由 ThoughtDAG 提供。参见 [普通贴纸与镜像](ordinary.md)、[关联笔记与迁移边界](session-links.md)。
 
 Annotation Core 提供气泡与引用动作，详见 [接入 Core](integrations/core.md)。Maintenance 提供会话身份和已迁入结构，详见 [接入 Maintenance](integrations/maintenance.md)。Lifecycle 提供外部 Bridge 挂载和重试，契约为 [Lifecycle 接口](../bridge-lifecycle/interface.md)；Companion 提供笔记打开、关联及回链。
 
 ## 扩展与可替换部分
 
 Better Sidebar 是可选详情容器，缺失可用浮层。ThoughtDAG 是可选主干图 UI，当前 sources 未包含其仓库；只记录与 Suite 的接口依赖，不重建其内部模块。普通贴纸本地保存和已迁移结构写入的要求不同，Bridge 离线不等于 Maintenance 可写。
+
+## 共享协议接入
+
+[[INT-sticker-protocol]]说明本组件实际消费哪些控制、数据及 Annotation 2 出口，返回 [[MOD-protocol|提供方接入目录]]。

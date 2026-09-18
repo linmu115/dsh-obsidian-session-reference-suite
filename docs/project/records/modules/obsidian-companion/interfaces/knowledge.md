@@ -28,4 +28,4 @@ relations:
 
 权威实现入口是 [来源准备与目标校验](../../../../../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/vault/linked-reference.ts) 及 [知识操作接入](../../../../../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/main.ts)，消费方实际顺序在 [关联气泡](../../../../../../../dsh-session-sticker-board/src/client/linked-notes.tsx)。本页解释交接，具体字段保持在提供方源码一处。
 
-已知接入：[Sticker 直接引用](../../sticker-board/integrations/core.md)；返回 [Companion 接口目录](../overview.md)。共享知识结构的写入约定仍在 [Maintenance](../../../dependencies/session-maintenance/business-adapters.md)。
+已知接入：[Sticker 直接引用](../../sticker-board/integrations/core.md)；返回 [Companion 接口目录](../overview.md)。共享知识结构的写入约定仍在 [[EXT-maintenance|Maintenance]]。

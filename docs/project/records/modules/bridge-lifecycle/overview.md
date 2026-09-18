@@ -52,3 +52,7 @@ Core 的宿主存储和本地草稿不由此生命周期卸载。外部连接可
 ## 提供接口与已知接入
 
 [连接与挂载合同](interface.md) 唯一维护公共 API。[Reference Adapter](../reference-adapter/overview.md) 注册 Host 删除轮询与 Client 投递连接；[Sticker](../sticker-board/overview.md) 注册 Bridge 贴纸/导航同步。源码入口为 [运行状态与附件队列](../../../../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts)、[Host 入口](../../../../../../dsh-obsidian-bridge-lifecycle/src/index.ts) 与 [浏览器配置入口](../../../../../../dsh-obsidian-bridge-lifecycle/src/client.ts)。
+
+## 共享协议接入
+
+[[INT-lifecycle-protocol]]说明本组件实际消费哪些控制、数据及 Annotation 2 出口，返回 [[MOD-protocol|提供方接入目录]]。

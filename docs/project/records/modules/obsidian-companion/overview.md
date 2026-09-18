@@ -62,4 +62,4 @@ Companion 是 Suite 配套的 Obsidian 插件，不是第五个 DSH 子插件。
 
 [引用 HTTP 交接](interfaces/references.md) 给 Lifecycle 和 Reference Adapter 使用；[知识链接与直接引用](interfaces/knowledge.md) 给 Sticker 的关联气泡和 Companion 内部会话选择使用。消费者分别返回 [Adapter](../reference-adapter/overview.md)、[Lifecycle](../bridge-lifecycle/overview.md) 与 [Sticker 关系 UI](../sticker-board/session-links.md)。
 
-Maintenance 结构集成见 [消费方接入说明](integrations/maintenance.md)。同步记录是身份和回执，不能被当作第二套完整会话备份。Protocol 源码仓库未在快照提供，当前可以核对成员版本、导入与服务行为，不能声称完整核验共享协议包。
+Maintenance 结构集成见 [消费方接入说明](integrations/maintenance.md)。同步记录是身份和回执，不能被当作第二套完整会话备份。共享协议源码已按 Suite 依赖绑定核对；控制、数据及 Annotation 2 的具体消费见 [[INT-companion-protocol]]。Companion 与 Protocol 是并列成员，不存在产品父子关系。

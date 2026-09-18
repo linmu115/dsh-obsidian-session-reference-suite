@@ -16,7 +16,8 @@ sources:
 relations:
 - relation: consumes
   to:
-    record_id: EXT-business-adapters
+    record_id: IF-extension
+    project_id: 0d05f813-7097-47d9-9e88-3d523bb537d6
   reason: 笔记链接
   reasons:
   - 笔记链接
@@ -25,7 +26,7 @@ relations:
 
 # Companion 接入 Maintenance
 
-外部提供方 [Maintenance](../../../dependencies/session-maintenance/overview.md) 管理 obsidian-links 等结构，通用扩展写入与知识领域规则见 [业务 Adapter 入口](../../../dependencies/session-maintenance/business-adapters.md)。Companion 保存稳定笔记身份、待同步动作、链接回执和归属标记，Vault 保留正文。
+外部提供方 [Maintenance](../../../dependencies/session-maintenance/overview.md) 管理 obsidian-links 等结构，通用扩展写入与知识领域规则见 [[EXT-maintenance|业务 Adapter 入口]]。Companion 保存稳定笔记身份、待同步动作、链接回执和归属标记，Vault 保留正文。
 
 实例在 Viewer 批次之间可能改变；同步和修复须绑定同一目标，不沿用上一实例的 owner。链接和来源需要明确迁移，原生 sessionId 要通过已接通的映射解析为逻辑会话，不能伪造 logicalSessionId。
 

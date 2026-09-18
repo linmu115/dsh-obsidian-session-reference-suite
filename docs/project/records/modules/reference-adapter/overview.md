@@ -66,3 +66,7 @@ relations:
 配置 profile 与 Core/Lifecycle/Maintenance 一致；bridgeOrigin 默认继承 Lifecycle。接入的唯一合同分别是 [Core Host](../annotation-core/interfaces/host.md)、[Core Client](../annotation-core/interfaces/client.md)、[Lifecycle](../bridge-lifecycle/interface.md) 与 [Companion 引用交接](../obsidian-companion/interfaces/references.md)。
 
 提供方合同不复制到 Adapter；本模块的接入细节集中于 [接入 Core](integrations/core.md)。删除关系不删除会话或笔记，Companion 的标记清理再按共享使用方判断。
+
+## 共享协议接入
+
+[[INT-reference-protocol]]说明本组件实际消费哪些控制、数据及 Annotation 2 出口，返回 [[MOD-protocol|提供方接入目录]]。
