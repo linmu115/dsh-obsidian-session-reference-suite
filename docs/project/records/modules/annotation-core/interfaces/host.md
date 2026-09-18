@@ -7,7 +7,7 @@ summary: Core 调用注册来源回调；后端集成可通过可选删除入口
 sources:
 - path: ../../../dsh-annotation-core/src/public/host-api.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/host/obsidian-source-adapter.ts
   role: current-workspace-source
 ---
 

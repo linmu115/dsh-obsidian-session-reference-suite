@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, readdir, realpath, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { memberRoot } from "./member-root.mjs";
 
 const suiteRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const workspace = dirname(suiteRoot);
@@ -51,9 +52,10 @@ export function compareMembers(expected, actual) {
 async function snapshot() {
   const spec = await json(join(suiteRoot, "suite.members.json"));
   const members = [];
+  const roots = new Map(await Promise.all(spec.members.map(async (member) => [member.name, await memberRoot(workspace, member)])));
   for (const member of spec.members) {
     if (!/^[a-z][a-z0-9-]+$/.test(member.name)) throw new Error("Invalid member path");
-    const root = join(workspace, member.name);
+    const root = roots.get(member.name);
     const manifest = await json(join(root, "package.json"));
     if (manifest.name !== member.name || manifest.version !== member.version) throw new Error(`Unexpected version/source: ${root}`);
     for (const [key, value] of Object.entries(manifest.dshKnowledge ?? {})) {
@@ -64,7 +66,7 @@ async function snapshot() {
       const pin = manifest.devDependencies?.[dependency.name];
       if (!pin) continue;
       const installed = await realpath(join(root, "node_modules", dependency.name));
-      const checkout = await realpath(join(workspace, dependency.name));
+      const checkout = roots.get(dependency.name);
       const linked = installed === checkout;
       if (!linked) {
         const installedManifest = await json(join(installed, "package.json"));
@@ -106,6 +108,7 @@ async function snapshot() {
 async function installedIssues(expected, options) {
   const issues = [];
   for (const member of expected.members) {
+    if (member.target === "compatibility-test") continue;
     const target = member.target === "obsidian-vault" ? options.vault : options.profile;
     if (!target) continue;
     const root = member.target === "obsidian-vault" ? join(target, ".obsidian", "plugins", member.name) : join(target, "node_modules", member.name);

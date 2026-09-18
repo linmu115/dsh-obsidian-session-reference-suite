@@ -44,7 +44,7 @@
   "lanes": [
     {
       "id": "lifecycle",
-      "label": "Bridge Lifecycle"
+      "label": "Bridge · 连接与共享通道"
     },
     {
       "id": "companion",
@@ -52,7 +52,7 @@
     },
     {
       "id": "adapter",
-      "label": "Reference Adapter"
+      "label": "Bridge · 内部引用接入"
     },
     {
       "id": "core",

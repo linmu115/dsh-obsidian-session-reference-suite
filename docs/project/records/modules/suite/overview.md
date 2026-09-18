@@ -3,7 +3,7 @@ id: MOD-suite
 kind: module
 title: Suite：装配与组合边界
 status: current
-summary: 组合入口和四个DSH运行子插件、共享Protocol、Obsidian Companion共同组成七成员。
+summary: 三个 DSH 运行子插件、Suite、Protocol 和 Obsidian Companion 组成当前组合；旧 Adapter 仅参与兼容测试。
 sources:
 - path: ../../README.md
   role: current-workspace-source
@@ -34,7 +34,7 @@ relations:
 - relation: contains
   to:
     record_id: MOD-reference
-  reason: Obsidian 来源接入
+  reason: 保留旧条目身份，当前实现已归入 Bridge 内部
 - relation: contains
   to:
     record_id: MOD-sticker
@@ -54,7 +54,7 @@ relations:
 - relation: implements
   to:
     record_id: REQ-suite-boundary
-  reason: 已确认七成员边界
+  reason: 保留组合项目范围，运行部署收敛为三个子插件
 ---
 
 # Suite：装配与组合边界
@@ -66,11 +66,11 @@ Suite 为 DSH 与 Obsidian 之间的引用、双向打开和贴纸协作提供�
 | [[MOD-protocol|Bridge Protocol]] | 控制与数据两个协议出口，DSH/Obsidian 两侧消费 |
 | [Annotation Core](../annotation-core/overview.md) | 气泡、引用事务、来源扩展、上下文读取 |
 | [Bridge Lifecycle](../bridge-lifecycle/overview.md) | 当前实例身份、租约、连接挂载、健康重试 |
-| [Reference Adapter](../reference-adapter/overview.md) | 浏览器定向领取、Host 来源核对与删除同步 |
+| [Bridge 内部引用接入](../reference-adapter/overview.md) | 原 Adapter 职责已并入 Bridge；旧包仅作兼容测试 |
 | [Sticker Board](../sticker-board/overview.md) | 普通贴纸、真实会话入口、来源标记、关联笔记气泡 |
 | [Obsidian Companion](../obsidian-companion/overview.md) | Vault 侧 Viewer、选区、链接回执与自有标记 |
 
-Core → Lifecycle → Reference Adapter → Sticker 是装载顺序；整个父组卸载时逆序释放。这只是四个运行子插件的装载顺序；本页 Suite 入口自身也是成员清单中的第七项。Protocol 是共享库成员，Companion 是 Obsidian 成员，两者不是父子产品。Maintenance 提供会话、固定来源及扩展结构真源，见 [外部依赖入口](../../dependencies/session-maintenance/overview.md)。
+Core → Bridge → Sticker 是三个运行子插件的装载顺序，整个父组卸载时逆序释放。成员清单仍记录旧 Adapter 的 compatibility-test 身份，以检验旧入口不会重复注册。Protocol 是共享库成员，Companion 是 Obsidian 成员，两者不是父子产品。Maintenance 提供会话、固定来源及扩展结构真源，见 [外部依赖入口](../../dependencies/session-maintenance/overview.md)。
 
 ## 修改组合时
 

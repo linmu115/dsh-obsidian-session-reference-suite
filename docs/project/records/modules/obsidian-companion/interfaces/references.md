@@ -9,11 +9,11 @@ sources:
   role: current-workspace-source
 - path: ../../../../rc2-adapt-20260912/obsidian-deepharness-bridge/src/protocol.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/bridge/http-client.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/bridge/http-client.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/client/annotation-consumer.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/host/obsidian-source-adapter.ts
   role: current-workspace-source
 ---
 

@@ -6,10 +6,10 @@ import { afterEach, describe, expect, it } from "vitest";
 import { AnnotationStore } from "../../dsh-annotation-core/src/host/store.ts";
 import { PendingDiscardOutbox } from "../../dsh-annotation-core/src/host/pending-discard-outbox.ts";
 import type { HostSourceRegistry } from "../../dsh-annotation-core/src/host/source-registry.ts";
-import { consumeObsidianReferenceCapture, type ObsidianAnnotationCore } from "../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts";
-import { createObsidianSourceAdapter } from "../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts";
-import { startReferencePolling, type ReferencePollingHandle } from "../../dsh-obsidian-reference-adapter/src/bridge/reference-polling.ts";
-import { createBridgeHttpClient, type BridgeHttpClient } from "../../dsh-obsidian-reference-adapter/src/bridge/http-client.ts";
+import { consumeObsidianReferenceCapture, type ObsidianAnnotationCore } from "../../dsh-obsidian-bridge-lifecycle/src/reference/client/annotation-consumer.ts";
+import { createObsidianSourceAdapter } from "../../dsh-obsidian-bridge-lifecycle/src/reference/host/obsidian-source-adapter.ts";
+import { startReferencePolling, type ReferencePollingHandle } from "../../dsh-obsidian-bridge-lifecycle/src/reference/bridge/reference-polling.ts";
+import { createBridgeHttpClient, type BridgeHttpClient } from "../../dsh-obsidian-bridge-lifecycle/src/reference/bridge/http-client.ts";
 import { startBridgeServer, type RunningBridge } from "../../obsidian-deepharness-bridge/src/bridge/server.ts";
 import { createObsidianReferenceCapture } from "../../obsidian-deepharness-bridge/src/vault/reference-source.ts";
 import type { ReferenceClaimV2 } from "../../obsidian-deepharness-bridge/src/protocol.ts";
@@ -60,7 +60,7 @@ async function flushDiscards(store: AnnotationStore, transport: BridgeHttpClient
   try { await outbox.runPending(sessionId); } finally { outbox.dispose(); }
 }
 
-describe("actual Core + Adapter + Obsidian HTTP reference delivery", () => {
+describe("actual Core + integrated Bridge + Obsidian HTTP reference delivery", () => {
   it("delivers a queued reference only to the Obsidian session while a standalone client polls the same instance", async () => {
     const { server, store, claims } = await fixture();
     const message = { ...capture("embedded-only"), dshInstanceId: "copy" }; server.enqueue(message);

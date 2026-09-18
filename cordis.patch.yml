@@ -1,5 +1,5 @@
 # One profile bundle, one parent group. Child row order is also the strict
-# teardown inverse: Sticker -> Reference Adapter -> Lifecycle -> Core.
+# teardown inverse: Sticker -> integrated Bridge -> Core.
 - insert:
     - id: obsidian-session-reference-suite
       name: 'cordis:group'
@@ -13,10 +13,6 @@
           name: 'dsh-obsidian-bridge-lifecycle'
           config:
             bridgeOrigin: 'http://127.0.0.1:18473'
-        - id: obsidian-reference-adapter
-          name: 'dsh-obsidian-reference-adapter'
-          inject: ['annotationCoreHost', 'obsidianBridgeLifecycle']
-          config:
             profileId: 'web'
         - id: session-sticker-board
           name: 'dsh-session-sticker-board'

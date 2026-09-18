@@ -1,7 +1,7 @@
 {
   "name": "dsh-obsidian-session-reference-suite",
-  "version": "0.3.4-rc2.18",
-  "description": "One DSH Bundle that composes Annotation Core, Bridge lifecycle, Obsidian reference adapter, and Sticker Board as a Cordis group.",
+  "version": "0.4.0-rc2.1",
+  "description": "One DSH Bundle with Annotation Core, the integrated Obsidian Bridge, and ordinary Sticker Board.",
   "type": "module",
   "license": "MIT",
   "files": [
@@ -36,11 +36,10 @@
     "stickerProtocolVersion": 1
   },
   "peerDependencies": {
-    "dsh-annotation-core": "0.3.11-rc2.2 || 0.3.12-rc2.1 || 0.3.12-rc2.2 || 0.3.12-rc2.3 || 0.3.12-rc2.4 || 0.3.12-rc2.5 || 0.3.12-rc2.6 || 0.3.12-rc2.7 || 0.3.12-rc2.8 || 0.3.12-rc2.9 || 0.3.12-rc2.10 || 0.3.12-rc2.11 || 0.3.12-rc2.12",
+    "dsh-annotation-core": "0.3.12-rc2.19",
     "dsh-obsidian-bridge-protocol": "0.3.3-rc2.1",
-    "dsh-obsidian-bridge-lifecycle": "0.3.3-rc2.2 || 0.3.3-rc2.3 || 0.3.3-rc2.4 || 0.3.3-rc2.5 || 0.3.3-rc2.6 || 0.3.3-rc2.7 || 0.3.3-rc2.8 || 0.3.3-rc2.9 || 0.3.3-rc2.10 || 0.3.3-rc2.11 || 0.3.3-rc2.12 || 0.3.3-rc2.13 || 0.3.3-rc2.14 || 0.3.3-rc2.15 || 0.3.3-rc2.16",
-    "dsh-obsidian-reference-adapter": "0.3.4-rc2.2 || 0.3.4-rc2.3 || 0.3.4-rc2.4 || 0.3.4-rc2.5 || 0.3.4-rc2.6 || 0.3.4-rc2.7 || 0.3.4-rc2.8 || 0.3.4-rc2.9 || 0.3.4-rc2.10 || 0.3.4-rc2.11 || 0.3.4-rc2.12 || 0.3.4-rc2.13 || 0.3.4-rc2.14 || 0.3.4-rc2.15 || 0.3.4-rc2.16",
-    "dsh-session-sticker-board": "0.7.3-rc2.2 || 0.7.3-rc2.3 || 0.7.3-rc2.4 || 0.7.3-rc2.5 || 0.7.3-rc2.6 || 0.7.3-rc2.7 || 0.7.3-rc2.8 || 0.7.3-rc2.9 || 0.7.3-rc2.10 || 0.7.3-rc2.11 || 0.7.3-rc2.12 || 0.7.3-rc2.13 || 0.7.3-rc2.14 || 0.7.3-rc2.15 || 0.7.3-rc2.16 || 0.7.3-rc2.17 || 0.7.3-rc2.18"
+    "dsh-obsidian-bridge-lifecycle": "0.4.0-rc2.1",
+    "dsh-session-sticker-board": "0.7.4-rc2.1"
   },
   "peerDependenciesMeta": {
     "dsh-annotation-core": {
@@ -52,19 +51,16 @@
     "dsh-obsidian-bridge-lifecycle": {
       "optional": true
     },
-    "dsh-obsidian-reference-adapter": {
-      "optional": true
-    },
     "dsh-session-sticker-board": {
       "optional": true
     }
   },
   "devDependencies": {
-    "dsh-annotation-core": "file:D:/AI/DeepSeekHarness-Plugin/artifacts/session-main-graph-20260914/dsh-annotation-core-0.3.12-rc2.8.tgz",
-    "dsh-obsidian-bridge-protocol": "file:C:/Users/19717/OneDrive/文档/ChatGPT/dsh/.artifacts/rc2-profile-candidate/dsh-obsidian-bridge-protocol-0.3.3-rc2.1.tgz",
-    "dsh-obsidian-bridge-lifecycle": "file:D:/AI/DeepSeekHarness-Plugin/artifacts/session-main-graph-20260914/dsh-obsidian-bridge-lifecycle-0.3.3-rc2.12.tgz",
-    "dsh-obsidian-reference-adapter": "file:D:/AI/DeepSeekHarness-Plugin/artifacts/session-main-graph-20260914/dsh-obsidian-reference-adapter-0.3.4-rc2.12.tgz",
-    "dsh-session-sticker-board": "file:D:/AI/DeepSeekHarness-Plugin/artifacts/session-main-graph-20260914/dsh-session-sticker-board-0.7.3-rc2.14.tgz",
+    "dsh-annotation-core": "link:../dsh-annotation-core",
+    "dsh-obsidian-bridge-protocol": "link:../../rc2-adapt-20260912/dsh-obsidian-bridge-protocol",
+    "dsh-obsidian-bridge-lifecycle": "link:../dsh-obsidian-bridge-lifecycle",
+    "dsh-obsidian-reference-adapter": "link:../dsh-obsidian-reference-adapter",
+    "dsh-session-sticker-board": "link:../dsh-session-sticker-board",
     "vitest": "^4.1.11",
     "yaml": "^2.8.1"
   },

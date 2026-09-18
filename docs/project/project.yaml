@@ -333,8 +333,8 @@
       "source_id": "integration-complete",
       "heading": "已确认需求",
       "status": "current",
-      "progress": "planned",
-      "summary": "完整确认稿包含绑定与独立运行，并新增贴纸业务归属、桥共用引用通道和先重构后开发的顺序。"
+      "progress": "in_progress",
+      "summary": "已授权施工，先整合Bridge和贴纸，再做绑定、Maintenance实例同步选择与扩展信息页。"
     },
     {
       "id": "EXP-bridge-consolidation",
@@ -343,7 +343,7 @@
       "source_id": "bridge-composition-review",
       "heading": "Core 引用归属、桥接插件收敛与未来操作通道评估",
       "status": "current",
-      "summary": "保留源码核查，按用户反馈收敛桥公共通道；笔记关联保留贴纸，先重构后绑定与新维护接入，尚未开工。",
+      "summary": "按用户修正实施桥公共通道收敛；笔记关联留在贴纸，实例范围由Maintenance新增权威策略。",
       "relations": [
         {
           "relation": "derived_from",

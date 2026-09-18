@@ -7,9 +7,9 @@ summary: 自动队列流程按 Companion、Lifecycle、Adapter、Core 分责；�
 progress: implemented
 gap: 静态核对与来源合成测试覆盖；本次未执行双应用投递。
 sources:
-- path: ../../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/client/annotation-consumer.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/host/obsidian-source-adapter.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/host/obsidian-source-adapter.ts
   role: current-workspace-source
 - path: ../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts
   role: current-workspace-source

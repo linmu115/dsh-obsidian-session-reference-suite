@@ -1,8 +1,8 @@
 # Obsidian Session Reference Suite
 
-本补丁配套 Annotation Core **0.3.12-rc2.12**，跨会话引用选择器使用 DSH 会话栏的可读标题。见[组合兼容说明](docs/changes/2026-09-15-picker-title-cohort.md)。
+本组合正在实施桥整合，阶段与验收条件见[实施计划](docs/2026-09-18-bridge-implementation-plan.md)。版本为本地开发候选，不代表已经发布或安装。
 
-当前版本 **0.3.4-rc2.18**，面向 **DSH 0.1.5-rc.2**。这是 DSH 与 Obsidian 引用系统的统一 Bundle：用一个父组加载四个有顺序的子插件，提供笔记引用、双向打开、会话关联、贴纸和断线恢复。
+当前版本 **0.4.0-rc2.1**，面向 **DSH 0.1.5-rc.2**。这是 DSH 与 Obsidian 引用系统的统一 Bundle：用一个父组加载三个有顺序的子插件，提供笔记引用、双向打开、会话关联、贴纸和断线恢复。
 
 ## 整套组件
 
@@ -10,15 +10,15 @@
 
 | 组件 | 当前版本 | 职责 |
 | --- | --- | --- |
-| Annotation Core | 0.3.12-rc2.12 | 引用气泡、准备与提交、引用状态、按需上下文工具 |
-| Bridge Lifecycle | 0.3.3-rc2.16 | Bridge 地址和实例身份、Viewer 连接租约、同步挂载及重试 |
-| Obsidian Reference Adapter | 0.3.4-rc2.16 | 笔记来源核对、定向领取、回链与双向删除 |
-| Session Sticker Board | 0.7.3-rc2.18 | 贴纸、真实会话入口、关联笔记气泡及对应管理界面 |
+| Annotation Core | 0.3.12-rc2.19 | 引用气泡、准备与提交、引用状态、按需上下文工具 |
+| DSH Bridge（保留 Lifecycle 包名） | 0.4.0-rc2.1 | 连接租约、统一动作分派、引用交接、来源核对、回链、双向删除与健康管理 |
+| Obsidian Reference Adapter（兼容测试成员） | 0.3.5-rc2.1 | 旧安装入口兼容；新 Suite 不加载，不另建轮询或来源注册 |
+| Session Sticker Board | 0.7.4-rc2.1 | 普通贴纸、笔记关联业务与界面；通过 Bridge 共用通道交接引用和定位 |
 | Bridge Protocol | 0.3.3-rc2.1 | 共享消息与数据协议 |
-| Obsidian DeepHarness Bridge | 0.6.4-rc2.6 | Vault 侧选区、笔记定位、内嵌会话、回链和同步记录 |
-| 本 Suite | 0.3.4-rc2.18 | 单一父组与组合验证 |
+| Obsidian DeepHarness Bridge | 0.6.4-rc2.7 | Vault 侧选区、笔记定位、内嵌会话、回链和同步记录 |
+| 本 Suite | 0.4.0-rc2.1 | 单一父组与组合验证 |
 
-DSH 中的加载顺序为 **Core → Lifecycle → Reference Adapter → Sticker**，卸载顺序相反。Protocol 作为依赖提供；Companion 安装在 Obsidian，不能作为 DSH 插件加载。新会话贴纸、知识链接和结构管理还要求已接通的 [Session Maintenance](https://github.com/linmu115/dsh-session-maintenance/blob/codex/rc2-session-context-graph/README.md) 及对应扩展能力。
+DSH 中的加载顺序为 **Core → Bridge → Sticker**，卸载顺序相反。Protocol 作为依赖提供；Companion 安装在 Obsidian，不能作为 DSH 插件加载。新会话贴纸、知识链接和结构管理还要求已接通的 [Session Maintenance](https://github.com/linmu115/dsh-session-maintenance/blob/codex/rc2-session-context-graph/README.md) 及对应扩展能力。
 
 ## 日常使用
 
@@ -48,12 +48,12 @@ DSH 中的加载顺序为 **Core → Lifecycle → Reference Adapter → Sticker
 
 ## 安装与配置
 
-首次手动部署时，先准备同一验证组合的本地构件，并在目标 DSH profile 安装表中的六个 DSH 包。已有 Launcher/套件管理的实例沿用其安装与更新流程，不重复安装第二套。只把 Suite 作为这组功能的 Bundle 加载；不要再把 Core、Lifecycle、Reference Adapter、Sticker 各自重复挂载为根 Bundle。[cordis.patch.yml](cordis.patch.yml) 定义唯一父组和子节点。
+首次手动部署时，先准备同一验证组合的本地构件，并在目标 DSH profile 安装表中的五个 DSH 运行与依赖包（不包括兼容测试成员）。已有 Launcher/套件管理的实例沿用其安装与更新流程，不重复安装第二套。只把 Suite 作为这组功能的 Bundle 加载；不要再把 Core、Bridge、Sticker 各自重复挂载为根 Bundle。[cordis.patch.yml](cordis.patch.yml) 定义唯一父组和子节点。
 
 | 配置位置 | 要求 |
 | --- | --- |
 | Lifecycle 子节点 `obsidian-bridge-lifecycle.config` | `bridgeOrigin` 与 Obsidian Bridge 端口一致；`dshInstanceId` 填当前 Launcher 实例 ID；`profileId` 填当前 profile。 |
-| Core / Reference Adapter 子节点 | `profileId` 与 Lifecycle 和 Maintenance 一致。Adapter 的 `bridgeOrigin` 通常留空，继承 Lifecycle。 |
+| Core / Bridge 子节点 | `profileId` 与当前实例及已接入的 Maintenance 一致；引用接入由 Bridge 内部提供。 |
 | Maintenance 插件 | 使用该实例已登记的 Engine 连接及 Launcher 启动绑定；为需要的扩展登记对应插件版本。只填 JSON 不能替代可信安装与启动绑定。 |
 | Obsidian 设置 | 配置本机 DSH Web 地址、Bridge 端口、伴生笔记目录；编辑后点击 **应用**。优先使用 Lifecycle 提供的当前 Viewer 地址。 |
 
@@ -67,29 +67,29 @@ Lifecycle 配置内容示例：
 }
 ```
 
-当前三项相关扩展在 Maintenance 的 `extensionPlugins` 中对应如下，供核对配置使用。由 Launcher/套件管理的实例应通过其配置流程维护；只有首次手动配置时才合入需要的条目，并保留其它已启用扩展。`writerId` 沿用该实例已经登记的实际值，示例占位符不能直接粘贴使用，也不能换成包名覆盖原写入者。安装版本变化时同步核对，不用固定示例覆盖整份实例配置。
+现有三项相关扩展在 Maintenance 的 `extensionPlugins` 中对应如下，供核对配置使用。由 Launcher/套件管理的实例应通过其配置流程维护；只有首次手动配置时才合入需要的条目，并保留其它已启用扩展。`writerId` 沿用该实例已经登记的实际值，示例占位符不能直接粘贴使用，也不能换成包名覆盖原写入者。安装版本变化时同步核对，不用固定示例覆盖整份实例配置。
 
 ```json
 [
   {
     "namespace": "annotation-upstream",
-    "pluginVersion": "0.3.12-rc2.12",
+    "pluginVersion": "0.3.12-rc2.19",
     "writerId": "<沿用该实例 annotation-upstream 已登记的 writerId>"
   },
   {
     "namespace": "stickers",
-    "pluginVersion": "0.7.3-rc2.18",
+    "pluginVersion": "0.7.4-rc2.1",
     "writerId": "<沿用该实例 stickers 已登记的 writerId>"
   },
   {
     "namespace": "obsidian-links",
-    "pluginVersion": "0.6.4-rc2.6",
+    "pluginVersion": "0.6.4-rc2.7",
     "writerId": "<沿用该实例 obsidian-links 已登记的 writerId>"
   }
 ]
 ```
 
-ThoughtDAG 是另一项可选扩展，按它自己的配套版本和配置接入，不由本 Suite 自动安装。跨会话上游引用的选区入口由配套 Annotation/Sidechat 提供。
+ThoughtDAG 是另一项可选扩展，按它自己的配套版本和配置接入，不由本 Suite 自动安装。原生主会话划选入口由 Core 提供，ThoughtDAG 负责跨会话入口和会话贴纸；本次桥整合不改变这些归属。
 
 ## 连接恢复
 
@@ -99,12 +99,12 @@ Bridge 离线时，Core 与贴纸模块仍保留已保存的本地工作；外�
 
 ## 从源码构建与核对
 
-将七个成员仓库按名称放在同一个父目录，版本与成员清单一致。各仓库当前含本地 `file:` 开发构件，Companion 还依赖 Maintenance contracts；先准备这些依赖路径或在新的开发分支更新路径与锁文件，再安装各仓库依赖。公开 Git 源码不等于本机归档自动可用。
+版本与成员清单一致。六个组合成员加旧 Adapter 兼容测试仓均参与开发验证；Protocol 可通过显式 `--protocol-root` 从独立共享仓链接。检查和组合记录使用该已验证的真实来源，无需复制协议仓。各仓库当前含本地 `file:` 开发构件，Companion 还依赖 Maintenance contracts；先准备这些依赖路径或在新的开发分支更新路径与锁文件，再安装各仓库依赖。公开 Git 源码不等于本机归档自动可用。
 
 成员依赖已安装后，在本 Suite 目录执行已有脚本：
 
 ```powershell
-pnpm workspace:link
+pnpm workspace:link --protocol-root "D:/path/to/dsh-obsidian-bridge-protocol"
 pnpm suite:check
 pnpm suite:record
 pnpm suite:verify
@@ -128,7 +128,7 @@ node scripts/prepare-registry.mjs "D:/path/to/state/registry/plugins.yaml"
 
 ## 验证范围与进一步说明
 
-协议版本保持 Annotation 2 / Sticker 1 / Lifecycle 3。组合测试覆盖真实 Core 存储、Adapter 与合成 Obsidian HTTP 服务、目标领取、重连和删除；它们不能替代实际双应用交互、真实模型调用或 Vault 性能验收。
+协议版本保持 Annotation 2 / Sticker 1 / Lifecycle 3。组合测试覆盖真实 Core 存储、整合后的 Bridge 与合成 Obsidian HTTP 服务、目标领取、重连和删除；它们不能替代实际双应用交互、真实模型调用或 Vault 性能验收。
 
 参阅 [CHANGELOG](CHANGELOG.md)、[关联笔记与按需引用](docs/2026-09-14-linked-note-rail.md)、[当前图谱引用生命周期组合](docs/2026-09-15-graph-reference-lifecycle-cohort.md)及 [Companion 使用说明](https://github.com/linmu115/obsidian-deepharness-bridge/blob/codex/dsh-0-1-5-rc2/README.md)。
 

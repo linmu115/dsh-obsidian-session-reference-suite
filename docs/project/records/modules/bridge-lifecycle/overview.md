@@ -1,9 +1,9 @@
 ---
 id: MOD-lifecycle
 kind: module
-title: Lifecycle：连接租约与外部挂载
+title: DSH Bridge：连接、引用交接与维护
 status: current
-summary: 连接身份与连接附属工作分层管理；离线时保留 Core 和持久业务数据。
+summary: 整合原 Lifecycle 与 Reference Adapter；统一连接、动作分派、引用交接和健康面板。
 sources:
 - path: ../../../dsh-obsidian-bridge-lifecycle/README.md
   role: current-workspace-source
@@ -41,7 +41,7 @@ relations:
   - Bridge 身份租约
 ---
 
-# Lifecycle：连接租约与外部挂载
+# DSH Bridge：连接、引用交接与维护
 
 ## 实例和 Viewer 连接
 
@@ -55,7 +55,7 @@ Core 的宿主存储和本地草稿不由此生命周期卸载。外部连接可
 
 ## 提供接口与已知接入
 
-[连接与挂载合同](interface.md) 唯一维护公共 API。[Reference Adapter](../reference-adapter/overview.md) 注册 Host 删除轮询与 Client 投递连接；[Sticker](../sticker-board/overview.md) 注册 Bridge 贴纸/导航同步。源码入口为 [运行状态与附件队列](../../../../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts)、[Host 入口](../../../../../../dsh-obsidian-bridge-lifecycle/src/index.ts) 与 [浏览器配置入口](../../../../../../dsh-obsidian-bridge-lifecycle/src/client.ts)。
+[连接与挂载合同](interface.md) 唯一维护公共 API。[内部引用接入](../reference-adapter/overview.md) 注册 Host 删除与 Client 领取处理者；[Sticker](../sticker-board/overview.md) 注册普通导航业务并借用共享传输。统一 action channel 持有队列和确认责任，普通贴纸不再维护独立轮询。源码入口为 [运行状态与附件队列](../../../../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts)、[Host 入口](../../../../../../dsh-obsidian-bridge-lifecycle/src/index.ts) 与 [浏览器配置入口](../../../../../../dsh-obsidian-bridge-lifecycle/src/client.ts)。
 
 ## 共享协议接入
 

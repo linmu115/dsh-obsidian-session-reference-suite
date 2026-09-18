@@ -20,3 +20,11 @@ plugins:
   expect(current.plugins[2].name).toBe("protocol");
   expect(current.plugins).toHaveLength(3);
 });
+
+it("does not promote a legacy compatibility test package into the runtime registry", () => {
+  const result = prepareRegistry("schemaVersion: 1\nplugins: []\n", "D:/suite", [
+    { name: "dsh-obsidian-bridge-lifecycle", target: "dsh-profile" },
+    { name: "dsh-obsidian-reference-adapter", target: "compatibility-test" },
+  ]);
+  expect(parse(result.candidate).plugins.map((plugin: { name: string }) => plugin.name)).toEqual(["dsh-obsidian-bridge-lifecycle"]);
+});

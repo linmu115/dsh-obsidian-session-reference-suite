@@ -2,6 +2,7 @@ import { spawn } from "node:child_process";
 import { mkdir, readFile, realpath, rm, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { memberRoot } from "./member-root.mjs";
 
 const suiteRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const workspace = dirname(suiteRoot);
@@ -9,15 +10,16 @@ const spec = JSON.parse(await readFile(join(suiteRoot, "suite.members.json"), "u
 const outputRoot = join(suiteRoot, ".artifacts", "checks");
 await mkdir(outputRoot, { recursive: true });
 const summary = [];
+const roots = new Map(await Promise.all(spec.members.map(async (member) => [member.name, await memberRoot(workspace, member)])));
 
 for (const member of spec.members) {
   if (!/^[a-z][a-z0-9-]+$/.test(member.name)) throw new Error("Invalid member path");
-  const root = join(workspace, member.name);
+  const root = roots.get(member.name);
   const manifest = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
   if (manifest.name !== member.name || manifest.version !== member.version) throw new Error(`Unexpected source: ${root}`);
   for (const dependency of spec.members) {
     if (!manifest.devDependencies?.[dependency.name]) continue;
-    if (await realpath(join(root, "node_modules", dependency.name)) !== await realpath(join(workspace, dependency.name))) {
+    if (await realpath(join(root, "node_modules", dependency.name)) !== roots.get(dependency.name)) {
       throw new Error(`${member.name}: link the suite workspace before checking ${dependency.name}`);
     }
   }

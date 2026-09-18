@@ -1,32 +1,28 @@
 ---
 id: IF-lifecycle
 kind: interface
-title: Lifecycle 合同：就绪挂载、排空与重试
+title: Bridge 合同：连接、统一分派与引用交接
 status: current
-summary: 消费者注册一段连接工作并返回释放函数；Lifecycle 根据当前 Bridge 状态启停。
+summary: Bridge 拥有连接与消息确认；消费者借用操作接口、注册动作业务并通过共用交接调用 Core。
 sources:
 - path: ../../../dsh-obsidian-bridge-lifecycle/src/api.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/action-channel.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/index.ts
-  role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/client/index.ts
-  role: current-workspace-source
-- path: ../../../dsh-session-sticker-board/src/client/index.tsx
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/handoff.ts
   role: current-workspace-source
 ---
 
-# Lifecycle 合同：就绪挂载、排空与重试
+# Bridge 合同：连接、统一分派与引用交接
 
-提供方 Lifecycle 将当前 Bridge 地址、运行身份和就绪状态交给消费者。消费者注册命名 mount 回调并返回 disposer；Lifecycle 在可用连接上挂载，在断线、排空、重启或撤销注册时释放。
+普通贴纸可以请求打开笔记、同步贴纸数据或把关联笔记引用到当前会话。Bridge 统一提供可借用的传输操作、就绪挂载、消息分派与引用交接；调用方保留业务验证和界面，不再自建连接或自行确认消息。
 
-例：Adapter 注册引用删除轮询，Bridge 断线后轮询停止；Core 保留持久删除作业，恢复后重新挂载并重试。调用方可订阅快照、提交健康状态、请求 drain/resume 或针对某组件 retry。
+`transport` 是借用接口，不暴露销毁、轮询游标或动作确认。`registerActionHandler` 注册本业务能识别的动作，返回只释放自身的句柄。Bridge 每个宿主或页面运行各有一个队列消费者；只有明确成功的所属动作被确认，不属于当前实例／Profile／页面的动作被忽略且不确认，等待业务就绪的动作可重试。重名或多个处理者同时声明同一动作是可诊断冲突。
 
-参数与类型以 [ObsidianBridgeLifecycle](../../../../../../dsh-obsidian-bridge-lifecycle/src/api.ts) 为唯一合同，状态/逆序实现以 [runtime.ts](../../../../../../dsh-obsidian-bridge-lifecycle/src/runtime.ts) 为依据。改变就绪判定、释放顺序或身份格式会影响 Adapter 与 Sticker，不能仅测试单个连接对象。
+`handoffReference` 接受当前会话、操作身份和业务的准备、核验、提交回调。它协调 Core 的添加与补偿，Core 继续持有通用引用状态和持久任务。贴纸的笔记关联规则与数据不迁入桥。
 
-已知接入者与返回：[Adapter 的 Host/Client 挂载](../reference-adapter/overview.md)、[Sticker 的外部同步](../sticker-board/overview.md)；提供方介绍在 [Lifecycle 模块](overview.md)。
+`mountWhenReady`、状态订阅、健康来源和 `drain/resume/retry` 保留。Bridge 自身提供维护面板；缺少普通贴纸不妨碍观察桥。消费者卸载只释放自己的贡献，不能关闭共享连接。
 
-## 下一版合同方向（待实现）
+参数、能力声明和错误行为以 [api.ts](../../../../../../dsh-obsidian-bridge-lifecycle/src/api.ts) 为唯一合同，实现位于 action-channel、reference/handoff 与 runtime。既有引用接入成为 [[MOD-lifecycle]] 内的 [[MOD-reference]]。Core 或 Maintenance 尚未加载时，连接服务仍正常；依赖其能力的工作等待或明确不可用。
 
-当前代码仍是上述单连接接口。新增绑定、发现与按 Vault 的连接接口草案统一见 [[IF-vault-binding]]；其消费者包括 Reference Adapter、Sticker、Companion 及可选维护页。迁移不能丢失现有动态端口、登录 URL、surfaceId、代次检查和延迟挂载释放行为。
+绑定、发现与按 Vault 路由是后续阶段，见 [[IF-vault-binding]]，不能把本阶段单连接的接口说成已经支持多 Vault。

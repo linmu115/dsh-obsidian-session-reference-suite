@@ -9,9 +9,9 @@ sources:
   role: current-workspace-source
 - path: ../../../dsh-annotation-core/src/public/client-api.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/index.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/host.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/client/index.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/client.ts
   role: current-workspace-source
 relations:
 - relation: provides

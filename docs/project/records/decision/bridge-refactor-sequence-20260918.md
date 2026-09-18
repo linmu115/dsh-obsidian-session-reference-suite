@@ -4,8 +4,8 @@ kind: decision
 title: 桥先整合、贴纸保留业务、绑定与维护分期推进
 date: 2026-09-18
 status: current
-progress: planned
-summary: 先整合既有桥与引用通道，贴纸保留笔记关联；再做两侧绑定路由及新的维护 Adapter，未来操作后置，等待明确开工。
+progress: in_progress
+summary: 用户已明确授权施工；先整合既有桥与引用通道，贴纸保留笔记关联，再依序验收两侧绑定路由与新的维护 Adapter，未来操作后置。
 relations:
 - relation: derived_from
   to:
@@ -49,6 +49,6 @@ relations:
 
 ## 实施边界
 
-用户明确要求继续核实、先落实实施计划，并在其下令后才开始施工。本次仅记录确认结果；没有授权本轮改动产品代码、安装新包、重启实例或迁移数据。
+此前用户要求先核实并等待其下令。2026-09-18 用户已明确下令按需求和执行规划施工，并要求由 Astra 子代理（思考强度不超过 high）分工执行。已进入第一阶段，详见[实施计划](../../../2026-09-18-bridge-implementation-plan.md)。代码、合成测试与本地构件按阶段推进，真实数据迁移和应用部署的完成情况另行记录。
 
 原评估中把笔记关联功能／面板迁入 Bridge 的建议已经撤回，详见 [[EXP-bridge-consolidation]] 的修订；其他已有引用与会话贴纸职责保持。来源与两项选择见 [[HIST-vault-instance-binding]]。

@@ -30,7 +30,7 @@ Vault 拥有笔记正文，Maintenance 拥有会话和已迁入结构，Core 拥
 - [Annotation Core](records/modules/annotation-core/overview.md)：通用引用 UI、引用状态与提交、上下文注入、Host/Client 来源扩展、轻量目录。
 - [Bridge Protocol](records/modules/bridge-protocol/overview.md)：两侧共享的控制/数据类型与校验；Annotation 2 单独归 Core。
 - [Bridge Lifecycle](records/modules/bridge-lifecycle/overview.md)：身份租约、实际 Viewer 地址、就绪挂载与重试。
-- [Reference Adapter](records/modules/reference-adapter/overview.md)：Client 领取与 Host 来源/删除分别维护。
+- [Bridge 内部引用接入](records/modules/reference-adapter/overview.md)：原 Adapter 已并入 Bridge；Client 领取与 Host 来源/删除仍分工。
 - [Sticker Board](records/modules/sticker-board/overview.md)：普通贴纸与真实会话/来源符号、关联笔记气泡。
 - [Obsidian Companion](records/modules/obsidian-companion/overview.md)：Viewer/Bridge 与 Vault 身份/标记/回执分别维护。
 

@@ -5,11 +5,11 @@ title: Reference Adapter 接入 Core
 status: current
 summary: 用 Core 保存引用事务；Adapter 只实现 Obsidian 来源动作和当前页面交接。
 sources:
-- path: ../../../dsh-obsidian-reference-adapter/src/index.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/host.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/client/index.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/client.ts
   role: current-workspace-source
-- path: ../../../dsh-obsidian-reference-adapter/src/client/annotation-consumer.ts
+- path: ../../../dsh-obsidian-bridge-lifecycle/src/reference/client/annotation-consumer.ts
   role: current-workspace-source
 relations:
 - relation: consumes

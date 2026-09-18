@@ -19,7 +19,6 @@ describe("Obsidian Session Reference Suite bundle", () => {
     expect(suite?.config.map((row) => [row.id, row.name])).toEqual([
       ["annotation-core", "dsh-annotation-core"],
       ["obsidian-bridge-lifecycle", "dsh-obsidian-bridge-lifecycle"],
-      ["obsidian-reference-adapter", "dsh-obsidian-reference-adapter"],
       ["session-sticker-board", "dsh-session-sticker-board"],
     ]);
   });
@@ -31,7 +30,6 @@ describe("Obsidian Session Reference Suite bundle", () => {
       "dsh-annotation-core",
       "dsh-obsidian-bridge-protocol",
       "dsh-obsidian-bridge-lifecycle",
-      "dsh-obsidian-reference-adapter",
       "dsh-session-sticker-board",
     ]);
   });

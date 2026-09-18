@@ -1,7 +1,7 @@
 ---
 id: REQ-suite-boundary
 kind: requirement
-title: 组合范围：七成员与独立外部项目
+title: 组合范围：整合 Bridge 与独立外部项目
 status: current
 summary: 按用户确认名单维护一张组合地图；Core 包括引用状态、提交、上下文注入和通用 UI。
 sources:
@@ -12,7 +12,7 @@ sources:
 relations: []
 ---
 
-# 组合范围：七成员与独立外部项目
+# 组合范围：整合 Bridge 与独立外部项目
 
 ## 当前要求与来源
 
@@ -20,11 +20,13 @@ relations: []
 
 Core 的范围包括引用状态与提交、上下文注入、通用引用 UI，不能缩成双链。Companion 缩进位置按真实依赖解释：它消费共享 Protocol，并非由 Protocol 创建、加载或拥有的子插件。
 
+2026-09-18 用户授权桥整合后，原 Reference Adapter 实现迁入 Bridge，独立包只作为旧入口兼容测试成员。当前 DSH 运行装配是 Core → Bridge → Sticker 三个子插件，连同 Suite、Protocol 与 Companion 共六个部署成员。清单中的第七项标为 compatibility-test，不要求安装。原条目身份与来源继续保留，内部引用接入挂到 Bridge 下。
+
 Session Maintenance 与 ThoughtDAG 各自已有地图，不属于本组合。组合保留自己使用哪些外部能力以及提供接口的已知外部消费者；对方内部平台/业务 Adapter 档案归回独立地图。已有需求编号、身份与后继继续可查。
 
 ## 验收条件
 
-- 入口说明七成员与各自部署位置；图框按组件归属容纳内部功能。
+- 入口区分六个当前部署成员与旧 Adapter 兼容测试成员；图框将引用接入容纳在 Bridge 内，部署顺序与实际补丁一致。
 - 两侧分别消费共享协议；Annotation 2 合同归 Core，Lifecycle 3 / Sticker 1 归 Protocol。
 - Core 的通用 UI、提交和注入职责均有记录与源码；其他成员保留内部职责、具体接入与返回合同的链接。
 - 外部项目用稳定项目/记录 ID 引用，不画成本组合子模块；旧重复记录只保留身份、原因与后继。
