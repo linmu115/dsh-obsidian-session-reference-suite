@@ -38,7 +38,7 @@
       },
       {
         "id": "external",
-        "label": "安装与外部业务组合",
+        "label": "安装、绑定与可选维护",
         "focus": [
           "suite-assembly",
           "life-identity",
@@ -51,9 +51,15 @@
           "comp-bridge",
           "ext-thoughtdag",
           "ext-better-sidebar",
-          "ext-maintenance"
+          "ext-maintenance",
+          "bridge-binding",
+          "bridge-folder",
+          "comp-location",
+          "ext-business-pages",
+          "ext-shared-scope",
+          "bridge-operations-planned"
         ],
-        "note": "Bridge 是唯一桥安装项；Core/Sticker 独立，普通 Sticker 需要 Core+Bridge+Better Sidebar，Maintenance 可选。"
+        "note": "Core/Bridge/Sticker 独立；Maintenance 仅可选外部入口与范围提供方。专用操作通道仍在同一 Bridge 内规划，未实现。"
       },
       {
         "id": "shared-protocol",
@@ -94,8 +100,8 @@
       "label": "内嵌 Viewer",
       "sublabel": "稳定页面 / 真实会话",
       "pos": [
-        75.0,
-        112.0
+        75,
+        112
       ],
       "size": [
         172.5,
@@ -108,8 +114,8 @@
       "label": "Vault 绑定与 HTTP 服务",
       "sublabel": "唯一 CAS 写口 / boot / 队列",
       "pos": [
-        75.0,
-        245.0
+        75,
+        245
       ],
       "size": [
         172.5,
@@ -122,8 +128,8 @@
       "label": "Vault 身份与回执",
       "sublabel": "笔记正文 / Owned 标记",
       "pos": [
-        75.0,
-        378.0
+        75,
+        378
       ],
       "size": [
         172.5,
@@ -136,8 +142,8 @@
       "label": "页面领取事务",
       "sublabel": "先 Core 添加，再确认 claim",
       "pos": [
-        450.0,
-        112.0
+        450,
+        112
       ],
       "size": [
         172.5,
@@ -150,8 +156,8 @@
       "label": "Host 来源适配",
       "sublabel": "核对 / 回链 / 后台删除",
       "pos": [
-        450.0,
-        245.0
+        450,
+        245
       ],
       "size": [
         172.5,
@@ -164,8 +170,8 @@
       "label": "Client 引用接口",
       "sublabel": "气泡 / 添加 / 精确解除",
       "pos": [
-        825.0,
-        112.0
+        825,
+        112
       ],
       "size": [
         172.5,
@@ -178,8 +184,8 @@
       "label": "输入与持久提交",
       "sublabel": "运行状态 / 提交 / 撤销 / 恢复",
       "pos": [
-        825.0,
-        245.0
+        825,
+        245
       ],
       "size": [
         172.5,
@@ -192,8 +198,8 @@
       "label": "Host 来源接口",
       "sublabel": "准备 / 回链 / 删除回调",
       "pos": [
-        825.0,
-        378.0
+        825,
+        378
       ],
       "size": [
         172.5,
@@ -206,8 +212,8 @@
       "label": "固定上游与原生工具",
       "sublabel": "授权 / 窗口 / 保留材料",
       "pos": [
-        1125.0,
-        112.0
+        1125,
+        112
       ],
       "size": [
         172.5,
@@ -220,8 +226,8 @@
       "label": "轻量目录接口",
       "sublabel": "分页只读 / 变更修订",
       "pos": [
-        1125.0,
-        245.0
+        1125,
+        245
       ],
       "size": [
         172.5,
@@ -232,7 +238,7 @@
       "id": "life-identity",
       "type": "security",
       "label": "实例发现与 Vault 路由",
-      "sublabel": "每 Vault 连接 / 稳定身份",
+      "sublabel": "稳定实例 / 当前 boot / 动态端口",
       "pos": [
         450,
         378
@@ -262,8 +268,8 @@
       "label": "普通 Markdown 贴纸",
       "sublabel": "红色符号 / 回链 / 迁移",
       "pos": [
-        450.0,
-        651.0
+        1800,
+        651
       ],
       "size": [
         172.5,
@@ -276,8 +282,8 @@
       "label": "普通贴纸定位与标记",
       "sublabel": "普通贴纸定位 / 关系管理",
       "pos": [
-        450.0,
-        784.0
+        1800,
+        784
       ],
       "size": [
         172.5,
@@ -290,8 +296,8 @@
       "label": "关联笔记气泡",
       "sublabel": "打开 / 直接引用到本轮",
       "pos": [
-        450.0,
-        917.0
+        1800,
+        917
       ],
       "size": [
         172.5,
@@ -304,8 +310,8 @@
       "label": "笔记知识接口",
       "sublabel": "按需准备 / 打开 / 回执",
       "pos": [
-        75.0,
-        511.0
+        75,
+        511
       ],
       "size": [
         172.5,
@@ -319,7 +325,7 @@
       "sublabel": "文档 / 组合验收，不安装",
       "pos": [
         75,
-        700
+        1280
       ],
       "size": [
         200,
@@ -386,7 +392,7 @@
       "id": "ext-maintenance",
       "type": "external",
       "label": "可选 Session Maintenance",
-      "sublabel": "分类范围 / 历史 Adapter / 信息页",
+      "sublabel": "外部可选 / 历史维护能力提供方",
       "pos": [
         950,
         1000
@@ -402,8 +408,8 @@
       "label": "独立 ThoughtDAG",
       "sublabel": "会话来源 / 跨会话引用 / 会话贴纸",
       "pos": [
-        1300,
-        1150
+        1800,
+        1280
       ],
       "size": [
         225,
@@ -430,12 +436,96 @@
       "label": "独立 Better Sidebar",
       "sublabel": "普通贴纸界面承载依赖",
       "pos": [
-        450,
+        1800,
         1130
       ],
       "size": [
         230,
         60
+      ]
+    },
+    {
+      "id": "bridge-binding",
+      "type": "security",
+      "label": "Vault 绑定与路由",
+      "sublabel": "单 Vault 单实例 / 多 Vault 隔离",
+      "pos": [
+        430,
+        650
+      ],
+      "size": [
+        220,
+        64
+      ]
+    },
+    {
+      "id": "bridge-folder",
+      "type": "backend",
+      "label": "文件夹选择与验证",
+      "sublabel": "插件完整性 / 在线身份 / 只读复核",
+      "pos": [
+        430,
+        784
+      ],
+      "size": [
+        220,
+        64
+      ]
+    },
+    {
+      "id": "bridge-operations-planned",
+      "type": "backend",
+      "label": "专用操作通道 · 规划",
+      "sublabel": "复用绑定路由 / 业务能力未实现",
+      "pos": [
+        430,
+        918
+      ],
+      "size": [
+        220,
+        64
+      ]
+    },
+    {
+      "id": "comp-location",
+      "type": "security",
+      "label": "在线 Vault 路径证明",
+      "sublabel": "本机无 Origin / realpath / 当前 boot",
+      "pos": [
+        55,
+        650
+      ],
+      "size": [
+        220,
+        64
+      ]
+    },
+    {
+      "id": "ext-business-pages",
+      "type": "external",
+      "label": "SM 插件信息页 · 可选",
+      "sublabel": "外部注册 / 栏目 / 动作与回执",
+      "pos": [
+        950,
+        1260
+      ],
+      "size": [
+        220,
+        64
+      ]
+    },
+    {
+      "id": "ext-shared-scope",
+      "type": "external",
+      "label": "SM 实例同步范围 · 可选",
+      "sublabel": "同实例全部 Vault 共用 / 下次启动生效",
+      "pos": [
+        1250,
+        1390
+      ],
+      "size": [
+        220,
+        64
       ]
     }
   ],
@@ -447,7 +537,8 @@
         "comp-viewer",
         "comp-bridge",
         "comp-vault",
-        "comp-knowledge"
+        "comp-knowledge",
+        "comp-location"
       ],
       "pad": 20
     },
@@ -472,7 +563,10 @@
         "ref-client",
         "ref-host",
         "life-identity",
-        "life-mount"
+        "life-mount",
+        "bridge-binding",
+        "bridge-folder",
+        "bridge-operations-planned"
       ],
       "pad": 20
     },
@@ -515,7 +609,7 @@
       "toSide": "top",
       "labelAt": [
         161.2,
-        175.0
+        175
       ]
     },
     {
@@ -527,7 +621,7 @@
       "toSide": "top",
       "labelAt": [
         161.2,
-        308.0
+        308
       ]
     },
     {
@@ -581,7 +675,7 @@
       "toSide": "top",
       "labelAt": [
         911.2,
-        175.0
+        175
       ]
     },
     {
@@ -593,7 +687,7 @@
       "toSide": "top",
       "labelAt": [
         911.2,
-        308.0
+        308
       ]
     },
     {
@@ -605,11 +699,11 @@
       "toSide": "left",
       "via": [
         [
-          705.0,
+          705,
           271.6
         ],
         [
-          705.0,
+          705,
           404.6
         ]
       ],
@@ -683,10 +777,28 @@
       "from": "life-mount",
       "to": "sticker-ordinary",
       "label": "同步附件",
-      "fromSide": "bottom",
-      "toSide": "top",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          710,
+          537.6
+        ],
+        [
+          710,
+          610
+        ],
+        [
+          1740,
+          610
+        ],
+        [
+          1740,
+          677.6
+        ]
+      ],
       "labelAt": [
-        580,
+        1560,
         610
       ]
     },
@@ -695,25 +807,25 @@
       "from": "sticker-session",
       "to": "core-client",
       "label": "普通贴纸引用 / 解除",
-      "fromSide": "top",
-      "toSide": "left",
+      "fromSide": "left",
+      "toSide": "top",
       "via": [
         [
-          536.25,
-          749.0
+          1720,
+          810.6
         ],
         [
-          742.5,
-          749.0
+          1720,
+          30
         ],
         [
-          742.5,
-          138.6
+          911.25,
+          30
         ]
       ],
       "labelAt": [
-        742.5,
-        563.5
+        1720,
+        400
       ]
     },
     {
@@ -726,7 +838,8 @@
       "id": "sticker-storage",
       "from": "sticker-ordinary",
       "to": "ext-maintenance",
-      "label": "已迁入对象"
+      "label": "已迁入对象",
+      "route": "auto"
     },
     {
       "id": "fixed-context",
@@ -798,7 +911,8 @@
       "id": "session-objects",
       "from": "ext-thoughtdag",
       "to": "ext-maintenance",
-      "label": "可选历史类型保存 / 恢复"
+      "label": "可选历史类型保存 / 恢复",
+      "route": "auto"
     },
     {
       "id": "companion-objects",
@@ -893,26 +1007,7 @@
       "from": "sticker-ordinary",
       "to": "protocol-data",
       "label": "消费贴纸数据",
-      "fromSide": "right",
-      "toSide": "top",
-      "via": [
-        [
-          700,
-          677.6
-        ],
-        [
-          700,
-          630
-        ],
-        [
-          1225,
-          630
-        ]
-      ],
-      "labelAt": [
-        1020,
-        630
-      ]
+      "route": "auto"
     },
     {
       "id": "companion-data-schema",
@@ -1001,21 +1096,29 @@
       "from": "sticker-linked",
       "to": "life-mount",
       "label": "handoffReference 交接",
-      "fromSide": "right",
+      "fromSide": "left",
       "toSide": "right",
       "via": [
         [
-          690,
+          1690,
           943.6
         ],
         [
-          690,
+          1690,
+          595
+        ],
+        [
+          680,
+          595
+        ],
+        [
+          680,
           537.6
         ]
       ],
       "labelAt": [
-        715,
-        880
+        1480,
+        595
       ]
     },
     {
@@ -1027,34 +1130,36 @@
       "toSide": "top",
       "via": [
         [
-          1620,
-          1180
+          2150,
+          1310
         ],
         [
-          1620,
-          45
+          2150,
+          10
         ],
         [
           911.25,
-          45
+          10
         ]
       ],
       "labelAt": [
-        1620,
-        750
+        2150,
+        600
       ]
     },
     {
       "id": "suite-core",
       "from": "suite-assembly",
       "to": "core-submit",
-      "label": "组合源码验证"
+      "label": "组合源码验证",
+      "route": "auto"
     },
     {
       "id": "suite-lifecycle",
       "from": "suite-assembly",
       "to": "life-mount",
-      "label": "开发 / 构件核验"
+      "label": "开发 / 构件核验",
+      "route": "auto"
     },
     {
       "id": "discover-host",
@@ -1092,28 +1197,137 @@
       "id": "scope-consumer",
       "from": "life-mount",
       "to": "ext-maintenance",
-      "label": "可选分类范围 / 公共页贡献"
+      "label": "可选维护能力接入"
     },
     {
       "id": "sticker-sidebar",
       "from": "sticker-ordinary",
       "to": "ext-better-sidebar",
       "label": "业务界面依赖",
-      "fromSide": "left",
-      "toSide": "left",
+      "fromSide": "right",
+      "toSide": "right",
       "via": [
         [
-          400,
+          2100,
           677.6
         ],
         [
-          400,
+          2100,
           1160
         ]
       ],
       "labelAt": [
-        398,
-        1030
+        2100,
+        1020
+      ]
+    },
+    {
+      "id": "binding-live-route",
+      "from": "bridge-binding",
+      "to": "life-identity",
+      "label": "长期绑定与当前端点分离",
+      "fromSide": "left",
+      "toSide": "left",
+      "via": [
+        [
+          390,
+          682
+        ],
+        [
+          390,
+          404.6
+        ]
+      ],
+      "labelAt": [
+        390,
+        620
+      ]
+    },
+    {
+      "id": "binding-authority",
+      "from": "bridge-binding",
+      "to": "comp-bridge",
+      "label": "CAS / 幂等 / 唯一有效绑定",
+      "route": "auto"
+    },
+    {
+      "id": "folder-binding",
+      "from": "bridge-folder",
+      "to": "bridge-binding",
+      "label": "验证成功后请求绑定",
+      "route": "auto"
+    },
+    {
+      "id": "folder-location-proof",
+      "from": "bridge-folder",
+      "to": "comp-location",
+      "label": "核对 realpath 与在线身份",
+      "route": "auto"
+    },
+    {
+      "id": "location-live-identity",
+      "from": "comp-location",
+      "to": "comp-bridge",
+      "label": "共享 publisher / boot / origin",
+      "fromSide": "left",
+      "toSide": "left",
+      "via": [
+        [
+          0,
+          682
+        ],
+        [
+          0,
+          271.6
+        ]
+      ],
+      "labelAt": [
+        0,
+        460
+      ]
+    },
+    {
+      "id": "business-pages-provider",
+      "from": "bridge-folder",
+      "to": "ext-business-pages",
+      "label": "贡献选择文件夹动作 / 回执",
+      "route": "auto"
+    },
+    {
+      "id": "business-binding-status",
+      "from": "bridge-binding",
+      "to": "ext-business-pages",
+      "label": "贡献 Vault 状态与显式改绑",
+      "route": "auto"
+    },
+    {
+      "id": "shared-scope-consumer",
+      "from": "bridge-binding",
+      "to": "ext-shared-scope",
+      "label": "消费权威范围 / 不另存 Vault 名单",
+      "route": "auto"
+    },
+    {
+      "id": "planned-operation-routing",
+      "from": "bridge-operations-planned",
+      "to": "bridge-binding",
+      "label": "规划：复用目标与路由",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "right",
+      "via": [
+        [
+          730,
+          950
+        ],
+        [
+          730,
+          682
+        ]
+      ],
+      "labelAt": [
+        730,
+        940
       ]
     }
   ],
@@ -1140,9 +1354,18 @@
       "dot": "cyan",
       "title": "当前交付边界",
       "items": [
-        "内部桥整合、双侧绑定和维护接入已有前阶段合成证据；新单桥包与真实安装另行验收。",
-        "Maintenance 的分类范围保存后下次启动生效，当前 run 按快照完成写入。缺少业务依赖显示等待/不可用。",
-        "未来专用通道归同一 Bridge；笔记、样式和模板等业务实现仍后置。"
+        "单桥产品、双侧绑定、动态发现和文件夹在线路径验证分别按实现与真实验收记录核对；源码通过不等于全部 UI 通过。",
+        "Maintenance 独立可选。插件信息页展示贡献栏目与动作回执；同实例 Vault 共用分类范围，保存后下次启动生效，当前 run 按原快照完成。",
+        "规划中的专用通道归同一 Bridge；纯笔记操作不必经过 Core 或 Maintenance，笔记、样式、模板等业务仍未实现。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "选择文件夹与绑定边界",
+      "items": [
+        "只读检查 Vault、插件入口与 vaultId，再核对在线 Companion 的 publisher/boot/origin 和 realpath；复制的 vaultId 不能替代路径证明。",
+        "Companion 持有唯一绑定写口；Maintenance 只登记确认及显示回执。已绑定其他实例须使用明确改绑入口，不因选文件夹自动抢占。",
+        "取消、离线、身份冲突或路径不符均停止绑定，不写 Vault 内容。公开发现身份不包含本机路径。"
       ]
     }
   ]

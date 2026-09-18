@@ -4,16 +4,35 @@ kind: history
 title: Vault 单实例绑定、公开扩展页与动态端口的需求收敛
 date: 2026-09-18
 status: current
-modules: [Bridge Lifecycle, Obsidian Companion, Reference Adapter, Bridge Protocol, Sticker Board]
-outcome: 已按授权实施桥整合、双侧绑定与路由、实例分类范围及公共信息页；本地合成验收与真实部署分别记录。
+modules:
+- Bridge Lifecycle
+- Obsidian Companion
+- Reference Adapter
+- Bridge Protocol
+- Sticker Board
+outcome: 桥整合、绑定、信息页与同步UI已分步实现；安装及生效分层记录，外部浏览器加载故障和Engine .39激活尚未闭环。
 summary: 从维护面板中的绑定讨论收敛为 Bridge 独立配对、可选维护页、共享实例范围及动态端口自动续接。
 applicability: 本机 Obsidian Vault 与 DSH 实例；首版不扩展到跨机器或未来操作插件的具体业务。
-coverage_note: 当前任务公开来源第 9–3209 行，共 777 事件（352 组调用/返回全部配对）；在既有范围上补齐安装形态纠正、业务组合、Core 职责和安装前备份。旧索引保留，不收录隐藏推理、内部元数据和图片等非文本块；截点为 2026-09-18 06:14:13 UTC，不覆盖后续真实安装。
+coverage_note: 整理者Codex，2026-09-18；本任务公开来源9–5944行，1559事件，704对工具及1个截点未配对调用；仅事件定位与指纹，不复制正文。安装后续以独立回执续记；隐藏推理/非文本块不收录。
 history:
-  path: history/20260918-single-bridge-product-correction
-  sha256: 48e86e4e6e8494eb4a9b7ad7e48a9a17c8570365e507eda8a58c1a6d61134129
-  capture_sha256: f40c51c5c588b84684f4fa01fcdcfb801b6cb74918b6d7d8df7f5ec5209421a4
-related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-operation-channel, VER-vault-binding-design, REQ-integration-complete, EXP-bridge-consolidation, VER-requirements-consolidation, DEC-bridge-refactor-sequence, DEC-single-bridge-product, EXT-better-sidebar, VER-single-bridge-delivery]
+  path: history/20260918-long-session-acceptance
+  sha256: 11b23d87d51c00137a498a8c95e7a48d4667bf677424ba3388b7e135b0e6b344
+  capture_sha256: 29729cd575fd4d8684472efd9b14b8ba467c4753099cf6160621c2ce6d2908a2
+related_records:
+- REQ-vault-instance-binding
+- IF-vault-binding
+- IF-obsidian-operation-channel
+- VER-vault-binding-design
+- REQ-integration-complete
+- EXP-bridge-consolidation
+- VER-requirements-consolidation
+- DEC-bridge-refactor-sequence
+- DEC-single-bridge-product
+- EXT-better-sidebar
+- VER-single-bridge-delivery
+- REQ-long-session-consolidated
+- IMP-long-session-status
+- VER-long-session-acceptance
 ---
 
 # Vault 单实例绑定、公开扩展页与动态端口的需求收敛
@@ -141,3 +160,38 @@ related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-oper
 之后正式 Start 成功，新运行端口为 36928。主任务 BrowserUse 新启动及禁用缓存刷新均完整加载 bundle，Core/Bridge/Sticker 已启用运行；托管历史会话及普通贴纸/笔记链接面板完成基本只读检查。当前恢复不等于原加载故障根因已修复；Vault 仍未绑定，Companion .2 修复未部署，双向引用与完整停止链路没有通过验收。详见 [[VER-single-bridge-delivery]] 和 [真实验收及本机回执](../../../changes/2026-09-18-single-bridge-product.md)。
 
 本节只整理执行主任务的回报和真实 artifact，不将晚于截点的事实伪造为既有 history-event。原索引、事件与所有身份保持不变；本次未写用户会话标题/正文。
+
+
+## 多轮用户验收与纠偏日志（续记）
+
+以下记录保留每次失败的环境与边界，不能用后来某个检查通过覆盖此前用户反馈。问题专题见 [[EXP-acceptance-blockers]]；最终需求见 [[REQ-long-session-consolidated]]，实际状态见 [[IMP-long-session-status]]。
+
+1. 用户明确要求命令控制与后端检查。发现Launcher内部IPC并非外部CLI；直接宿主退出漏beforeStop，会产生requestedStop=false/recovered。Stop/Restart脚本改为操作前拒绝，正常停止需用户Launcher操作；不能称完整自动重启已交付。
+[查看依据：命令与后端要求](history-event:EVT-29ad4a52f0972cc333f0)
+2. 用户反复报告启动Failed to load plugins，并要求直接看右侧浏览器。GPT浏览器可用不能推广到Launcher和Edge；未经充分验证归因为缺登录凭据后，用户指出Launcher登录入口也失败。Edge/Chrome控制接口不可用同样不说明浏览器已正常。
+[查看依据：实际loader报错](history-event:EVT-4a2ffab39cb99f8fe39f)
+[查看依据：用户纠正登录归因](history-event:EVT-c6794616e1986e5fcdc9)
+3. 扩展数据页面异常；信息接入放错层级，用户明确“扩展→各插件→Obsidian内数据/信息并列”，随后修正。math仍绑定失败；修复安装后需要Obsidian重载，后续绑定revision1/READY，不能拿此前target=null当现状。
+[查看依据：层级纠正](history-event:EVT-94d26715699378ff3594)
+[查看依据：math绑定失败](history-event:EVT-a0d40034ed0ead9315e9)
+4. 用户报告维护引擎未启动，要求双击未启动则启动、已启动则开看板。已实现入口；后续安装发现桌面路径指向缺失脚本，补齐并CheckOnly验证连接。引擎正常停止协议仍是独立未结项。
+[查看依据：引擎未启动](history-event:EVT-cdef157b7dd6def498ab)
+[查看依据：双击入口](history-event:EVT-0bd494e551b3d9eb8a19)
+5. 用户追加文件夹绑定。实现目录/插件检查及live路径证明，防止复制Vault同ID误绑定；Companion.3已安装重载核验，DSH两包安装回执已生成，真实对话框到绑定尚未验收。
+[查看依据：目录选择绑定需求](history-event:EVT-60abc37ff900a61e4a0f)
+6. 同步页卡片无内边距、两个选择区堆叠、大量历史run显示为当前范围。用户要求两个并列子栏目；.1.5修复布局及切换，.39新增在线判定但未激活。用户禁止使用已卸载UI skill，此后不再加载。
+[查看依据：同步子栏目纠正](history-event:EVT-c65481b741437769a9e0)
+[查看依据：禁止UI skill](history-event:EVT-4b923b4d426c5a813cfa)
+7. 安装遇Sticker严格peer锁旧Bridge，新增仅兼容peer发布.4后严格安装通过；运行时patch新增其他插件，守卫拒绝覆盖，最终保留新增节点，仅更新已确认版本。用户正常停止后核验closed/finalized再安装。引擎.39仅独立安装，不冒充激活。
+[查看依据：用户授权安装](history-event:EVT-fdc2b67dbe9877f8d298)
+[查看依据：用户已正常停止](history-event:EVT-f78a89a34e77aa67568b)
+
+
+### 接入指纹修复（保留失败前因）
+
+2026-09-18 08:40 UTC，确认prepare拒绝原因为保存的Maintenance接入fingerprint仍对应旧插件/profile配置；不是attestation构件失败。插件及patch升级使其失配，provider在stderr报错而stdout为空，外层才记录invalid-json。备份后通过正式integrations repair验证本目标，恢复connected/issues=[]，其他绑定、同步范围、profile包与配置均不变。证据：D:/AI/DeepSeekHarness-Plugin/artifacts/bridge-folder-binding-20260918/start-binding-repaired.json。随后单一控制方执行Start，08:41:53 prepare已成功；后续running身份仍需单独核验，不能以prepare成功替代。
+
+
+### 正式启动结果
+
+本轮正式Start最终成功：RC2副本/web为running，新origin为http://127.0.0.1:27583，boot为05c53aef-7f18-465e-b773-1fc7750b66e7，run-2f0d3ad7-9778-43fc-857b-c6258c9ecc22为running，Engine ready，all/revision0。端口仅本次证据，不写入固定绑定。准备完成至web入口约40秒；旧boot日志不能归入新启动故障。运行恢复不代表外部浏览器bundle根因、真实folder绑定或所有引用交互已通过。Engine仍.38，.39未激活。

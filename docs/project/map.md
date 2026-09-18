@@ -1,5 +1,7 @@
 # DSH–Obsidian 引用与贴纸组合
 
+本次长会话最新入口：[[REQ-long-session-consolidated|最终确认需求]] · [[IMP-long-session-status|实际交付状态]] · [[VER-long-session-acceptance|验收与未结项]] · [[HIST-vault-instance-binding|完整开发历程]] · [[EXP-acceptance-blockers|验收错误与卡点日志]]。下文旧时点状态以这些续记为准。
+
 当前产品形态见 [[DEC-single-bridge-product]]：用户只管理一个 DSH Bridge 桥插件；Suite 是私有开发/文档/组合验收工作区，Protocol 是内部依赖，旧 Adapter 退役。新包与真实安装进度见 [[VER-single-bridge-delivery]]。
 
 当前职责修订见 [[DEC-selection-ownership-20260918|划选与会话贴纸归属]]；旧版入口说明以此修订为准。
@@ -46,7 +48,7 @@ Vault 拥有笔记正文，Maintenance 拥有会话和已迁入结构，Core 拥
 
 架构图区分 Suite 开发工作区、DSH 独立组件、内部 Protocol 库和 Obsidian Companion，框住各自内部功能，外部 Maintenance / ThoughtDAG 仅保留接口端点。Core 的 UI、事务和上下文都可独立定位；共享协议的依赖线与 HTTP 调用分开标注。可选“Core 的完整职责”“两端共享协议”“外部依赖与消费”等聚焦视图。
 
-流程图只展开有源码证据的笔记选段队列路径：Companion 保存 → Bridge 连接就绪 → Bridge 内部引用接入加入 Core / claim → 用户发送 → Core 持久确认 → 回链。离线、冲突和来源/预算错误留在各自负责方。直接笔记引用、删除与上下文释放另有记录，不混成一条假定时序。
+流程图保留有源码证据的笔记选段队列路径，并新增独立的文件夹绑定流程（选择→根目录与插件检查→live路径/身份核验→CAS绑定→回执），不把它串成发送引用的前置步骤。笔记路径：Companion 保存 → Bridge 连接就绪 → Bridge 内部引用接入加入 Core / claim → 用户发送 → Core 持久确认 → 回链。离线、冲突和来源/预算错误留在各自负责方。直接笔记引用、删除与上下文释放另有记录，不混成一条假定时序。
 
 ## 查需求与继续开发
 
@@ -65,6 +67,6 @@ Maintenance 与 ThoughtDAG 通过已登记项目 ID 轻量关联。Protocol 真�
 
 当前单桥产品、独立业务插件与内部依赖的范围及验收条件见 [[REQ-suite-boundary]]。旧外部档案保留身份与后继；[[VER-map-repair]]保留上次修复的历史验证，旧边界结果见 [[VER-suite-boundary]]，本轮见 [[VER-single-bridge-delivery]]。
 
-## 2026-09-18 当前施工状态
+## 2026-09-18 早期施工状态（保留历史）
 
 第一阶段整合已验收：[[IMP-bridge-consolidation]]。双侧绑定、多 Vault 路由与可选 Maintenance 贡献接入已完成本地实现、构建及合成验证，见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。Maintenance 分类工作区策略与公共信息页由其独立地图维护，保存影响下次启动，旧 run 按快照写入。上述合成证据适用原包组；新的单桥安装形态已确认，新包、依赖等待和真实安装验收按 [[VER-single-bridge-delivery]] 续填。未来通用直连笔记/样式业务仍后置，通道归同一 Bridge。

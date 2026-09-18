@@ -382,7 +382,10 @@
           "IF-obsidian-operation-channel",
           "EXP-bridge-consolidation",
           "DEC-bridge-refactor-sequence",
-          "IMP-vault-binding-routing"
+          "IMP-vault-binding-routing",
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
         ],
         "comp-vault": [
           "MOD-companion-vault",
@@ -433,13 +436,19 @@
           "IF-vault-binding",
           "EXP-bridge-consolidation",
           "DEC-bridge-refactor-sequence",
-          "VER-vault-binding-implementation"
+          "VER-vault-binding-implementation",
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
         ],
         "life-mount": [
           "IF-lifecycle",
           "MOD-lifecycle",
           "IF-vault-binding",
-          "DEC-single-bridge-product"
+          "DEC-single-bridge-product",
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
         ],
         "sticker-ordinary": [
           "MOD-sticker-ordinary",
@@ -496,7 +505,10 @@
           "INT-sticker-maintenance",
           "INT-companion-maintenance",
           "INT-suite-extension-pages",
-          "DEC-bridge-refactor-sequence"
+          "DEC-bridge-refactor-sequence",
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
         ],
         "ext-thoughtdag": [
           "EXT-thoughtdag"
@@ -508,6 +520,35 @@
         "ext-better-sidebar": [
           "EXT-better-sidebar",
           "MOD-sticker"
+        ],
+        "bridge-binding": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "bridge-folder": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "comp-location": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "ext-business-pages": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "ext-shared-scope": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "bridge-operations-planned": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status"
         ]
       }
     },
@@ -527,10 +568,16 @@
         ],
         "ready": [
           "MOD-lifecycle",
-          "IF-lifecycle"
+          "IF-lifecycle",
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
         ],
         "offline": [
-          "IF-lifecycle"
+          "IF-lifecycle",
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
         ],
         "poll": [
           "MOD-reference-client"
@@ -570,6 +617,46 @@
           "MOD-core-submit",
           "OBJ-reference",
           "IF-core-input-acceptance"
+        ],
+        "folder-action": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "folder-inspect": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "folder-proof": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "folder-match": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "folder-bind-request": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "folder-cas": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "folder-receipt": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
+        ],
+        "folder-blocked": [
+          "REQ-long-session-consolidated",
+          "IMP-long-session-status",
+          "HIST-vault-instance-binding"
         ]
       }
     }

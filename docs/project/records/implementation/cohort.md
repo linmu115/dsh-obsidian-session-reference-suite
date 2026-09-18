@@ -5,7 +5,7 @@ title: 当前工作区：组件版本与适用边界
 status: current
 summary: 以工作区 Suite 成员清单为组合事实；历史报告与当前声明之间的版本差异分别保留。
 progress: implemented
-gap: 未在本次任务验证目标实例安装、模型交付和整套实际运行兼容性。
+gap: 两包新版本已安装并正式启动；完整跨端业务、外部浏览器根因和Engine .39激活仍未验收。
 sources:
 - path: ../../suite.members.json
   role: current-workspace-source
@@ -38,19 +38,22 @@ relations:
   reason: 当前候选的构建与分阶段组合验证
 ---
 
+> 2026-09-18 后续版本、安装和验收状态已由 [[IMP-long-session-status]] / [[VER-long-session-acceptance]] 续记；下列候选、失败和未部署描述保留其当时时点，不代表最新状态。
+
+
 # 当前工作区：组件版本与适用边界
 
-适用宿主为 DSH 0.1.5-rc.2。以下为当前单桥产品候选；开发源码见 [成员清单](../../../../suite.members.json)，不能把开发依赖当安装项；基础协议仍为 Annotation 2 / Lifecycle 3 / Sticker 1，显式 Vault 绑定另外要求 bindingProtocolVersion 1 和对应能力声明。
+适用宿主为 DSH 0.1.5-rc.2。以下为本次单桥产品源码/安装版本；开发源码见 [成员清单](../../../../suite.members.json)，不能把开发依赖当安装项；基础协议仍为 Annotation 2 / Lifecycle 3 / Sticker 1，显式 Vault 绑定另外要求 bindingProtocolVersion 1 和对应能力声明。
 
-| 组件 | 当前候选版本 | 组合身份 |
+| 组件 | 本轮版本 | 组合身份 |
 | --- | --- | --- |
 | Annotation Core | 0.3.12-rc2.19 | 通用引用事务与补偿 |
-| DSH Obsidian Bridge (`dsh-obsidian-bridge`) | 0.4.1-rc2.1 | 唯一桥安装项，整合连接、来源接入、绑定及多 Vault 路由 |
-| Sticker Board | 0.7.4-rc2.3 | 普通贴纸及笔记关联业务，共享 Bridge 通道 |
+| DSH Obsidian Bridge (`dsh-obsidian-bridge`) | 0.4.1-rc2.2 | 唯一桥安装项，整合连接、来源接入、绑定及多 Vault 路由 |
+| Sticker Board | 0.7.4-rc2.4 | 普通贴纸及笔记关联业务，共享 Bridge 通道 |
 | Bridge Protocol（内部依赖） | 0.4.0-rc2.1 | 两侧共享合同，用户不单独安装或启用 |
-| Obsidian Companion | 0.7.0-rc2.1 | Vault 绑定唯一写入口、来源及回链回执 |
+| Obsidian Companion | 0.7.0-rc2.3 | Vault 绑定唯一写入口、来源及回链回执 |
 
-可选 Session Maintenance 当前候选为 Engine **0.1.33-rc2.38**、DSH 维护插件 **0.2.26-rc2.29**。该项目独立维护分类工作区策略、运行快照与公共信息页；缺席不阻断基础绑定、路由与引用，已托管数据仍不得回退到旧副本写入。
+可选 Session Maintenance 运行中为 Engine **0.1.33-rc2.38**（.39 已独立安装但未激活），Dashboard **0.1.5** 已运行验收、DSH 维护插件 **0.2.26-rc2.29**。该项目独立维护分类工作区策略、运行快照与公共信息页；缺席不阻断基础绑定、路由与引用，已托管数据仍不得回退到旧副本写入。
 
 Suite 不再是可安装插件，旧 Adapter 退役。Profile 独立加载 Core、Bridge、Sticker 各一次，以服务发现支持可选与晚加载；新包本地验证已由主任务回报：Bridge 102、Sticker 123、Suite 21 项通过；Suite 源码为 2480db1，Maintenance 精确门禁修复 2e84ec3 另有 32 项及类型/构建检查通过；构件、安装前备份与部署边界见 [[VER-single-bridge-delivery]]。
 

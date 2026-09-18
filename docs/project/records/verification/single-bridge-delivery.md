@@ -18,6 +18,9 @@ relations:
     record_id: IMP-cohort
 ---
 
+> 2026-09-18 后续版本、安装和验收状态已由 [[IMP-long-session-status]] / [[VER-long-session-acceptance]] 续记；下列候选、失败和未部署描述保留其当时时点，不代表最新状态。
+
+
 # 单桥产品、地图与安装验收边界
 
 本轮用户纠正安装形态后，当前要求为一个 DSH Bridge 插件，Core、普通 Sticker 和可选 Maintenance 独立；Suite 是私有开发工作区，Protocol 内部依赖，旧 Adapter 退役。普通 Sticker 还需要 Better Sidebar 业务能力，缺席应等待/不可用而非启动异常。

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "diagram_type": "workflow",
   "meta": {
-    "title": "笔记选段从排队到真实提交",
+    "title": "引用投递与可选维护页的文件夹绑定",
     "locale": "zh-CN",
     "quality_profile": "standard",
     "animation": "none",
@@ -38,6 +38,21 @@
           "blocked"
         ],
         "note": "异常留在负责方；离线不清空持久引用，冲突不影响赢家。"
+      },
+      {
+        "id": "folder-binding",
+        "label": "选择文件夹并绑定",
+        "focus": [
+          "folder-action",
+          "folder-inspect",
+          "folder-proof",
+          "folder-match",
+          "folder-bind-request",
+          "folder-cas",
+          "folder-receipt",
+          "folder-blocked"
+        ],
+        "note": "独立管理流程：验证插件和在线路径后才请求绑定；不是每次引用投递的前置步骤。"
       }
     ]
   },
@@ -61,6 +76,18 @@
     {
       "id": "host",
       "label": "外部宿主 · DSH 原生执行器"
+    },
+    {
+      "id": "maintenance-page",
+      "label": "外部可选 · SM 插件信息页"
+    },
+    {
+      "id": "bridge-binding-control",
+      "label": "Bridge · 文件夹验证与绑定控制"
+    },
+    {
+      "id": "companion-binding-control",
+      "label": "Companion · 路径证明与唯一绑定写口"
     }
   ],
   "groups": [
@@ -112,6 +139,27 @@
       "lane": "host",
       "fromCol": 4,
       "toCol": 4
+    },
+    {
+      "id": "folder-management",
+      "label": "可选管理入口与结果",
+      "lane": "maintenance-page",
+      "fromCol": 0,
+      "toCol": 5
+    },
+    {
+      "id": "folder-validation",
+      "label": "只读核验与绑定请求",
+      "lane": "bridge-binding-control",
+      "fromCol": 1,
+      "toCol": 5
+    },
+    {
+      "id": "vault-binding-authority",
+      "label": "本机证明与持久绑定",
+      "lane": "companion-binding-control",
+      "fromCol": 2,
+      "toCol": 5
     }
   ],
   "nodes": [
@@ -248,6 +296,78 @@
       "type": "backend",
       "label": "接受并持久化输入",
       "sublabel": "真实原生提交回执",
+      "width": 156
+    },
+    {
+      "id": "folder-action",
+      "lane": "maintenance-page",
+      "col": 0,
+      "type": "frontend",
+      "label": "选择文件夹并绑定",
+      "sublabel": "当前 DSH 的 Windows 桌面",
+      "width": 156
+    },
+    {
+      "id": "folder-receipt",
+      "lane": "maintenance-page",
+      "col": 5,
+      "type": "frontend",
+      "label": "显示确认或失败回执",
+      "sublabel": "维护登记不另建有效绑定",
+      "width": 156
+    },
+    {
+      "id": "folder-inspect",
+      "lane": "bridge-binding-control",
+      "col": 1,
+      "type": "backend",
+      "label": "只读检查 Vault 与插件",
+      "sublabel": "完整入口 / vaultId / 在线候选",
+      "width": 156
+    },
+    {
+      "id": "folder-match",
+      "lane": "bridge-binding-control",
+      "col": 3,
+      "type": "backend",
+      "label": "匹配路径与在线身份",
+      "sublabel": "realpath / publisher / boot / origin",
+      "width": 156
+    },
+    {
+      "id": "folder-bind-request",
+      "lane": "bridge-binding-control",
+      "col": 4,
+      "type": "backend",
+      "label": "复核后请求绑定",
+      "sublabel": "同目标不重复 / 其他目标不抢占",
+      "width": 156
+    },
+    {
+      "id": "folder-blocked",
+      "lane": "bridge-binding-control",
+      "col": 5,
+      "type": "backend",
+      "label": "停止并保留原绑定",
+      "sublabel": "取消 / 离线 / 冲突 / 路径不符",
+      "width": 156
+    },
+    {
+      "id": "folder-proof",
+      "lane": "companion-binding-control",
+      "col": 2,
+      "type": "backend",
+      "label": "返回在线 Vault 路径证明",
+      "sublabel": "仅本机进程 / 无 Origin",
+      "width": 156
+    },
+    {
+      "id": "folder-cas",
+      "lane": "companion-binding-control",
+      "col": 5,
+      "type": "database",
+      "label": "保存唯一有效绑定",
+      "sublabel": "expectedRevision / operationId",
       "width": 156
     }
   ],
@@ -388,6 +508,83 @@
       "to": "written",
       "label": "commitBacklink",
       "role": "main"
+    },
+    {
+      "id": "folder-action-inspect",
+      "from": "folder-action",
+      "to": "folder-inspect",
+      "label": "本机选择后核验",
+      "role": "async"
+    },
+    {
+      "id": "folder-inspect-proof",
+      "from": "folder-inspect",
+      "to": "folder-proof",
+      "label": "请求当前在线证明",
+      "role": "async"
+    },
+    {
+      "id": "folder-proof-match",
+      "from": "folder-proof",
+      "to": "folder-match",
+      "label": "只读响应",
+      "role": "async"
+    },
+    {
+      "id": "folder-match-bind",
+      "from": "folder-match",
+      "to": "folder-bind-request",
+      "label": "身份与目录一致",
+      "role": "async"
+    },
+    {
+      "id": "folder-bind-cas",
+      "from": "folder-bind-request",
+      "to": "folder-cas",
+      "label": "仅未绑定 Vault",
+      "role": "async"
+    },
+    {
+      "id": "folder-cas-receipt",
+      "from": "folder-cas",
+      "to": "folder-receipt",
+      "label": "核验目标与回执",
+      "role": "async"
+    },
+    {
+      "id": "folder-inspect-error",
+      "from": "folder-inspect",
+      "to": "folder-blocked",
+      "label": "取消 / 插件缺失 / 离线",
+      "role": "error"
+    },
+    {
+      "id": "folder-match-error",
+      "from": "folder-match",
+      "to": "folder-blocked",
+      "label": "路径或身份不一致",
+      "role": "error"
+    },
+    {
+      "id": "folder-bind-foreign",
+      "from": "folder-bind-request",
+      "to": "folder-blocked",
+      "label": "其他实例：明确改绑入口",
+      "role": "error"
+    },
+    {
+      "id": "folder-bind-existing",
+      "from": "folder-bind-request",
+      "to": "folder-receipt",
+      "label": "已绑定当前实例：无改动",
+      "role": "branch"
+    },
+    {
+      "id": "folder-blocked-receipt",
+      "from": "folder-blocked",
+      "to": "folder-receipt",
+      "label": "明确原因 / 无写入",
+      "role": "error"
     }
   ],
   "mainPath": [
@@ -416,12 +613,28 @@
       {
         "from": "pending",
         "to": "prepare"
+      },
+      {
+        "from": "folder-proof",
+        "to": "folder-match"
+      },
+      {
+        "from": "folder-match",
+        "to": "folder-bind-request"
+      },
+      {
+        "from": "folder-bind-request",
+        "to": "folder-cas"
       }
     ],
     "requiredPaths": [
       {
         "from": "capture",
         "to": "written"
+      },
+      {
+        "from": "folder-action",
+        "to": "folder-receipt"
       }
     ]
   },
@@ -430,12 +643,13 @@
       "dot": "slate",
       "title": "本图范围",
       "items": [
-        "此图只说明笔记选段的自动队列路径。",
+        "原 mainPath 保留笔记选段自动队列；下方新增独立的可选维护页文件夹绑定流程。",
         "关联笔记直接引用不经过 capture 自动领取队列。",
         "删除、图接续和原生上下文释放分别在模块记录解释。",
         "泳道按实际执行方划分；Protocol 只供类型校验，不作为独立执行步骤。",
         "DSH 原生执行器是外部宿主，Maintenance/ThoughtDAG 不列为 Suite 成员泳道。",
-        "连接与引用接入均在单一 Bridge 内；Core 独立拥有引用状态、UI 和提交，不依赖 Suite 父组。"
+        "连接与引用接入均在单一 Bridge 内；Core 独立拥有引用状态、UI 和提交，不依赖 Suite 父组。",
+        "SM 信息页仅为外部可选管理入口，不是基础引用或 Bridge 连接的必需步骤；未来专用操作通道仍属规划。"
       ]
     },
     {
@@ -445,7 +659,7 @@
         "一般断线保留已持久添加的同一操作，重连再 claim。",
         "冲突补偿不取消赢家；来源改变与容量不足阻断发送。",
         "claim 与 prepared 都不是模型已收到或理解材料的证明。",
-        "改绑保留历史身份；只为新作业保存新路由。既有多 Vault 合成结果保留，新单桥包与真实安装单独验收。"
+        "改绑保留历史身份；只为新作业保存新路由。目录验证与实际 UI 的验收分别记录，不由图源校验代替。"
       ]
     }
   ]
