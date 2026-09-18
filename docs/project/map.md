@@ -4,6 +4,8 @@
 
 已确认、待实现的绑定与扩展设计：[[REQ-vault-instance-binding]]、[[IF-vault-binding]]、[[INT-suite-extension-pages]]；动态端口自动连接作为必保留能力，文档验证见 [[VER-vault-binding-design]]。
 
+完整需求阅读入口：[[REQ-integration-complete]]。当前 Core、桥接层与未来操作通道的源码评估见 [[EXP-bridge-consolidation]]；其中合并插件、迁移笔记关联的建议尚未确认，现有职责决定继续有效。本轮文档检查见 [[VER-requirements-consolidation]]。
+
 ## 目标：让笔记与真实会话相互引用
 
 这套组合把 Obsidian 选段、笔记链接、DSH 引用气泡和会话贴纸连起来。用户保留原草稿，自行发送；内嵌 Viewer 打开的是目标实例的真实 DSH 会话。入口：[Suite 结构](records/modules/suite/overview.md)、[当前版本与限制](records/implementation/cohort.md)。

@@ -2,6 +2,8 @@
 
 日期：2026-09-18。状态：需求已确认，设计待实现；本次只整理文档与地图，没有修改、构建或部署产品。
 
+跨项目的完整产品要求统一阅读 [需求完整稿](2026-09-18-dsh-obsidian-confirmed-requirements.md)。本页需求表保留原编号作为摘要；Bridge 接口草案仍在本页维护。后续插件合并讨论见 [职责评估](2026-09-18-dsh-obsidian-composition-review.md)，尚未改变当前职责。
+
 本文拥有 Bridge 绑定、发现、路由及操作管道预留的设计。Maintenance 的公开扩展注册与实例有效范围合同由 [Maintenance 设计](../../dsh-session-maintenance/docs/superpowers/specs/2026-09-18-extension-pages-and-instance-scope.md) 维护；双方通过接口协作，不复制对方内部实现。
 
 ## 已确认需求

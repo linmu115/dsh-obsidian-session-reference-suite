@@ -8,12 +8,12 @@ modules: [Bridge Lifecycle, Obsidian Companion, Reference Adapter, Bridge Protoc
 outcome: 已整理确认需求和待实现设计，产品实现与部署未开始
 summary: 从维护面板中的绑定讨论收敛为 Bridge 独立配对、可选维护页、共享实例范围及动态端口自动续接。
 applicability: 本机 Obsidian Vault 与 DSH 实例；首版不扩展到跨机器或未来操作插件的具体业务。
-coverage_note: 当前 Codex 任务公开来源第 9–259 行，包含初始需求、批注、范围选择及整理请求；索引末尾一个工具调用未覆盖返回，不作为检查成功证据。后续文档验证另见 VER-vault-binding-design。
+coverage_note: 当前 Codex 任务公开来源第 9–409 行，包含初始需求、确认选择、前次整理和本次完整文档及架构提问；92 个公开事件且工具均配对。保留此前 9–259 行索引，当前源码评估和文档检查通过对应文档单独说明。
 history:
-  path: history/20260918-vault-binding-requirements
-  sha256: 501c03390e67199271aa48d396a36db737ca1346e80887036745873bf812f53d
-  capture_sha256: 4c9ab0529c2b8e078f9d665fd49d0c6148e26aed3426593d726618db4a9839cd
-related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-operation-channel, VER-vault-binding-design]
+  path: history/20260918-vault-binding-complete-requirements
+  sha256: bb9906b563fd63d91a996ce00869196166f348400f8c5de3e2971188b46d45d0
+  capture_sha256: c698def16030cf7b4a0ad026c5493d12fd4e33d96d7025af784c804cd24b8bf1
+related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-operation-channel, VER-vault-binding-design, REQ-integration-complete, EXP-bridge-consolidation, VER-requirements-consolidation]
 ---
 
 # Vault 单实例绑定、公开扩展页与动态端口的需求收敛
@@ -41,3 +41,13 @@ related_records: [REQ-vault-instance-binding, IF-vault-binding, IF-obsidian-oper
 本次还核对了当前地图已有的 [[DEC-selection-ownership-20260918]]，避免使用旧版“Sticker 拥有会话贴纸”的职责描述。最终范围包含 Lifecycle、Companion、Protocol、Reference Adapter、Sticker、Maintenance 项目及 Suite 装配，Core／ThoughtDAG／Sidechat 为已知消费者核查，Launcher 为可选增强。
 
 新规格和接口草案分别由 Suite 与 Maintenance 提供方维护。登记目录、协议字段、实际有效范围接入点等留为工程核查，没有剩余产品行为问题要求用户重复确认。此次没有实施插件、重启实例、修改会话或 Vault 数据；文档检查范围见 [[VER-vault-binding-design]]。
+
+## 完整需求稿与新的架构问题
+
+用户要求将已确认讨论整理为一个完整文档，并询问 Core 是否收拢引用职责、桥接插件是否应合并，以及未来 DSH → Obsidian 操作通道的两侧归属。新增 [[REQ-integration-complete]] 作为完整阅读入口；原 VB／EP 编号保持可追溯。
+
+[查看依据：完整文档与桥接职责提问](history-event:EVT-1ff80cd98322df6cdb24)
+
+核查当前源码确认 Core 拥有通用引用状态与提交；Reference 与 Sticker 已共享 Lifecycle 的 transport，但各自消费动作队列，通用状态 UI 和一部分笔记引用编排仍在 Sticker。[[EXP-bridge-consolidation]] 据此提出统一 DSH Bridge 的建议，分开已核实事实与尚未确认的职责迁移。未来操作通道建议由两侧 Bridge 的内部模块协作，不将这个建议写成已确认安装结构。
+
+本次扩展为新范围索引并保留原索引；完整稿及评估的文档检查见 [[VER-requirements-consolidation]]。没有修改运行插件或部署。

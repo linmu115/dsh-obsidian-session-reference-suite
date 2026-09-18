@@ -86,6 +86,21 @@
       "source_id": "vault-binding-design-report",
       "path": "../2026-09-18-vault-binding-design-report.md",
       "format": "markdown"
+    },
+    {
+      "source_id": "integration-complete",
+      "path": "../2026-09-18-dsh-obsidian-confirmed-requirements.md",
+      "format": "markdown"
+    },
+    {
+      "source_id": "bridge-composition-review",
+      "path": "../2026-09-18-dsh-obsidian-composition-review.md",
+      "format": "markdown"
+    },
+    {
+      "source_id": "requirements-consolidation-report",
+      "path": "../2026-09-18-requirements-consolidation-report.md",
+      "format": "markdown"
     }
   ],
   "bindings": [
@@ -310,6 +325,43 @@
       "heading": "验证结果",
       "status": "current",
       "summary": "仅检查地图、公开来源、链接与差异；产品验收待实施。"
+    },
+    {
+      "id": "REQ-integration-complete",
+      "kind": "requirement",
+      "title": "DSH–Obsidian 与维护协作完整确认需求",
+      "source_id": "integration-complete",
+      "heading": "已确认需求",
+      "status": "current",
+      "progress": "planned",
+      "summary": "汇总绑定、动态端口、独立安装、业务页、实例同步范围和未来操作通道的确认要求；工程方案另列。"
+    },
+    {
+      "id": "EXP-bridge-consolidation",
+      "kind": "exploration",
+      "title": "Core、桥接插件收敛与直连通道的源码评估",
+      "source_id": "bridge-composition-review",
+      "heading": "Core 引用归属、桥接插件收敛与未来操作通道评估",
+      "status": "proposed",
+      "summary": "建议合并 DSH 桥维护和 Obsidian 接入的运行包装；当前只是讨论，Core 与维护系统保持独立。",
+      "relations": [
+        {
+          "relation": "derived_from",
+          "to": {
+            "record_id": "REQ-integration-complete"
+          },
+          "reason": "合并建议必须遵守已确认独立运行与绑定要求"
+        }
+      ]
+    },
+    {
+      "id": "VER-requirements-consolidation",
+      "kind": "verification",
+      "title": "完整需求与职责评估的文档检查",
+      "source_id": "requirements-consolidation-report",
+      "heading": "验证结果",
+      "status": "current",
+      "summary": "只检查需求覆盖、源码定位、地图与来源；未实施插件合并或执行产品验收。"
     }
   ],
   "archify": {
@@ -325,7 +377,8 @@
           "IF-companion-reference",
           "MOD-companion-viewer",
           "IF-vault-binding",
-          "IF-obsidian-operation-channel"
+          "IF-obsidian-operation-channel",
+          "EXP-bridge-consolidation"
         ],
         "comp-vault": [
           "MOD-companion-vault",
@@ -340,7 +393,8 @@
         "ref-host": [
           "MOD-reference-host",
           "INT-reference-core",
-          "REQ-vault-instance-binding"
+          "REQ-vault-instance-binding",
+          "EXP-bridge-consolidation"
         ],
         "core-client": [
           "IF-core-client",
@@ -355,7 +409,8 @@
         ],
         "core-host": [
           "IF-core-host",
-          "MOD-core-sources"
+          "MOD-core-sources",
+          "EXP-bridge-consolidation"
         ],
         "core-context": [
           "MOD-core-context",
@@ -371,7 +426,8 @@
           "MOD-lifecycle",
           "OBJ-identities",
           "REQ-vault-instance-binding",
-          "IF-vault-binding"
+          "IF-vault-binding",
+          "EXP-bridge-consolidation"
         ],
         "life-mount": [
           "IF-lifecycle",
@@ -391,7 +447,8 @@
           "REQ-linked-note",
           "IF-companion-knowledge",
           "INT-sticker-core",
-          "REQ-vault-instance-binding"
+          "REQ-vault-instance-binding",
+          "EXP-bridge-consolidation"
         ],
         "comp-knowledge": [
           "IF-companion-knowledge",
@@ -401,7 +458,9 @@
           "MOD-suite",
           "IF-composition",
           "REQ-suite-boundary",
-          "VER-vault-binding-design"
+          "VER-vault-binding-design",
+          "EXP-bridge-consolidation",
+          "REQ-integration-complete"
         ],
         "core-ui": [
           "MOD-core-ui",
