@@ -99,8 +99,8 @@
     {
       "id": "comp-bridge",
       "type": "backend",
-      "label": "Bridge 引用接口",
-      "sublabel": "队列 / claim / refresh / 回链",
+      "label": "Vault 绑定与 HTTP 服务",
+      "sublabel": "唯一 CAS 写口 / boot / 队列",
       "pos": [
         75.0,
         245.0
@@ -225,8 +225,8 @@
     {
       "id": "life-identity",
       "type": "security",
-      "label": "实例与连接租约",
-      "sublabel": "实际 Web 地址 / bootId",
+      "label": "实例发现与 Vault 路由",
+      "sublabel": "每 Vault 连接 / 稳定身份",
       "pos": [
         450,
         378
@@ -239,8 +239,8 @@
     {
       "id": "life-mount",
       "type": "backend",
-      "label": "共享通道与维护入口",
-      "sublabel": "READY / DEGRADED / 逆序释放",
+      "label": "共享分派与引用交接",
+      "sublabel": "业务 handler / Core handoff",
       "pos": [
         450,
         511
@@ -310,7 +310,7 @@
       "id": "suite-assembly",
       "type": "backend",
       "label": "Suite 组合入口",
-      "sublabel": "四子插件装配 / 七成员兼容",
+      "sublabel": "三运行子插件 / 六部署成员",
       "pos": [
         75,
         700
@@ -351,8 +351,8 @@
     {
       "id": "protocol-control",
       "type": "backend",
-      "label": "控制协议出口",
-      "sublabel": "Lifecycle 3 / 身份 / 租约",
+      "label": "控制与绑定协议",
+      "sublabel": "Lifecycle 3 / binding 1",
       "pos": [
         825,
         680
@@ -366,7 +366,7 @@
       "id": "protocol-data",
       "type": "backend",
       "label": "数据协议出口",
-      "sublabel": "Sticker 1 / 贴纸 / 深链",
+      "sublabel": "Sticker 1 / 显式 Vault 目标",
       "pos": [
         1125,
         680
@@ -401,6 +401,20 @@
       ],
       "size": [
         225,
+        60
+      ]
+    },
+    {
+      "id": "protocol-discovery",
+      "type": "backend",
+      "label": "本机发现元数据",
+      "sublabel": "纯 origin / 到期 / 冲突拒绝",
+      "pos": [
+        825,
+        810
+      ],
+      "size": [
+        200,
         60
       ]
     }
@@ -465,7 +479,8 @@
       "label": "两侧共享 · Bridge Protocol",
       "wraps": [
         "protocol-control",
-        "protocol-data"
+        "protocol-data",
+        "protocol-discovery"
       ],
       "pad": 20
     }
@@ -607,23 +622,7 @@
       "id": "lease-connection",
       "from": "life-identity",
       "to": "comp-bridge",
-      "label": "Viewer 地址 / 租约",
-      "fromSide": "left",
-      "toSide": "left",
-      "via": [
-        [
-          26.2,
-          677.6
-        ],
-        [
-          26.2,
-          271.6
-        ]
-      ],
-      "labelAt": [
-        26.2,
-        539.0
-      ]
+      "label": "匹配绑定 controller 租约"
     },
     {
       "id": "lifecycle-attach",
@@ -633,8 +632,8 @@
       "fromSide": "bottom",
       "toSide": "top",
       "labelAt": [
-        161.2,
-        714.0
+        580,
+        477
       ]
     },
     {
@@ -642,21 +641,21 @@
       "from": "life-mount",
       "to": "ref-client",
       "label": "就绪挂载",
-      "fromSide": "right",
+      "fromSide": "left",
       "toSide": "left",
       "via": [
         [
-          367.5,
-          810.6
+          350,
+          537.6
         ],
         [
-          367.5,
+          350,
           138.6
         ]
       ],
       "labelAt": [
-        367.5,
-        518.0
+        342,
+        345
       ]
     },
     {
@@ -664,25 +663,11 @@
       "from": "life-mount",
       "to": "sticker-ordinary",
       "label": "同步附件",
-      "fromSide": "top",
-      "toSide": "left",
-      "via": [
-        [
-          161.25,
-          740
-        ],
-        [
-          420,
-          740
-        ],
-        [
-          420,
-          677.6
-        ]
-      ],
+      "fromSide": "bottom",
+      "toSide": "top",
       "labelAt": [
-        230,
-        724
+        580,
+        610
       ]
     },
     {
@@ -713,25 +698,9 @@
     },
     {
       "id": "linked-note-http",
-      "from": "sticker-linked",
+      "from": "life-mount",
       "to": "comp-knowledge",
-      "label": "来源准备 / 打开",
-      "fromSide": "left",
-      "toSide": "right",
-      "via": [
-        [
-          292.5,
-          943.6
-        ],
-        [
-          292.5,
-          537.6
-        ]
-      ],
-      "labelAt": [
-        292.5,
-        864.5
-      ]
+      "label": "forVault 业务 prepare / commit"
     },
     {
       "id": "sticker-storage",
@@ -788,21 +757,21 @@
       "from": "life-mount",
       "to": "ref-host",
       "label": "删除轮询",
-      "fromSide": "right",
+      "fromSide": "left",
       "toSide": "left",
       "via": [
         [
-          401.2,
-          810.6
+          380,
+          537.6
         ],
         [
-          401.2,
+          380,
           271.6
         ]
       ],
       "labelAt": [
-        401.2,
-        448.0
+        378,
+        460
       ]
     },
     {
@@ -815,7 +784,27 @@
       "id": "companion-objects",
       "from": "comp-knowledge",
       "to": "ext-maintenance",
-      "label": "obsidian-links"
+      "label": "obsidian-links",
+      "fromSide": "left",
+      "toSide": "bottom",
+      "via": [
+        [
+          20,
+          537.6
+        ],
+        [
+          20,
+          1100
+        ],
+        [
+          1070,
+          1100
+        ]
+      ],
+      "labelAt": [
+        310,
+        1090
+      ]
     },
     {
       "id": "ui-state",
@@ -845,27 +834,7 @@
       "id": "lifecycle-control-schema",
       "from": "life-identity",
       "to": "protocol-control",
-      "label": "消费控制类型",
-      "fromSide": "top",
-      "toSide": "left",
-      "via": [
-        [
-          161.25,
-          590
-        ],
-        [
-          740,
-          590
-        ],
-        [
-          740,
-          710
-        ]
-      ],
-      "labelAt": [
-        540,
-        590
-      ]
+      "label": "消费控制类型"
     },
     {
       "id": "companion-control-schema",
@@ -897,27 +866,7 @@
       "id": "lifecycle-data-schema",
       "from": "life-mount",
       "to": "protocol-data",
-      "label": "传输校验 / 数据类型",
-      "fromSide": "right",
-      "toSide": "bottom",
-      "via": [
-        [
-          300,
-          810.6
-        ],
-        [
-          300,
-          870
-        ],
-        [
-          1225,
-          870
-        ]
-      ],
-      "labelAt": [
-        1080,
-        870
-      ]
+      "label": "传输校验 / 数据类型"
     },
     {
       "id": "sticker-data-schema",
@@ -1030,8 +979,24 @@
     {
       "id": "linked-note-core",
       "from": "sticker-linked",
-      "to": "core-client",
-      "label": "来源准备后添加 / 补偿"
+      "to": "life-mount",
+      "label": "handoffReference 交接",
+      "fromSide": "right",
+      "toSide": "right",
+      "via": [
+        [
+          690,
+          943.6
+        ],
+        [
+          690,
+          537.6
+        ]
+      ],
+      "labelAt": [
+        715,
+        880
+      ]
     },
     {
       "id": "thoughtdag-core",
@@ -1070,6 +1035,44 @@
       "from": "suite-assembly",
       "to": "life-mount",
       "label": "装配连接子插件"
+    },
+    {
+      "id": "discover-host",
+      "from": "life-identity",
+      "to": "protocol-discovery",
+      "label": "自登记 / 核验候选"
+    },
+    {
+      "id": "discover-vault",
+      "from": "comp-bridge",
+      "to": "protocol-discovery",
+      "label": "实际端口 / 已确认绑定",
+      "fromSide": "left",
+      "toSide": "bottom",
+      "via": [
+        [
+          -70,
+          271.6
+        ],
+        [
+          -70,
+          900
+        ],
+        [
+          925,
+          900
+        ]
+      ],
+      "labelAt": [
+        195,
+        880
+      ]
+    },
+    {
+      "id": "scope-consumer",
+      "from": "life-mount",
+      "to": "ext-maintenance",
+      "label": "可选有效范围 / 公共页贡献"
     }
   ],
   "cards": [
@@ -1089,6 +1092,15 @@
         "Core 管引用状态、提交、通用 UI 及上下文注入。",
         "Lifecycle 3 / Sticker 1 由 Protocol 定义；Annotation 2 由 Core 定义。",
         "连线标明实际消费范围；接口依赖不自动等于执行顺序。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "当前交付边界",
+      "items": [
+        "第一阶段整合已验收；双侧绑定已实现，Bridge/Sticker 最终组合验证仍进行。",
+        "Maintenance 保存下次启动范围；当前 run 按快照完成写入。",
+        "通用直连笔记、样式和模板操作 deferred。"
       ]
     }
   ]

@@ -43,6 +43,8 @@ relations:
 
 变更任何身份映射时，同时查 [Core 添加/解除入口](../modules/annotation-core/interfaces/client.md)、[Companion 领取合同](../modules/obsidian-companion/interfaces/references.md) 和 [[INT-maintenance-directory|目录镜像映射]]。
 
-## 绑定身份与当前可用性（待实现）
+## 绑定身份与当前可用性（当前实现，组合验证进行中）
 
 [[IF-vault-binding]] 追加绑定修订与运行代次的区别：实例 ID 是持久目标，端口和当前登录地址是运行位置。各 Vault 共用实例有效同步范围；未同步、离线、映射未就绪与会话已删除分开表达。改绑不重写历史实例、逻辑会话和 Vault 身份，也不重新投递旧队列。
+
+当前实现状态：[[IMP-vault-binding-routing]]；分阶段验证与未结项：[[VER-vault-binding-implementation]]。未来通用直连操作仍 deferred。

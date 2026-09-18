@@ -22,7 +22,7 @@ relations:
 - relation: implements
   to:
     record_id: REQ-vault-instance-binding
-  reason: 独立安装与组合兼容待实现验收
+  reason: 已实现独立安装与组合兼容，合成验收见 VER-vault-binding-implementation
 - relation: contains
   to:
     record_id: MOD-core
@@ -46,7 +46,7 @@ relations:
 - relation: depends_on
   to:
     record_id: EXT-maintenance
-  reason: 会话和扩展真源
+  reason: 可选协作者；已托管会话与扩展的真源，非基础启动依赖
 - relation: contains
   to:
     record_id: MOD-protocol
@@ -63,14 +63,14 @@ Suite 为 DSH 与 Obsidian 之间的引用、双向打开和贴纸协作提供�
 
 | 成员 | 内部职责与入口 |
 | --- | --- |
-| [[MOD-protocol|Bridge Protocol]] | 控制与数据两个协议出口，DSH/Obsidian 两侧消费 |
+| [[MOD-protocol|Bridge Protocol]] | 控制、数据、绑定与发现出口，DSH/Obsidian 两侧消费 |
 | [Annotation Core](../annotation-core/overview.md) | 气泡、引用事务、来源扩展、上下文读取 |
-| [Bridge Lifecycle](../bridge-lifecycle/overview.md) | 当前实例身份、租约、连接挂载、健康重试 |
+| [Bridge Lifecycle](../bridge-lifecycle/overview.md) | 稳定实例身份、多 Vault 绑定路由、共享交接、租约与健康重试 |
 | [Bridge 内部引用接入](../reference-adapter/overview.md) | 原 Adapter 职责已并入 Bridge；旧包仅作兼容测试 |
 | [Sticker Board](../sticker-board/overview.md) | 普通贴纸、真实会话入口、来源标记、关联笔记气泡 |
 | [Obsidian Companion](../obsidian-companion/overview.md) | Vault 侧 Viewer、选区、链接回执与自有标记 |
 
-Core → Bridge → Sticker 是三个运行子插件的装载顺序，整个父组卸载时逆序释放。成员清单仍记录旧 Adapter 的 compatibility-test 身份，以检验旧入口不会重复注册。Protocol 是共享库成员，Companion 是 Obsidian 成员，两者不是父子产品。Maintenance 提供会话、固定来源及扩展结构真源，见 [外部依赖入口](../../dependencies/session-maintenance/overview.md)。
+Core → Bridge → Sticker 是三个运行子插件的装载顺序，整个父组卸载时逆序释放。成员清单仍记录旧 Adapter 的 compatibility-test 身份，以检验旧入口不会重复注册。Protocol 是共享库成员，Companion 是 Obsidian 成员，两者不是父子产品。Maintenance 是可选协作者，接入后提供托管会话、固定来源及扩展结构真源；缺席不阻断基础绑定、路由与引用，已托管对象不因此回退旧副本写入。见 [外部依赖入口](../../dependencies/session-maintenance/overview.md)。
 
 ## 修改组合时
 
@@ -82,6 +82,6 @@ Core → Bridge → Sticker 是三个运行子插件的装载顺序，整个父�
 
 [Vault 与 DSH 之间的交接入口](interfaces/composition.md)说明各提供方的分工，并链接到相应权威接口。
 
-## 绑定与独立安装要求（待实现）
+## 已实现的绑定与独立安装边界
 
-[[REQ-vault-instance-binding]] 明确 Maintenance 为可选协作者，基础配对、路由和引用不以其存在为启动前提；已经托管的数据仍受其写入归属约束。Suite 同步成员兼容与装配，不持有绑定真源，不新增必装操作插件。范围与验收见 [绑定设计](../../../../2026-09-18-vault-instance-binding-design.md)，当前职责仍遵守 [[DEC-selection-ownership-20260918]]。
+[[REQ-vault-instance-binding]] 明确 Maintenance 为可选协作者，基础配对、路由和引用不以其存在为启动前提；已经托管的数据仍受其写入归属约束。Suite 同步成员兼容与装配，不持有绑定真源，不新增必装操作插件。需求依据保留在 [绑定设计](../../../../2026-09-18-vault-instance-binding-design.md)，当前实现与合成验证见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]；真实安装和窗口交互未验收。普通贴纸与笔记关联业务仍归 Sticker，遵守 [[DEC-selection-ownership-20260918]]。未来通用直连笔记、样式等操作后置，不属于当前已实现能力。

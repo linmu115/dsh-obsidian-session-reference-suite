@@ -2,9 +2,9 @@
 
 当前职责修订见 [[DEC-selection-ownership-20260918|划选与会话贴纸归属]]；旧版入口说明以此修订为准。
 
-已确认、待实现的绑定与扩展设计：[[REQ-vault-instance-binding]]、[[IF-vault-binding]]、[[INT-suite-extension-pages]]；动态端口自动连接作为必保留能力，文档验证见 [[VER-vault-binding-design]]。
+绑定与扩展需求：[[REQ-vault-instance-binding]]、[[IF-vault-binding]]、[[INT-suite-extension-pages]]；双侧实现保留动态端口自动连接，当前源码与合成验收见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。旧 [[VER-vault-binding-design]] 保留设计阶段证据。
 
-完整需求阅读入口：[[REQ-integration-complete]]。最新 [[DEC-bridge-refactor-sequence]] 明确先整合桥、贴纸保留笔记关联、再做绑定路由和新的维护 Adapter；当前尚未开工。源码评估 [[EXP-bridge-consolidation]] 已撤回迁移笔记关联业务的建议，原职责决定继续有效。文档检查见 [[VER-requirements-consolidation]]。
+完整需求阅读入口：[[REQ-integration-complete]]。[[DEC-bridge-refactor-sequence]] 明确先整合桥、贴纸保留笔记关联、再做绑定路由和新的维护 Adapter；已按该顺序完成本地实现与分组验收。源码评估 [[EXP-bridge-consolidation]] 已撤回迁移笔记关联业务的建议，原职责决定继续有效。文档检查见 [[VER-requirements-consolidation]]。
 
 ## 目标：让笔记与真实会话相互引用
 
@@ -26,7 +26,7 @@ Vault 拥有笔记正文，Maintenance 拥有会话和已迁入结构，Core 拥
 
 ## 模块、提供方合同与接入者
 
-- [Suite 入口](records/modules/suite/overview.md)：七成员兼容清单，四个 DSH 子插件的单一装配组。
+- [Suite 入口](records/modules/suite/overview.md)：七成员兼容清单，三个 DSH 运行子插件的单一装配组。
 - [Annotation Core](records/modules/annotation-core/overview.md)：通用引用 UI、引用状态与提交、上下文注入、Host/Client 来源扩展、轻量目录。
 - [Bridge Protocol](records/modules/bridge-protocol/overview.md)：两侧共享的控制/数据类型与校验；Annotation 2 单独归 Core。
 - [Bridge Lifecycle](records/modules/bridge-lifecycle/overview.md)：身份租约、实际 Viewer 地址、就绪挂载与重试。
@@ -34,7 +34,7 @@ Vault 拥有笔记正文，Maintenance 拥有会话和已迁入结构，Core 拥
 - [Sticker Board](records/modules/sticker-board/overview.md)：普通贴纸与真实会话/来源符号、关联笔记气泡。
 - [Obsidian Companion](records/modules/obsidian-companion/overview.md)：Viewer/Bridge 与 Vault 身份/标记/回执分别维护。
 
-以上六项加 Companion 共七成员，成员清单与当前用户确认一致。Companion 运行于 Obsidian，Protocol 是被两侧消费的库；源码依赖不表示两者存在产品父子关系。
+当前候选部署组合为 Suite、Core、Bridge、Sticker、Protocol 与 Companion 六成员；原独立 Reference Adapter 留作 compatibility-test，不再是运行子插件。该组合已本地构建，尚未安装到真实实例。Companion 运行于 Obsidian，Protocol 是被两侧消费的库；源码依赖不表示两者存在产品父子关系。
 
 [Session Maintenance](records/dependencies/session-maintenance/overview.md) 与 [ThoughtDAG](records/dependencies/thoughtdag.md) 是独立项目，详情按稳定 ID 到各自地图。本组合保留自己的消费范围，不展开对方内部 Adapter。
 
@@ -61,4 +61,8 @@ Maintenance 与 ThoughtDAG 通过已登记项目 ID 轻量关联。Protocol 真�
 地图正文、记录与 diagrams 是维护源；views 是按需更新的阅读快照。继续开发时在原规格修订相关要求，按影响范围检查合同与消费者。实现与验证分开维护；旧接口入口 [[IF-reference]]、[[IF-vault]] 和 [[IF-composition]] 继续可查。
 
 
-七成员范围及验收条件见 [[REQ-suite-boundary]]。旧外部档案保留身份与后继；[[VER-map-repair]]保留上次修复的历史验证，当前结果见 [[VER-suite-boundary]]。
+当前六部署成员与旧兼容测试成员的范围及验收条件见 [[REQ-suite-boundary]]。旧外部档案保留身份与后继；[[VER-map-repair]]保留上次修复的历史验证，当前结果见 [[VER-suite-boundary]]。
+
+## 2026-09-18 当前施工状态
+
+第一阶段整合已验收：[[IMP-bridge-consolidation]]。双侧绑定、多 Vault 路由与可选 Maintenance 贡献接入已完成本地实现、构建及合成验证，见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。Maintenance 分类工作区策略与公共信息页由其独立地图维护，保存影响下次启动，旧 run 按快照写入。真实应用安装与窗口验收尚未进行；未来通用直连笔记/样式管道仍后置。

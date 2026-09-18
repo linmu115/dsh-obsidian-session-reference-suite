@@ -1,6 +1,6 @@
 {
   "name": "dsh-obsidian-session-reference-suite",
-  "version": "0.4.0-rc2.1",
+  "version": "0.4.0-rc2.2",
   "description": "One DSH Bundle with Annotation Core, the integrated Obsidian Bridge, and ordinary Sticker Board.",
   "type": "module",
   "license": "MIT",
@@ -37,9 +37,9 @@
   },
   "peerDependencies": {
     "dsh-annotation-core": "0.3.12-rc2.19",
-    "dsh-obsidian-bridge-protocol": "0.3.3-rc2.1",
-    "dsh-obsidian-bridge-lifecycle": "0.4.0-rc2.1",
-    "dsh-session-sticker-board": "0.7.4-rc2.1"
+    "dsh-obsidian-bridge-protocol": "0.4.0-rc2.1",
+    "dsh-obsidian-bridge-lifecycle": "0.4.0-rc2.2",
+    "dsh-session-sticker-board": "0.7.4-rc2.2"
   },
   "peerDependenciesMeta": {
     "dsh-annotation-core": {

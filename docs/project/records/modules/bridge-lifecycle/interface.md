@@ -25,4 +25,4 @@ sources:
 
 参数、能力声明和错误行为以 [api.ts](../../../../../../dsh-obsidian-bridge-lifecycle/src/api.ts) 为唯一合同，实现位于 action-channel、reference/handoff 与 runtime。既有引用接入成为 [[MOD-lifecycle]] 内的 [[MOD-reference]]。Core 或 Maintenance 尚未加载时，连接服务仍正常；依赖其能力的工作等待或明确不可用。
 
-绑定、发现与按 Vault 路由是后续阶段，见 [[IF-vault-binding]]，不能把本阶段单连接的接口说成已经支持多 Vault。
+当前 Bridge 已扩展为按 Vault 的独立通道，消费者通过 forVault(vaultId) 明确路由；无目标且多 Vault 时返回歧义，不借用任意连接。绑定设计见 [[IF-vault-binding]]，当前实现与组合验收见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。

@@ -24,4 +24,4 @@ relations:
 
 首阶段源码提交：Bridge `3b16e92`，兼容 Adapter `e8b6285`，Sticker `bdc814c`。对应候选版本为 `0.4.0-rc2.1`、`0.3.5-rc2.1`、`0.7.4-rc2.1`，Core 使用 `0.3.12-rc2.19`。后续阶段会在此基础上继续修改，不将这些版本号视为发布或真实部署证据。
 
-Vault 绑定、多 Vault 路由和新的 Maintenance Adapter 仍按后续阶段实现。实例工作区双向同步选择为用户在施工中新增的 Maintenance 要求，详见 [[REQ-integration-complete]]。
+第一阶段 Suite 1e73bc6 已验收。后续 Vault 绑定、多 Vault 路由和 Maintenance 贡献接入已完成本地构建与合成联测；见 [[IMP-vault-binding-routing]] 与 [[VER-vault-binding-implementation]]。实例工作区双向同步选择为用户在施工中新增的 Maintenance 要求，详见 [[REQ-integration-complete]]。

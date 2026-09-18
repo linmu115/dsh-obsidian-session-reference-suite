@@ -75,6 +75,8 @@ relations:
 
 [[INT-reference-protocol]]说明本组件实际消费哪些控制、数据及 Annotation 2 出口，返回 [[MOD-protocol|提供方接入目录]]。
 
-## 多 Vault 与可选维护接入（待实现）
+## 多 Vault 与可选维护接入
 
 依据 [[REQ-vault-instance-binding]]，保留单一 obsidian-note 来源类型，在 Bridge 内按 vaultId 选择连接，覆盖 Host 来源准备、Client 领取与导航、回链和删除；同名笔记不能串入另一 Vault。消费 [[IF-vault-binding]] 以及 [[INT-suite-extension-pages]] 所链接的 Maintenance 有效范围；缺少 Maintenance 时基础原生引用继续运行。
+
+上述接入已归入 Bridge 0.4.0-rc2.2，旧 Adapter 0.3.5-rc2.2 仅保留能力守卫与兼容元数据。实现与合成验收见 [[IMP-vault-binding-routing]]、[[VER-vault-binding-implementation]]。

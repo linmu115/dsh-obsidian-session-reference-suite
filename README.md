@@ -1,8 +1,8 @@
 # Obsidian Session Reference Suite
 
-本组合正在实施桥整合，阶段与验收条件见[实施计划](docs/2026-09-18-bridge-implementation-plan.md)。版本为本地开发候选，不代表已经发布或安装。
+本组合已整合桥并增加 Vault 绑定、定向路由与可选维护页，阶段与验收条件见[实施计划](docs/2026-09-18-bridge-implementation-plan.md)。版本为本地开发候选，不代表已经发布或安装。
 
-当前版本 **0.4.0-rc2.1**，面向 **DSH 0.1.5-rc.2**。这是 DSH 与 Obsidian 引用系统的统一 Bundle：用一个父组加载三个有顺序的子插件，提供笔记引用、双向打开、会话关联、贴纸和断线恢复。
+当前版本 **0.4.0-rc2.2**，面向 **DSH 0.1.5-rc.2**。这是 DSH 与 Obsidian 引用系统的统一 Bundle：用一个父组加载三个有顺序的子插件，提供笔记引用、双向打开、会话关联、贴纸和断线恢复。
 
 ## 整套组件
 
@@ -11,14 +11,24 @@
 | 组件 | 当前版本 | 职责 |
 | --- | --- | --- |
 | Annotation Core | 0.3.12-rc2.19 | 引用气泡、准备与提交、引用状态、按需上下文工具 |
-| DSH Bridge（保留 Lifecycle 包名） | 0.4.0-rc2.1 | 连接租约、统一动作分派、引用交接、来源核对、回链、双向删除与健康管理 |
-| Obsidian Reference Adapter（兼容测试成员） | 0.3.5-rc2.1 | 旧安装入口兼容；新 Suite 不加载，不另建轮询或来源注册 |
-| Session Sticker Board | 0.7.4-rc2.1 | 普通贴纸、笔记关联业务与界面；通过 Bridge 共用通道交接引用和定位 |
-| Bridge Protocol | 0.3.3-rc2.1 | 共享消息与数据协议 |
-| Obsidian DeepHarness Bridge | 0.6.4-rc2.7 | Vault 侧选区、笔记定位、内嵌会话、回链和同步记录 |
-| 本 Suite | 0.4.0-rc2.1 | 单一父组与组合验证 |
+| DSH Bridge（保留 Lifecycle 包名） | 0.4.0-rc2.2 | 连接租约、统一动作分派、引用交接、来源核对、回链、双向删除与健康管理 |
+| Obsidian Reference Adapter（兼容测试成员） | 0.3.5-rc2.2 | 旧安装入口兼容；新 Suite 不加载，不另建轮询或来源注册 |
+| Session Sticker Board | 0.7.4-rc2.2 | 普通贴纸、笔记关联业务与界面；通过 Bridge 共用通道交接引用和定位 |
+| Bridge Protocol | 0.4.0-rc2.1 | 共享消息与数据协议 |
+| Obsidian DeepHarness Bridge | 0.7.0-rc2.1 | Vault 侧选区、笔记定位、内嵌会话、回链和同步记录 |
+| 本 Suite | 0.4.0-rc2.2 | 单一父组与组合验证 |
 
 DSH 中的加载顺序为 **Core → Bridge → Sticker**，卸载顺序相反。Protocol 作为依赖提供；Companion 安装在 Obsidian，不能作为 DSH 插件加载。新会话贴纸、知识链接和结构管理还要求已接通的 [Session Maintenance](https://github.com/linmu115/dsh-session-maintenance/blob/codex/rc2-session-context-graph/README.md) 及对应扩展能力。
+
+## Vault 绑定与维护范围
+
+在 Obsidian Bridge 设置中刷新本机实例，显式选择并绑定当前 Vault。一个 Vault 至多绑定一个实例，一个实例可绑定多个 Vault。未绑定时保留可检查状态；手工填写的桥地址只提供候选，不会自动配对。实例与 Vault 的稳定身份独立于本次端口，Launcher 每次启动改变端口时可重新发现，Viewer 仍采用该实例当前的已鉴权地址。
+
+DSH Bridge 提供绑定管理与按 Vault 路由。多个 Vault 中存在同名笔记时，不以第一个结果猜目标。改绑只影响后续操作；旧链接和待处理任务保留原身份，不能被转投新实例。旧无目标数据必须核验唯一归属或显式选择。
+
+Maintenance 是可选能力。接入后，“扩展数据”的 Obsidian 业务页显示连接、绑定、数据目录和管理动作，绑定动作仍由同一个 Companion 入口核验修订。每实例同步范围在 Maintenance 独立配置；对象是它自己的会话分类工作区，未分类会话单独可选。保存后在实例下次启动生效，当前会话继续完整保存。所有绑定该实例的 Vault 共用范围；取消选择后保留旧链接，显示未同步，重新选择后核验原映射恢复。
+
+独立 Bridge 首次可生成并持久保存实例 ID。与 Maintenance 集成时，两侧必须使用同一稳定实例身份及 Profile；已有持久身份不匹配时明确停止该集成路由，需核对配置，不能因安装顺序静默重命名或重绑。
 
 ## 日常使用
 
@@ -52,10 +62,10 @@ DSH 中的加载顺序为 **Core → Bridge → Sticker**，卸载顺序相反�
 
 | 配置位置 | 要求 |
 | --- | --- |
-| Lifecycle 子节点 `obsidian-bridge-lifecycle.config` | `bridgeOrigin` 与 Obsidian Bridge 端口一致；`dshInstanceId` 填当前 Launcher 实例 ID；`profileId` 填当前 profile。 |
+| Lifecycle 子节点 `obsidian-bridge-lifecycle.config` | bridgeOrigin 是人工发现候选；dshInstanceId 使用已核验的稳定实例 ID，不能填 Launcher 显示名或端口；profileId 与目标实例一致。 |
 | Core / Bridge 子节点 | `profileId` 与当前实例及已接入的 Maintenance 一致；引用接入由 Bridge 内部提供。 |
 | Maintenance 插件 | 使用该实例已登记的 Engine 连接及 Launcher 启动绑定；为需要的扩展登记对应插件版本。只填 JSON 不能替代可信安装与启动绑定。 |
-| Obsidian 设置 | 配置本机 DSH Web 地址、Bridge 端口、伴生笔记目录；编辑后点击 **应用**。优先使用 Lifecycle 提供的当前 Viewer 地址。 |
+| Obsidian 设置 | 显式选择本机实例并绑定／改绑／解绑；Bridge 端口冲突时可自动选择可用端口。当前 Viewer 地址由已核验的绑定实例提供，旧手填地址不自动建立绑定。 |
 
 Lifecycle 配置内容示例：
 
@@ -78,12 +88,12 @@ Lifecycle 配置内容示例：
   },
   {
     "namespace": "stickers",
-    "pluginVersion": "0.7.4-rc2.1",
+    "pluginVersion": "0.7.4-rc2.2",
     "writerId": "<沿用该实例 stickers 已登记的 writerId>"
   },
   {
     "namespace": "obsidian-links",
-    "pluginVersion": "0.6.4-rc2.7",
+    "pluginVersion": "0.7.0-rc2.1",
     "writerId": "<沿用该实例 obsidian-links 已登记的 writerId>"
   }
 ]

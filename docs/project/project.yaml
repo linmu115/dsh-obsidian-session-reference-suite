@@ -294,8 +294,9 @@
       "source_id": "vault-binding-design",
       "heading": "已确认需求",
       "status": "current",
-      "progress": "planned",
-      "summary": "一 Vault 至多一实例，多 Vault 共用实例同步范围；历史链接保留，动态端口自动重连。"
+      "progress": "in_progress",
+      "summary": "一 Vault 至多一实例，多 Vault 共用实例同步范围；历史链接保留，动态端口自动重连。",
+      "gap": "当前实现已落地，最终组合验收待完成；原绑定正文保留设计时点，当前实现和验证见新增记录。"
     },
     {
       "id": "IF-vault-binding",
@@ -304,8 +305,9 @@
       "source_id": "vault-binding-design",
       "heading": "绑定与连接合同草案",
       "status": "proposed",
-      "progress": "planned",
-      "summary": "稳定身份与运行端点分离；Bridge 确认有效配对，Maintenance 保存登记与回执。"
+      "progress": "in_progress",
+      "summary": "稳定身份与运行端点分离；Bridge 确认有效配对，Maintenance 保存登记与回执。",
+      "gap": "当前实现已落地，最终组合验收待完成；原绑定正文保留设计时点，当前实现和验证见新增记录。"
     },
     {
       "id": "IF-obsidian-operation-channel",
@@ -334,7 +336,7 @@
       "heading": "已确认需求",
       "status": "current",
       "progress": "in_progress",
-      "summary": "已授权施工，先整合Bridge和贴纸，再做绑定、Maintenance实例同步选择与扩展信息页。"
+      "summary": "第一阶段整合已验收；双侧绑定、多 Vault 消费和 Maintenance 策略/信息页已实现，最终跨仓验收进行中。"
     },
     {
       "id": "EXP-bridge-consolidation",
@@ -379,7 +381,8 @@
           "IF-vault-binding",
           "IF-obsidian-operation-channel",
           "EXP-bridge-consolidation",
-          "DEC-bridge-refactor-sequence"
+          "DEC-bridge-refactor-sequence",
+          "IMP-vault-binding-routing"
         ],
         "comp-vault": [
           "MOD-companion-vault",
@@ -429,7 +432,8 @@
           "REQ-vault-instance-binding",
           "IF-vault-binding",
           "EXP-bridge-consolidation",
-          "DEC-bridge-refactor-sequence"
+          "DEC-bridge-refactor-sequence",
+          "VER-vault-binding-implementation"
         ],
         "life-mount": [
           "IF-lifecycle",
@@ -493,6 +497,10 @@
         ],
         "ext-thoughtdag": [
           "EXT-thoughtdag"
+        ],
+        "protocol-discovery": [
+          "IMP-vault-binding-routing",
+          "IF-vault-binding"
         ]
       }
     },

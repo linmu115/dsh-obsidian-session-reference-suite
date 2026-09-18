@@ -121,7 +121,7 @@
       "col": 0,
       "type": "database",
       "label": "保存选段 capture",
-      "sublabel": "用户显式引用 / 等待内嵌页",
+      "sublabel": "保存原实例 / Vault / 绑定修订",
       "width": 156
     },
     {
@@ -148,7 +148,7 @@
       "col": 1,
       "type": "backend",
       "label": "连接就绪",
-      "sublabel": "当前实例 / bootId / 租约",
+      "sublabel": "匹配绑定 / 当前 boot / 租约",
       "width": 156
     },
     {
@@ -157,7 +157,7 @@
       "col": 2,
       "type": "backend",
       "label": "等待或排空连接",
-      "sublabel": "停附件 / 保留持久记录",
+      "sublabel": "改绑旧作业暂停，不改投",
       "width": 156
     },
     {
@@ -166,7 +166,7 @@
       "col": 0,
       "type": "frontend",
       "label": "合格内嵌页领取",
-      "sublabel": "页面身份与实例匹配",
+      "sublabel": "Vault / 修订 / boot / 页面匹配",
       "width": 156
     },
     {
@@ -443,7 +443,8 @@
       "items": [
         "一般断线保留已持久添加的同一操作，重连再 claim。",
         "冲突补偿不取消赢家；来源改变与容量不足阻断发送。",
-        "claim 与 prepared 都不是模型已收到或理解材料的证明。"
+        "claim 与 prepared 都不是模型已收到或理解材料的证明。",
+        "改绑保留历史身份；只为新作业保存新路由。多 Vault 最终消费者验收仍进行。"
       ]
     }
   ]
