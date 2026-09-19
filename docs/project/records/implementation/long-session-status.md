@@ -11,8 +11,8 @@ status: current
 
 | 组件 | 版本与实际状态 |
 | --- | --- |
-| DSH Bridge | 0.4.1-rc2.2，已在正常停止副本后安装；文件夹绑定入口真实交互待验收 |
-| 普通 Sticker | 0.7.4-rc2.4，已安装；仅新增 Bridge .1/.2 peer兼容，28个运行源码文件保持原实现 |
+| DSH Bridge | 0.4.1-rc2.3，CLI/skill 版本已安装并 active；skill 目录通过，Agent 调用待验收 |
+| 普通 Sticker | 0.7.4-rc2.5，已安装并 active；新增 Bridge .3 peer 兼容，28 个运行源码文件保持原实现 |
 | Obsidian Companion | 0.7.0-rc2.3，math已安装、用户重载；live路径证明和在线身份一致已核验 |
 | Dashboard | 0.1.5，当前引擎静态页已更新；Maintenance/Codex并列标签及卡片间距经过实际浏览器检查 |
 | Maintenance Engine | 0.1.33-rc2.40已安装并激活，ready；.39因版本门禁缺陷未激活，由.40替代 |
@@ -22,7 +22,7 @@ math先前revision1绑定RC2副本成功；本轮新路径proof核验没有重�
 
 Bridge安装保留新增gpt-compat-accounts配置。停止回执确认旧run closed、Launcher handle finalized/closed、live identity消失；本轮正式启动与后续运行状态见验收续记。引擎.39切换仍缺安全停止链路，未绕过。桌面维护看板入口缺失/路径错位已补齐，CheckOnly能连接现运行引擎，不代表验证从零启动。
 
-双侧Bridge通用操作通道、真实文件夹选择→绑定交互、完整引用往返及外部浏览器故障根因仍未验收。源码、安装与UI证据分开见 [[VER-long-session-acceptance]]。
+双侧 Bridge 的 CLI 专用操作已形成 DSH .3 源码候选：skill、绑定目标解析和 CLI 派发已实现；本机 CLI 已启用、真实只读与桥重载通过。Bridge .3 / Sticker .5 已部署并 active，skill 目录已核验；Plugin API 补充执行器尚未实现。见 [[IMP-obsidian-cli]]、[[VER-obsidian-cli]]。真实文件夹选择→绑定交互、完整引用往返及外部浏览器故障根因仍未验收。源码、安装与UI证据分开见 [[VER-long-session-acceptance]]。
 
 
 ## 安装后启动续记

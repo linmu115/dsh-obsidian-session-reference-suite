@@ -59,7 +59,7 @@
           "ext-shared-scope",
           "bridge-operations-planned"
         ],
-        "note": "Core/Bridge/Sticker 独立；Maintenance 仅可选外部入口与范围提供方。专用操作通道仍在同一 Bridge 内规划，未实现。"
+        "note": "Core/Bridge/Sticker 独立；Maintenance 仅可选外部入口与范围提供方。专用操作 CLI 路线在同一 Bridge 内形成源码候选，已部署到 DSH，skill 目录已核验，Agent 调用未验收。"
       },
       {
         "id": "shared-protocol",
@@ -475,8 +475,8 @@
     {
       "id": "bridge-operations-planned",
       "type": "backend",
-      "label": "专用操作通道 · 规划",
-      "sublabel": "复用绑定路由 / 业务能力未实现",
+      "label": "专用操作通道 · CLI",
+      "sublabel": "绑定目标 + skill + CLI / 已部署，调用待验收",
       "pos": [
         430,
         918
@@ -532,7 +532,7 @@
   "boundaries": [
     {
       "kind": "region",
-      "label": "Obsidian 侧 · Companion",
+      "label": "Obsidian 侧 · Bridge",
       "wraps": [
         "comp-viewer",
         "comp-bridge",
@@ -1356,7 +1356,7 @@
       "items": [
         "单桥产品、双侧绑定、动态发现和文件夹在线路径验证分别按实现与真实验收记录核对；源码通过不等于全部 UI 通过。",
         "Maintenance 独立可选。插件信息页展示贡献栏目与动作回执；同实例 Vault 共用分类范围，保存后下次启动生效，当前 run 按原快照完成。",
-        "规划中的专用通道归同一 Bridge；纯笔记操作不必经过 Core 或 Maintenance，笔记、样式、模板等业务仍未实现。"
+        "专用通道扩展现有两侧 Bridge，提供直接操作权限；必须有 CLI，候选已包含 skill、绑定目标和 CLI 工具。本机 CLI 与桥重载已验证，Bridge .3 / Sticker .5 已部署并 active，skill 目录已核验。无需逐 Vault 能力识别或 Core/Maintenance；Plugin API 补充执行器尚未实现。"
       ]
     },
     {

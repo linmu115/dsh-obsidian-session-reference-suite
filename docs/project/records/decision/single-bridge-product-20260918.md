@@ -4,7 +4,7 @@ kind: decision
 title: 单一桥产品与独立引用业务组合
 date: 2026-09-18
 status: current
-summary: 桥接层统一为 dsh-obsidian-bridge；Suite 不安装，Core/普通 Sticker/ThoughtDAG 保持业务边界，Maintenance 独立可选。
+summary: 当前桥接功能收口到 DSH 侧 dsh-obsidian-bridge 与 Obsidian 侧 obsidian-deepharness-bridge 各一个插件；Suite 不安装，业务插件保持独立。
 sources:
 - path: ../2026-09-18-dsh-obsidian-confirmed-requirements.md
   heading: R12：桥接层合为一个用户安装插件
@@ -21,6 +21,8 @@ relations:
 ---
 
 # 单一桥产品与独立引用业务组合
+
+2026-09-18 当前地图回查任务再次明确：**当前桥接功能被收口到 DSH 和 Obsidian 侧各一个插件上。** DSH 侧为 `dsh-obsidian-bridge`，Obsidian 侧为 `obsidian-deepharness-bridge`（显示名 DeepHarness Bridge，旧称 Companion）。“单桥”指每个宿主各一个桥插件，两侧通过协议连接；Companion 不构成第三个插件。未来专门操作通道也在这两个现有插件内追加，不增加操作桥安装项。该要求不合并 Core、普通 Sticker、ThoughtDAG 或可选 Maintenance 的独立业务职责。
 
 用户明确要求桥接层在安装形态上合为一个插件，不能以内部模块合并和 Suite wrapper 代替。当前产品是 `dsh-obsidian-bridge@0.4.1-rc2.1`，统一实例/Vault 绑定、路由、共享引用交接和桥维护；未来专用通道也归该插件，具体操作业务仍后置。
 

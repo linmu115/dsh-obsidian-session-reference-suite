@@ -1,7 +1,7 @@
 ---
 id: MOD-companion
 kind: module
-title: Companion：Vault 侧会话与引用协作
+title: Obsidian 侧 Bridge：Vault 侧会话与引用协作
 status: current
 summary: 运行在 Obsidian：Viewer 页面、Bridge HTTP、笔记定位、关联回执和持久重试。
 sources:
@@ -16,6 +16,8 @@ sources:
   role: original-module-authority
 aliases:
 - Obsidian Companion：Vault 一侧
+- Companion：Vault 侧会话与引用协作
+- DeepHarness Bridge
 relations:
 - relation: provides
   to:
@@ -59,9 +61,9 @@ relations:
   - Vault 维护责任
 ---
 
-# Companion：Vault 侧会话与引用协作
+# Obsidian 侧 Bridge：Vault 侧会话与引用协作
 
-Companion 是独立 Obsidian 插件，与单一 DSH Bridge 跨宿主协作；Suite 只作开发验收工作区。它让笔记选区投递到内嵌 DSH，会话链接与笔记可双向打开，并管理本侧持久同步责任。
+本模块就是现有 Obsidian 侧桥插件 `obsidian-deepharness-bridge`，显示名 DeepHarness Bridge；Companion 是地图及内部文档的旧称，不是桥之外另需安装的插件。它与 DSH 侧 `dsh-obsidian-bridge` 分别运行于两个宿主，共同组成桥；Suite 只作开发验收工作区。它让笔记选区投递到内嵌 DSH，会话链接与笔记可双向打开，并管理本侧持久同步责任。
 
 - [Viewer 与 Bridge 交接](viewer.md)：稳定页面、租约、定向队列与双向导航。
 - [Vault 身份、标记与恢复](vault.md)：正文归属、笔记定位、回链/删除记录与标记清理。
@@ -74,6 +76,6 @@ Maintenance 结构集成见 [消费方接入说明](integrations/maintenance.md)
 
 ## Vault 绑定与独立运行（已有合成验证，新包验收另记）
 
-Companion 按 [[REQ-vault-instance-binding]] 提供设置页实例选择及有效绑定的唯一写入口；Maintenance 管理页通过 [[IF-vault-binding]] 调用同一入口。按绑定身份选择当前控制租约并自动更新动态 Web 地址，不能再由另一实例最近上线抢占。未来专门操作插件通过 [[IF-obsidian-operation-channel]] 扩展；本轮只留合同，不实现其业务。
+Obsidian 侧 Bridge 按 [[REQ-vault-instance-binding]] 提供设置页实例选择及有效绑定的唯一写入口；Maintenance 管理页通过 [[IF-vault-binding]] 调用同一入口。按绑定身份选择当前控制租约并自动更新动态 Web 地址，不能再由另一实例最近上线抢占。未来专门操作通道通过本插件内部执行模块及 [[IF-obsidian-operation-channel]] 扩展，向已绑定 DSH 提供直接操作权限，不要求逐 Vault 操作能力识别，不新增操作插件；本轮只修订合同，不实现其业务。
 
 当前实现状态：[[IMP-vault-binding-routing]]；分阶段验证与未结项：[[VER-vault-binding-implementation]]。未来通用直连操作仍 deferred。

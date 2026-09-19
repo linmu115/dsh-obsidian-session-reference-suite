@@ -1,12 +1,19 @@
+> **停止维护 / Archived — 2026-09-19**
+> 本仓库已被统一桥项目 [dsh-obsidian-bridge](https://github.com/linmu115/dsh-obsidian-bridge) 替代，不再发布更新或接受新功能。
+> 新问题和改动请转到新仓库。历史源码、许可证和以下旧版说明保留供回查，旧版安装说明不再作为当前推荐。
+> Obsidian 侧插件 [obsidian-deepharness-bridge](https://github.com/linmu115/obsidian-deepharness-bridge) 继续维护。Protocol 源码转到新仓库 `vendor/protocol`；Suite 仅保留历史组合规格。
+
 # DSH–Obsidian 桥开发与组合验收工作区
 
-当前对用户提供一个 DSH 桥插件 **`dsh-obsidian-bridge@0.4.1-rc2.1`**，统一连接、实例/Vault 绑定、路由、共享引用交接与桥管理。Core、普通 Sticker 和可选 Maintenance 保持独立。用户确认的交付形态及本轮验收进度见[单桥更正与验收记录](docs/changes/2026-09-18-single-bridge-product.md)。
+当前对用户提供一个 DSH 桥插件 **`dsh-obsidian-bridge@0.4.1-rc2.3`**，统一连接、实例/Vault 绑定、路由、共享引用交接与桥管理。Core、普通 Sticker 和可选 Maintenance 保持独立。用户确认的交付形态及本轮验收进度见[单桥更正与验收记录](docs/changes/2026-09-18-single-bridge-product.md)。
 
 本仓库面向 **DSH 0.1.5-rc.2**，只作为私有开发、文档与跨仓组合验收工作区，不再提供可安装的 Suite plugin wrapper。实例 profile 独立加载 Core、Bridge、Sticker 各一次，使用 Cordis 服务发现支持可选能力及晚加载。旧 Lifecycle 目录名和内部服务 key 仅用于源码历史与兼容，不是额外安装项。
 
 ## 整套组件
 
-以下是 [suite.members.json](suite.members.json) 记录的当前源码组合，不能据此推定这些候选版已经发布到 npm 或 GitHub Releases。
+CLI 后续实际部署：Bridge .3 / Sticker .5 已 active，操作 skill 目录已核验，见[部署验收](docs/project/records/verification/obsidian-cli.md)。
+
+以下是 [suite.members.json](suite.members.json) 保留的首轮单桥源码组合，不能据此推定这些候选版已经发布到 npm 或 GitHub Releases。
 
 | 用户安装项 | 当前候选版本 | 职责 |
 | --- | --- | --- |

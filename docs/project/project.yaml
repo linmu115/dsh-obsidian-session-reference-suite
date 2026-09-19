@@ -315,9 +315,9 @@
       "title": "Obsidian 操作管道的扩展预留",
       "source_id": "vault-binding-design",
       "heading": "操作管道扩展预留",
-      "status": "proposed",
-      "progress": "planned",
-      "summary": "只预留按 Vault 的操作登记与结果合同，具体笔记、样式、模板和插件功能以后实现。"
+      "status": "current",
+      "progress": "in_progress",
+      "summary": "两侧各一个 Bridge；必须提供绑定 Vault 的官方 CLI，直接操作权限，无逐 Vault 能力识别前置。DSH .3 候选包含 skill/CLI 工具，本机 CLI 与桥重载已验证，Bridge .3 / Sticker .5 已部署并 active，skill 目录已核验。"
     },
     {
       "id": "VER-vault-binding-design",
@@ -548,7 +548,8 @@
         ],
         "bridge-operations-planned": [
           "REQ-long-session-consolidated",
-          "IMP-long-session-status"
+          "IMP-long-session-status",
+          "DEC-obsidian-operation-route"
         ]
       }
     },

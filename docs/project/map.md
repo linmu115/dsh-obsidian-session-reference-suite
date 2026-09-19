@@ -1,8 +1,14 @@
 # DSH–Obsidian 引用与贴纸组合
 
+> 2026-09-19：本 Suite 仓库停止维护。本图保留历史组合规格；统一桥开发已迁至 [独立项目地图](../../../../../repositories/dsh-obsidian-bridge/docs/project/map.md)。Core、Sticker、Obsidian 侧桥等独立业务继续维护。
+
 本次长会话最新入口：[[REQ-long-session-consolidated|最终确认需求]] · [[IMP-long-session-status|实际交付状态]] · [[VER-long-session-acceptance|验收与未结项]] · [[HIST-vault-instance-binding|完整开发历程]] · [[EXP-acceptance-blockers|验收错误与卡点日志]]。下文旧时点状态以这些续记为准。
 
 当前产品形态见 [[DEC-single-bridge-product]]：用户只管理一个 DSH Bridge 桥插件；Suite 是私有开发/文档/组合验收工作区，Protocol 是内部依赖，旧 Adapter 退役。新包与真实安装进度见 [[VER-single-bridge-delivery]]。
+
+当前桥接功能收口到 DSH 和 Obsidian 侧各一个插件：DSH 侧为 `dsh-obsidian-bridge`，Obsidian 侧为 DeepHarness Bridge（`obsidian-deepharness-bridge`）。旧称 Obsidian Companion 的模块就是这个 Obsidian 侧桥，不是额外安装项；Core、普通 Sticker、ThoughtDAG 和可选 Maintenance 仍按既定业务职责独立。[[IF-obsidian-operation-channel|未来专门操作通道]] 在这两个现有插件内追加，复用绑定及路由并提供直接操作权限，不要求逐 Vault 操作能力识别；CLI 版本已部署到真实 DSH，桥与 Sticker 均 active，操作 skill 已进入现有会话目录。
+
+[[DEC-obsidian-operation-route|专用操作技术路线]]：桥交付操作 skill，指导 DSH 优先走当前绑定 Vault 的官方 CLI，显式核验目标；CLI 必须存在并启用，不能静默回退。DSH Bridge .3 候选已包含 skill、目标封装与 CLI 工具；本机官方 CLI 与真实桥重载已通过。实现见 [[IMP-obsidian-cli]]，实际部署检查和剩余验收边界见 [[VER-obsidian-cli]]。CLI 未覆盖的 Plugin API 执行器尚未实现。
 
 当前职责修订见 [[DEC-selection-ownership-20260918|划选与会话贴纸归属]]；旧版入口说明以此修订为准。
 
@@ -36,7 +42,7 @@ Vault 拥有笔记正文，Maintenance 拥有会话和已迁入结构，Core 拥
 - [DSH Obsidian Bridge](records/modules/bridge-lifecycle/overview.md)：单一桥产品；实例/Vault 绑定、路由、来源、传输、定位、共享交接和桥管理。
 - [Bridge 内部引用接入](records/modules/reference-adapter/overview.md)：原 Adapter 已并入 Bridge；Client 领取与 Host 来源/删除仍分工。
 - [Sticker Board](records/modules/sticker-board/overview.md)：普通贴纸与笔记关联业务，使用 Core、Bridge 与 Better Sidebar；会话贴纸归 ThoughtDAG。
-- [Obsidian Companion](records/modules/obsidian-companion/overview.md)：Viewer/Bridge 与 Vault 身份/标记/回执分别维护。
+- [Obsidian 侧 Bridge（旧称 Companion）](records/modules/obsidian-companion/overview.md)：现有 DeepHarness Bridge 插件，内部维护 Viewer、传输与 Vault 身份/标记/回执。
 
 当前 DSH profile 独立启用 Core、`dsh-obsidian-bridge` 和 Sticker 各一次；普通 Sticker 同时需要 Better Sidebar，Maintenance 独立可选。Companion 运行于 Obsidian，Protocol 由消费者构建使用，用户不单独安装或启用；Suite 与旧 Adapter 无安装项。Cordis 服务支持可选、晚加载与卸载，缺少业务依赖显示等待/不可用，不抛启动错误。旧 Lifecycle 目录与服务 key 仅内部兼容。
 

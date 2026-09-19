@@ -11,12 +11,16 @@ status: current
 
 ## 安装与业务边界
 
+- 当前桥接功能收口到 DSH 和 Obsidian 侧各一个插件：分别为 `dsh-obsidian-bridge` 与 `obsidian-deepharness-bridge`。这是当前产品边界，未来专门操作功能也在这两个现有桥插件内追加。
+
 - DSH 侧只提供一个 `dsh-obsidian-bridge` 桥插件：收拢旧 Suite 的运行装配、Adapter、Lifecycle、实例/Vault 绑定、多 Vault 路由及未来专用通道。Suite 只保留私有开发/文档/组合验收工作区，Protocol 为内部库；仓库数量不等于安装项数量。
 - Core 独立，自己负责上下文引用、引用样式/UI/气泡、上下文组织和注入、提交/撤销/恢复。Core + Bridge 支持跨 Obsidian 引用；Core + ThoughtDAG 支持跨会话引用及会话贴纸。
 - 普通 Sticker 独立，同时使用 Core、Bridge、BetterSidebar。普通贴纸独有的笔记关联继续留在 Sticker；撤回“把笔记关联迁入桥”的建议。Bridge 暴露通用双向引用通道，Sticker 自行适配。
 - 第一阶段只整合已有引用、回链、定位、解除能力，保留现有 Maintenance 接入；不把新双向操作能力混入重构验收。
-- 未来专门操作通道由 DSH 与 Obsidian 两侧现有 Bridge 内部模块协作，不另增桥安装项。Obsidian Companion 是现有 Obsidian 侧 `obsidian-deepharness-bridge` / DeepHarness Bridge 的旧称。笔记写入、面板样式、模板和插件注册等仍待设计和实现，未交付；纯笔记操作不必进入 Core 引用流程或依赖 Maintenance。
+- 未来专门操作通道由 DSH 与 Obsidian 两侧现有 Bridge 内部模块协作，不另增桥安装项。Obsidian Companion 是现有 Obsidian 侧 `obsidian-deepharness-bridge` / DeepHarness Bridge 的旧称。笔记、模板和样式片段的 CLI 路线已形成 .3 版本并部署生效，面板接口仍未实现；插件业务依后续修订仅保留重载；纯笔记操作不必进入 Core 引用流程或依赖 Maintenance。
 - 2026-09-18 本次用户批注修订：复用绑定和路由，提供直接操作权限；不需要逐 Vault 识别、声明或协商操作能力，不以能力目录、查询或逐项启用为前置。保留目标身份、绑定归属和请求鉴权，实际不支持的操作返回明确错误。此要求替代 R09 / VB11 及操作管道草案中原有能力识别方案。
+- 用户追加：桥插件交付面向 DSH 的操作 skill，指导 DSH 优先使用绑定 Vault 的官方 CLI，显式指定并核验目标，不依赖当前活动 Vault。路线见 [[DEC-obsidian-operation-route]]；用户进一步要求“必须要有 cli”，不可静默回退。skill、目标封装与 CLI 工具已形成 .3 候选；已实现和实际部署边界见 [[IMP-obsidian-cli]]、[[VER-obsidian-cli]]。
+- 实施前用户修订：插件业务仅重载已有插件；LLM 自行通过本地工程工具生成、构建插件。桥不承担插件构建、安装、卸载或启停，替代此前插件注册及完整管理构想；用户已要求开始实现下一步。
 
 ## 绑定、发现与同步范围
 
